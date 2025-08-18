@@ -1,0 +1,312 @@
+xlable f�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=108a8h ( 67752) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=000208d0 vaddr=3ffb0000 size=02820h ( 10272) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=000230f8 vaddr=40080000 size=0cf20h ( 53024) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2fb28h (195368) map[0m
+[0;32mI (222) esp_image: segment 4: paddr=0005fb50 vaddr=4008cf20 size=023d8h (  9176) load[0m
+[0;32mI (233) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (233) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) app_init: Application information:[0m
+[0;32mI (257) app_init: Project name:     hot_potato[0m
+[0;32mI (262) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (268) app_init: Compile time:     Aug  7 2025 21:47:14[0m
+[0;32mI (274) app_init: ELF file SHA256:  ac799a232...[0m
+[0;32mI (279) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (284) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (289) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (294) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (299) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (306) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (312) heap_init: At 3FFB3700 len 0002C900 (178 KiB): DRAM[0m
+[0;32mI (318) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (324) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (331) heap_init: At 4008F2F8 len 00010D08 (67 KiB): IRAM[0m
+[0;32mI (339) spi_flash: detected chip: generic[0m
+[0;32mI (342) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (360) main_task: Started on CPU0[0m
+[0;32mI (370) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (370) IR_TEST: Starting IR test harness[0m
+[0;32mI (370) IR_TEST: My MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (410) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (580) IR_TX: IR TX deinitialized[0m
+[0;33mW (580) rmt: channel resolution loss, real=2962962[0m
+[0;32mI (580) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) IR_TX: RMT TX channel created successfully[0m
+[0;32mI (590) IR_TX: Carrier applied successfully: 38000 Hz[0m
+[0;32mI (600) IR_TX: Using direct RMT encoding (no copy encoder)[0m
+[0;32mI (600) IR_TX: RMT channel enabled successfully[0m
+[0;32mI (610) IR_TX: IR TX initialized: GPIO 26, carrier 38000 Hz, resolution 3000000 Hz[0m
+[0;32mI (620) gpio: GPIO[36]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;33mW (630) gptimer: resolution lost, expect 3000000, real 3076923[0m
+[0;32mI (630) IR_RX: IR RX GPT initialized: GPIO 36, resolution 3000000 Hz[0m
+[0;32mI (640) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (15650) IR_TEST: Button pressed[0m
+[0;32mI (15850) IR_TEST: Button released after 200 ms[0m
+[0;32mI (15850) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (15850) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (15850) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (15860) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (15860) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (15870) IR_TX: First 4 symbols:[0m
+[0;32mI (15870) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (15880) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (15880) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (15890) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (15890) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (15900) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (15900) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (16960) IR_TEST: Button pressed[0m
+[0;32mI (17110) IR_TEST: Button released after 150 ms[0m
+[0;32mI (17110) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (17110) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (17110) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (17120) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (17120) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (17130) IR_TX: First 4 symbols:[0m
+[0;32mI (17130) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17140) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17140) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17150) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (17150) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (17160) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (17160) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (17670) IR_TEST: Button pressed[0m
+[0;32mI (17820) IR_TEST: Button released after 150 ms[0m
+[0;32mI (17820) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (17820) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (17820) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (17830) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (17830) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (17840) IR_TX: First 4 symbols:[0m
+[0;32mI (17840) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17850) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17850) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (17860) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (17860) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (17870) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (17870) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (18230) IR_TEST: Button pressed[0m
+[0;32mI (18380) IR_TEST: Button released after 150 ms[0m
+[0;32mI (18380) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (18380) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (18380) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (18390) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (18390) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (18400) IR_TX: First 4 symbols:[0m
+[0;32mI (18400) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18410) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18410) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18420) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (18420) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (18430) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (18430) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (18690) IR_TEST: Button pressed[0m
+[0;32mI (18840) IR_TEST: Button released after 150 ms[0m
+[0;32mI (18840) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (18840) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (18840) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (18850) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (18850) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (18860) IR_TX: First 4 symbols:[0m
+[0;32mI (18860) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18870) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18870) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (18880) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (18880) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (18890) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (18890) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (19150) IR_TEST: Button pressed[0m
+[0;32mI (19250) IR_TEST: Button released after 100 ms[0m
+[0;32mI (19250) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (19250) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (19250) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (19260) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (19260) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (19270) IR_TX: First 4 symbols:[0m
+[0;32mI (19270) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19280) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19280) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19290) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (19290) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (19300) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (19300) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (19610) IR_TEST: Button pressed[0m
+[0;32mI (19760) IR_TEST: Button released after 150 ms[0m
+[0;32mI (19760) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (19760) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (19760) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (19770) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (19770) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (19780) IR_TX: First 4 symbols:[0m
+[0;32mI (19780) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19790) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19790) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (19800) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (19800) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (19810) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (19810) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (19920) IR_TEST: Button pressed[0m
+[0;32mI (20020) IR_TEST: Button released after 100 ms[0m
+[0;32mI (20020) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (20020) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (20020) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (20030) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (20030) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (20040) IR_TX: First 4 symbols:[0m
+[0;32mI (20040) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20050) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20050) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20060) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (20060) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (20070) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (20070) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (20130) IR_TEST: Button pressed[0m
+[0;32mI (20230) IR_TEST: Button released after 100 ms[0m
+[0;32mI (20230) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (20230) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (20230) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (20240) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (20240) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (20250) IR_TX: First 4 symbols:[0m
+[0;32mI (20250) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20260) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20260) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20270) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (20270) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (20280) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (20280) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (20340) IR_TEST: Button pressed[0m
+[0;32mI (20440) IR_TEST: Button released after 100 ms[0m
+[0;32mI (20440) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (20440) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (20440) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (20450) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (20450) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (20460) IR_TX: First 4 symbols:[0m
+[0;32mI (20460) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20470) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20470) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20480) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (20480) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (20490) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (20490) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (20700) IR_TEST: Button pressed[0m
+[0;32mI (20800) IR_TEST: Button released after 100 ms[0m
+[0;32mI (20800) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (20800) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (20800) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (20810) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (20810) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (20820) IR_TX: First 4 symbols:[0m
+[0;32mI (20820) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20830) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20830) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20840) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (20840) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (20850) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (20850) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (20910) IR_TEST: Button pressed[0m
+[0;32mI (20960) IR_TEST: Button released after 50 ms[0m
+[0;32mI (20960) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (20960) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (20960) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (20970) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (20970) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (20980) IR_TX: First 4 symbols:[0m
+[0;32mI (20980) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20990) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (20990) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21000) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (21000) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (21010) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (21010) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (21170) IR_TEST: Button pressed[0m
+[0;32mI (21220) IR_TEST: Button released after 50 ms[0m
+[0;32mI (21220) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (21220) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (21220) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (21230) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (21230) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (21240) IR_TX: First 4 symbols:[0m
+[0;32mI (21240) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21250) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21250) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21260) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (21260) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (21270) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (21270) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (21380) IR_TEST: Button pressed[0m
+[0;32mI (21480) IR_TEST: Button released after 100 ms[0m
+[0;32mI (21480) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (21480) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (21480) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (21490) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (21490) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (21500) IR_TX: First 4 symbols:[0m
+[0;32mI (21500) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21510) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21510) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21520) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (21520) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (21530) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (21530) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (21590) IR_TEST: Button pressed[0m
+[0;32mI (21640) IR_TEST: Button released after 50 ms[0m
+[0;32mI (21640) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (21640) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (21640) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (21650) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (21650) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (21660) IR_TX: First 4 symbols:[0m
+[0;32mI (21660) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21670) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21670) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21680) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (21680) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (21690) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (21690) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (21750) IR_TEST: Button pressed[0m
+[0;32mI (21800) IR_TEST: Button released after 50 ms[0m
+[0;32mI (21800) IR_TEST: Short press detected - sending packet[0m
+[0;32mI (21800) IR_TX: === RMT TRANSMIT DEBUG ===[0m
+[0;32mI (21800) IR_TX: Channel: 0x3ffb5c5c, Encoder: NULL[0m
+[0;32mI (21810) IR_TX: Count: 80, BIT_TICKS: 1250[0m
+[0;32mI (21810) IR_TX: Payload bytes: 320, Symbol size: 4[0m
+[0;32mI (21820) IR_TX: First 4 symbols:[0m
+[0;32mI (21820) IR_TX:   [0] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21830) IR_TX:   [1] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21830) IR_TX:   [2] L0:0/D0:1250 | L1:0/D1:0[0m
+[0;32mI (21840) IR_TX:   [3] L0:1/D0:1250 | L1:0/D1:0[0m
+[0;31mE (21840) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (21850) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (21850) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m

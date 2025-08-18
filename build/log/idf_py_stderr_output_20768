@@ -1,0 +1,15 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400e571f: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/esp-idf-v5.3.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m434[0m
+[0m--- 0x400e5ae4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/esp-idf-v5.3.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m507[0m
+[0m--- 0x400831fd: [0;33m_xt_lowint1[0m[0m at [0;32mC:/esp-idf-v5.3.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000d2d6: [0;33m__umoddi3[0m[0m in [0;32mROM[0m
+[0m--- 0x40007cb0: [0;33m_cvt[0m[0m in [0;32mROM[0m
+[0m--- 0x40007ffd: [0;33mets_printf[0m[0m in [0;32mROM[0m
+[0m--- 0x400eaa02: [0;33mrmt_receive[0m[0m at [0;32mC:/esp-idf-v5.3.3/components/esp_driver_rmt/src/rmt_rx.c[0m[0m:[1;31m392[0m
+[0m--- 0x400d821d: [0;33mrx_task(void*)[0m[0m at [0;32mC:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp[0m[0m:[1;31m458[0m
+[0m--- 0x40087d41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/esp-idf-v5.3.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m

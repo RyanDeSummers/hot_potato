@@ -1,0 +1,128 @@
+lpile tets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=105a8h ( 66984) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=000205d0 vaddr=3ffb0000 size=02820h ( 10272) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=00022df8 vaddr=40080000 size=0d220h ( 53792) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2f8e0h (194784) map[0m
+[0;32mI (222) esp_image: segment 4: paddr=0005f908 vaddr=4008d220 size=021c8h (  8648) load[0m
+[0;32mI (233) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (233) boot: Disabling RNG early entropy source...[0m
+[0;32mI (245) cpu_start: Multicore app[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) app_init: Application information:[0m
+[0;32mI (257) app_init: Project name:     hot_potato[0m
+[0;32mI (262) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (267) app_init: Compile time:     Aug  7 2025 21:47:14[0m
+[0;32mI (273) app_init: ELF file SHA256:  9a920a721...[0m
+[0;32mI (278) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (284) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (289) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (294) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (299) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (306) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (312) heap_init: At 3FFB3700 len 0002C900 (178 KiB): DRAM[0m
+[0;32mI (318) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (324) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (331) heap_init: At 4008F3E8 len 00010C18 (67 KiB): IRAM[0m
+[0;32mI (338) spi_flash: detected chip: generic[0m
+[0;32mI (341) spi_flash: flash io: dio[0m
+[0;33mW (345) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (360) main_task: Started on CPU0[0m
+[0;32mI (370) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (370) IR_TEST: Starting IR test harness[0m
+[0;32mI (370) IR_TEST: My MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (410) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (580) IR_TX: IR TX deinitialized[0m
+[0;33mW (580) rmt: channel resolution loss, real=2962962[0m
+[0;32mI (580) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) IR_TX: IR TX initialized: GPIO 26, carrier 38000 Hz, resolution 3000000 Hz[0m
+[0;32mI (600) gpio: GPIO[36]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;33mW (610) gptimer: resolution lost, expect 3000000, real 3076923[0m
+[0;32mI (610) IR_RX: IR RX GPT initialized: GPIO 36, resolution 3000000 Hz[0m
+[0;32mI (620) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (14280) IR_TEST: Button pressed[0m
+[0;32mI (14430) IR_TEST: Button released after 150 ms[0m
+[0;32mI (14430) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (14430) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (14430) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (14440) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (14590) IR_TEST: Button pressed[0m
+[0;32mI (14640) IR_TEST: Button released after 50 ms[0m
+[0;32mI (14640) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (14640) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (14640) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (14650) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (15500) IR_TEST: Button pressed[0m
+[0;32mI (15650) IR_TEST: Button released after 150 ms[0m
+[0;32mI (15650) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (15650) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (15650) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (15660) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (16560) IR_TEST: Button pressed[0m
+[0;32mI (16760) IR_TEST: Button released after 200 ms[0m
+[0;32mI (16760) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (16760) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (16760) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (16770) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (17570) IR_TEST: Button pressed[0m
+[0;32mI (17770) IR_TEST: Button released after 200 ms[0m
+[0;32mI (17770) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (17770) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (17770) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (17780) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (18080) IR_TEST: Button pressed[0m
+[0;32mI (18230) IR_TEST: Button released after 150 ms[0m
+[0;32mI (18230) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (18230) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (18230) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (18240) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (73440) IR_TEST: Button pressed[0m
+[0;32mI (73590) IR_TEST: Button released after 150 ms[0m
+[0;32mI (73590) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (73590) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (73590) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (73600) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (73800) IR_TEST: Button pressed[0m
+[0;32mI (73950) IR_TEST: Button released after 150 ms[0m
+[0;32mI (73950) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (73950) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (73950) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (73960) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (74110) IR_TEST: Button pressed[0m
+[0;32mI (74210) IR_TEST: Button released after 100 ms[0m
+[0;32mI (74210) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (74210) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (74210) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (74220) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (74320) IR_TEST: Button pressed[0m
+[0;32mI (74420) IR_TEST: Button released after 100 ms[0m
+[0;32mI (74420) IR_TEST: Short press detected - sending packet[0m
+[0;31mE (74420) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (74420) IR_TX: RMT transmit failed: ESP_ERR_INVALID_ARG[0m
+[0;31mE (74430) IR_TEST: Send failed: ESP_ERR_INVALID_ARG[0m
