@@ -1,0 +1,1671 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20ac0h (133824) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=00030ae8 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=00034e68 vaddr=40080000 size=0b1b0h ( 45488) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9c5a8h (640424) map[0m
+[0;32mI (395) esp_image: segment 4: paddr=000dc5d0 vaddr=4008b1b0 size=0f5c4h ( 62916) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (457) app_init: Project name:     hot_potato[0m
+[0;32mI (462) app_init: App version:      6f5b998-dirty[0m
+[0;32mI (467) app_init: Compile time:     Aug 18 2025 14:23:14[0m
+[0;32mI (473) app_init: ELF file SHA256:  04a26c135...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (484) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (489) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (494) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (499) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (506) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB8E70 len 00027190 (156 KiB): DRAM[0m
+[0;32mI (518) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 4009A774 len 0000588C (22 KiB): IRAM[0m
+[0;32mI (539) spi_flash: detected chip: generic[0m
+[0;32mI (542) spi_flash: flash io: dio[0m
+[0;33mW (546) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (560) main_task: Started on CPU0[0m
+[0;32mI (570) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (570) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;31mE (570) task_wdt: esp_task_wdt_init(515): TWDT already initialized[0m
+[0;32mI (580) IR_SIMPLE_TEST_OPT: MAC: 08:D1:F9:6A:D9:BC[0m
+[0;32mI (610) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (780) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (780) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (780) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (790) CFG: Self MAC = 08:D1:F9:6A:D9:BC[0m
+[0;32mI (820) wifi:wifi driver task: 3ffc17ec, prio:23, stack:6656, core=0[0m
+[0;32mI (820) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (820) wifi:wifi certification version: v7.0[0m
+[0;32mI (820) wifi:config NVS flash: enabled[0m
+[0;32mI (820) wifi:config nano formating: disabled[0m
+[0;32mI (830) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (830) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (840) wifi:Init management short buffer num: 32[0m
+[0;32mI (840) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (840) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (850) wifi:Init static rx buffer num: 10[0m
+[0;32mI (850) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (860) wifi_init: rx ba win: 6[0m
+[0;32mI (860) wifi_init: accept mbox: 6[0m
+[0;32mI (860) wifi_init: tcpip mbox: 32[0m
+[0;32mI (870) wifi_init: udp mbox: 6[0m
+[0;32mI (870) wifi_init: tcp mbox: 6[0m
+[0;32mI (870) wifi_init: tcp tx win: 5760[0m
+[0;32mI (880) wifi_init: tcp rx win: 5760[0m
+[0;32mI (880) wifi_init: tcp mss: 1440[0m
+[0;32mI (890) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (890) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (900) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (990) wifi:mode : sta (08:d1:f9:6a:d9:bc)[0m
+[0;32mI (990) wifi:enable tsf[0m
+[0;32mI (990) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (990) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (990) ESPNOW: init OK, channel=1[0m
+[0;32mI (1000) IR-UART: UART RX initialized on GPIO36 at 2400-8N1[0m
+[0;32mI (1000) IR-UART: UART RX task started[0m
+[0;32mI (1010) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1030) IR_SIMPLE_TEST_OPT: M5Stack FIRE side LEDs reset - should be OFF now[0m
+[0;32mI (1030) IR_SIMPLE_TEST_OPT: Initial HOLDER - startup delay 3000ms[0m
+[0;32mI (1030) IR_SIMPLE_TEST_OPT: IR Simple Test (Stage-2a) ready - potato passing demo[0m
+[0;32mI (1070) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (1070) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (1080) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (4170) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=0)[0m
+[0;32mI (4230) IR-UART: 0x5A[0m
+[0;32mI (4230) IR-UART: 0x54[0m
+[0;32mI (4230) IR-UART: 0x07[0m
+[0;32mI (4230) IR-UART: 0x00[0m
+[0;32mI (4230) IR-UART: 0x08[0m
+[0;32mI (4230) IR-UART: 0xD1[0m
+[0;32mI (4230) IR-UART: 0xF9[0m
+[0;32mI (4240) IR-UART: 0x6A[0m
+[0;32mI (4240) IR-UART: 0xD9[0m
+[0;32mI (4240) IR-UART: 0xBC[0m
+[0;32mI (4240) IR-UART: 0x87[0m
+[0;32mI (4250) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (4270) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=0[0m
+[0;32mI (4270) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (4270) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (4280) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (4390) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (4390) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=0[0m
+[0;32mI (4390) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (7510) IR-UART: 0x5A[0m
+[0;32mI (7510) IR-UART: 0x54[0m
+[0;32mI (7510) IR-UART: 0x07[0m
+[0;32mI (7510) IR-UART: 0x00[0m
+[0;32mI (7510) IR-UART: 0x34[0m
+[0;32mI (7510) IR-UART: 0x98[0m
+[0;32mI (7510) IR-UART: 0x7A[0m
+[0;32mI (7520) IR-UART: 0xB5[0m
+[0;32mI (7520) IR-UART: 0x97[0m
+[0;32mI (7520) IR-UART: 0x74[0m
+[0;32mI (7520) IR-UART: 0xE7[0m
+[0;32mI (7530) RX: CRC OK (len=7)[0m
+[0;32mI (7530) RX: SEQ=0 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (7850) IR-UART: 0x5A[0m
+[0;32mI (7850) IR-UART: 0x54[0m
+[0;32mI (7850) IR-UART: 0x07[0m
+[0;32mI (7850) IR-UART: 0x01[0m
+[0;32mI (7850) IR-UART: 0x34[0m
+[0;32mI (7850) IR-UART: 0x98[0m
+[0;32mI (7850) IR-UART: 0x7A[0m
+[0;32mI (7860) IR-UART: 0xB5[0m
+[0;32mI (7860) IR-UART: 0x97[0m
+[0;32mI (7860) IR-UART: 0x74[0m
+[0;32mI (7860) IR-UART: 0x0E[0m
+[0;32mI (7870) RX: CRC OK (len=7)[0m
+[0;32mI (7870) RX: SEQ=1 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (8190) IR-UART: 0x5A[0m
+[0;32mI (8190) IR-UART: 0x54[0m
+[0;32mI (8190) IR-UART: 0x07[0m
+[0;32mI (8190) IR-UART: 0x02[0m
+[0;32mI (8190) IR-UART: 0x34[0m
+[0;32mI (8190) IR-UART: 0x98[0m
+[0;32mI (8190) IR-UART: 0x7A[0m
+[0;32mI (8200) IR-UART: 0xB5[0m
+[0;32mI (8200) IR-UART: 0x97[0m
+[0;32mI (8200) IR-UART: 0x74[0m
+[0;32mI (8200) IR-UART: 0x04[0m
+[0;32mI (8210) RX: CRC OK (len=7)[0m
+[0;32mI (8210) RX: SEQ=2 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (8530) IR-UART: 0x5A[0m
+[0;32mI (8530) IR-UART: 0x54[0m
+[0;32mI (8530) IR-UART: 0x07[0m
+[0;32mI (8530) IR-UART: 0x03[0m
+[0;32mI (8530) IR-UART: 0x34[0m
+[0;32mI (8530) IR-UART: 0x98[0m
+[0;32mI (8530) IR-UART: 0x7A[0m
+[0;32mI (8540) IR-UART: 0xB5[0m
+[0;32mI (8540) IR-UART: 0x97[0m
+[0;32mI (8540) IR-UART: 0x74[0m
+[0;32mI (8540) IR-UART: 0xED[0m
+[0;32mI (8550) RX: CRC OK (len=7)[0m
+[0;32mI (8550) RX: SEQ=3 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (8870) IR-UART: 0x5A[0m
+[0;32mI (8870) IR-UART: 0x54[0m
+[0;32mI (8870) IR-UART: 0x07[0m
+[0;32mI (8870) IR-UART: 0x04[0m
+[0;32mI (8870) IR-UART: 0x34[0m
+[0;32mI (8870) IR-UART: 0x98[0m
+[0;32mI (8870) IR-UART: 0x7A[0m
+[0;32mI (8880) IR-UART: 0xB5[0m
+[0;32mI (8880) IR-UART: 0x97[0m
+[0;32mI (8880) IR-UART: 0x74[0m
+[0;32mI (8880) IR-UART: 0x10[0m
+[0;32mI (8890) RX: CRC OK (len=7)[0m
+[0;32mI (8890) RX: SEQ=4 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (9210) IR-UART: 0x5A[0m
+[0;32mI (9210) IR-UART: 0x54[0m
+[0;32mI (9210) IR-UART: 0x07[0m
+[0;32mI (9210) IR-UART: 0x05[0m
+[0;32mI (9210) IR-UART: 0x34[0m
+[0;32mI (9210) IR-UART: 0x98[0m
+[0;32mI (9210) IR-UART: 0x7A[0m
+[0;32mI (9220) IR-UART: 0xB5[0m
+[0;32mI (9220) IR-UART: 0x97[0m
+[0;32mI (9220) IR-UART: 0x74[0m
+[0;32mI (9220) IR-UART: 0xF9[0m
+[0;32mI (9230) RX: CRC OK (len=7)[0m
+[0;32mI (9230) RX: SEQ=5 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (9550) IR-UART: 0x5A[0m
+[0;32mI (9550) IR-UART: 0x54[0m
+[0;32mI (9550) IR-UART: 0x07[0m
+[0;32mI (9550) IR-UART: 0x06[0m
+[0;32mI (9550) IR-UART: 0x34[0m
+[0;32mI (9550) IR-UART: 0x98[0m
+[0;32mI (9550) IR-UART: 0x7A[0m
+[0;32mI (9560) IR-UART: 0xB5[0m
+[0;32mI (9560) IR-UART: 0x97[0m
+[0;32mI (9560) IR-UART: 0x74[0m
+[0;32mI (9560) IR-UART: 0xF3[0m
+[0;32mI (9570) CLAIM: slot=2 jitter=231 send_in=4231 seq=6[0m
+[0;32mI (9570) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (9580) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (9600) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (9600) PASS_REQ: Sent seq=6 to 34:98:7A:B5:97:74[0m
+[0;32mI (9600) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (9690) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (9690) RX: CRC OK (len=7)[0m
+[0;32mI (9690) RX: SEQ=6 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (9720) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (9720) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (9730) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (9730) CORE: ROLE -> HOLDER (PASS_GRANT won seq=6)[0m
+[0;32mI (12810) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=1)[0m
+[0;32mI (12870) IR-UART: 0x5A[0m
+[0;32mI (12870) IR-UART: 0x54[0m
+[0;32mI (12870) IR-UART: 0x07[0m
+[0;32mI (12870) IR-UART: 0x01[0m
+[0;32mI (12870) IR-UART: 0x08[0m
+[0;32mI (12870) IR-UART: 0xD1[0m
+[0;32mI (12870) IR-UART: 0xF9[0m
+[0;32mI (12880) IR-UART: 0x6A[0m
+[0;32mI (12880) IR-UART: 0xD9[0m
+[0;32mI (12880) IR-UART: 0xBC[0m
+[0;32mI (12890) IR-UART: 0x6E[0m
+[0;32mI (12890) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (13150) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=2)[0m
+[0;32mI (13210) IR-UART: 0x5A[0m
+[0;32mI (13210) IR-UART: 0x54[0m
+[0;32mI (13210) IR-UART: 0x07[0m
+[0;32mI (13210) IR-UART: 0x02[0m
+[0;32mI (13210) IR-UART: 0x08[0m
+[0;32mI (13210) IR-UART: 0xD1[0m
+[0;32mI (13210) IR-UART: 0xF9[0m
+[0;32mI (13220) IR-UART: 0x6A[0m
+[0;32mI (13220) IR-UART: 0xD9[0m
+[0;32mI (13220) IR-UART: 0xBC[0m
+[0;32mI (13230) IR-UART: 0x64[0m
+[0;32mI (13230) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (13490) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=3)[0m
+[0;32mI (13550) IR-UART: 0x5A[0m
+[0;32mI (13550) IR-UART: 0x54[0m
+[0;32mI (13550) IR-UART: 0x07[0m
+[0;32mI (13550) IR-UART: 0x03[0m
+[0;32mI (13550) IR-UART: 0x08[0m
+[0;32mI (13550) IR-UART: 0xD1[0m
+[0;32mI (13550) IR-UART: 0xF9[0m
+[0;32mI (13560) IR-UART: 0x6A[0m
+[0;32mI (13560) IR-UART: 0xD9[0m
+[0;32mI (13560) IR-UART: 0xBC[0m
+[0;32mI (13570) IR-UART: 0x8D[0m
+[0;32mI (13570) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (13830) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=4)[0m
+[0;32mI (13890) IR-UART: 0x5A[0m
+[0;32mI (13890) IR-UART: 0x54[0m
+[0;32mI (13890) IR-UART: 0x07[0m
+[0;32mI (13890) IR-UART: 0x04[0m
+[0;32mI (13890) IR-UART: 0x08[0m
+[0;32mI (13890) IR-UART: 0xD1[0m
+[0;32mI (13890) IR-UART: 0xF9[0m
+[0;32mI (13900) IR-UART: 0x6A[0m
+[0;32mI (13900) IR-UART: 0xD9[0m
+[0;32mI (13900) IR-UART: 0xBC[0m
+[0;32mI (13910) IR-UART: 0x70[0m
+[0;32mI (13910) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14170) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=5)[0m
+[0;32mI (14230) IR-UART: 0x5A[0m
+[0;32mI (14230) IR-UART: 0x54[0m
+[0;32mI (14230) IR-UART: 0x07[0m
+[0;32mI (14230) IR-UART: 0x05[0m
+[0;32mI (14230) IR-UART: 0x08[0m
+[0;32mI (14230) IR-UART: 0xD1[0m
+[0;32mI (14230) IR-UART: 0xF9[0m
+[0;32mI (14240) IR-UART: 0x6A[0m
+[0;32mI (14240) IR-UART: 0xD9[0m
+[0;32mI (14240) IR-UART: 0xBC[0m
+[0;32mI (14250) IR-UART: 0x99[0m
+[0;32mI (14250) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14510) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=6)[0m
+[0;32mI (14570) IR-UART: 0x5A[0m
+[0;32mI (14570) IR-UART: 0x54[0m
+[0;32mI (14570) IR-UART: 0x07[0m
+[0;32mI (14570) IR-UART: 0x06[0m
+[0;32mI (14570) IR-UART: 0x08[0m
+[0;32mI (14570) IR-UART: 0xD1[0m
+[0;32mI (14570) IR-UART: 0xF9[0m
+[0;32mI (14580) IR-UART: 0x6A[0m
+[0;32mI (14580) IR-UART: 0xD9[0m
+[0;32mI (14580) IR-UART: 0xBC[0m
+[0;32mI (14590) IR-UART: 0x93[0m
+[0;32mI (14590) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14850) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=7)[0m
+[0;32mI (14910) IR-UART: 0x5A[0m
+[0;32mI (14910) IR-UART: 0x54[0m
+[0;32mI (14910) IR-UART: 0x07[0m
+[0;32mI (14910) IR-UART: 0x07[0m
+[0;32mI (14910) IR-UART: 0x08[0m
+[0;32mI (14910) IR-UART: 0xD1[0m
+[0;32mI (14910) IR-UART: 0xF9[0m
+[0;32mI (14920) IR-UART: 0x6A[0m
+[0;32mI (14920) IR-UART: 0xD9[0m
+[0;32mI (14920) IR-UART: 0xBC[0m
+[0;32mI (14930) IR-UART: 0x7A[0m
+[0;32mI (14930) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (15000) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=7[0m
+[0;33mW (15000) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (15000) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (15010) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (15010) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (15120) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (15120) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=7[0m
+[0;32mI (15120) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (18240) IR-UART: 0x5A[0m
+[0;32mI (18240) IR-UART: 0x54[0m
+[0;32mI (18240) IR-UART: 0x07[0m
+[0;32mI (18240) IR-UART: 0x07[0m
+[0;32mI (18240) IR-UART: 0x34[0m
+[0;32mI (18240) IR-UART: 0x98[0m
+[0;32mI (18240) IR-UART: 0x7A[0m
+[0;32mI (18250) IR-UART: 0xB5[0m
+[0;32mI (18250) IR-UART: 0x97[0m
+[0;32mI (18250) IR-UART: 0x74[0m
+[0;32mI (18260) IR-UART: 0x1A[0m
+[0;32mI (18260) RX: CRC OK (len=7)[0m
+[0;32mI (18260) RX: SEQ=7 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (18580) IR-UART: 0x5A[0m
+[0;32mI (18580) IR-UART: 0x54[0m
+[0;32mI (18580) IR-UART: 0x07[0m
+[0;32mI (18580) IR-UART: 0x08[0m
+[0;32mI (18580) IR-UART: 0x34[0m
+[0;32mI (18580) IR-UART: 0x98[0m
+[0;32mI (18580) IR-UART: 0x7A[0m
+[0;32mI (18590) IR-UART: 0xB5[0m
+[0;32mI (18590) IR-UART: 0x97[0m
+[0;32mI (18590) IR-UART: 0x74[0m
+[0;32mI (18600) IR-UART: 0x38[0m
+[0;32mI (18600) RX: CRC OK (len=7)[0m
+[0;32mI (18600) RX: SEQ=8 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (18920) IR-UART: 0x5A[0m
+[0;32mI (18920) IR-UART: 0x54[0m
+[0;32mI (18920) IR-UART: 0x07[0m
+[0;32mI (18920) IR-UART: 0x09[0m
+[0;32mI (18920) IR-UART: 0x34[0m
+[0;32mI (18920) IR-UART: 0x98[0m
+[0;32mI (18920) IR-UART: 0x7A[0m
+[0;32mI (18930) IR-UART: 0xB5[0m
+[0;32mI (18930) IR-UART: 0x97[0m
+[0;32mI (18930) IR-UART: 0x74[0m
+[0;32mI (18940) IR-UART: 0xD1[0m
+[0;32mI (18940) RX: CRC OK (len=7)[0m
+[0;32mI (18940) RX: SEQ=9 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (19260) IR-UART: 0x5A[0m
+[0;32mI (19260) IR-UART: 0x54[0m
+[0;32mI (19260) IR-UART: 0x07[0m
+[0;32mI (19260) IR-UART: 0x0A[0m
+[0;32mI (19260) IR-UART: 0x34[0m
+[0;32mI (19260) IR-UART: 0x98[0m
+[0;32mI (19260) IR-UART: 0x7A[0m
+[0;32mI (19270) IR-UART: 0xB5[0m
+[0;32mI (19270) IR-UART: 0x97[0m
+[0;32mI (19270) IR-UART: 0x74[0m
+[0;32mI (19280) IR-UART: 0xDB[0m
+[0;32mI (19280) RX: CRC OK (len=7)[0m
+[0;32mI (19280) RX: SEQ=10 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (19600) IR-UART: 0x5A[0m
+[0;32mI (19600) IR-UART: 0x54[0m
+[0;32mI (19600) IR-UART: 0x07[0m
+[0;32mI (19600) IR-UART: 0x0B[0m
+[0;32mI (19600) IR-UART: 0x34[0m
+[0;32mI (19600) IR-UART: 0x98[0m
+[0;32mI (19600) IR-UART: 0x7A[0m
+[0;32mI (19610) IR-UART: 0xB5[0m
+[0;32mI (19610) IR-UART: 0x97[0m
+[0;32mI (19610) IR-UART: 0x74[0m
+[0;32mI (19620) IR-UART: 0x32[0m
+[0;32mI (19620) RX: CRC OK (len=7)[0m
+[0;32mI (19620) RX: SEQ=11 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (19940) IR-UART: 0x5A[0m
+[0;32mI (19940) IR-UART: 0x54[0m
+[0;32mI (19940) IR-UART: 0x07[0m
+[0;32mI (19940) IR-UART: 0x0C[0m
+[0;32mI (19940) IR-UART: 0x34[0m
+[0;32mI (19940) IR-UART: 0x98[0m
+[0;32mI (19940) IR-UART: 0x7A[0m
+[0;32mI (19950) IR-UART: 0xB5[0m
+[0;32mI (19950) IR-UART: 0x97[0m
+[0;32mI (19950) IR-UART: 0x74[0m
+[0;32mI (19960) IR-UART: 0xCF[0m
+[0;32mI (19960) RX: CRC OK (len=7)[0m
+[0;32mI (19960) RX: SEQ=12 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (20280) IR-UART: 0x5A[0m
+[0;32mI (20280) IR-UART: 0x54[0m
+[0;32mI (20280) IR-UART: 0x07[0m
+[0;32mI (20280) IR-UART: 0x0D[0m
+[0;32mI (20280) IR-UART: 0x34[0m
+[0;32mI (20280) IR-UART: 0x98[0m
+[0;32mI (20280) IR-UART: 0x7A[0m
+[0;32mI (20290) IR-UART: 0xB5[0m
+[0;32mI (20290) IR-UART: 0x97[0m
+[0;32mI (20290) IR-UART: 0x74[0m
+[0;32mI (20300) IR-UART: 0x26[0m
+[0;32mI (20300) CLAIM: slot=7 jitter=213 send_in=14213 seq=13[0m
+[0;32mI (20300) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (20310) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (20330) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (20330) PASS_REQ: Sent seq=13 to 34:98:7A:B5:97:74[0m
+[0;32mI (20330) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (20420) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (20420) RX: CRC OK (len=7)[0m
+[0;32mI (20420) RX: SEQ=13 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (20450) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (20450) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (20460) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (20460) CORE: ROLE -> HOLDER (PASS_GRANT won seq=13)[0m
+[0;32mI (23540) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=8)[0m
+[0;32mI (23600) IR-UART: 0x5A[0m
+[0;32mI (23600) IR-UART: 0x54[0m
+[0;32mI (23600) IR-UART: 0x07[0m
+[0;32mI (23600) IR-UART: 0x08[0m
+[0;32mI (23600) IR-UART: 0x08[0m
+[0;32mI (23600) IR-UART: 0xD1[0m
+[0;32mI (23600) IR-UART: 0xF9[0m
+[0;32mI (23610) IR-UART: 0x6A[0m
+[0;32mI (23610) IR-UART: 0xD9[0m
+[0;32mI (23610) IR-UART: 0xBC[0m
+[0;32mI (23620) IR-UART: 0x58[0m
+[0;32mI (23620) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (23880) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=9)[0m
+[0;32mI (23940) IR-UART: 0x5A[0m
+[0;32mI (23940) IR-UART: 0x54[0m
+[0;32mI (23940) IR-UART: 0x07[0m
+[0;32mI (23940) IR-UART: 0x09[0m
+[0;32mI (23940) IR-UART: 0x08[0m
+[0;32mI (23940) IR-UART: 0xD1[0m
+[0;32mI (23940) IR-UART: 0xF9[0m
+[0;32mI (23950) IR-UART: 0x6A[0m
+[0;32mI (23950) IR-UART: 0xD9[0m
+[0;32mI (23950) IR-UART: 0xBC[0m
+[0;32mI (23960) IR-UART: 0xB1[0m
+[0;32mI (23960) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24220) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=10)[0m
+[0;32mI (24280) IR-UART: 0x5A[0m
+[0;32mI (24280) IR-UART: 0x54[0m
+[0;32mI (24280) IR-UART: 0x07[0m
+[0;32mI (24280) IR-UART: 0x0A[0m
+[0;32mI (24280) IR-UART: 0x08[0m
+[0;32mI (24280) IR-UART: 0xD1[0m
+[0;32mI (24280) IR-UART: 0xF9[0m
+[0;32mI (24290) IR-UART: 0x6A[0m
+[0;32mI (24290) IR-UART: 0xD9[0m
+[0;32mI (24290) IR-UART: 0xBC[0m
+[0;32mI (24300) IR-UART: 0xBB[0m
+[0;32mI (24300) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24560) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=11)[0m
+[0;32mI (24620) IR-UART: 0x5A[0m
+[0;32mI (24620) IR-UART: 0x54[0m
+[0;32mI (24620) IR-UART: 0x07[0m
+[0;32mI (24620) IR-UART: 0x0B[0m
+[0;32mI (24620) IR-UART: 0x08[0m
+[0;32mI (24620) IR-UART: 0xD1[0m
+[0;32mI (24620) IR-UART: 0xF9[0m
+[0;32mI (24630) IR-UART: 0x6A[0m
+[0;32mI (24630) IR-UART: 0xD9[0m
+[0;32mI (24630) IR-UART: 0xBC[0m
+[0;32mI (24640) IR-UART: 0x52[0m
+[0;32mI (24640) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24900) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=12)[0m
+[0;32mI (24960) IR-UART: 0x5A[0m
+[0;32mI (24960) IR-UART: 0x54[0m
+[0;32mI (24960) IR-UART: 0x07[0m
+[0;32mI (24960) IR-UART: 0x0C[0m
+[0;32mI (24960) IR-UART: 0x08[0m
+[0;32mI (24960) IR-UART: 0xD1[0m
+[0;32mI (24960) IR-UART: 0xF9[0m
+[0;32mI (24970) IR-UART: 0x6A[0m
+[0;32mI (24970) IR-UART: 0xD9[0m
+[0;32mI (24970) IR-UART: 0xBC[0m
+[0;32mI (24980) IR-UART: 0xAF[0m
+[0;32mI (24980) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25240) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=13)[0m
+[0;32mI (25300) IR-UART: 0x5A[0m
+[0;32mI (25300) IR-UART: 0x54[0m
+[0;32mI (25300) IR-UART: 0x07[0m
+[0;32mI (25300) IR-UART: 0x0D[0m
+[0;32mI (25300) IR-UART: 0x08[0m
+[0;32mI (25300) IR-UART: 0xD1[0m
+[0;32mI (25300) IR-UART: 0xF9[0m
+[0;32mI (25310) IR-UART: 0x6A[0m
+[0;32mI (25310) IR-UART: 0xD9[0m
+[0;32mI (25310) IR-UART: 0xBC[0m
+[0;32mI (25320) IR-UART: 0x46[0m
+[0;32mI (25320) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25580) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=14)[0m
+[0;32mI (25640) IR-UART: 0x5A[0m
+[0;32mI (25640) IR-UART: 0x54[0m
+[0;32mI (25640) IR-UART: 0x07[0m
+[0;32mI (25640) IR-UART: 0x0E[0m
+[0;32mI (25640) IR-UART: 0x08[0m
+[0;32mI (25640) IR-UART: 0xD1[0m
+[0;32mI (25640) IR-UART: 0xF9[0m
+[0;32mI (25650) IR-UART: 0x6A[0m
+[0;32mI (25650) IR-UART: 0xD9[0m
+[0;32mI (25650) IR-UART: 0xBC[0m
+[0;32mI (25660) IR-UART: 0x4C[0m
+[0;32mI (25660) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25730) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=14[0m
+[0;33mW (25730) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (25730) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (25740) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (25740) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (25850) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (25850) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=14[0m
+[0;32mI (25850) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (28970) IR-UART: 0x5A[0m
+[0;32mI (28970) IR-UART: 0x54[0m
+[0;32mI (28970) IR-UART: 0x07[0m
+[0;32mI (28970) IR-UART: 0x0E[0m
+[0;32mI (28970) IR-UART: 0x34[0m
+[0;32mI (28970) IR-UART: 0x98[0m
+[0;32mI (28970) IR-UART: 0x7A[0m
+[0;32mI (28980) IR-UART: 0xB5[0m
+[0;32mI (28980) IR-UART: 0x97[0m
+[0;32mI (28980) IR-UART: 0x74[0m
+[0;32mI (28990) IR-UART: 0x2C[0m
+[0;32mI (28990) RX: CRC OK (len=7)[0m
+[0;32mI (28990) RX: SEQ=14 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (29310) IR-UART: 0x5A[0m
+[0;32mI (29310) IR-UART: 0x54[0m
+[0;32mI (29310) IR-UART: 0x07[0m
+[0;32mI (29310) IR-UART: 0x0F[0m
+[0;32mI (29310) IR-UART: 0x34[0m
+[0;32mI (29310) IR-UART: 0x98[0m
+[0;32mI (29310) IR-UART: 0x7A[0m
+[0;32mI (29320) IR-UART: 0xB5[0m
+[0;32mI (29320) IR-UART: 0x97[0m
+[0;32mI (29320) IR-UART: 0x74[0m
+[0;32mI (29330) IR-UART: 0xC5[0m
+[0;32mI (29330) RX: CRC OK (len=7)[0m
+[0;32mI (29330) RX: SEQ=15 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (29650) IR-UART: 0x5A[0m
+[0;32mI (29650) IR-UART: 0x54[0m
+[0;32mI (29650) IR-UART: 0x07[0m
+[0;32mI (29650) IR-UART: 0x10[0m
+[0;32mI (29650) IR-UART: 0x34[0m
+[0;32mI (29650) IR-UART: 0x98[0m
+[0;32mI (29650) IR-UART: 0x7A[0m
+[0;32mI (29660) IR-UART: 0xB5[0m
+[0;32mI (29660) IR-UART: 0x97[0m
+[0;32mI (29660) IR-UART: 0x74[0m
+[0;32mI (29670) IR-UART: 0x68[0m
+[0;32mI (29670) RX: CRC OK (len=7)[0m
+[0;32mI (29670) RX: SEQ=16 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (29990) IR-UART: 0x5A[0m
+[0;32mI (29990) IR-UART: 0x54[0m
+[0;32mI (29990) IR-UART: 0x07[0m
+[0;32mI (29990) IR-UART: 0x11[0m
+[0;32mI (29990) IR-UART: 0x34[0m
+[0;32mI (29990) IR-UART: 0x98[0m
+[0;32mI (29990) IR-UART: 0x7A[0m
+[0;32mI (30000) IR-UART: 0xB5[0m
+[0;32mI (30000) IR-UART: 0x97[0m
+[0;32mI (30000) IR-UART: 0x74[0m
+[0;32mI (30010) IR-UART: 0x81[0m
+[0;32mI (30010) RX: CRC OK (len=7)[0m
+[0;32mI (30010) RX: SEQ=17 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (30330) IR-UART: 0x5A[0m
+[0;32mI (30330) IR-UART: 0x54[0m
+[0;32mI (30330) IR-UART: 0x07[0m
+[0;32mI (30330) IR-UART: 0x12[0m
+[0;32mI (30330) IR-UART: 0x34[0m
+[0;32mI (30330) IR-UART: 0x98[0m
+[0;32mI (30330) IR-UART: 0x7A[0m
+[0;32mI (30340) IR-UART: 0xB5[0m
+[0;32mI (30340) IR-UART: 0x97[0m
+[0;32mI (30340) IR-UART: 0x74[0m
+[0;32mI (30350) IR-UART: 0x8B[0m
+[0;32mI (30350) RX: CRC OK (len=7)[0m
+[0;32mI (30350) RX: SEQ=18 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (30670) IR-UART: 0x5A[0m
+[0;32mI (30670) IR-UART: 0x54[0m
+[0;32mI (30670) IR-UART: 0x07[0m
+[0;32mI (30670) IR-UART: 0x13[0m
+[0;32mI (30670) IR-UART: 0x34[0m
+[0;32mI (30670) IR-UART: 0x98[0m
+[0;32mI (30670) IR-UART: 0x7A[0m
+[0;32mI (30680) IR-UART: 0xB5[0m
+[0;32mI (30680) IR-UART: 0x97[0m
+[0;32mI (30680) IR-UART: 0x74[0m
+[0;32mI (30690) IR-UART: 0x62[0m
+[0;32mI (30690) RX: CRC OK (len=7)[0m
+[0;32mI (30690) RX: SEQ=19 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (31010) IR-UART: 0x5A[0m
+[0;32mI (31010) IR-UART: 0x54[0m
+[0;32mI (31010) IR-UART: 0x07[0m
+[0;32mI (31010) IR-UART: 0x14[0m
+[0;32mI (31010) IR-UART: 0x34[0m
+[0;32mI (31010) IR-UART: 0x98[0m
+[0;32mI (31010) IR-UART: 0x7A[0m
+[0;32mI (31020) IR-UART: 0xB5[0m
+[0;32mI (31020) IR-UART: 0x97[0m
+[0;32mI (31020) IR-UART: 0x74[0m
+[0;32mI (31030) IR-UART: 0x9F[0m
+[0;32mI (31030) CLAIM: slot=1 jitter=172 send_in=2172 seq=20[0m
+[0;32mI (31030) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (31040) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (31060) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (31060) PASS_REQ: Sent seq=20 to 34:98:7A:B5:97:74[0m
+[0;32mI (31060) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (31150) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (31150) RX: CRC OK (len=7)[0m
+[0;32mI (31150) RX: SEQ=20 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (31180) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (31180) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (31190) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (31190) CORE: ROLE -> HOLDER (PASS_GRANT won seq=20)[0m
+[0;32mI (34270) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=15)[0m
+[0;32mI (34330) IR-UART: 0x5A[0m
+[0;32mI (34330) IR-UART: 0x54[0m
+[0;32mI (34330) IR-UART: 0x07[0m
+[0;32mI (34330) IR-UART: 0x0F[0m
+[0;32mI (34330) IR-UART: 0x08[0m
+[0;32mI (34330) IR-UART: 0xD1[0m
+[0;32mI (34330) IR-UART: 0xF9[0m
+[0;32mI (34340) IR-UART: 0x6A[0m
+[0;32mI (34340) IR-UART: 0xD9[0m
+[0;32mI (34340) IR-UART: 0xBC[0m
+[0;32mI (34350) IR-UART: 0xA5[0m
+[0;32mI (34350) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (34610) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=16)[0m
+[0;32mI (34670) IR-UART: 0x5A[0m
+[0;32mI (34670) IR-UART: 0x54[0m
+[0;32mI (34670) IR-UART: 0x07[0m
+[0;32mI (34670) IR-UART: 0x10[0m
+[0;32mI (34670) IR-UART: 0x08[0m
+[0;32mI (34670) IR-UART: 0xD1[0m
+[0;32mI (34670) IR-UART: 0xF9[0m
+[0;32mI (34680) IR-UART: 0x6A[0m
+[0;32mI (34680) IR-UART: 0xD9[0m
+[0;32mI (34680) IR-UART: 0xBC[0m
+[0;32mI (34690) IR-UART: 0x08[0m
+[0;32mI (34690) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (34950) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=17)[0m
+[0;32mI (35010) IR-UART: 0x5A[0m
+[0;32mI (35010) IR-UART: 0x54[0m
+[0;32mI (35010) IR-UART: 0x07[0m
+[0;32mI (35010) IR-UART: 0x11[0m
+[0;32mI (35010) IR-UART: 0x08[0m
+[0;32mI (35010) IR-UART: 0xD1[0m
+[0;32mI (35010) IR-UART: 0xF9[0m
+[0;32mI (35020) IR-UART: 0x6A[0m
+[0;32mI (35020) IR-UART: 0xD9[0m
+[0;32mI (35020) IR-UART: 0xBC[0m
+[0;32mI (35030) IR-UART: 0xE1[0m
+[0;32mI (35030) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35290) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=18)[0m
+[0;32mI (35350) IR-UART: 0x5A[0m
+[0;32mI (35350) IR-UART: 0x54[0m
+[0;32mI (35350) IR-UART: 0x07[0m
+[0;32mI (35350) IR-UART: 0x12[0m
+[0;32mI (35350) IR-UART: 0x08[0m
+[0;32mI (35350) IR-UART: 0xD1[0m
+[0;32mI (35350) IR-UART: 0xF9[0m
+[0;32mI (35360) IR-UART: 0x6A[0m
+[0;32mI (35360) IR-UART: 0xD9[0m
+[0;32mI (35360) IR-UART: 0xBC[0m
+[0;32mI (35370) IR-UART: 0xEB[0m
+[0;32mI (35370) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35630) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=19)[0m
+[0;32mI (35690) IR-UART: 0x5A[0m
+[0;32mI (35690) IR-UART: 0x54[0m
+[0;32mI (35690) IR-UART: 0x07[0m
+[0;32mI (35690) IR-UART: 0x13[0m
+[0;32mI (35690) IR-UART: 0x08[0m
+[0;32mI (35690) IR-UART: 0xD1[0m
+[0;32mI (35690) IR-UART: 0xF9[0m
+[0;32mI (35700) IR-UART: 0x6A[0m
+[0;32mI (35700) IR-UART: 0xD9[0m
+[0;32mI (35700) IR-UART: 0xBC[0m
+[0;32mI (35710) IR-UART: 0x02[0m
+[0;32mI (35710) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35970) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=20)[0m
+[0;32mI (36030) IR-UART: 0x5A[0m
+[0;32mI (36030) IR-UART: 0x54[0m
+[0;32mI (36030) IR-UART: 0x07[0m
+[0;32mI (36030) IR-UART: 0x14[0m
+[0;32mI (36030) IR-UART: 0x08[0m
+[0;32mI (36030) IR-UART: 0xD1[0m
+[0;32mI (36030) IR-UART: 0xF9[0m
+[0;32mI (36040) IR-UART: 0x6A[0m
+[0;32mI (36040) IR-UART: 0xD9[0m
+[0;32mI (36040) IR-UART: 0xBC[0m
+[0;32mI (36050) IR-UART: 0xFF[0m
+[0;32mI (36050) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (36310) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=21)[0m
+[0;32mI (36370) IR-UART: 0x5A[0m
+[0;32mI (36370) IR-UART: 0x54[0m
+[0;32mI (36370) IR-UART: 0x07[0m
+[0;32mI (36370) IR-UART: 0x15[0m
+[0;32mI (36370) IR-UART: 0x08[0m
+[0;32mI (36370) IR-UART: 0xD1[0m
+[0;32mI (36370) IR-UART: 0xF9[0m
+[0;32mI (36380) IR-UART: 0x6A[0m
+[0;32mI (36380) IR-UART: 0xD9[0m
+[0;32mI (36380) IR-UART: 0xBC[0m
+[0;32mI (36390) IR-UART: 0x16[0m
+[0;32mI (36390) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (36420) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=21[0m
+[0;33mW (36420) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (36420) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (36420) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (36430) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (36540) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (36540) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=21[0m
+[0;32mI (36540) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (39650) IR-UART: 0x5A[0m
+[0;32mI (39650) IR-UART: 0x54[0m
+[0;32mI (39650) IR-UART: 0x07[0m
+[0;32mI (39650) IR-UART: 0x15[0m
+[0;32mI (39650) IR-UART: 0x34[0m
+[0;32mI (39650) IR-UART: 0x98[0m
+[0;32mI (39650) IR-UART: 0x7A[0m
+[0;32mI (39660) IR-UART: 0xB5[0m
+[0;32mI (39660) IR-UART: 0x97[0m
+[0;32mI (39660) IR-UART: 0x74[0m
+[0;32mI (39670) IR-UART: 0x76[0m
+[0;32mI (39670) RX: CRC OK (len=7)[0m
+[0;32mI (39670) RX: SEQ=21 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (39990) IR-UART: 0x5A[0m
+[0;32mI (39990) IR-UART: 0x54[0m
+[0;32mI (39990) IR-UART: 0x07[0m
+[0;32mI (39990) IR-UART: 0x16[0m
+[0;32mI (39990) IR-UART: 0x34[0m
+[0;32mI (39990) IR-UART: 0x98[0m
+[0;32mI (39990) IR-UART: 0x7A[0m
+[0;32mI (40000) IR-UART: 0xB5[0m
+[0;32mI (40000) IR-UART: 0x97[0m
+[0;32mI (40000) IR-UART: 0x74[0m
+[0;32mI (40010) IR-UART: 0x7C[0m
+[0;32mI (40010) RX: CRC OK (len=7)[0m
+[0;32mI (40010) RX: SEQ=22 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (40330) IR-UART: 0x5A[0m
+[0;32mI (40330) IR-UART: 0x54[0m
+[0;32mI (40330) IR-UART: 0x07[0m
+[0;32mI (40330) IR-UART: 0x17[0m
+[0;32mI (40330) IR-UART: 0x34[0m
+[0;32mI (40330) IR-UART: 0x98[0m
+[0;32mI (40330) IR-UART: 0x7A[0m
+[0;32mI (40340) IR-UART: 0xB5[0m
+[0;32mI (40340) IR-UART: 0x97[0m
+[0;32mI (40340) IR-UART: 0x74[0m
+[0;32mI (40350) IR-UART: 0x95[0m
+[0;32mI (40350) RX: CRC OK (len=7)[0m
+[0;32mI (40350) RX: SEQ=23 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (40670) IR-UART: 0x5A[0m
+[0;32mI (40670) IR-UART: 0x54[0m
+[0;32mI (40670) IR-UART: 0x07[0m
+[0;32mI (40670) IR-UART: 0x18[0m
+[0;32mI (40670) IR-UART: 0x34[0m
+[0;32mI (40670) IR-UART: 0x98[0m
+[0;32mI (40670) IR-UART: 0x7A[0m
+[0;32mI (40680) IR-UART: 0xB5[0m
+[0;32mI (40680) IR-UART: 0x97[0m
+[0;32mI (40680) IR-UART: 0x74[0m
+[0;32mI (40690) IR-UART: 0xB7[0m
+[0;32mI (40690) RX: CRC OK (len=7)[0m
+[0;32mI (40690) RX: SEQ=24 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (41010) IR-UART: 0x5A[0m
+[0;32mI (41010) IR-UART: 0x54[0m
+[0;32mI (41010) IR-UART: 0x07[0m
+[0;32mI (41010) IR-UART: 0x19[0m
+[0;32mI (41010) IR-UART: 0x34[0m
+[0;32mI (41010) IR-UART: 0x98[0m
+[0;32mI (41010) IR-UART: 0x7A[0m
+[0;32mI (41020) IR-UART: 0xB5[0m
+[0;32mI (41020) IR-UART: 0x97[0m
+[0;32mI (41020) IR-UART: 0x74[0m
+[0;32mI (41030) IR-UART: 0x5E[0m
+[0;32mI (41030) RX: CRC OK (len=7)[0m
+[0;32mI (41030) RX: SEQ=25 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (41350) IR-UART: 0x5A[0m
+[0;32mI (41350) IR-UART: 0x54[0m
+[0;32mI (41350) IR-UART: 0x07[0m
+[0;32mI (41350) IR-UART: 0x1A[0m
+[0;32mI (41350) IR-UART: 0x34[0m
+[0;32mI (41350) IR-UART: 0x98[0m
+[0;32mI (41350) IR-UART: 0x7A[0m
+[0;32mI (41360) IR-UART: 0xB5[0m
+[0;32mI (41360) IR-UART: 0x97[0m
+[0;32mI (41360) IR-UART: 0x74[0m
+[0;32mI (41370) IR-UART: 0x54[0m
+[0;32mI (41370) RX: CRC OK (len=7)[0m
+[0;32mI (41370) RX: SEQ=26 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (41690) IR-UART: 0x5A[0m
+[0;32mI (41690) IR-UART: 0x54[0m
+[0;32mI (41690) IR-UART: 0x07[0m
+[0;32mI (41690) IR-UART: 0x1B[0m
+[0;32mI (41690) IR-UART: 0x34[0m
+[0;32mI (41690) IR-UART: 0x98[0m
+[0;32mI (41690) IR-UART: 0x7A[0m
+[0;32mI (41700) IR-UART: 0xB5[0m
+[0;32mI (41700) IR-UART: 0x97[0m
+[0;32mI (41700) IR-UART: 0x74[0m
+[0;32mI (41710) IR-UART: 0xBD[0m
+[0;32mI (41710) CLAIM: slot=5 jitter=177 send_in=10177 seq=27[0m
+[0;32mI (41710) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (41720) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (41780) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (41780) PASS_REQ: Sent seq=27 to 34:98:7A:B5:97:74[0m
+[0;32mI (41780) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (41830) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (41830) RX: CRC OK (len=7)[0m
+[0;32mI (41830) RX: SEQ=27 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (41900) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (41900) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (41910) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (41910) CORE: ROLE -> HOLDER (PASS_GRANT won seq=27)[0m
+[0;32mI (44950) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=22)[0m
+[0;32mI (45010) IR-UART: 0x5A[0m
+[0;32mI (45010) IR-UART: 0x54[0m
+[0;32mI (45010) IR-UART: 0x07[0m
+[0;32mI (45010) IR-UART: 0x16[0m
+[0;32mI (45010) IR-UART: 0x08[0m
+[0;32mI (45010) IR-UART: 0xD1[0m
+[0;32mI (45010) IR-UART: 0xF9[0m
+[0;32mI (45020) IR-UART: 0x6A[0m
+[0;32mI (45020) IR-UART: 0xD9[0m
+[0;32mI (45020) IR-UART: 0xBC[0m
+[0;32mI (45030) IR-UART: 0x1C[0m
+[0;32mI (45030) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45290) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=23)[0m
+[0;32mI (45350) IR-UART: 0x5A[0m
+[0;32mI (45350) IR-UART: 0x54[0m
+[0;32mI (45350) IR-UART: 0x07[0m
+[0;32mI (45350) IR-UART: 0x17[0m
+[0;32mI (45350) IR-UART: 0x08[0m
+[0;32mI (45350) IR-UART: 0xD1[0m
+[0;32mI (45350) IR-UART: 0xF9[0m
+[0;32mI (45360) IR-UART: 0x6A[0m
+[0;32mI (45360) IR-UART: 0xD9[0m
+[0;32mI (45360) IR-UART: 0xBC[0m
+[0;32mI (45370) IR-UART: 0xF5[0m
+[0;32mI (45370) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45630) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=24)[0m
+[0;32mI (45690) IR-UART: 0x5A[0m
+[0;32mI (45690) IR-UART: 0x54[0m
+[0;32mI (45690) IR-UART: 0x07[0m
+[0;32mI (45690) IR-UART: 0x18[0m
+[0;32mI (45690) IR-UART: 0x08[0m
+[0;32mI (45690) IR-UART: 0xD1[0m
+[0;32mI (45690) IR-UART: 0xF9[0m
+[0;32mI (45700) IR-UART: 0x6A[0m
+[0;32mI (45700) IR-UART: 0xD9[0m
+[0;32mI (45700) IR-UART: 0xBC[0m
+[0;32mI (45710) IR-UART: 0xD7[0m
+[0;32mI (45710) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45970) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=25)[0m
+[0;32mI (46030) IR-UART: 0x5A[0m
+[0;32mI (46030) IR-UART: 0x54[0m
+[0;32mI (46030) IR-UART: 0x07[0m
+[0;32mI (46030) IR-UART: 0x19[0m
+[0;32mI (46030) IR-UART: 0x08[0m
+[0;32mI (46030) IR-UART: 0xD1[0m
+[0;32mI (46030) IR-UART: 0xF9[0m
+[0;32mI (46040) IR-UART: 0x6A[0m
+[0;32mI (46040) IR-UART: 0xD9[0m
+[0;32mI (46040) IR-UART: 0xBC[0m
+[0;32mI (46050) IR-UART: 0x3E[0m
+[0;32mI (46050) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46310) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=26)[0m
+[0;32mI (46370) IR-UART: 0x5A[0m
+[0;32mI (46370) IR-UART: 0x54[0m
+[0;32mI (46370) IR-UART: 0x07[0m
+[0;32mI (46370) IR-UART: 0x1A[0m
+[0;32mI (46370) IR-UART: 0x08[0m
+[0;32mI (46370) IR-UART: 0xD1[0m
+[0;32mI (46370) IR-UART: 0xF9[0m
+[0;32mI (46380) IR-UART: 0x6A[0m
+[0;32mI (46380) IR-UART: 0xD9[0m
+[0;32mI (46380) IR-UART: 0xBC[0m
+[0;32mI (46390) IR-UART: 0x34[0m
+[0;32mI (46390) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46650) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=27)[0m
+[0;32mI (46710) IR-UART: 0x5A[0m
+[0;32mI (46710) IR-UART: 0x54[0m
+[0;32mI (46710) IR-UART: 0x07[0m
+[0;32mI (46710) IR-UART: 0x1B[0m
+[0;32mI (46710) IR-UART: 0x08[0m
+[0;32mI (46710) IR-UART: 0xD1[0m
+[0;32mI (46710) IR-UART: 0xF9[0m
+[0;32mI (46720) IR-UART: 0x6A[0m
+[0;32mI (46720) IR-UART: 0xD9[0m
+[0;32mI (46720) IR-UART: 0xBC[0m
+[0;32mI (46730) IR-UART: 0xDD[0m
+[0;32mI (46730) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46990) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=28)[0m
+[0;32mI (47050) IR-UART: 0x5A[0m
+[0;32mI (47050) IR-UART: 0x54[0m
+[0;32mI (47050) IR-UART: 0x07[0m
+[0;32mI (47050) IR-UART: 0x1C[0m
+[0;32mI (47050) IR-UART: 0x08[0m
+[0;32mI (47050) IR-UART: 0xD1[0m
+[0;32mI (47050) IR-UART: 0xF9[0m
+[0;32mI (47060) IR-UART: 0x6A[0m
+[0;32mI (47060) IR-UART: 0xD9[0m
+[0;32mI (47060) IR-UART: 0xBC[0m
+[0;32mI (47070) IR-UART: 0x20[0m
+[0;32mI (47070) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (47100) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=28[0m
+[0;33mW (47100) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (47100) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (47110) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (47110) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (47220) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (47220) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=28[0m
+[0;32mI (47220) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (50330) IR-UART: 0x5A[0m
+[0;32mI (50330) IR-UART: 0x54[0m
+[0;32mI (50330) IR-UART: 0x07[0m
+[0;32mI (50330) IR-UART: 0x1C[0m
+[0;32mI (50330) IR-UART: 0x34[0m
+[0;32mI (50330) IR-UART: 0x98[0m
+[0;32mI (50330) IR-UART: 0x7A[0m
+[0;32mI (50340) IR-UART: 0xB5[0m
+[0;32mI (50340) IR-UART: 0x97[0m
+[0;32mI (50340) IR-UART: 0x74[0m
+[0;32mI (50350) IR-UART: 0x40[0m
+[0;32mI (50350) RX: CRC OK (len=7)[0m
+[0;32mI (50350) RX: SEQ=28 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (50670) IR-UART: 0x5A[0m
+[0;32mI (50670) IR-UART: 0x54[0m
+[0;32mI (50670) IR-UART: 0x07[0m
+[0;32mI (50670) IR-UART: 0x1D[0m
+[0;32mI (50670) IR-UART: 0x34[0m
+[0;32mI (50670) IR-UART: 0x98[0m
+[0;32mI (50670) IR-UART: 0x7A[0m
+[0;32mI (50680) IR-UART: 0xB5[0m
+[0;32mI (50680) IR-UART: 0x97[0m
+[0;32mI (50680) IR-UART: 0x74[0m
+[0;32mI (50690) IR-UART: 0xA9[0m
+[0;32mI (50690) RX: CRC OK (len=7)[0m
+[0;32mI (50690) RX: SEQ=29 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (51010) IR-UART: 0x5A[0m
+[0;32mI (51010) IR-UART: 0x54[0m
+[0;32mI (51010) IR-UART: 0x07[0m
+[0;32mI (51010) IR-UART: 0x1E[0m
+[0;32mI (51010) IR-UART: 0x34[0m
+[0;32mI (51010) IR-UART: 0x98[0m
+[0;32mI (51010) IR-UART: 0x7A[0m
+[0;32mI (51020) IR-UART: 0xB5[0m
+[0;32mI (51020) IR-UART: 0x97[0m
+[0;32mI (51020) IR-UART: 0x74[0m
+[0;32mI (51030) IR-UART: 0xA3[0m
+[0;32mI (51030) RX: CRC OK (len=7)[0m
+[0;32mI (51030) RX: SEQ=30 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (51350) IR-UART: 0x5A[0m
+[0;32mI (51350) IR-UART: 0x54[0m
+[0;32mI (51350) IR-UART: 0x07[0m
+[0;32mI (51350) IR-UART: 0x1F[0m
+[0;32mI (51350) IR-UART: 0x34[0m
+[0;32mI (51350) IR-UART: 0x98[0m
+[0;32mI (51350) IR-UART: 0x7A[0m
+[0;32mI (51360) IR-UART: 0xB5[0m
+[0;32mI (51360) IR-UART: 0x97[0m
+[0;32mI (51360) IR-UART: 0x74[0m
+[0;32mI (51370) IR-UART: 0x4A[0m
+[0;32mI (51370) RX: CRC OK (len=7)[0m
+[0;32mI (51370) RX: SEQ=31 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (51690) IR-UART: 0x5A[0m
+[0;32mI (51690) IR-UART: 0x54[0m
+[0;32mI (51690) IR-UART: 0x07[0m
+[0;32mI (51690) IR-UART: 0x20[0m
+[0;32mI (51690) IR-UART: 0x34[0m
+[0;32mI (51690) IR-UART: 0x98[0m
+[0;32mI (51690) IR-UART: 0x7A[0m
+[0;32mI (51700) IR-UART: 0xB5[0m
+[0;32mI (51700) IR-UART: 0x97[0m
+[0;32mI (51700) IR-UART: 0x74[0m
+[0;32mI (51710) IR-UART: 0xC8[0m
+[0;32mI (51710) RX: CRC OK (len=7)[0m
+[0;32mI (51710) RX: SEQ=32 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (52030) IR-UART: 0x5A[0m
+[0;32mI (52030) IR-UART: 0x54[0m
+[0;32mI (52030) IR-UART: 0x07[0m
+[0;32mI (52030) IR-UART: 0x21[0m
+[0;32mI (52030) IR-UART: 0x34[0m
+[0;32mI (52030) IR-UART: 0x98[0m
+[0;32mI (52030) IR-UART: 0x7A[0m
+[0;32mI (52040) IR-UART: 0xB5[0m
+[0;32mI (52040) IR-UART: 0x97[0m
+[0;32mI (52040) IR-UART: 0x74[0m
+[0;32mI (52050) IR-UART: 0x21[0m
+[0;32mI (52050) RX: CRC OK (len=7)[0m
+[0;32mI (52050) RX: SEQ=33 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (52370) IR-UART: 0x5A[0m
+[0;32mI (52370) IR-UART: 0x54[0m
+[0;32mI (52370) IR-UART: 0x07[0m
+[0;32mI (52370) IR-UART: 0x22[0m
+[0;32mI (52370) IR-UART: 0x34[0m
+[0;32mI (52370) IR-UART: 0x98[0m
+[0;32mI (52370) IR-UART: 0x7A[0m
+[0;32mI (52380) IR-UART: 0xB5[0m
+[0;32mI (52380) IR-UART: 0x97[0m
+[0;32mI (52380) IR-UART: 0x74[0m
+[0;32mI (52390) IR-UART: 0x2B[0m
+[0;32mI (52390) CLAIM: slot=4 jitter=113 send_in=8113 seq=34[0m
+[0;32mI (52390) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (52400) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (52420) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (52420) PASS_REQ: Sent seq=34 to 34:98:7A:B5:97:74[0m
+[0;32mI (52420) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (52510) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (52510) RX: CRC OK (len=7)[0m
+[0;32mI (52510) RX: SEQ=34 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (52540) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (52540) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (52550) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (52550) CORE: ROLE -> HOLDER (PASS_GRANT won seq=34)[0m
+[0;32mI (55630) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=29)[0m
+[0;32mI (55690) IR-UART: 0x5A[0m
+[0;32mI (55690) IR-UART: 0x54[0m
+[0;32mI (55690) IR-UART: 0x07[0m
+[0;32mI (55690) IR-UART: 0x1D[0m
+[0;32mI (55690) IR-UART: 0x08[0m
+[0;32mI (55690) IR-UART: 0xD1[0m
+[0;32mI (55690) IR-UART: 0xF9[0m
+[0;32mI (55700) IR-UART: 0x6A[0m
+[0;32mI (55700) IR-UART: 0xD9[0m
+[0;32mI (55700) IR-UART: 0xBC[0m
+[0;32mI (55710) IR-UART: 0xC9[0m
+[0;32mI (55710) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (55970) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=30)[0m
+[0;32mI (56030) IR-UART: 0x5A[0m
+[0;32mI (56030) IR-UART: 0x54[0m
+[0;32mI (56030) IR-UART: 0x07[0m
+[0;32mI (56030) IR-UART: 0x1E[0m
+[0;32mI (56030) IR-UART: 0x08[0m
+[0;32mI (56030) IR-UART: 0xD1[0m
+[0;32mI (56030) IR-UART: 0xF9[0m
+[0;32mI (56040) IR-UART: 0x6A[0m
+[0;32mI (56040) IR-UART: 0xD9[0m
+[0;32mI (56040) IR-UART: 0xBC[0m
+[0;32mI (56050) IR-UART: 0xC3[0m
+[0;32mI (56050) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56310) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=31)[0m
+[0;32mI (56370) IR-UART: 0x5A[0m
+[0;32mI (56370) IR-UART: 0x54[0m
+[0;32mI (56370) IR-UART: 0x07[0m
+[0;32mI (56370) IR-UART: 0x1F[0m
+[0;32mI (56370) IR-UART: 0x08[0m
+[0;32mI (56370) IR-UART: 0xD1[0m
+[0;32mI (56370) IR-UART: 0xF9[0m
+[0;32mI (56380) IR-UART: 0x6A[0m
+[0;32mI (56380) IR-UART: 0xD9[0m
+[0;32mI (56380) IR-UART: 0xBC[0m
+[0;32mI (56390) IR-UART: 0x2A[0m
+[0;32mI (56390) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56650) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=32)[0m
+[0;32mI (56710) IR-UART: 0x5A[0m
+[0;32mI (56710) IR-UART: 0x54[0m
+[0;32mI (56710) IR-UART: 0x07[0m
+[0;32mI (56710) IR-UART: 0x20[0m
+[0;32mI (56710) IR-UART: 0x08[0m
+[0;32mI (56710) IR-UART: 0xD1[0m
+[0;32mI (56710) IR-UART: 0xF9[0m
+[0;32mI (56720) IR-UART: 0x6A[0m
+[0;32mI (56720) IR-UART: 0xD9[0m
+[0;32mI (56720) IR-UART: 0xBC[0m
+[0;32mI (56730) IR-UART: 0xA8[0m
+[0;32mI (56730) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56990) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=33)[0m
+[0;32mI (57050) IR-UART: 0x5A[0m
+[0;32mI (57050) IR-UART: 0x54[0m
+[0;32mI (57050) IR-UART: 0x07[0m
+[0;32mI (57050) IR-UART: 0x21[0m
+[0;32mI (57050) IR-UART: 0x08[0m
+[0;32mI (57050) IR-UART: 0xD1[0m
+[0;32mI (57050) IR-UART: 0xF9[0m
+[0;32mI (57060) IR-UART: 0x6A[0m
+[0;32mI (57060) IR-UART: 0xD9[0m
+[0;32mI (57060) IR-UART: 0xBC[0m
+[0;32mI (57070) IR-UART: 0x41[0m
+[0;32mI (57070) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57330) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=34)[0m
+[0;32mI (57390) IR-UART: 0x5A[0m
+[0;32mI (57390) IR-UART: 0x54[0m
+[0;32mI (57390) IR-UART: 0x07[0m
+[0;32mI (57390) IR-UART: 0x22[0m
+[0;32mI (57390) IR-UART: 0x08[0m
+[0;32mI (57390) IR-UART: 0xD1[0m
+[0;32mI (57390) IR-UART: 0xF9[0m
+[0;32mI (57400) IR-UART: 0x6A[0m
+[0;32mI (57400) IR-UART: 0xD9[0m
+[0;32mI (57400) IR-UART: 0xBC[0m
+[0;32mI (57410) IR-UART: 0x4B[0m
+[0;32mI (57410) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57670) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=35)[0m
+[0;32mI (57730) IR-UART: 0x5A[0m
+[0;32mI (57730) IR-UART: 0x54[0m
+[0;32mI (57730) IR-UART: 0x07[0m
+[0;32mI (57730) IR-UART: 0x23[0m
+[0;32mI (57730) IR-UART: 0x08[0m
+[0;32mI (57730) IR-UART: 0xD1[0m
+[0;32mI (57730) IR-UART: 0xF9[0m
+[0;32mI (57740) IR-UART: 0x6A[0m
+[0;32mI (57740) IR-UART: 0xD9[0m
+[0;32mI (57740) IR-UART: 0xBC[0m
+[0;32mI (57750) IR-UART: 0xA2[0m
+[0;32mI (57750) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57780) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=35[0m
+[0;33mW (57780) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (57780) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (57790) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (57790) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (57900) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (57900) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=35[0m
+[0;32mI (57900) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (61010) IR-UART: 0x5A[0m
+[0;32mI (61010) IR-UART: 0x54[0m
+[0;32mI (61010) IR-UART: 0x07[0m
+[0;32mI (61010) IR-UART: 0x23[0m
+[0;32mI (61010) IR-UART: 0x34[0m
+[0;32mI (61010) IR-UART: 0x98[0m
+[0;32mI (61010) IR-UART: 0x7A[0m
+[0;32mI (61020) IR-UART: 0xB5[0m
+[0;32mI (61020) IR-UART: 0x97[0m
+[0;32mI (61020) IR-UART: 0x74[0m
+[0;32mI (61030) IR-UART: 0xC2[0m
+[0;32mI (61030) RX: CRC OK (len=7)[0m
+[0;32mI (61030) RX: SEQ=35 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (61350) IR-UART: 0x5A[0m
+[0;32mI (61350) IR-UART: 0x54[0m
+[0;32mI (61350) IR-UART: 0x07[0m
+[0;32mI (61350) IR-UART: 0x24[0m
+[0;32mI (61350) IR-UART: 0x34[0m
+[0;32mI (61350) IR-UART: 0x98[0m
+[0;32mI (61350) IR-UART: 0x7A[0m
+[0;32mI (61360) IR-UART: 0xB5[0m
+[0;32mI (61360) IR-UART: 0x97[0m
+[0;32mI (61360) IR-UART: 0x74[0m
+[0;32mI (61370) IR-UART: 0x3F[0m
+[0;32mI (61370) RX: CRC OK (len=7)[0m
+[0;32mI (61370) RX: SEQ=36 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (61690) IR-UART: 0x5A[0m
+[0;32mI (61690) IR-UART: 0x54[0m
+[0;32mI (61690) IR-UART: 0x07[0m
+[0;32mI (61690) IR-UART: 0x25[0m
+[0;32mI (61690) IR-UART: 0x34[0m
+[0;32mI (61690) IR-UART: 0x98[0m
+[0;32mI (61690) IR-UART: 0x7A[0m
+[0;32mI (61700) IR-UART: 0xB5[0m
+[0;32mI (61700) IR-UART: 0x97[0m
+[0;32mI (61700) IR-UART: 0x74[0m
+[0;32mI (61710) IR-UART: 0xD6[0m
+[0;32mI (61710) RX: CRC OK (len=7)[0m
+[0;32mI (61710) RX: SEQ=37 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (62030) IR-UART: 0x5A[0m
+[0;32mI (62030) IR-UART: 0x54[0m
+[0;32mI (62030) IR-UART: 0x07[0m
+[0;32mI (62030) IR-UART: 0x26[0m
+[0;32mI (62030) IR-UART: 0x34[0m
+[0;32mI (62030) IR-UART: 0x98[0m
+[0;32mI (62030) IR-UART: 0x7A[0m
+[0;32mI (62040) IR-UART: 0xB5[0m
+[0;32mI (62040) IR-UART: 0x97[0m
+[0;32mI (62040) IR-UART: 0x74[0m
+[0;32mI (62050) IR-UART: 0xDC[0m
+[0;32mI (62050) RX: CRC OK (len=7)[0m
+[0;32mI (62050) RX: SEQ=38 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (62370) IR-UART: 0x5A[0m
+[0;32mI (62370) IR-UART: 0x54[0m
+[0;32mI (62370) IR-UART: 0x07[0m
+[0;32mI (62370) IR-UART: 0x27[0m
+[0;32mI (62370) IR-UART: 0x34[0m
+[0;32mI (62370) IR-UART: 0x98[0m
+[0;32mI (62370) IR-UART: 0x7A[0m
+[0;32mI (62380) IR-UART: 0xB5[0m
+[0;32mI (62380) IR-UART: 0x97[0m
+[0;32mI (62380) IR-UART: 0x74[0m
+[0;32mI (62390) IR-UART: 0x35[0m
+[0;32mI (62390) RX: CRC OK (len=7)[0m
+[0;32mI (62390) RX: SEQ=39 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (62710) IR-UART: 0x5A[0m
+[0;32mI (62710) IR-UART: 0x54[0m
+[0;32mI (62710) IR-UART: 0x07[0m
+[0;32mI (62710) IR-UART: 0x28[0m
+[0;32mI (62710) IR-UART: 0x34[0m
+[0;32mI (62710) IR-UART: 0x98[0m
+[0;32mI (62710) IR-UART: 0x7A[0m
+[0;32mI (62720) IR-UART: 0xB5[0m
+[0;32mI (62720) IR-UART: 0x97[0m
+[0;32mI (62720) IR-UART: 0x74[0m
+[0;32mI (62730) IR-UART: 0x17[0m
+[0;32mI (62730) RX: CRC OK (len=7)[0m
+[0;32mI (62730) RX: SEQ=40 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (63050) IR-UART: 0x5A[0m
+[0;32mI (63050) IR-UART: 0x54[0m
+[0;32mI (63050) IR-UART: 0x07[0m
+[0;32mI (63050) IR-UART: 0x29[0m
+[0;32mI (63050) IR-UART: 0x34[0m
+[0;32mI (63050) IR-UART: 0x98[0m
+[0;32mI (63050) IR-UART: 0x7A[0m
+[0;32mI (63060) IR-UART: 0xB5[0m
+[0;32mI (63060) IR-UART: 0x97[0m
+[0;32mI (63060) IR-UART: 0x74[0m
+[0;32mI (63070) IR-UART: 0xFE[0m
+[0;32mI (63070) CLAIM: slot=1 jitter=67 send_in=2067 seq=41[0m
+[0;32mI (63070) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (63080) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (63140) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (63140) PASS_REQ: Sent seq=41 to 34:98:7A:B5:97:74[0m
+[0;32mI (63140) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (63190) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (63190) RX: CRC OK (len=7)[0m
+[0;32mI (63190) RX: SEQ=41 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (63260) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (63260) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (63270) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (63270) CORE: ROLE -> HOLDER (PASS_GRANT won seq=41)[0m
+[0;32mI (66310) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=36)[0m
+[0;32mI (66370) IR-UART: 0x5A[0m
+[0;32mI (66370) IR-UART: 0x54[0m
+[0;32mI (66370) IR-UART: 0x07[0m
+[0;32mI (66370) IR-UART: 0x24[0m
+[0;32mI (66370) IR-UART: 0x08[0m
+[0;32mI (66370) IR-UART: 0xD1[0m
+[0;32mI (66370) IR-UART: 0xF9[0m
+[0;32mI (66380) IR-UART: 0x6A[0m
+[0;32mI (66380) IR-UART: 0xD9[0m
+[0;32mI (66380) IR-UART: 0xBC[0m
+[0;32mI (66390) IR-UART: 0x5F[0m
+[0;32mI (66390) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (66650) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=37)[0m
+[0;32mI (66710) IR-UART: 0x5A[0m
+[0;32mI (66710) IR-UART: 0x54[0m
+[0;32mI (66710) IR-UART: 0x07[0m
+[0;32mI (66710) IR-UART: 0x25[0m
+[0;32mI (66710) IR-UART: 0x08[0m
+[0;32mI (66710) IR-UART: 0xD1[0m
+[0;32mI (66710) IR-UART: 0xF9[0m
+[0;32mI (66720) IR-UART: 0x6A[0m
+[0;32mI (66720) IR-UART: 0xD9[0m
+[0;32mI (66720) IR-UART: 0xBC[0m
+[0;32mI (66730) IR-UART: 0xB6[0m
+[0;32mI (66730) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (66990) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=38)[0m
+[0;32mI (67050) IR-UART: 0x5A[0m
+[0;32mI (67050) IR-UART: 0x54[0m
+[0;32mI (67050) IR-UART: 0x07[0m
+[0;32mI (67050) IR-UART: 0x26[0m
+[0;32mI (67050) IR-UART: 0x08[0m
+[0;32mI (67050) IR-UART: 0xD1[0m
+[0;32mI (67050) IR-UART: 0xF9[0m
+[0;32mI (67060) IR-UART: 0x6A[0m
+[0;32mI (67060) IR-UART: 0xD9[0m
+[0;32mI (67060) IR-UART: 0xBC[0m
+[0;32mI (67070) IR-UART: 0xBC[0m
+[0;32mI (67070) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (67330) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=39)[0m
+[0;32mI (67390) IR-UART: 0x5A[0m
+[0;32mI (67390) IR-UART: 0x54[0m
+[0;32mI (67390) IR-UART: 0x07[0m
+[0;32mI (67390) IR-UART: 0x27[0m
+[0;32mI (67390) IR-UART: 0x08[0m
+[0;32mI (67390) IR-UART: 0xD1[0m
+[0;32mI (67390) IR-UART: 0xF9[0m
+[0;32mI (67400) IR-UART: 0x6A[0m
+[0;32mI (67400) IR-UART: 0xD9[0m
+[0;32mI (67400) IR-UART: 0xBC[0m
+[0;32mI (67410) IR-UART: 0x55[0m
+[0;32mI (67410) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (67670) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=40)[0m
+[0;32mI (67730) IR-UART: 0x5A[0m
+[0;32mI (67730) IR-UART: 0x54[0m
+[0;32mI (67730) IR-UART: 0x07[0m
+[0;32mI (67730) IR-UART: 0x28[0m
+[0;32mI (67730) IR-UART: 0x08[0m
+[0;32mI (67730) IR-UART: 0xD1[0m
+[0;32mI (67730) IR-UART: 0xF9[0m
+[0;32mI (67740) IR-UART: 0x6A[0m
+[0;32mI (67740) IR-UART: 0xD9[0m
+[0;32mI (67740) IR-UART: 0xBC[0m
+[0;32mI (67750) IR-UART: 0x77[0m
+[0;32mI (67750) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68010) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=41)[0m
+[0;32mI (68070) IR-UART: 0x5A[0m
+[0;32mI (68070) IR-UART: 0x54[0m
+[0;32mI (68070) IR-UART: 0x07[0m
+[0;32mI (68070) IR-UART: 0x29[0m
+[0;32mI (68070) IR-UART: 0x08[0m
+[0;32mI (68070) IR-UART: 0xD1[0m
+[0;32mI (68070) IR-UART: 0xF9[0m
+[0;32mI (68080) IR-UART: 0x6A[0m
+[0;32mI (68080) IR-UART: 0xD9[0m
+[0;32mI (68080) IR-UART: 0xBC[0m
+[0;32mI (68090) IR-UART: 0x9E[0m
+[0;32mI (68090) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68350) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=42)[0m
+[0;32mI (68410) IR-UART: 0x5A[0m
+[0;32mI (68410) IR-UART: 0x54[0m
+[0;32mI (68410) IR-UART: 0x07[0m
+[0;32mI (68410) IR-UART: 0x2A[0m
+[0;32mI (68410) IR-UART: 0x08[0m
+[0;32mI (68410) IR-UART: 0xD1[0m
+[0;32mI (68410) IR-UART: 0xF9[0m
+[0;32mI (68420) IR-UART: 0x6A[0m
+[0;32mI (68420) IR-UART: 0xD9[0m
+[0;32mI (68420) IR-UART: 0xBC[0m
+[0;32mI (68430) IR-UART: 0x94[0m
+[0;32mI (68430) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68460) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=42[0m
+[0;33mW (68460) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (68460) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (68470) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (68470) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (68580) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (68580) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=42[0m
+[0;32mI (68580) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (71690) IR-UART: 0x5A[0m
+[0;32mI (71690) IR-UART: 0x54[0m
+[0;32mI (71690) IR-UART: 0x07[0m
+[0;32mI (71690) IR-UART: 0x2A[0m
+[0;32mI (71690) IR-UART: 0x34[0m
+[0;32mI (71690) IR-UART: 0x98[0m
+[0;32mI (71690) IR-UART: 0x7A[0m
+[0;32mI (71700) IR-UART: 0xB5[0m
+[0;32mI (71700) IR-UART: 0x97[0m
+[0;32mI (71700) IR-UART: 0x74[0m
+[0;32mI (71710) IR-UART: 0xF4[0m
+[0;32mI (71710) RX: CRC OK (len=7)[0m
+[0;32mI (71710) RX: SEQ=42 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (72030) IR-UART: 0x5A[0m
+[0;32mI (72030) IR-UART: 0x54[0m
+[0;32mI (72030) IR-UART: 0x07[0m
+[0;32mI (72030) IR-UART: 0x2B[0m
+[0;32mI (72030) IR-UART: 0x34[0m
+[0;32mI (72030) IR-UART: 0x98[0m
+[0;32mI (72030) IR-UART: 0x7A[0m
+[0;32mI (72040) IR-UART: 0xB5[0m
+[0;32mI (72040) IR-UART: 0x97[0m
+[0;32mI (72040) IR-UART: 0x74[0m
+[0;32mI (72050) IR-UART: 0x1D[0m
+[0;32mI (72050) RX: CRC OK (len=7)[0m
+[0;32mI (72050) RX: SEQ=43 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (72370) IR-UART: 0x5A[0m
+[0;32mI (72370) IR-UART: 0x54[0m
+[0;32mI (72370) IR-UART: 0x07[0m
+[0;32mI (72370) IR-UART: 0x2C[0m
+[0;32mI (72370) IR-UART: 0x34[0m
+[0;32mI (72370) IR-UART: 0x98[0m
+[0;32mI (72370) IR-UART: 0x7A[0m
+[0;32mI (72380) IR-UART: 0xB5[0m
+[0;32mI (72380) IR-UART: 0x97[0m
+[0;32mI (72380) IR-UART: 0x74[0m
+[0;32mI (72390) IR-UART: 0xE0[0m
+[0;32mI (72390) RX: CRC OK (len=7)[0m
+[0;32mI (72390) RX: SEQ=44 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (72710) IR-UART: 0x5A[0m
+[0;32mI (72710) IR-UART: 0x54[0m
+[0;32mI (72710) IR-UART: 0x07[0m
+[0;32mI (72710) IR-UART: 0x2D[0m
+[0;32mI (72710) IR-UART: 0x34[0m
+[0;32mI (72710) IR-UART: 0x98[0m
+[0;32mI (72710) IR-UART: 0x7A[0m
+[0;32mI (72720) IR-UART: 0xB5[0m
+[0;32mI (72720) IR-UART: 0x97[0m
+[0;32mI (72720) IR-UART: 0x74[0m
+[0;32mI (72730) IR-UART: 0x09[0m
+[0;32mI (72730) RX: CRC OK (len=7)[0m
+[0;32mI (72730) RX: SEQ=45 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (73050) IR-UART: 0x5A[0m
+[0;32mI (73050) IR-UART: 0x54[0m
+[0;32mI (73050) IR-UART: 0x07[0m
+[0;32mI (73050) IR-UART: 0x2E[0m
+[0;32mI (73050) IR-UART: 0x34[0m
+[0;32mI (73050) IR-UART: 0x98[0m
+[0;32mI (73050) IR-UART: 0x7A[0m
+[0;32mI (73060) IR-UART: 0xB5[0m
+[0;32mI (73060) IR-UART: 0x97[0m
+[0;32mI (73060) IR-UART: 0x74[0m
+[0;32mI (73070) IR-UART: 0x03[0m
+[0;32mI (73070) RX: CRC OK (len=7)[0m
+[0;32mI (73070) RX: SEQ=46 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (73390) IR-UART: 0x5A[0m
+[0;32mI (73390) IR-UART: 0x54[0m
+[0;32mI (73390) IR-UART: 0x07[0m
+[0;32mI (73390) IR-UART: 0x2F[0m
+[0;32mI (73390) IR-UART: 0x34[0m
+[0;32mI (73390) IR-UART: 0x98[0m
+[0;32mI (73390) IR-UART: 0x7A[0m
+[0;32mI (73400) IR-UART: 0xB5[0m
+[0;32mI (73400) IR-UART: 0x97[0m
+[0;32mI (73400) IR-UART: 0x74[0m
+[0;32mI (73410) IR-UART: 0xEA[0m
+[0;32mI (73410) RX: CRC OK (len=7)[0m
+[0;32mI (73410) RX: SEQ=47 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (73730) IR-UART: 0x5A[0m
+[0;32mI (73730) IR-UART: 0x54[0m
+[0;32mI (73730) IR-UART: 0x07[0m
+[0;32mI (73730) IR-UART: 0x30[0m
+[0;32mI (73730) IR-UART: 0x34[0m
+[0;32mI (73730) IR-UART: 0x98[0m
+[0;32mI (73730) IR-UART: 0x7A[0m
+[0;32mI (73740) IR-UART: 0xB5[0m
+[0;32mI (73740) IR-UART: 0x97[0m
+[0;32mI (73740) IR-UART: 0x74[0m
+[0;32mI (73750) IR-UART: 0x47[0m
+[0;32mI (73750) CLAIM: slot=7 jitter=58 send_in=14058 seq=48[0m
+[0;32mI (73750) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (73760) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (73780) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (73780) PASS_REQ: Sent seq=48 to 34:98:7A:B5:97:74[0m
+[0;32mI (73780) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (73870) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (73870) RX: CRC OK (len=7)[0m
+[0;32mI (73870) RX: SEQ=48 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (73900) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (73910) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (73910) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (73910) CORE: ROLE -> HOLDER (PASS_GRANT won seq=48)[0m
+[0;32mI (76990) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=43)[0m
+[0;32mI (77050) IR-UART: 0x5A[0m
+[0;32mI (77050) IR-UART: 0x54[0m
+[0;32mI (77050) IR-UART: 0x07[0m
+[0;32mI (77050) IR-UART: 0x2B[0m
+[0;32mI (77050) IR-UART: 0x08[0m
+[0;32mI (77050) IR-UART: 0xD1[0m
+[0;32mI (77050) IR-UART: 0xF9[0m
+[0;32mI (77060) IR-UART: 0x6A[0m
+[0;32mI (77060) IR-UART: 0xD9[0m
+[0;32mI (77060) IR-UART: 0xBC[0m
+[0;32mI (77070) IR-UART: 0x7D[0m
+[0;32mI (77070) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (77330) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=44)[0m
+[0;32mI (77390) IR-UART: 0x5A[0m
+[0;32mI (77390) IR-UART: 0x54[0m
+[0;32mI (77390) IR-UART: 0x07[0m
+[0;32mI (77390) IR-UART: 0x2C[0m
+[0;32mI (77390) IR-UART: 0x08[0m
+[0;32mI (77390) IR-UART: 0xD1[0m
+[0;32mI (77390) IR-UART: 0xF9[0m
+[0;32mI (77400) IR-UART: 0x6A[0m
+[0;32mI (77400) IR-UART: 0xD9[0m
+[0;32mI (77400) IR-UART: 0xBC[0m
+[0;32mI (77410) IR-UART: 0x80[0m
+[0;32mI (77410) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (77670) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=45)[0m
+[0;32mI (77730) IR-UART: 0x5A[0m
+[0;32mI (77730) IR-UART: 0x54[0m
+[0;32mI (77730) IR-UART: 0x07[0m
+[0;32mI (77730) IR-UART: 0x2D[0m
+[0;32mI (77730) IR-UART: 0x08[0m
+[0;32mI (77730) IR-UART: 0xD1[0m
+[0;32mI (77730) IR-UART: 0xF9[0m
+[0;32mI (77740) IR-UART: 0x6A[0m
+[0;32mI (77740) IR-UART: 0xD9[0m
+[0;32mI (77740) IR-UART: 0xBC[0m
+[0;32mI (77750) IR-UART: 0x69[0m
+[0;32mI (77750) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (78010) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=46)[0m
+[0;32mI (78070) IR-UART: 0x5A[0m
+[0;32mI (78070) IR-UART: 0x54[0m
+[0;32mI (78070) IR-UART: 0x07[0m
+[0;32mI (78070) IR-UART: 0x2E[0m
+[0;32mI (78070) IR-UART: 0x08[0m
+[0;32mI (78070) IR-UART: 0xD1[0m
+[0;32mI (78070) IR-UART: 0xF9[0m
+[0;32mI (78080) IR-UART: 0x6A[0m
+[0;32mI (78080) IR-UART: 0xD9[0m
+[0;32mI (78080) IR-UART: 0xBC[0m
+[0;32mI (78090) IR-UART: 0x63[0m
+[0;32mI (78090) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (78350) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=47)[0m
+[0;32mI (78410) IR-UART: 0x5A[0m
+[0;32mI (78410) IR-UART: 0x54[0m
+[0;32mI (78410) IR-UART: 0x07[0m
+[0;32mI (78410) IR-UART: 0x2F[0m
+[0;32mI (78410) IR-UART: 0x08[0m
+[0;32mI (78410) IR-UART: 0xD1[0m
+[0;32mI (78410) IR-UART: 0xF9[0m
+[0;32mI (78420) IR-UART: 0x6A[0m
+[0;32mI (78420) IR-UART: 0xD9[0m
+[0;32mI (78420) IR-UART: 0xBC[0m
+[0;32mI (78430) IR-UART: 0x8A[0m
+[0;32mI (78430) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (78690) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=48)[0m
+[0;32mI (78750) IR-UART: 0x5A[0m
+[0;32mI (78750) IR-UART: 0x54[0m
+[0;32mI (78750) IR-UART: 0x07[0m
+[0;32mI (78750) IR-UART: 0x30[0m
+[0;32mI (78750) IR-UART: 0x08[0m
+[0;32mI (78750) IR-UART: 0xD1[0m
+[0;32mI (78750) IR-UART: 0xF9[0m
+[0;32mI (78760) IR-UART: 0x6A[0m
+[0;32mI (78760) IR-UART: 0xD9[0m
+[0;32mI (78760) IR-UART: 0xBC[0m
+[0;32mI (78770) IR-UART: 0x27[0m
+[0;32mI (78770) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (79030) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=49)[0m
+[0;32mI (79090) IR-UART: 0x5A[0m
+[0;32mI (79090) IR-UART: 0x54[0m
+[0;32mI (79090) IR-UART: 0x07[0m
+[0;32mI (79090) IR-UART: 0x31[0m
+[0;32mI (79090) IR-UART: 0x08[0m
+[0;32mI (79090) IR-UART: 0xD1[0m
+[0;32mI (79090) IR-UART: 0xF9[0m
+[0;32mI (79100) IR-UART: 0x6A[0m
+[0;32mI (79100) IR-UART: 0xD9[0m
+[0;32mI (79100) IR-UART: 0xBC[0m
+[0;32mI (79110) IR-UART: 0xCE[0m
+[0;32mI (79110) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (79140) HOLDER: PASS_REQ from 34:98:7A:B5:97:74 seq=49[0m
+[0;33mW (79140) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (79140) CORE: cooldown with 34:98:7A:B5:97:74 for 5000 ms[0m
+[0;32mI (79150) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (79150) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (79260) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (79260) HOLDER: GRANT -> 34:98:7A:B5:97:74 seq=49[0m
+[0;32mI (79260) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (82370) IR-UART: 0x5A[0m
+[0;32mI (82370) IR-UART: 0x54[0m
+[0;32mI (82370) IR-UART: 0x07[0m
+[0;32mI (82370) IR-UART: 0x31[0m
+[0;32mI (82370) IR-UART: 0x34[0m
+[0;32mI (82370) IR-UART: 0x98[0m
+[0;32mI (82370) IR-UART: 0x7A[0m
+[0;32mI (82380) IR-UART: 0xB5[0m
+[0;32mI (82380) IR-UART: 0x97[0m
+[0;32mI (82380) IR-UART: 0x74[0m
+[0;32mI (82390) IR-UART: 0xAE[0m
+[0;32mI (82390) RX: CRC OK (len=7)[0m
+[0;32mI (82390) RX: SEQ=49 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (82710) IR-UART: 0x5A[0m
+[0;32mI (82710) IR-UART: 0x54[0m
+[0;32mI (82710) IR-UART: 0x07[0m
+[0;32mI (82710) IR-UART: 0x32[0m
+[0;32mI (82710) IR-UART: 0x34[0m
+[0;32mI (82710) IR-UART: 0x98[0m
+[0;32mI (82710) IR-UART: 0x7A[0m
+[0;32mI (82720) IR-UART: 0xB5[0m
+[0;32mI (82720) IR-UART: 0x97[0m
+[0;32mI (82720) IR-UART: 0x74[0m
+[0;32mI (82730) IR-UART: 0xA4[0m
+[0;32mI (82730) RX: CRC OK (len=7)[0m
+[0;32mI (82730) RX: SEQ=50 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (83050) IR-UART: 0x5A[0m
+[0;32mI (83050) IR-UART: 0x54[0m
+[0;32mI (83050) IR-UART: 0x07[0m
+[0;32mI (83050) IR-UART: 0x33[0m
+[0;32mI (83050) IR-UART: 0x34[0m
+[0;32mI (83050) IR-UART: 0x98[0m
+[0;32mI (83050) IR-UART: 0x7A[0m
+[0;32mI (83060) IR-UART: 0xB5[0m
+[0;32mI (83060) IR-UART: 0x97[0m
+[0;32mI (83060) IR-UART: 0x74[0m
+[0;32mI (83070) IR-UART: 0x4D[0m
+[0;32mI (83070) RX: CRC OK (len=7)[0m
+[0;32mI (83070) RX: SEQ=51 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (83390) IR-UART: 0x5A[0m
+[0;32mI (83390) IR-UART: 0x54[0m
+[0;32mI (83390) IR-UART: 0x07[0m
+[0;32mI (83390) IR-UART: 0x34[0m
+[0;32mI (83390) IR-UART: 0x34[0m
+[0;32mI (83390) IR-UART: 0x98[0m
+[0;32mI (83390) IR-UART: 0x7A[0m
+[0;32mI (83400) IR-UART: 0xB5[0m
+[0;32mI (83400) IR-UART: 0x97[0m
+[0;32mI (83400) IR-UART: 0x74[0m
+[0;32mI (83410) IR-UART: 0xB0[0m
+[0;32mI (83410) RX: CRC OK (len=7)[0m
+[0;32mI (83410) RX: SEQ=52 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (83730) IR-UART: 0x5A[0m
+[0;32mI (83730) IR-UART: 0x54[0m
+[0;32mI (83730) IR-UART: 0x07[0m
+[0;32mI (83730) IR-UART: 0x35[0m
+[0;32mI (83730) IR-UART: 0x34[0m
+[0;32mI (83730) IR-UART: 0x98[0m
+[0;32mI (83730) IR-UART: 0x7A[0m
+[0;32mI (83740) IR-UART: 0xB5[0m
+[0;32mI (83740) IR-UART: 0x97[0m
+[0;32mI (83740) IR-UART: 0x74[0m
+[0;32mI (83750) IR-UART: 0x59[0m
+[0;32mI (83750) RX: CRC OK (len=7)[0m
+[0;32mI (83750) RX: SEQ=53 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (84070) IR-UART: 0x5A[0m
+[0;32mI (84070) IR-UART: 0x54[0m
+[0;32mI (84070) IR-UART: 0x07[0m
+[0;32mI (84070) IR-UART: 0x36[0m
+[0;32mI (84070) IR-UART: 0x34[0m
+[0;32mI (84070) IR-UART: 0x98[0m
+[0;32mI (84070) IR-UART: 0x7A[0m
+[0;32mI (84080) IR-UART: 0xB5[0m
+[0;32mI (84080) IR-UART: 0x97[0m
+[0;32mI (84080) IR-UART: 0x74[0m
+[0;32mI (84090) IR-UART: 0x53[0m
+[0;32mI (84090) RX: CRC OK (len=7)[0m
+[0;32mI (84090) RX: SEQ=54 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (84410) IR-UART: 0x5A[0m
+[0;32mI (84410) IR-UART: 0x54[0m
+[0;32mI (84410) IR-UART: 0x07[0m
+[0;32mI (84410) IR-UART: 0x37[0m
+[0;32mI (84410) IR-UART: 0x34[0m
+[0;32mI (84410) IR-UART: 0x98[0m
+[0;32mI (84410) IR-UART: 0x7A[0m
+[0;32mI (84420) IR-UART: 0xB5[0m
+[0;32mI (84420) IR-UART: 0x97[0m
+[0;32mI (84420) IR-UART: 0x74[0m
+[0;32mI (84430) IR-UART: 0xBA[0m
+[0;32mI (84430) CLAIM: slot=0 jitter=121 send_in=121 seq=55[0m
+[0;32mI (84430) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (84440) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (84500) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (84500) PASS_REQ: Sent seq=55 to 34:98:7A:B5:97:74[0m
+[0;32mI (84500) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (84550) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (84550) RX: CRC OK (len=7)[0m
+[0;32mI (84550) RX: SEQ=55 MAC=34:98:7A:B5:97:74[0m
+[0;32mI (84620) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (84620) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (84630) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (84630) CORE: ROLE -> HOLDER (PASS_GRANT won seq=55)[0m
+[0;32mI (87670) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=50)[0m
+[0;32mI (87730) IR-UART: 0x5A[0m
+[0;32mI (87730) IR-UART: 0x54[0m
+[0;32mI (87730) IR-UART: 0x07[0m
+[0;32mI (87730) IR-UART: 0x32[0m
+[0;32mI (87730) IR-UART: 0x08[0m
+[0;32mI (87730) IR-UART: 0xD1[0m
+[0;32mI (87730) IR-UART: 0xF9[0m
+[0;32mI (87740) IR-UART: 0x6A[0m
+[0;32mI (87740) IR-UART: 0xD9[0m
+[0;32mI (87740) IR-UART: 0xBC[0m
+[0;32mI (87750) IR-UART: 0xC4[0m
+[0;32mI (87750) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (88010) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=51)[0m
+[0;32mI (88070) IR-UART: 0x5A[0m
+[0;32mI (88070) IR-UART: 0x54[0m
+[0;32mI (88070) IR-UART: 0x07[0m
+[0;32mI (88070) IR-UART: 0x33[0m
+[0;32mI (88070) IR-UART: 0x08[0m
+[0;32mI (88070) IR-UART: 0xD1[0m
+[0;32mI (88070) IR-UART: 0xF9[0m
+[0;32mI (88080) IR-UART: 0x6A[0m
+[0;32mI (88080) IR-UART: 0xD9[0m
+[0;32mI (88080) IR-UART: 0xBC[0m
+[0;32mI (88090) IR-UART: 0x2D[0m
+[0;32mI (88090) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (88350) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=52)[0m
+[0;32mI (88410) IR-UART: 0x5A[0m
+[0;32mI (88410) IR-UART: 0x54[0m
+[0;32mI (88410) IR-UART: 0x07[0m
+[0;32mI (88410) IR-UART: 0x34[0m
+[0;32mI (88410) IR-UART: 0x08[0m
+[0;32mI (88410) IR-UART: 0xD1[0m
+[0;32mI (88410) IR-UART: 0xF9[0m
+[0;32mI (88420) IR-UART: 0x6A[0m
+[0;32mI (88420) IR-UART: 0xD9[0m
+[0;32mI (88420) IR-UART: 0xBC[0m
+[0;32mI (88430) IR-UART: 0xD0[0m
+[0;32mI (88430) RX: CRC OK but ignored self frame (our MAC)[0m

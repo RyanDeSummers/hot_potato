@@ -1,0 +1,179 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10e54h ( 69204) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00020e7c vaddr=3ffb0000 size=028c0h ( 10432) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=00023744 vaddr=40080000 size=0c8d4h ( 51412) load[0m
+[0;32mI (154) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=30b2ch (199468) map[0m
+[0;32mI (223) esp_image: segment 4: paddr=00060b54 vaddr=4008c8d4 size=02ba8h ( 11176) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (236) boot: Disabling RNG early entropy source...[0m
+[0;32mI (248) cpu_start: Multicore app[0m
+[0;32mI (256) cpu_start: Pro cpu start user code[0m
+[0;32mI (256) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (256) app_init: Application information:[0m
+[0;32mI (259) app_init: Project name:     hot_potato[0m
+[0;32mI (264) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (270) app_init: Compile time:     Aug  7 2025 21:47:14[0m
+[0;32mI (276) app_init: ELF file SHA256:  b0753a20b...[0m
+[0;32mI (281) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (286) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (291) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (296) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (301) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (308) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (314) heap_init: At 3FFB3650 len 0002C9B0 (178 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (327) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (333) heap_init: At 4008F47C len 00010B84 (66 KiB): IRAM[0m
+[0;32mI (341) spi_flash: detected chip: generic[0m
+[0;32mI (344) spi_flash: flash io: dio[0m
+[0;33mW (348) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (362) main_task: Started on CPU0[0m
+[0;32mI (372) main_task: Calling app_main()[0m
+Starting Hot Potato + Sound
+[0;32mI (402) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (542) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (542) IR_SIMPLE: Initializing simple IR test[0m
+[0;32mI (542) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (552) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (562) IR_SIMPLE: Simple IR test initialized[0m
+Simple IR test initialized successfully
+[0;32mI (572) IR_PROTOCOL: Own MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (572) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;33mW (582) rmt: GPIO 26 is not usable, maybe conflict with others[0m
+[0;32mI (592) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (602) IR_PROTOCOL: IR protocol initialized[0m
+IR protocol initialized successfully
+[0;32mI (612) IR_TEST: Test mode initialized. Own MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (612) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (622) IR_TEST: IR test mode ready. Press button A to toggle continuous transmission[0m
+Potato received!
+[0;31mE (1212) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (1212) IR_SIMPLE: Failed to send IR pulse: ESP_ERR_INVALID_ARG[0m
+[0;31mE (5952) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (5952) IR_SIMPLE: Failed to send IR pulse: ESP_ERR_INVALID_ARG[0m
+Player eliminated!
+Game Over - Player Eliminated
+[0;32mI (6992) main_task: Returned from app_main()[0m
+[0;32mI (27222) IR_TEST: Continuous TX: ON[0m
+[0;32mI (27222) IR_TEST: Starting continuous IR transmission - Device is now SENDER[0m
+[0;31mE (27322) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (27322) IR_PROTOCOL: Failed to send IR packet: ESP_ERR_INVALID_ARG[0m
+[0;31mE (27322) IR_TEST: Failed to send test packet: ESP_ERR_INVALID_ARG[0m
+
+***ERROR*** A stack overflow in task continuous_tx_t has been detected.
+
+
+Backtrace: 0x40081aae:0x3ffb76a0 0x40087199:0x3ffb76c0 0x400880aa:0x3ffb76e0 0x40089117:0x3ffb7760 0x400881b4:0x3ffb7780 0x40088166:0x00000000 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: b0753a20b
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10e54h ( 69204) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=00020e7c vaddr=3ffb0000 size=028c0h ( 10432) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=00023744 vaddr=40080000 size=0c8d4h ( 51412) load[0m
+[0;32mI (154) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=30b2ch (199468) map[0m
+[0;32mI (223) esp_image: segment 4: paddr=00060b54 vaddr=4008c8d4 size=02ba8h ( 11176) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (248) cpu_start: Multicore app[0m
+[0;32mI (256) cpu_start: Pro cpu start user code[0m
+[0;32mI (256) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (256) app_init: Application information:[0m
+[0;32mI (259) app_init: Project name:     hot_potato[0m
+[0;32mI (264) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (270) app_init: Compile time:     Aug  7 2025 21:47:14[0m
+[0;32mI (276) app_init: ELF file SHA256:  b0753a20b...[0m
+[0;32mI (281) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (286) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (291) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (296) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (301) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (308) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (314) heap_init: At 3FFB3650 len 0002C9B0 (178 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (327) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (333) heap_init: At 4008F47C len 00010B84 (66 KiB): IRAM[0m
+[0;32mI (341) spi_flash: detected chip: generic[0m
+[0;32mI (344) spi_flash: flash io: dio[0m
+[0;33mW (348) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (362) main_task: Started on CPU0[0m
+[0;32mI (372) main_task: Calling app_main()[0m
+Starting Hot Potato + Sound
+[0;32mI (402) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (542) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (542) IR_SIMPLE: Initializing simple IR test[0m
+[0;32mI (542) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (552) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (562) IR_SIMPLE: Simple IR test initialized[0m
+Simple IR test initialized successfully
+[0;32mI (572) IR_PROTOCOL: Own MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (572) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;33mW (582) rmt: GPIO 26 is not usable, maybe conflict with others[0m
+[0;32mI (592) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (602) IR_PROTOCOL: IR protocol initialized[0m
+IR protocol initialized successfully
+[0;32mI (612) IR_TEST: Test mode initialized. Own MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (612) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (622) IR_TEST: IR test mode ready. Press button A to toggle continuous transmission[0m
+Potato received!
+[0;31mE (1212) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (1212) IR_SIMPLE: Failed to send IR pulse: ESP_ERR_INVALID_ARG[0m
+[0;31mE (5952) rmt: rmt_transmit(522): invalid argument[0m
+[0;31mE (5952) IR_SIMPLE: Failed to send IR pulse: ESP_ERR_INVALID_ARG[0m
+Player eliminated!
+Game Over - Player Eliminated
+[0;32mI (6992) main_task: Returned from app_main()[0m

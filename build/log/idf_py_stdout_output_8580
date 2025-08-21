@@ -1,0 +1,170 @@
+[1/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj
+[2/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_cxx_api.cpp.obj
+[3/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_item_hash_list.cpp.obj
+[4/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj
+[5/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_api.cpp.obj
+[6/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_locked.cpp.obj
+[7/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_storage.cpp.obj
+[8/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_lookup.cpp.obj
+[9/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition.cpp.obj
+[10/76] Building CXX object esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_exception_stubs.cpp.obj
+[11/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_handle_simple.cpp.obj
+[12/76] Building CXX object esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_guards.cpp.obj
+[13/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_platform.cpp.obj
+[14/76] Building CXX object esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_init.cpp.obj
+[15/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj
+[16/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_partition_manager.cpp.obj
+[17/76] Building CXX object esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj
+[18/76] Linking C static library esp-idf\nvs_flash\libnvs_flash.a
+[19/76] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/esp-idf-v5.3.3/projects/hot_potato/build/bootloader/bootloader.bin"
+Bootloader binary size 0x68d0 bytes. 0x730 bytes (6%) free.
+[20/76] No install step for 'bootloader'
+[21/76] Linking C static library esp-idf\cxx\libcxx.a
+[22/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/Partition.cpp.obj
+[23/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/SPI_Flash.cpp.obj
+[24/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Flash.cpp.obj
+[25/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Safe.cpp.obj
+[26/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/crc32.cpp.obj
+[27/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Perf.cpp.obj
+[28/76] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/wear_levelling.cpp.obj
+[29/76] Completed 'bootloader'
+[30/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/misc/common_function.cpp.obj
+[31/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/LGFX_Button.cpp.obj
+[32/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/M5GFX.cpp.obj
+[33/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_Device.cpp.obj
+[34/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/LGFXBase.cpp.obj
+[35/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_EPDiy.cpp.obj
+[36/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/misc/SpriteBuffer.cpp.obj
+[37/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/lgfx_fonts.cpp.obj
+[38/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/misc/DividedFrameBuffer.cpp.obj
+[39/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/LGFX_Sprite.cpp.obj
+[40/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/misc/pixelcopy.cpp.obj
+[41/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_FrameBufferBase.cpp.obj
+[42/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_GDEW0154D67.cpp.obj
+[43/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_IT8951.cpp.obj
+[44/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_M5HDMI.cpp.obj
+[45/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_GDEW0154M09.cpp.obj
+[46/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_HasBuffer.cpp.obj
+[47/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_LCD.cpp.obj
+[48/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_SSD1306.cpp.obj
+[49/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_M5UnitGLASS.cpp.obj
+[50/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Light_PWM.cpp.obj
+[51/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/panel/Panel_M5UnitLCD.cpp.obj
+[52/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Panel_EPD.cpp.obj
+[53/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Bus_I2C.cpp.obj
+[54/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Bus_EPD.cpp.obj
+[55/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32p4/Panel_DSI.cpp.obj
+[56/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Bus_Parallel8.cpp.obj
+[57/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Panel_CVBS.cpp.obj
+[58/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32c3/Bus_Parallel8.cpp.obj
+[59/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/Bus_SPI.cpp.obj
+[60/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32s3/Bus_Parallel8.cpp.obj
+[61/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32s3/Bus_Parallel16.cpp.obj
+[62/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/platforms/esp32/common.cpp.obj
+[63/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/touch/Touch_CST816S.cpp.obj
+[64/76] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/game_logic.cpp.obj
+[65/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/touch/Touch_GT911.cpp.obj
+[66/76] Building CXX object esp-idf/M5GFX/CMakeFiles/__idf_M5GFX.dir/src/lgfx/v1/touch/Touch_FT5x06.cpp.obj
+[67/76] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/SoundManager.cpp.obj
+[68/76] Linking C static library esp-idf\wear_levelling\libwear_levelling.a
+[69/76] Linking C static library esp-idf\M5GFX\libM5GFX.a
+[70/76] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[71/76] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/ir_simple_test.cpp.obj
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:636:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  636 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_MAC_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:660:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  660 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_LEN_MAC_CRC_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:714:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  714 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_tx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:761:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+  761 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:761:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:761:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_od_mode' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:769:5: warning: missing initializer for member 'rmt_carrier_config_t::<unnamed struct>::always_on' [-Wmissing-field-initializers]
+  769 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_uart_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:795:5: warning: missing initializer for member 'uart_config_t::rx_flow_ctrl_thresh' [-Wmissing-field-initializers]
+  795 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:795:5: warning: missing initializer for member 'uart_config_t::flags' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1040:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+ 1040 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1040:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void send_byte(uint8_t)':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1291:9: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+ 1291 |         };
+      |         ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_simple_test_main()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1453:5: warning: missing initializer for member 'esp_timer_create_args_t::dispatch_method' [-Wmissing-field-initializers]
+ 1453 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1453:5: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1460:5: warning: missing initializer for member 'esp_timer_create_args_t::dispatch_method' [-Wmissing-field-initializers]
+ 1460 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1460:5: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1470:9: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+ 1470 |         };
+      |         ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1506:5: warning: missing initializer for member 'led_strip_config_t::led_model' [-Wmissing-field-initializers]
+ 1506 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1506:5: warning: missing initializer for member 'led_strip_config_t::color_component_format' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1506:5: warning: missing initializer for member 'led_strip_config_t::flags' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1511:5: warning: missing initializer for member 'led_strip_rmt_config_t::flags' [-Wmissing-field-initializers]
+ 1511 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1546:9: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+ 1546 |         };
+      |         ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: At global scope:
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1351:13: warning: 'void print_binary(uint8_t, const char*, int, int)' defined but not used [-Wunused-function]
+ 1351 | static void print_binary(uint8_t val, const char *label, int x, int y) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1241:13: warning: 'void rx_task(void*)' defined but not used [-Wunused-function]
+ 1241 | static void rx_task(void *pvParameters) {
+      |             ^~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1230:16: warning: 'uint8_t decode_symbols_to_byte(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+ 1230 | static uint8_t decode_symbols_to_byte(const rmt_symbol_word_t *syms, size_t cnt) {
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1066:13: warning: 'void dump_symbols(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+ 1066 | static void dump_symbols(const rmt_symbol_word_t *buf, size_t n) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1056:23: warning: 'bool rmt_rx_done_callback(rmt_channel_handle_t, const rmt_rx_done_event_data_t*, void*)' defined but not used [-Wunused-function]
+ 1056 | static bool IRAM_ATTR rmt_rx_done_callback(rmt_channel_handle_t channel, const rmt_rx_done_event_data_t *edata, void *user_data) {
+      |                       ^~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1031:13: warning: 'void setup_rmt_rx()' defined but not used [-Wunused-function]
+ 1031 | static void setup_rmt_rx() {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:643:13: warning: 'void ir_send_ZT_MAC_oneshot()' defined but not used [-Wunused-function]
+  643 | static void ir_send_ZT_MAC_oneshot(void) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:630:13: warning: 'void ir_send_ZT_oneshot()' defined but not used [-Wunused-function]
+  630 | static void ir_send_ZT_oneshot(void) {
+      |             ^~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:71:13: warning: 'g_tx_hex' defined but not used [-Wunused-variable]
+   71 | static char g_tx_hex[128];      // e.g., "5A 54"
+      |             ^~~~~~~~
+[72/76] Linking C static library esp-idf\main\libmain.a
+[73/76] Generating ld/sections.ld
+[74/76] Linking CXX executable hot_potato.elf
+[75/76] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin
+[76/76] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/esp-idf-v5.3.3/projects/hot_potato/build/partition_table/partition-table.bin C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin"
+hot_potato.bin binary size 0xdc1b0 bytes. Smallest app partition is 0x100000 bytes. 0x23e50 bytes (14%) free.

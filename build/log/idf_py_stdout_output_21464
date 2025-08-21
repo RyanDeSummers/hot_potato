@@ -1,0 +1,71 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/esp-idf-v5.3.3/projects/hot_potato/build/bootloader/bootloader.bin"
+Bootloader binary size 0x68d0 bytes. 0x730 bytes (6%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[5/10] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/ir_simple_test.cpp.obj
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:105:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  105 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_MAC_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:135:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  135 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_tx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:188:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+  188 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:188:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:188:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_od_mode' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:196:5: warning: missing initializer for member 'rmt_carrier_config_t::<unnamed struct>::always_on' [-Wmissing-field-initializers]
+  196 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_uart_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:222:5: warning: missing initializer for member 'uart_config_t::rx_flow_ctrl_thresh' [-Wmissing-field-initializers]
+  222 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:222:5: warning: missing initializer for member 'uart_config_t::flags' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:304:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+  304 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:304:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void send_byte(uint8_t)':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:556:9: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  556 |         };
+      |         ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: At global scope:
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:598:13: warning: 'void print_binary(uint8_t, const char*, int, int)' defined but not used [-Wunused-function]
+  598 | static void print_binary(uint8_t val, const char *label, int x, int y) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:506:13: warning: 'void rx_task(void*)' defined but not used [-Wunused-function]
+  506 | static void rx_task(void *pvParameters) {
+      |             ^~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:495:16: warning: 'uint8_t decode_symbols_to_byte(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+  495 | static uint8_t decode_symbols_to_byte(const rmt_symbol_word_t *syms, size_t cnt) {
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:330:13: warning: 'void dump_symbols(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+  330 | static void dump_symbols(const rmt_symbol_word_t *buf, size_t n) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:320:23: warning: 'bool rmt_rx_done_callback(rmt_channel_handle_t, const rmt_rx_done_event_data_t*, void*)' defined but not used [-Wunused-function]
+  320 | static bool IRAM_ATTR rmt_rx_done_callback(rmt_channel_handle_t channel, const rmt_rx_done_event_data_t *edata, void *user_data) {
+      |                       ^~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:295:13: warning: 'void setup_rmt_rx()' defined but not used [-Wunused-function]
+  295 | static void setup_rmt_rx() {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:99:13: warning: 'void ir_send_ZT_oneshot()' defined but not used [-Wunused-function]
+   99 | static void ir_send_ZT_oneshot(void) {
+      |             ^~~~~~~~~~~~~~~~~~
+[6/10] Linking C static library esp-idf\main\libmain.a
+[7/10] Generating ld/sections.ld
+[8/10] Linking CXX executable hot_potato.elf
+[9/10] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin
+[10/10] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/esp-idf-v5.3.3/projects/hot_potato/build/partition_table/partition-table.bin C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin"
+hot_potato.bin binary size 0x54370 bytes. Smallest app partition is 0x100000 bytes. 0xabc90 bytes (67%) free.

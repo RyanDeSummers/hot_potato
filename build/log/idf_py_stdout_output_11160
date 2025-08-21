@@ -1,0 +1,232 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10800h ( 67584) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=00020828 vaddr=3ffb0000 size=028c0h ( 10432) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=000230f0 vaddr=40080000 size=0cf28h ( 53032) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=30004h (196612) map[0m
+[0;32mI (222) esp_image: segment 4: paddr=0006002c vaddr=4008cf28 size=02828h ( 10280) load[0m
+[0;32mI (234) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (234) boot: Disabling RNG early entropy source...[0m
+[0;32mI (247) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (255) app_init: Application information:[0m
+[0;32mI (258) app_init: Project name:     hot_potato[0m
+[0;32mI (263) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (269) app_init: Compile time:     Aug 12 2025 21:50:08[0m
+[0;32mI (275) app_init: ELF file SHA256:  d7c01f6ff...[0m
+[0;32mI (280) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (285) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (290) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (295) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFB3B38 len 0002C4C8 (177 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (325) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 4008F750 len 000108B0 (66 KiB): IRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (347) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (361) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (371) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;32mI (371) IR_SIMPLE_TEST_OPT: Our MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (411) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (581) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:2 [0m
+[0;32mI (581) IR_SIMPLE_TEST_OPT: Button interrupt setup successful[0m
+[0;32mI (581) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (601) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (611) gpio: GPIO[36]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (611) IR_SIMPLE_TEST_OPT: RMT RX initialized[0m
+[0;32mI (621) IR_SIMPLE_TEST_OPT: RX task started[0m
+[0;32mI (621) IR_SIMPLE_TEST_OPT: TX task started[0m
+[0;32mI (631) IR_SIMPLE_TEST_OPT: IR Simple Test (OPTIMIZED) ready - press Button A to send[0m
+[0;32mI (3751) RX: Dump 20 symbols:[0m
+[0;32mI (3751) RX: [00] l0=0 d0=853 | l1=1 d1=384[0m
+[0;32mI (3751) RX: [01] l0=0 d0=437 | l1=1 d1=826[0m
+[0;32mI (3761) RX: [02] l0=0 d0=441 | l1=1 d1=401[0m
+[0;32mI (3761) RX: [03] l0=0 d0=430 | l1=1 d1=3307[0m
+[0;32mI (3771) RX: [04] l0=0 d0=1274 | l1=1 d1=383[0m
+[0;32mI (3771) RX: [05] l0=0 d0=437 | l1=1 d1=405[0m
+[0;32mI (3781) RX: [06] l0=0 d0=437 | l1=1 d1=406[0m
+[0;32mI (3781) RX: [07] l0=0 d0=435 | l1=1 d1=7932[0m
+[0;32mI (3791) RX: [08] l0=0 d0=440 | l1=1 d1=11295[0m
+[0;32mI (3791) RX: [09] l0=0 d0=431 | l1=1 d1=11278[0m
+[0;32mI (3801) RX: [10] l0=0 d0=439 | l1=1 d1=14138[0m
+[0;32mI (3801) RX: [11] l0=0 d0=435 | l1=1 d1=9564[0m
+[0;32mI (3811) RX: [12] l0=0 d0=439 | l1=1 d1=10139[0m
+[0;32mI (3811) RX: [13] l0=0 d0=435 | l1=1 d1=11273[0m
+[0;32mI (3821) RX: [14] l0=0 d0=1700 | l1=1 d1=406[0m
+[0;32mI (3821) RX: [15] l0=0 d0=1671 | l1=1 d1=7959[0m
+[0;32mI (3831) RX: [16] l0=0 d0=434 | l1=1 d1=381[0m
+[0;32mI (3831) RX: [17] l0=0 d0=1281 | l1=1 d1=404[0m
+[0;32mI (3841) RX: [18] l0=0 d0=437 | l1=1 d1=8772[0m
+[0;32mI (3841) RX: [19] l0=0 d0=442 | l1=1 d1=400[0m
+[0;32mI (3851) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (3851) IR_SIMPLE_TEST_OPT: RX: packet start detected (0x5A)[0m
+[0;32mI (6741) RX: Dump 20 symbols:[0m
+[0;32mI (6741) RX: [00] l0=0 d0=861 | l1=1 d1=375[0m
+[0;32mI (6741) RX: [01] l0=0 d0=456 | l1=1 d1=808[0m
+[0;32mI (6751) RX: [02] l0=0 d0=439 | l1=1 d1=402[0m
+[0;32mI (6751) RX: [03] l0=0 d0=439 | l1=1 d1=3430[0m
+[0;32mI (6761) RX: [04] l0=0 d0=1276 | l1=1 d1=381[0m
+[0;32mI (6761) RX: [05] l0=0 d0=460 | l1=1 d1=383[0m
+[0;32mI (6771) RX: [06] l0=0 d0=438 | l1=1 d1=403[0m
+[0;32mI (6771) RX: [07] l0=0 d0=438 | l1=1 d1=7797[0m
+[0;32mI (6781) RX: [08] l0=0 d0=460 | l1=1 d1=11276[0m
+[0;32mI (6781) RX: [09] l0=0 d0=441 | l1=1 d1=11268[0m
+[0;32mI (6791) RX: [10] l0=0 d0=438 | l1=1 d1=14534[0m
+[0;32mI (6791) RX: [11] l0=0 d0=434 | l1=1 d1=9565[0m
+[0;32mI (6801) RX: [12] l0=0 d0=437 | l1=1 d1=9746[0m
+[0;32mI (6801) RX: [13] l0=0 d0=434 | l1=1 d1=11301[0m
+[0;32mI (6811) RX: [14] l0=0 d0=1672 | l1=1 d1=407[0m
+[0;32mI (6811) RX: [15] l0=0 d0=1691 | l1=1 d1=7940[0m
+[0;32mI (6821) RX: [16] l0=0 d0=433 | l1=1 d1=408[0m
+[0;32mI (6821) RX: [17] l0=0 d0=1254 | l1=1 d1=404[0m
+[0;32mI (6831) RX: [18] l0=0 d0=437 | l1=1 d1=8772[0m
+[0;32mI (6831) RX: [19] l0=0 d0=441 | l1=1 d1=401[0m
+[0;32mI (6841) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (6841) IR_SIMPLE_TEST_OPT: RX: packet timeout, resetting[0m
+[0;32mI (6851) IR_SIMPLE_TEST_OPT: RX: packet start detected (0x5A)[0m
+[0;32mI (8521) RX: Dump 20 symbols:[0m
+[0;32mI (8521) RX: [00] l0=0 d0=855 | l1=1 d1=409[0m
+[0;32mI (8521) RX: [01] l0=0 d0=484 | l1=1 d1=752[0m
+[0;32mI (8521) RX: [02] l0=0 d0=443 | l1=1 d1=399[0m
+[0;32mI (8531) RX: [03] l0=0 d0=494 | l1=1 d1=5926[0m
+[0;32mI (8531) RX: [04] l0=0 d0=1283 | l1=1 d1=402[0m
+[0;32mI (8541) RX: [05] l0=0 d0=439 | l1=1 d1=376[0m
+[0;32mI (8541) RX: [06] l0=0 d0=455 | l1=1 d1=387[0m
+[0;32mI (8551) RX: [07] l0=0 d0=434 | l1=1 d1=6223[0m
+[0;32mI (8551) RX: [08] l0=0 d0=435 | l1=1 d1=10329[0m
+[0;32mI (8561) RX: [09] l0=0 d0=432 | l1=1 d1=11274[0m
+[0;32mI (8561) RX: [10] l0=0 d0=442 | l1=1 d1=11294[0m
+[0;32mI (8571) RX: [11] l0=0 d0=433 | l1=1 d1=11276[0m
+[0;32mI (8571) RX: [12] l0=0 d0=440 | l1=1 d1=13664[0m
+[0;32mI (8581) RX: [13] l0=0 d0=442 | l1=1 d1=9557[0m
+[0;32mI (8581) RX: [14] l0=0 d0=1692 | l1=1 d1=386[0m
+[0;32mI (8591) RX: [15] l0=0 d0=1702 | l1=1 d1=7271[0m
+[0;32mI (8591) RX: [16] l0=0 d0=436 | l1=1 d1=406[0m
+[0;32mI (8601) RX: [17] l0=0 d0=1276 | l1=1 d1=381[0m
+[0;32mI (8601) RX: [18] l0=0 d0=440 | l1=1 d1=8796[0m
+[0;32mI (8611) RX: [19] l0=0 d0=438 | l1=1 d1=378[0m
+[0;32mI (8611) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (8621) IR_SIMPLE_TEST_OPT: RX: packet timeout, resetting[0m
+[0;32mI (8621) IR_SIMPLE_TEST_OPT: RX: packet start detected (0x5A)[0m
+[0;32mI (11011) IR_SIMPLE_TEST_OPT: Sending packet (22 bytes):[0m
+[0;32mI (11011) IR_SIMPLE_TEST_OPT:   [0] 0x5A[0m
+[0;32mI (11011) IR_SIMPLE_TEST_OPT:   [1] 0x54[0m
+[0;32mI (11021) IR_SIMPLE_TEST_OPT:   [2] 0xFF[0m
+[0;32mI (11021) IR_SIMPLE_TEST_OPT:   [3] 0xFF[0m
+[0;32mI (11031) IR_SIMPLE_TEST_OPT:   [4] 0xFF[0m
+[0;32mI (11031) IR_SIMPLE_TEST_OPT:   [5] 0xFF[0m
+[0;32mI (11041) IR_SIMPLE_TEST_OPT:   [6] 0xFF[0m
+[0;32mI (11041) IR_SIMPLE_TEST_OPT:   [7] 0xFF[0m
+[0;32mI (11041) IR_SIMPLE_TEST_OPT:   [8] 0x34[0m
+[0;32mI (11051) IR_SIMPLE_TEST_OPT:   [9] 0x98[0m
+[0;32mI (11051) IR_SIMPLE_TEST_OPT:   [10] 0x7A[0m
+[0;32mI (11061) IR_SIMPLE_TEST_OPT:   [11] 0xB5[0m
+[0;32mI (11061) IR_SIMPLE_TEST_OPT:   [12] 0x97[0m
+[0;32mI (11071) IR_SIMPLE_TEST_OPT:   [13] 0x74[0m
+[0;32mI (11071) IR_SIMPLE_TEST_OPT:   [14] 0x01[0m
+[0;32mI (11081) IR_SIMPLE_TEST_OPT:   [15] 0x00[0m
+[0;32mI (11081) IR_SIMPLE_TEST_OPT:   [16] 0x04[0m
+[0;32mI (11091) IR_SIMPLE_TEST_OPT:   [17] 0xDE[0m
+[0;32mI (11091) IR_SIMPLE_TEST_OPT:   [18] 0xAD[0m
+[0;32mI (11101) IR_SIMPLE_TEST_OPT:   [19] 0xBE[0m
+[0;32mI (11101) IR_SIMPLE_TEST_OPT:   [20] 0xEF[0m
+[0;32mI (11111) IR_SIMPLE_TEST_OPT:   [21] 0x5B[0m
+[0;32mI (11161) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (11161) IR_SIMPLE_TEST_OPT: Sent byte: 0x5A[0m
+[0;32mI (11171) IR_SIMPLE_TEST_OPT: TX prebuilt 0x54 into 10 symbols[0m
+[0;32mI (11171) IR_SIMPLE_TEST_OPT: Sent byte: 0x54[0m
+[0;32mI (11181) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11181) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11191) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11191) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11201) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11201) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11211) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11211) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11221) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11221) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11241) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (11241) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (11251) IR_SIMPLE_TEST_OPT: TX prebuilt 0x34 into 10 symbols[0m
+[0;32mI (11251) IR_SIMPLE_TEST_OPT: Sent byte: 0x34[0m
+[0;32mI (11261) IR_SIMPLE_TEST_OPT: TX prebuilt 0x98 into 10 symbols[0m
+[0;32mI (11261) IR_SIMPLE_TEST_OPT: Sent byte: 0x98[0m
+[0;32mI (11271) IR_SIMPLE_TEST_OPT: TX prebuilt 0x7A into 10 symbols[0m
+[0;32mI (11271) IR_SIMPLE_TEST_OPT: Sent byte: 0x7A[0m
+[0;32mI (11281) IR_SIMPLE_TEST_OPT: TX prebuilt 0xB5 into 10 symbols[0m
+[0;32mI (11281) IR_SIMPLE_TEST_OPT: Sent byte: 0xB5[0m
+[0;32mI (11291) IR_SIMPLE_TEST_OPT: TX prebuilt 0x97 into 10 symbols[0m
+[0;32mI (11291) IR_SIMPLE_TEST_OPT: Sent byte: 0x97[0m
+[0;32mI (11301) IR_SIMPLE_TEST_OPT: TX prebuilt 0x74 into 10 symbols[0m
+[0;32mI (11311) IR_SIMPLE_TEST_OPT: Sent byte: 0x74[0m
+[0;32mI (11321) IR_SIMPLE_TEST_OPT: TX prebuilt 0x01 into 10 symbols[0m
+[0;32mI (11321) IR_SIMPLE_TEST_OPT: Sent byte: 0x01[0m
+[0;32mI (11331) IR_SIMPLE_TEST_OPT: TX prebuilt 0x00 into 10 symbols[0m
+[0;32mI (11331) IR_SIMPLE_TEST_OPT: Sent byte: 0x00[0m
+[0;32mI (11341) IR_SIMPLE_TEST_OPT: TX prebuilt 0x04 into 10 symbols[0m
+[0;32mI (11341) IR_SIMPLE_TEST_OPT: Sent byte: 0x04[0m
+[0;32mI (11351) IR_SIMPLE_TEST_OPT: TX prebuilt 0xDE into 10 symbols[0m
+[0;32mI (11351) IR_SIMPLE_TEST_OPT: Sent byte: 0xDE[0m
+[0;32mI (11361) IR_SIMPLE_TEST_OPT: TX prebuilt 0xAD into 10 symbols[0m
+[0;32mI (11361) IR_SIMPLE_TEST_OPT: Sent byte: 0xAD[0m
+[0;32mI (11371) IR_SIMPLE_TEST_OPT: TX prebuilt 0xBE into 10 symbols[0m
+[0;32mI (11371) IR_SIMPLE_TEST_OPT: Sent byte: 0xBE[0m
+[0;32mI (11391) IR_SIMPLE_TEST_OPT: TX prebuilt 0xEF into 10 symbols[0m
+[0;32mI (11391) IR_SIMPLE_TEST_OPT: Sent byte: 0xEF[0m
+[0;32mI (11401) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5B into 10 symbols[0m
+[0;32mI (11401) IR_SIMPLE_TEST_OPT: Sent byte: 0x5B[0m
+[0;32mI (11441) RX: Dump 20 symbols:[0m
+[0;32mI (11441) RX: [00] l0=0 d0=938 | l1=1 d1=350[0m
+[0;32mI (11441) RX: [01] l0=0 d0=439 | l1=1 d1=797[0m
+[0;32mI (11441) RX: [02] l0=0 d0=460 | l1=1 d1=408[0m
+[0;32mI (11451) RX: [03] l0=0 d0=413 | l1=1 d1=5297[0m
+[0;32mI (11451) RX: [04] l0=0 d0=1278 | l1=1 d1=433[0m
+[0;32mI (11461) RX: [05] l0=0 d0=408 | l1=1 d1=407[0m
+[0;32mI (11461) RX: [06] l0=0 d0=414 | l1=1 d1=402[0m
+[0;32mI (11471) RX: [07] l0=0 d0=440 | l1=1 d1=6217[0m
+[0;32mI (11471) RX: [08] l0=0 d0=441 | l1=1 d1=10373[0m
+[0;32mI (11481) RX: [09] l0=0 d0=440 | l1=1 d1=11083[0m
+[0;32mI (11481) RX: [10] l0=0 d0=467 | l1=1 d1=11086[0m
+[0;32mI (11491) RX: [11] l0=0 d0=433 | l1=1 d1=11118[0m
+[0;32mI (11491) RX: [12] l0=0 d0=433 | l1=1 d1=14117[0m
+[0;32mI (11501) RX: [13] l0=0 d0=435 | l1=1 d1=9592[0m
+[0;32mI (11501) RX: [14] l0=0 d0=1252 | l1=1 d1=432[0m
+[0;32mI (11511) RX: [15] l0=0 d0=409 | l1=1 d1=827[0m
+[0;32mI (11511) RX: [16] l0=0 d0=836 | l1=1 d1=6294[0m
+[0;32mI (11521) RX: [17] l0=0 d0=1704 | l1=1 d1=823[0m
+[0;32mI (11521) RX: [18] l0=0 d0=828 | l1=1 d1=8197[0m
+[0;32mI (11531) RX: [19] l0=0 d0=861 | l1=1 d1=402[0m
+[0;32mI (11531) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (11541) IR_SIMPLE_TEST_OPT: RX: packet timeout, resetting[0m
+[0;32mI (11541) IR_SIMPLE_TEST_OPT: RX: packet start detected (0x5A)[0m

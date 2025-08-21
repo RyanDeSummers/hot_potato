@@ -1,0 +1,686 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20c60h (134240) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=00030c88 vaddr=3ffb0000 size=04398h ( 17304) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=00035028 vaddr=40080000 size=0aff0h ( 45040) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9c978h (641400) map[0m
+[0;32mI (395) esp_image: segment 4: paddr=000dc9a0 vaddr=4008aff0 size=0f7b8h ( 63416) load[0m
+[0;32mI (434) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (434) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (455) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (455) app_init: Application information:[0m
+[0;32mI (457) app_init: Project name:     hot_potato[0m
+[0;32mI (463) app_init: App version:      6f5b998-dirty[0m
+[0;32mI (468) app_init: Compile time:     Aug 20 2025 17:45:05[0m
+[0;32mI (474) app_init: ELF file SHA256:  363ae1051...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (489) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (494) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (499) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (506) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB8F28 len 000270D8 (156 KiB): DRAM[0m
+[0;32mI (519) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (525) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 4009A7A8 len 00005858 (22 KiB): IRAM[0m
+[0;32mI (539) spi_flash: detected chip: generic[0m
+[0;32mI (542) spi_flash: flash io: dio[0m
+[0;33mW (546) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (561) main_task: Started on CPU0[0m
+[0;32mI (571) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (571) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;31mE (571) task_wdt: esp_task_wdt_init(515): TWDT already initialized[0m
+[0;32mI (581) IR_SIMPLE_TEST_OPT: MAC: 08:D1:F9:6A:D9:BC[0m
+[0;32mI (611) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (781) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (781) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (781) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (791) CFG: Self MAC = 08:D1:F9:6A:D9:BC[0m
+[0;32mI (821) wifi:wifi driver task: 3ffc18c8, prio:23, stack:6656, core=0[0m
+[0;32mI (821) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (821) wifi:wifi certification version: v7.0[0m
+[0;32mI (821) wifi:config NVS flash: enabled[0m
+[0;32mI (821) wifi:config nano formating: disabled[0m
+[0;32mI (831) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (831) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (841) wifi:Init management short buffer num: 32[0m
+[0;32mI (841) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (841) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (851) wifi:Init static rx buffer num: 10[0m
+[0;32mI (851) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (861) wifi_init: rx ba win: 6[0m
+[0;32mI (861) wifi_init: accept mbox: 6[0m
+[0;32mI (861) wifi_init: tcpip mbox: 32[0m
+[0;32mI (871) wifi_init: udp mbox: 6[0m
+[0;32mI (871) wifi_init: tcp mbox: 6[0m
+[0;32mI (871) wifi_init: tcp tx win: 5760[0m
+[0;32mI (881) wifi_init: tcp rx win: 5760[0m
+[0;32mI (881) wifi_init: tcp mss: 1440[0m
+[0;32mI (891) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (891) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (901) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (991) wifi:mode : sta (08:d1:f9:6a:d9:bc)[0m
+[0;32mI (991) wifi:enable tsf[0m
+[0;32mI (991) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (991) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (991) ESPNOW: init OK, channel=1[0m
+[0;32mI (1001) IR-UART: UART RX initialized on GPIO36 at 2400-8N1[0m
+[0;32mI (1001) IR-UART: UART RX task started[0m
+[0;32mI (1011) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (1011) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1031) IR_SIMPLE_TEST_OPT: M5Stack FIRE side LEDs reset - should be OFF now[0m
+[0;32mI (1031) IR_SIMPLE_TEST_OPT: Initial HOLDER - startup delay 1ms[0m
+[0;32mI (1031) IR_SIMPLE_TEST_OPT: IR Simple Test (Stage-2a) ready - potato passing demo[0m
+[0;32mI (1081) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (1081) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (1081) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (1391) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=0)[0m
+[0;32mI (1491) HOLDER: PASS_REQ from 08:D1:F9:6A:D4:24 seq=0[0m
+[0;32mI (1491) CORE: cooldown with 08:D1:F9:6A:D4:24 for 1000 ms[0m
+[0;32mI (1491) IR_RX: ENABLED (listening)[0m
+[0;32mI (1501) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (1501) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (1531) IR-UART: 0x5A[0m
+[0;32mI (1531) IR-UART: 0x54[0m
+[0;32mI (1531) IR-UART: 0x08[0m
+[0;32mI (1531) IR-UART: 0x00[0m
+[0;32mI (1531) IR-UART: 0x00[0m
+[0;32mI (1531) IR-UART: 0x08[0m
+[0;32mI (1531) IR-UART: 0xD1[0m
+[0;32mI (1541) IR-UART: 0xF9[0m
+[0;32mI (1541) IR-UART: 0x6A[0m
+[0;32mI (1541) IR-UART: 0xD9[0m
+[0;32mI (1541) IR-UART: 0xBC[0m
+[0;32mI (1551) IR-UART: 0x14[0m
+[0;32mI (1551) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (1611) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (1611) HOLDER: GRANT -> 08:D1:F9:6A:D4:24 seq=0[0m
+[0;32mI (1611) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (1741) IR-UART: 0x5A[0m
+[0;32mI (1741) IR-UART: 0x54[0m
+[0;32mI (1741) IR-UART: 0x08[0m
+[0;32mI (1741) IR-UART: 0x00[0m
+[0;32mI (1741) IR-UART: 0x00[0m
+[0;32mI (1741) IR-UART: 0x08[0m
+[0;32mI (1741) IR-UART: 0xD1[0m
+[0;32mI (1751) IR-UART: 0xF9[0m
+[0;32mI (1751) IR-UART: 0x6A[0m
+[0;32mI (1751) IR-UART: 0xD4[0m
+[0;32mI (1751) IR-UART: 0x24[0m
+[0;32mI (1761) IR-UART: 0xD4[0m
+[0;32mI (1761) RX: CRC OK (len=8)[0m
+[0;32mI (1761) RX: SEQ=0 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (2311) IR-UART: 0x5A[0m
+[0;32mI (2311) IR-UART: 0x54[0m
+[0;32mI (2311) IR-UART: 0x08[0m
+[0;32mI (2311) IR-UART: 0xF7[0m
+[0;32mI (2311) IR-UART: 0x02[0m
+[0;32mI (2311) IR-UART: 0xB0[0m
+[0;32mI (2311) IR-UART: 0xB2[0m
+[0;32mI (2321) IR-UART: 0x1C[0m
+[0;32mI (2321) IR-UART: 0x60[0m
+[0;32mI (2321) IR-UART: 0xB8[0m
+[0;32mI (2321) IR-UART: 0xB4[0m
+[0;32mI (2331) IR-UART: 0xA1[0m
+[0;32mI (2331) RX: CRC OK (len=8)[0m
+[0;32mI (2331) RX: SEQ=759 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (2891) IR-UART: 0x5A[0m
+[0;32mI (2891) IR-UART: 0x54[0m
+[0;32mI (2891) IR-UART: 0x08[0m
+[0;32mI (2891) IR-UART: 0x53[0m
+[0;32mI (2891) IR-UART: 0x01[0m
+[0;32mI (2891) IR-UART: 0x34[0m
+[0;32mI (2891) IR-UART: 0x98[0m
+[0;32mI (2901) IR-UART: 0x7A[0m
+[0;32mI (2901) IR-UART: 0xB5[0m
+[0;32mI (2901) IR-UART: 0x97[0m
+[0;32mI (2901) IR-UART: 0x74[0m
+[0;32mI (2911) IR-UART: 0x73[0m
+[0;32mI (2911) CLAIM: slot=4 jitter=211 send_in=6211 seq=339[0m
+[0;32mI (2921) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (2921) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;32mI (2971) PASS_REQ: Sent seq=339 to 34:98:7A:B5:97:74[0m
+[0;32mI (2971) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (3031) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (3031) RX: CRC OK (len=8)[0m
+[0;32mI (3031) RX: SEQ=339 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (3171) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (3171) PASS_REQ: Sent seq=339 to 34:98:7A:B5:97:74[0m
+[0;32mI (3171) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (3231) IR-UART: 0x5A[0m
+[0;32mI (3231) IR-UART: 0x54[0m
+[0;32mI (3231) IR-UART: 0x08[0m
+[0;32mI (3231) IR-UART: 0x01[0m
+[0;32mI (3231) IR-UART: 0x00[0m
+[0;32mI (3231) IR-UART: 0x08[0m
+[0;32mI (3231) IR-UART: 0xD1[0m
+[0;32mI (3241) IR-UART: 0xF9[0m
+[0;32mI (3241) IR-UART: 0x6A[0m
+[0;32mI (3241) IR-UART: 0xD4[0m
+[0;32mI (3241) IR-UART: 0x24[0m
+[0;32mI (3251) IR-UART: 0x9D[0m
+[0;32mI (3251) IR_RX: ENABLED (listening)[0m
+[0;32mI (3251) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (3261) CLAIM: slot=0 jitter=107 send_in=107 seq=1[0m
+[0;32mI (3271) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (3271) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (3281) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (3281) PASS_REQ: Sent seq=1 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (3291) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (3381) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (3381) RX: CRC OK (len=8)[0m
+[0;32mI (3381) RX: SEQ=1 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (3411) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (3411) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (3411) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (3421) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (3421) CORE: ROLE -> HOLDER (PASS_GRANT won seq=1)[0m
+[0;32mI (3481) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=1)[0m
+[0;32mI (3601) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=1[0m
+[0;32mI (3601) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (3601) IR_RX: ENABLED (listening)[0m
+[0;32mI (3611) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (3611) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (3641) IR-UART: 0x5A[0m
+[0;32mI (3641) IR-UART: 0x54[0m
+[0;32mI (3641) IR-UART: 0x08[0m
+[0;32mI (3641) IR-UART: 0x01[0m
+[0;32mI (3641) IR-UART: 0x00[0m
+[0;32mI (3641) IR-UART: 0x08[0m
+[0;32mI (3641) IR-UART: 0xD1[0m
+[0;32mI (3651) IR-UART: 0xF9[0m
+[0;32mI (3651) IR-UART: 0x6A[0m
+[0;32mI (3651) IR-UART: 0xD9[0m
+[0;32mI (3651) IR-UART: 0xBC[0m
+[0;32mI (3661) IR-UART: 0x5D[0m
+[0;32mI (3661) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (3721) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (3721) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=1[0m
+[0;32mI (3721) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (4111) IR-UART: 0x5A[0m
+[0;32mI (4111) IR-UART: 0x54[0m
+[0;32mI (4111) IR-UART: 0x08[0m
+[0;32mI (4111) IR-UART: 0xF8[0m
+[0;32mI (4111) IR-UART: 0x02[0m
+[0;32mI (4111) IR-UART: 0xB0[0m
+[0;32mI (4111) IR-UART: 0xB2[0m
+[0;32mI (4121) IR-UART: 0x1C[0m
+[0;32mI (4121) IR-UART: 0x60[0m
+[0;32mI (4121) IR-UART: 0xB8[0m
+[0;32mI (4121) IR-UART: 0xB4[0m
+[0;32mI (4131) IR-UART: 0x45[0m
+[0;32mI (4131) RX: CRC OK (len=8)[0m
+[0;32mI (4131) RX: SEQ=760 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (4691) IR-UART: 0x5A[0m
+[0;32mI (4691) IR-UART: 0x54[0m
+[0;32mI (4691) IR-UART: 0x08[0m
+[0;32mI (4691) IR-UART: 0x54[0m
+[0;32mI (4691) IR-UART: 0x01[0m
+[0;32mI (4691) IR-UART: 0x34[0m
+[0;32mI (4691) IR-UART: 0x98[0m
+[0;32mI (4701) IR-UART: 0x7A[0m
+[0;32mI (4701) IR-UART: 0xB5[0m
+[0;32mI (4701) IR-UART: 0x97[0m
+[0;32mI (4701) IR-UART: 0x74[0m
+[0;32mI (4711) IR-UART: 0xBD[0m
+[0;32mI (4711) CLAIM: slot=11 jitter=144 send_in=16644 seq=340[0m
+[0;32mI (4721) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (4721) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (4751) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (4751) PASS_REQ: Sent seq=340 to 34:98:7A:B5:97:74[0m
+[0;32mI (4751) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (4831) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (4831) RX: CRC OK (len=8)[0m
+[0;32mI (4831) RX: SEQ=340 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (4951) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (4951) PASS_REQ: Sent seq=340 to 34:98:7A:B5:97:74[0m
+[0;32mI (4951) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (5031) IR-UART: 0x5A[0m
+[0;32mI (5031) IR-UART: 0x54[0m
+[0;32mI (5031) IR-UART: 0x08[0m
+[0;32mI (5031) IR-UART: 0x02[0m
+[0;32mI (5031) IR-UART: 0x00[0m
+[0;32mI (5031) IR-UART: 0x08[0m
+[0;32mI (5031) IR-UART: 0xD1[0m
+[0;32mI (5041) IR-UART: 0xF9[0m
+[0;32mI (5041) IR-UART: 0x6A[0m
+[0;32mI (5041) IR-UART: 0xD4[0m
+[0;32mI (5041) IR-UART: 0x24[0m
+[0;32mI (5051) IR-UART: 0x46[0m
+[0;32mI (5051) IR_RX: ENABLED (listening)[0m
+[0;32mI (5051) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (5061) CLAIM: slot=10 jitter=7 send_in=15007 seq=2[0m
+[0;32mI (5071) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (5071) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (5081) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (5081) PASS_REQ: Sent seq=2 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (5091) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (5181) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (5181) RX: CRC OK (len=8)[0m
+[0;32mI (5181) RX: SEQ=2 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (5211) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (5211) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (5211) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (5221) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (5221) CORE: ROLE -> HOLDER (PASS_GRANT won seq=2)[0m
+[0;32mI (5281) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=2)[0m
+[0;32mI (5401) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=2[0m
+[0;33mW (5401) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (5401) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (5411) IR_RX: ENABLED (listening)[0m
+[0;32mI (5411) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (5421) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (5441) IR-UART: 0x5A[0m
+[0;32mI (5441) IR-UART: 0x54[0m
+[0;32mI (5441) IR-UART: 0x08[0m
+[0;32mI (5441) IR-UART: 0x02[0m
+[0;32mI (5441) IR-UART: 0x00[0m
+[0;32mI (5441) IR-UART: 0x08[0m
+[0;32mI (5441) IR-UART: 0xD1[0m
+[0;32mI (5451) IR-UART: 0xF9[0m
+[0;32mI (5451) IR-UART: 0x6A[0m
+[0;32mI (5451) IR-UART: 0xD9[0m
+[0;32mI (5461) IR-UART: 0xBC[0m
+[0;32mI (5461) IR-UART: 0x86[0m
+[0;32mI (5461) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5521) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (5521) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=2[0m
+[0;32mI (5521) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (5911) IR-UART: 0x5A[0m
+[0;32mI (5911) IR-UART: 0x54[0m
+[0;32mI (5911) IR-UART: 0x08[0m
+[0;32mI (5911) IR-UART: 0xF9[0m
+[0;32mI (5911) IR-UART: 0x02[0m
+[0;32mI (5911) IR-UART: 0xB0[0m
+[0;32mI (5911) IR-UART: 0xB2[0m
+[0;32mI (5921) IR-UART: 0x1C[0m
+[0;32mI (5921) IR-UART: 0x60[0m
+[0;32mI (5921) IR-UART: 0xB8[0m
+[0;32mI (5921) IR-UART: 0xB4[0m
+[0;32mI (5931) IR-UART: 0x0C[0m
+[0;32mI (5931) RX: CRC OK (len=8)[0m
+[0;32mI (5931) RX: SEQ=761 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (6491) IR-UART: 0x5A[0m
+[0;32mI (6491) IR-UART: 0x54[0m
+[0;32mI (6491) IR-UART: 0x08[0m
+[0;32mI (6491) IR-UART: 0x55[0m
+[0;32mI (6491) IR-UART: 0x01[0m
+[0;32mI (6491) IR-UART: 0x34[0m
+[0;32mI (6491) IR-UART: 0x98[0m
+[0;32mI (6501) IR-UART: 0x7A[0m
+[0;32mI (6501) IR-UART: 0xB5[0m
+[0;32mI (6501) IR-UART: 0x97[0m
+[0;32mI (6501) IR-UART: 0x74[0m
+[0;32mI (6511) IR-UART: 0xF4[0m
+[0;32mI (6511) CLAIM: slot=1 jitter=11 send_in=1511 seq=341[0m
+[0;32mI (6521) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (6521) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (6551) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (6551) PASS_REQ: Sent seq=341 to 34:98:7A:B5:97:74[0m
+[0;32mI (6551) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (6631) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (6631) RX: CRC OK (len=8)[0m
+[0;32mI (6631) RX: SEQ=341 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (6751) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (6751) PASS_REQ: Sent seq=341 to 34:98:7A:B5:97:74[0m
+[0;32mI (6751) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (6831) IR-UART: 0x5A[0m
+[0;32mI (6831) IR-UART: 0x54[0m
+[0;32mI (6831) IR-UART: 0x08[0m
+[0;32mI (6831) IR-UART: 0x03[0m
+[0;32mI (6831) IR-UART: 0x00[0m
+[0;32mI (6831) IR-UART: 0x08[0m
+[0;32mI (6831) IR-UART: 0xD1[0m
+[0;32mI (6841) IR-UART: 0xF9[0m
+[0;32mI (6841) IR-UART: 0x6A[0m
+[0;32mI (6841) IR-UART: 0xD4[0m
+[0;32mI (6841) IR-UART: 0x24[0m
+[0;32mI (6851) IR-UART: 0x0F[0m
+[0;32mI (6851) IR_RX: ENABLED (listening)[0m
+[0;32mI (6851) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (6861) CLAIM: slot=0 jitter=156 send_in=156 seq=3[0m
+[0;32mI (6871) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (6871) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (6881) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (6881) PASS_REQ: Sent seq=3 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (6891) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (6981) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (6981) RX: CRC OK (len=8)[0m
+[0;32mI (6981) RX: SEQ=3 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (7011) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (7011) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (7011) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (7021) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (7021) CORE: ROLE -> HOLDER (PASS_GRANT won seq=3)[0m
+[0;32mI (7081) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=3)[0m
+[0;32mI (7201) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=3[0m
+[0;33mW (7201) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (7201) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (7211) IR_RX: ENABLED (listening)[0m
+[0;32mI (7211) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (7221) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (7241) IR-UART: 0x5A[0m
+[0;32mI (7241) IR-UART: 0x54[0m
+[0;32mI (7241) IR-UART: 0x08[0m
+[0;32mI (7241) IR-UART: 0x03[0m
+[0;32mI (7241) IR-UART: 0x00[0m
+[0;32mI (7241) IR-UART: 0x08[0m
+[0;32mI (7241) IR-UART: 0xD1[0m
+[0;32mI (7251) IR-UART: 0xF9[0m
+[0;32mI (7251) IR-UART: 0x6A[0m
+[0;32mI (7251) IR-UART: 0xD9[0m
+[0;32mI (7261) IR-UART: 0xBC[0m
+[0;32mI (7261) IR-UART: 0xCF[0m
+[0;32mI (7261) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (7321) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (7321) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=3[0m
+[0;32mI (7321) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (7711) IR-UART: 0x5A[0m
+[0;32mI (7711) IR-UART: 0x54[0m
+[0;32mI (7711) IR-UART: 0x08[0m
+[0;32mI (7711) IR-UART: 0xFA[0m
+[0;32mI (7711) IR-UART: 0x02[0m
+[0;32mI (7711) IR-UART: 0xB0[0m
+[0;32mI (7711) IR-UART: 0xB2[0m
+[0;32mI (7721) IR-UART: 0x1C[0m
+[0;32mI (7721) IR-UART: 0x60[0m
+[0;32mI (7721) IR-UART: 0xB8[0m
+[0;32mI (7721) IR-UART: 0xB4[0m
+[0;32mI (7731) IR-UART: 0xD7[0m
+[0;32mI (7731) RX: CRC OK (len=8)[0m
+[0;32mI (7731) RX: SEQ=762 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (8291) IR-UART: 0x5A[0m
+[0;32mI (8291) IR-UART: 0x54[0m
+[0;32mI (8291) IR-UART: 0x08[0m
+[0;32mI (8291) IR-UART: 0x56[0m
+[0;32mI (8291) IR-UART: 0x01[0m
+[0;32mI (8291) IR-UART: 0x34[0m
+[0;32mI (8291) IR-UART: 0x98[0m
+[0;32mI (8301) IR-UART: 0x7A[0m
+[0;32mI (8301) IR-UART: 0xB5[0m
+[0;32mI (8301) IR-UART: 0x97[0m
+[0;32mI (8301) IR-UART: 0x74[0m
+[0;32mI (8311) IR-UART: 0x2F[0m
+[0;32mI (8311) CLAIM: slot=3 jitter=103 send_in=4603 seq=342[0m
+[0;32mI (8321) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (8321) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (8351) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (8351) PASS_REQ: Sent seq=342 to 34:98:7A:B5:97:74[0m
+[0;32mI (8351) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (8431) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (8431) RX: CRC OK (len=8)[0m
+[0;32mI (8431) RX: SEQ=342 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (8551) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (8551) PASS_REQ: Sent seq=342 to 34:98:7A:B5:97:74[0m
+[0;32mI (8551) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (8631) IR-UART: 0x5A[0m
+[0;32mI (8631) IR-UART: 0x54[0m
+[0;32mI (8631) IR-UART: 0x08[0m
+[0;32mI (8631) IR-UART: 0x04[0m
+[0;32mI (8631) IR-UART: 0x00[0m
+[0;32mI (8631) IR-UART: 0x08[0m
+[0;32mI (8631) IR-UART: 0xD1[0m
+[0;32mI (8641) IR-UART: 0xF9[0m
+[0;32mI (8641) IR-UART: 0x6A[0m
+[0;32mI (8641) IR-UART: 0xD4[0m
+[0;32mI (8641) IR-UART: 0x24[0m
+[0;32mI (8651) IR-UART: 0xC1[0m
+[0;32mI (8651) IR_RX: ENABLED (listening)[0m
+[0;32mI (8651) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (8661) CLAIM: slot=3 jitter=223 send_in=4723 seq=4[0m
+[0;32mI (8671) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (8671) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (8681) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (8681) PASS_REQ: Sent seq=4 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (8691) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (8781) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (8781) RX: CRC OK (len=8)[0m
+[0;32mI (8781) RX: SEQ=4 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (8811) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (8811) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (8811) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (8821) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (8821) CORE: ROLE -> HOLDER (PASS_GRANT won seq=4)[0m
+[0;32mI (8881) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=4)[0m
+[0;32mI (9001) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=4[0m
+[0;33mW (9001) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (9001) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (9011) IR_RX: ENABLED (listening)[0m
+[0;32mI (9011) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (9021) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (9041) IR-UART: 0x5A[0m
+[0;32mI (9041) IR-UART: 0x54[0m
+[0;32mI (9041) IR-UART: 0x08[0m
+[0;32mI (9041) IR-UART: 0x04[0m
+[0;32mI (9041) IR-UART: 0x00[0m
+[0;32mI (9041) IR-UART: 0x08[0m
+[0;32mI (9041) IR-UART: 0xD1[0m
+[0;32mI (9051) IR-UART: 0xF9[0m
+[0;32mI (9051) IR-UART: 0x6A[0m
+[0;32mI (9051) IR-UART: 0xD9[0m
+[0;32mI (9061) IR-UART: 0xBC[0m
+[0;32mI (9061) IR-UART: 0x01[0m
+[0;32mI (9061) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (9121) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (9121) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=4[0m
+[0;32mI (9121) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (9511) IR-UART: 0x5A[0m
+[0;32mI (9511) IR-UART: 0x54[0m
+[0;32mI (9511) IR-UART: 0x08[0m
+[0;32mI (9511) IR-UART: 0xFB[0m
+[0;32mI (9511) IR-UART: 0x02[0m
+[0;32mI (9511) IR-UART: 0xB0[0m
+[0;32mI (9511) IR-UART: 0xB2[0m
+[0;32mI (9521) IR-UART: 0x1C[0m
+[0;32mI (9521) IR-UART: 0x60[0m
+[0;32mI (9521) IR-UART: 0xB8[0m
+[0;32mI (9521) IR-UART: 0xB4[0m
+[0;32mI (9531) IR-UART: 0x9E[0m
+[0;32mI (9531) RX: CRC OK (len=8)[0m
+[0;32mI (9531) RX: SEQ=763 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (10091) IR-UART: 0x5A[0m
+[0;32mI (10091) IR-UART: 0x54[0m
+[0;32mI (10091) IR-UART: 0x08[0m
+[0;32mI (10091) IR-UART: 0x57[0m
+[0;32mI (10091) IR-UART: 0x01[0m
+[0;32mI (10091) IR-UART: 0x34[0m
+[0;32mI (10091) IR-UART: 0x98[0m
+[0;32mI (10101) IR-UART: 0x7A[0m
+[0;32mI (10101) IR-UART: 0xB5[0m
+[0;32mI (10101) IR-UART: 0x97[0m
+[0;32mI (10111) IR-UART: 0x74[0m
+[0;32mI (10111) IR-UART: 0x66[0m
+[0;32mI (10111) CLAIM: slot=5 jitter=252 send_in=7752 seq=343[0m
+[0;32mI (10121) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (10121) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (10151) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (10151) PASS_REQ: Sent seq=343 to 34:98:7A:B5:97:74[0m
+[0;32mI (10151) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (10231) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (10231) RX: CRC OK (len=8)[0m
+[0;32mI (10231) RX: SEQ=343 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (10351) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (10351) PASS_REQ: Sent seq=343 to 34:98:7A:B5:97:74[0m
+[0;32mI (10351) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (10431) IR-UART: 0x5A[0m
+[0;32mI (10431) IR-UART: 0x54[0m
+[0;32mI (10431) IR-UART: 0x08[0m
+[0;32mI (10431) IR-UART: 0x05[0m
+[0;32mI (10431) IR-UART: 0x00[0m
+[0;32mI (10431) IR-UART: 0x08[0m
+[0;32mI (10431) IR-UART: 0xD1[0m
+[0;32mI (10441) IR-UART: 0xF9[0m
+[0;32mI (10441) IR-UART: 0x6A[0m
+[0;32mI (10441) IR-UART: 0xD4[0m
+[0;32mI (10451) IR-UART: 0x24[0m
+[0;32mI (10451) IR-UART: 0x88[0m
+[0;32mI (10451) IR_RX: ENABLED (listening)[0m
+[0;32mI (10461) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (10461) CLAIM: slot=1 jitter=68 send_in=1568 seq=5[0m
+[0;32mI (10471) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (10471) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (10481) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (10491) PASS_REQ: Sent seq=5 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (10491) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (10581) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (10581) RX: CRC OK (len=8)[0m
+[0;32mI (10581) RX: SEQ=5 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (10611) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (10611) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (10611) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (10621) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (10621) CORE: ROLE -> HOLDER (PASS_GRANT won seq=5)[0m
+[0;32mI (10681) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=5)[0m
+[0;32mI (10801) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=5[0m
+[0;33mW (10801) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (10801) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (10811) IR_RX: ENABLED (listening)[0m
+[0;32mI (10811) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (10821) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (10841) IR-UART: 0x5A[0m
+[0;32mI (10841) IR-UART: 0x54[0m
+[0;32mI (10841) IR-UART: 0x08[0m
+[0;32mI (10841) IR-UART: 0x05[0m
+[0;32mI (10841) IR-UART: 0x00[0m
+[0;32mI (10841) IR-UART: 0x08[0m
+[0;32mI (10841) IR-UART: 0xD1[0m
+[0;32mI (10851) IR-UART: 0xF9[0m
+[0;32mI (10851) IR-UART: 0x6A[0m
+[0;32mI (10851) IR-UART: 0xD9[0m
+[0;32mI (10861) IR-UART: 0xBC[0m
+[0;32mI (10861) IR-UART: 0x48[0m
+[0;32mI (10861) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (10921) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (10921) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=5[0m
+[0;32mI (10921) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (11311) IR-UART: 0x5A[0m
+[0;32mI (11311) IR-UART: 0x54[0m
+[0;32mI (11311) IR-UART: 0x08[0m
+[0;32mI (11311) IR-UART: 0xFC[0m
+[0;32mI (11311) IR-UART: 0x02[0m
+[0;32mI (11311) IR-UART: 0xB0[0m
+[0;32mI (11311) IR-UART: 0xB2[0m
+[0;32mI (11321) IR-UART: 0x1C[0m
+[0;32mI (11321) IR-UART: 0x60[0m
+[0;32mI (11321) IR-UART: 0xB8[0m
+[0;32mI (11331) IR-UART: 0xB4[0m
+[0;32mI (11331) IR-UART: 0x50[0m
+[0;32mI (11331) RX: CRC OK (len=8)[0m
+[0;32mI (11341) RX: SEQ=764 MAC=B0:B2:1C:60:B8:B4[0m
+[0;32mI (11891) IR-UART: 0x5A[0m
+[0;32mI (11891) IR-UART: 0x54[0m
+[0;32mI (11891) IR-UART: 0x08[0m
+[0;32mI (11891) IR-UART: 0x58[0m
+[0;32mI (11891) IR-UART: 0x01[0m
+[0;32mI (11891) IR-UART: 0x34[0m
+[0;32mI (11891) IR-UART: 0x98[0m
+[0;32mI (11901) IR-UART: 0x7A[0m
+[0;32mI (11901) IR-UART: 0xB5[0m
+[0;32mI (11901) IR-UART: 0x97[0m
+[0;32mI (11911) IR-UART: 0x74[0m
+[0;32mI (11911) IR-UART: 0x82[0m
+[0;32mI (11911) CLAIM: slot=9 jitter=225 send_in=13725 seq=344[0m
+[0;32mI (11921) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (11921) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (11961) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (11961) PASS_REQ: Sent seq=344 to 34:98:7A:B5:97:74[0m
+[0;32mI (11961) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (12031) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (12031) RX: CRC OK (len=8)[0m
+[0;32mI (12031) RX: SEQ=344 MAC=34:98:7A:B5:97:74[0m
+[0;33mW (12161) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (12161) PASS_REQ: Sent seq=344 to 34:98:7A:B5:97:74[0m
+[0;32mI (12161) ESPNOW: send to 34:98:7A:B5:97:74 -> OK[0m
+[0;32mI (12231) IR-UART: 0x5A[0m
+[0;32mI (12231) IR-UART: 0x54[0m
+[0;32mI (12231) IR-UART: 0x08[0m
+[0;32mI (12231) IR-UART: 0x06[0m
+[0;32mI (12231) IR-UART: 0x00[0m
+[0;32mI (12231) IR-UART: 0x08[0m
+[0;32mI (12231) IR-UART: 0xD1[0m
+[0;32mI (12241) IR-UART: 0xF9[0m
+[0;32mI (12241) IR-UART: 0x6A[0m
+[0;32mI (12241) IR-UART: 0xD4[0m
+[0;32mI (12251) IR-UART: 0x24[0m
+[0;32mI (12251) IR-UART: 0x53[0m
+[0;32mI (12251) IR_RX: ENABLED (listening)[0m
+[0;32mI (12261) CORE: cancel PENDING: new holder IR seen 08:D1[0m
+[0;32mI (12261) CLAIM: slot=3 jitter=40 send_in=4540 seq=6[0m
+[0;32mI (12271) IR_SIMPLE_TEST_OPT: update_led_state: role=2[0m
+[0;32mI (12271) IR_SIMPLE_TEST_OPT: Turning off LED for role 2[0m
+[0;33mW (12281) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (12291) PASS_REQ: Sent seq=6 to 08:D1:F9:6A:D4:24[0m
+[0;32mI (12291) ESPNOW: send to 08:D1:F9:6A:D4:24 -> OK[0m
+[0;32mI (12381) IR_SIMPLE_TEST_OPT: LED: OFF (PENDING) - aggressive clear completed[0m
+[0;32mI (12381) RX: CRC OK (len=8)[0m
+[0;32mI (12381) RX: SEQ=6 MAC=08:D1:F9:6A:D4:24[0m
+[0;32mI (12411) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (12411) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (12411) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (12421) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (12421) CORE: ROLE -> HOLDER (PASS_GRANT won seq=6)[0m
+[0;32mI (12481) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=6)[0m
+[0;32mI (12611) HOLDER: PASS_REQ from B0:B2:1C:60:B8:B4 seq=6[0m
+[0;33mW (12611) ESPNOW: Peer exists. Please call API esp_now_mod_peer()![0m
+[0;32mI (12611) CORE: cooldown with B0:B2:1C:60:B8:B4 for 1000 ms[0m
+[0;32mI (12621) IR_RX: ENABLED (listening)[0m
+[0;32mI (12621) IR_SIMPLE_TEST_OPT: update_led_state: role=1[0m
+[0;32mI (12631) IR_SIMPLE_TEST_OPT: Turning off LED for role 1[0m
+[0;32mI (12641) IR-UART: 0x5A[0m
+[0;32mI (12641) IR-UART: 0x54[0m
+[0;32mI (12641) IR-UART: 0x08[0m
+[0;32mI (12641) IR-UART: 0x06[0m
+[0;32mI (12641) IR-UART: 0x00[0m
+[0;32mI (12651) IR-UART: 0x08[0m
+[0;32mI (12651) IR-UART: 0xD1[0m
+[0;32mI (12651) IR-UART: 0xF9[0m
+[0;32mI (12661) IR-UART: 0x6A[0m
+[0;32mI (12661) IR-UART: 0xD9[0m
+[0;32mI (12661) IR-UART: 0xBC[0m
+[0;32mI (12671) IR-UART: 0x93[0m
+[0;32mI (12671) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (12731) IR_SIMPLE_TEST_OPT: LED: OFF (RUNNER - disabled) - aggressive clear completed[0m
+[0;32mI (12731) HOLDER: GRANT -> B0:B2:1C:60:B8:B4 seq=6[0m
+[0;32mI (12731) ESPNOW: send to B0:B2:1C:60:B8:B4 -> OK[0m
+[0;32mI (13111) IR-UART: 0x5A[0m
+[0;32mI (13111) IR-UART: 0x54[0m
+[0;32mI (13111) IR-UART: 0x08[0m
+[0;32mI (13111) IR-UART: 0xFD[0m
+[0;32mI (13111) IR-UART: 0x02[0m
+[0;32mI (13111) IR-UART: 0xB0[0m
+[0;32mI (13111) IR-UART: 0xB2[0m
+[0;32mI (13121) IR-UART: 0x1C[0m
+[0;32mI (13121) IR-UART: 0x60[0m
+[0;32mI (13121) IR-UART: 0xB8[0m
+[0;32mI (13131) IR-UART: 0xB4[0m
+[0;32mI (13131) IR-UART: 0x19[0m
+[0;32mI (13131) RX: CRC OK (len=8)[0m
+[0;32mI (13141) RX: SEQ=765 MAC=B0:B2:1C:60:B8:B4[0m

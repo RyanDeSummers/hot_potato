@@ -1,4 +1,4 @@
-// Optimized IR Test - Sender + Receiver on same device
+/// Optimized IR Test - Sender + Receiver on same device
 // Receiver always running, button press sends "Z" signal
 // Features: CPU-minimal RX, prebuilt TX symbols, validation-based decoding
 
@@ -22,12 +22,13 @@
 #include "esp_now.h"
 #include "nvs_flash.h"
 #include "esp_task_wdt.h"
+#include "esp_rom_crc.h"
 #include "M5GFX.h"
+#include "led_strip.h"
 #include "ir_simple_test.h"
 
 #define IR_TX_GPIO GPIO_NUM_26
 #define IR_RX_GPIO GPIO_NUM_36
-#define BUTTON_A_GPIO GPIO_NUM_39
 
 #define CARRIER_FREQ 38000 // 38 kHz
 
@@ -45,6 +46,7 @@ static const char *TAG = "IR_SIMPLE_TEST_OPT";
 
 // Use external display instance from main.cpp
 extern M5GFX display;
+extern led_strip_handle_t led_strip;
 
 // RMT handles
 static rmt_channel_handle_t rmt_tx_chan = NULL;
@@ -57,9 +59,7 @@ static volatile size_t rx_symbol_count = 0;
 static SemaphoreHandle_t rx_done_sem = NULL;
 static QueueHandle_t rx_byte_queue = NULL;
 
-// Button interrupt state
-static TaskHandle_t tx_task_handle = NULL;
-static bool use_button_interrupt = false;
+// Button functionality removed - using automatic beacon instead
 
 // Display state
 static bool display_needs_update = true;
@@ -78,14 +78,98 @@ static char g_mac_line[32] = {0};
 // Our MAC for self-filtering
 static uint8_t g_self_mac[6] = {0};
 
+// ---- Role state ----
+typedef enum { ROLE_HOLDER, ROLE_RUNNER, ROLE_PENDING } role_t; // +PENDING
+static volatile role_t g_role = START_AS_HOLDER ? ROLE_HOLDER : ROLE_RUNNER;
+static uint16_t g_ir_seq = 0;          // holder++ each beacon
+static uint16_t g_pending_seq = 0;     // runner's claimed seq
+static uint8_t g_no_tagback_peer[6] = {0};
+static int64_t g_no_tagback_until_us = 0;
+static int64_t g_holder_startup_until_us = 0;
+static uint8_t g_last_peer_mac[6] = {0};
+
+// Per-seq grant guard (holder-side sequence gating)
+static bool     g_granted_seq_valid = false;
+static uint16_t g_granted_seq = 0;
+static uint16_t g_last_beacon_seq_tx = 0;
+
+// Forward declarations
+static void role_beacon_task(void *arg);
+static esp_err_t espnow_send_ack_to(const uint8_t dst_mac[6], uint8_t seq);
+static esp_err_t espnow_send_pass_req(const uint8_t* holder_mac, uint16_t seq);
+static esp_err_t espnow_send_pass_grant(const uint8_t* winner_mac, uint16_t seq);
+static esp_err_t espnow_send_state_sync(uint16_t seq, const uint8_t* new_holder_mac);
+static void update_led_state(void);
+
+// PASS_REQ timer callbacks
+static void pass_req_timer_callback(void* arg);
+static void retry_timer_callback(void* arg);
+
+// Slot picker (deterministic)
+typedef struct { uint8_t slot; uint16_t jitter_us; } slot_pick_t;
+static inline slot_pick_t pick_slot(uint16_t seq, const uint8_t holder[6], const uint8_t mine[6]) {
+    // If seq==0 (old payload with no seq), fold in time so it's not constant
+    if (seq == 0) {
+        uint16_t t = (uint16_t)(esp_timer_get_time() & 0xFFFF);
+        seq = (uint16_t)(seq + t);
+    }
+    uint8_t buf[2+6+6];
+    buf[0] = (uint8_t)(seq & 0xFF); buf[1] = (uint8_t)(seq >> 8);
+    memcpy(&buf[2], holder, 6);
+    memcpy(&buf[8], mine,   6);
+    uint16_t h16 = esp_rom_crc16_le(0, buf, sizeof(buf));
+    uint8_t  h8  = esp_rom_crc8_le(0, buf, sizeof(buf));
+    slot_pick_t r;
+    r.slot = (uint8_t)(h16 % SLOTS);
+    r.jitter_us = (uint16_t)(h8 % SLOT_JITTER_MAX_US);
+    return r;
+}
+
 // ---- Dedupe state ----
 typedef struct {
     uint8_t  mac[6];
-    uint8_t  last_seq;   // valid only if a SEQ is present; otherwise ignored
+    uint16_t last_seq;   // valid only if a SEQ is present; otherwise ignored
     int64_t  last_us;    // last accepted time (µs)
     bool     used;
 } dedupe_entry_t;
 static dedupe_entry_t g_dedupe[IR_DEDUPE_CAPACITY] = {};
+
+// Per-holder dedupe (runner, IR decode path)
+typedef struct { 
+    uint8_t mac[6]; 
+    uint16_t last_seq; 
+    bool used; 
+} seq_entry_t;
+
+#ifndef DEDUPE_SLOTS
+#define DEDUPE_SLOTS 12   // a bit > max players
+#endif
+static seq_entry_t g_seq_seen[DEDUPE_SLOTS] = {};
+
+static inline bool dedupe_seen_and_update(const uint8_t holder[6], uint16_t seq) {
+    int free_i = -1;
+    for (int i=0;i<DEDUPE_SLOTS;i++){
+        if (g_seq_seen[i].used && memcmp(g_seq_seen[i].mac, holder, 6)==0) {
+            // treat seq as uint16 wrap-around: accept strictly newer
+            uint16_t prev = g_seq_seen[i].last_seq;
+            bool newer = (uint16_t)(seq - prev) != 0;   // not equal → newer or wrapped
+            g_seq_seen[i].last_seq = seq;
+            return !newer; // true => drop duplicate
+        }
+        if (!g_seq_seen[i].used && free_i<0) free_i=i;
+    }
+    if (free_i>=0) {
+        memcpy(g_seq_seen[free_i].mac, holder, 6);
+        g_seq_seen[free_i].last_seq = seq;
+        g_seq_seen[free_i].used = true;
+    } else {
+        // simple LRU: overwrite index 0
+        memcpy(g_seq_seen[0].mac, holder, 6);
+        g_seq_seen[0].last_seq = seq;
+        g_seq_seen[0].used = true;
+    }
+    return false;
+}
 
 static int dedupe_find(const uint8_t mac[6]) {
     for (int i = 0; i < IR_DEDUPE_CAPACITY; ++i)
@@ -104,7 +188,7 @@ static int dedupe_oldest_or_free(void) {
 
 // Returns true if this frame should be dropped as duplicate.
 // If a SEQ is present, drop exact (MAC,SEQ) repeats. Otherwise use time window per MAC.
-static bool dedupe_should_drop_and_update(const uint8_t mac[6], bool has_seq, uint8_t seq) {
+static bool dedupe_should_drop_and_update(const uint8_t mac[6], bool has_seq, uint16_t seq) {
     const int64_t now = esp_timer_get_time(); // µs
     int idx = dedupe_find(mac);
     if (idx < 0) {
@@ -131,6 +215,67 @@ static bool dedupe_should_drop_and_update(const uint8_t mac[6], bool has_seq, ui
 static bool g_espnow_ready = false;
 static QueueHandle_t g_ack_queue = nullptr;   // posts sender MACs on ACK rx
 static char g_ack_hex[64] = {0};              // "aa bb cc dd ee ff"
+
+// ESP-NOW message types
+#define MSG_PASS_REQ   0xA1  // runner->holder (you already use 0xA1)
+#define MSG_PASS_GRANT 0xA2  // holder->winner
+#define MSG_STATE_SYNC 0xA3  // holder->all (optional now)
+
+// PASS_REQ slotting
+typedef struct {
+    uint16_t seq;
+    uint8_t holder_mac[6];
+} pass_req_data_t;
+
+static QueueHandle_t g_pass_req_queue = nullptr;  // posts PASS_REQ data
+static esp_timer_handle_t g_pass_req_timer = nullptr;
+static esp_timer_handle_t g_retry_timer = nullptr;
+static pass_req_data_t g_pending_pass_req = {{0}, {0}};
+
+// One-shot timer to send the delayed ACK/claim
+static esp_timer_handle_t g_ack_slot_timer = NULL;
+static uint8_t  g_ack_slot_dst[6] = {0};
+static uint8_t  g_ack_slot_seq    = 0;
+
+// Beacon cadence (esp_timer) → notifies role_beacon_task to send
+static TaskHandle_t        g_beacon_task  = NULL;
+static esp_timer_handle_t  g_beacon_timer = NULL;
+
+// -------- IR RX gating (role-driven) --------
+static volatile bool g_rx_enabled = true;   // RUNNER listens, HOLDER not
+
+void ir_rx_set_enabled(bool en) {
+    g_rx_enabled = en;
+    ESP_LOGI("IR_RX", "%s", en ? "ENABLED (listening)" : "DISABLED (holder; not listening)");
+}
+
+// PASS_REQ timer callback implementations
+static void pass_req_timer_callback(void* arg) {
+    // Post to queue for processing in main task
+    uint8_t dummy = 1;
+    xQueueSend(g_pass_req_queue, &dummy, 0);
+}
+
+static void retry_timer_callback(void* arg) {
+    // Post to queue for retry processing
+    uint8_t dummy = 1;
+    xQueueSend(g_pass_req_queue, &dummy, 0);
+}
+
+static void ack_slot_timer_cb(void *arg) {
+    // Copy out in case send triggers logs that preempt this task
+    uint8_t mac[6]; memcpy(mac, g_ack_slot_dst, 6);
+    uint8_t seq = g_ack_slot_seq;
+    // Send existing 0xA1 claim/ACK (peer mgmt already in espnow_send_ack_to)
+    (void)espnow_send_ack_to(mac, seq);
+}
+
+static void beacon_timer_cb(void* arg) {
+    // Runs in esp_timer task context; don't block here.
+    if (g_beacon_task) {
+        xTaskNotifyGive(g_beacon_task);  // wake the beacon task
+    }
+}
 
 // Prebuilt buffer for current TX byte (e.g., 'Z')
 static rmt_symbol_word_t tx_uart_buf[16];
@@ -200,9 +345,164 @@ static esp_err_t espnow_init_once(void) {
 
     // Receive callback (post sender MAC to UI queue when ACK arrives)
     err = esp_now_register_recv_cb([](const esp_now_recv_info* info, const uint8_t* data, int len){
-        if (len >= 1 && data[0] == 0xA1 && g_ack_queue) {
-            // Non-blocking post of 6-byte MAC
-            xQueueSend(g_ack_queue, info->src_addr, 0);
+        if (len < 1) return;
+        
+        switch (data[0]) {
+            case MSG_PASS_REQ: {
+                // PASS_REQ: [0xA1 | seq_lo | seq_hi | holder_mac(6)]
+                if (len >= 10 && g_role == ROLE_HOLDER) {
+                    int64_t now = esp_timer_get_time();
+                    
+                    // Check cooldown
+                    if (memcmp(info->src_addr, g_no_tagback_peer, 6) == 0 && 
+                        now < g_no_tagback_until_us) {
+                        int32_t remaining_ms = (int32_t)((g_no_tagback_until_us - now) / 1000);
+                        ESP_LOGI("HOLDER", "Ignoring PASS_REQ from cooldown peer, remaining %ld ms", remaining_ms);
+                        return;
+                    }
+                    
+                    uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+                    uint8_t holder_mac[6];
+                    memcpy(holder_mac, &data[3], 6);
+                    
+                    // Only accept PASS_REQ aimed at me
+                    if (memcmp(holder_mac, g_self_mac, 6) != 0) {
+                        ESP_LOGD("NET", "drop PASS_REQ: not for me");
+                        return;
+                    }
+                    
+                    // Holder-side sequence gating: only accept PASS_REQ for current beacon seq
+                    if (seq != g_last_beacon_seq_tx) {
+                        ESP_LOGD("NET", "drop PASS_REQ: seq=%u != current=%u", seq, g_last_beacon_seq_tx);
+                        return;
+                    }
+                    
+                    // First valid request per seq wins
+                    if (g_granted_seq_valid && g_granted_seq == seq) {
+                        ESP_LOGD("NET", "drop PASS_REQ: already granted seq=%u", seq);
+                        return;
+                    }
+                    
+                    ESP_LOGI("HOLDER", "PASS_REQ from %02X:%02X:%02X:%02X:%02X:%02X seq=%u",
+                             info->src_addr[0],info->src_addr[1],info->src_addr[2],
+                             info->src_addr[3],info->src_addr[4],info->src_addr[5], seq);
+                    
+                    // Mark this sequence as granted
+                    g_granted_seq_valid = true;
+                    g_granted_seq = seq;
+                    
+                    // Send PASS_GRANT to winner
+                    espnow_send_pass_grant(info->src_addr, seq);
+                    
+                    // Broadcast STATE_SYNC
+                    espnow_send_state_sync(seq, info->src_addr);
+                    
+                    // Flip to RUNNER
+                    memcpy(g_last_peer_mac, info->src_addr, 6);
+                    memcpy(g_no_tagback_peer, info->src_addr, 6);
+                    g_no_tagback_until_us = now + (int64_t)PASS_COOLDOWN_MS * 1000;
+                    ESP_LOGI("CORE", "cooldown with %02X:%02X:%02X:%02X:%02X:%02X for %d ms",
+                             info->src_addr[0], info->src_addr[1], info->src_addr[2],
+                             info->src_addr[3], info->src_addr[4], info->src_addr[5], PASS_COOLDOWN_MS);
+                    g_role = ROLE_RUNNER;
+                    ir_rx_set_enabled(true);
+                    update_led_state();
+                    display_needs_update = true;
+                    
+                    ESP_LOGI("HOLDER", "GRANT -> %02X:%02X:%02X:%02X:%02X:%02X seq=%u",
+                             info->src_addr[0],info->src_addr[1],info->src_addr[2],
+                             info->src_addr[3],info->src_addr[4],info->src_addr[5], seq);
+                }
+                break;
+            }
+            
+            case MSG_PASS_GRANT: {
+                // PASS_GRANT: [0xA2 | seq_lo | seq_hi | new_holder_mac(6)]
+                if (len >= 10 && g_role == ROLE_PENDING) {
+                    uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+                    uint8_t new_holder_mac[6];
+                    memcpy(new_holder_mac, &data[3], 6);
+                    
+                    if (seq == g_pending_seq && memcmp(new_holder_mac, g_self_mac, 6) == 0) {
+                        // We won! Commit to HOLDER
+                        esp_timer_stop(g_pass_req_timer);
+                        esp_timer_stop(g_retry_timer);
+                        int64_t now = esp_timer_get_time();
+                        g_role = ROLE_HOLDER;
+                        ir_rx_set_enabled(false);
+                        g_holder_startup_until_us = now + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+                        display_needs_update = true;
+                        
+                        update_led_state();
+                        ESP_LOGI("CORE", "ROLE -> HOLDER (PASS_GRANT won seq=%u)", seq);
+                    }
+                }
+                break;
+            }
+            
+            case MSG_STATE_SYNC: {
+                // STATE_SYNC: [0xA3 | seq_lo | seq_hi | new_holder_mac(6) | cooldown_ms(2)]
+                if (len >= 12 && g_role == ROLE_PENDING) {
+                    uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+                    uint8_t new_holder_mac[6];
+                    memcpy(new_holder_mac, &data[3], 6);
+                    
+                    if (g_role == ROLE_PENDING && seq == g_pending_seq) {
+                        if (memcmp(new_holder_mac, g_self_mac, 6) == 0) {
+                            // winner path (likely already handled): also stop timers
+                            esp_timer_stop(g_pass_req_timer);
+                            esp_timer_stop(g_retry_timer);
+                            int64_t now = esp_timer_get_time();
+                            g_role = ROLE_HOLDER;
+                            ir_rx_set_enabled(false);
+                            g_holder_startup_until_us = now + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+                            display_needs_update = true;
+                            
+                            update_led_state();
+                            ESP_LOGI("CORE", "ROLE -> HOLDER (STATE_SYNC won seq=%u)", seq);
+                        } else {
+                            // lost: cleanly exit pending
+                            esp_timer_stop(g_pass_req_timer);
+                            esp_timer_stop(g_retry_timer);
+                            g_role = ROLE_RUNNER;
+                            ir_rx_set_enabled(true);
+                            update_led_state();
+                            display_needs_update = true;
+                            ESP_LOGI("CORE","ROLE -> RUNNER (lost seq=%u)", seq);
+                        }
+                    }
+                    
+                    ESP_LOGI("SYNC", "new_holder=%02X:%02X:%02X:%02X:%02X:%02X seq=%u",
+                             new_holder_mac[0],new_holder_mac[1],new_holder_mac[2],
+                             new_holder_mac[3],new_holder_mac[4],new_holder_mac[5], seq);
+                }
+                break;
+            }
+            
+            default: {
+                // Legacy ACK - backward compatibility
+                if (data[0] == 0xA1 && g_ack_queue) {
+                    // Role transition: HOLDER → RUNNER on legacy ACK
+                    int64_t now = esp_timer_get_time();
+                    if (g_role == ROLE_HOLDER && now >= g_no_tagback_until_us) {
+                        memcpy(g_last_peer_mac, info->src_addr, 6);
+                        g_no_tagback_until_us = now + (int64_t)PASS_COOLDOWN_MS * 1000;
+                        ESP_LOGI("CORE", "cooldown with %02X:%02X:%02X:%02X:%02X:%02X for %d ms",
+                                 info->src_addr[0], info->src_addr[1], info->src_addr[2],
+                                 info->src_addr[3], info->src_addr[4], info->src_addr[5], PASS_COOLDOWN_MS);
+                        g_role = ROLE_RUNNER;
+                        ir_rx_set_enabled(true);
+                        update_led_state();
+                        display_needs_update = true;
+                        ESP_LOGI("CORE", "ROLE -> RUNNER (legacy ACK from %02X:%02X:%02X:%02X:%02X:%02X)",
+                                 info->src_addr[0],info->src_addr[1],info->src_addr[2],
+                                 info->src_addr[3],info->src_addr[4],info->src_addr[5]);
+                    }
+                    // Non-blocking post of 6-byte MAC
+                    xQueueSend(g_ack_queue, info->src_addr, 0);
+                }
+                break;
+            }
         }
     });
     if (err != ESP_OK) {
@@ -236,6 +536,75 @@ static esp_err_t espnow_send_ack_to(const uint8_t dst_mac[6], uint8_t seq /*0 if
     }
     uint8_t ack[2] = {0xA1, seq};   // echo seq if provided
     return esp_now_send(dst_mac, ack, 2);
+}
+
+// ESP-NOW helper functions
+static esp_err_t ensure_peer(const uint8_t* mac) {
+    esp_now_peer_info_t p = {};
+    memcpy(p.peer_addr, mac, 6);
+    p.ifidx = WIFI_IF_STA;
+    p.channel = ESPNOW_CHANNEL;
+    p.encrypt = false;
+    esp_err_t err = esp_now_add_peer(&p);
+    if (err == ESP_ERR_ESPNOW_EXIST) {
+        return ESP_OK;  // Already exists
+    }
+    return err;
+}
+
+static esp_err_t espnow_send_pass_req(const uint8_t* holder_mac, uint16_t seq) {
+    if (!g_espnow_ready) {
+        esp_err_t err = espnow_init_once();
+        if (err != ESP_OK) return err;
+    }
+    
+    esp_err_t err = ensure_peer(holder_mac);
+    if (err != ESP_OK) return err;
+    
+    uint8_t payload[10] = {
+        MSG_PASS_REQ,
+        (uint8_t)(seq & 0xFF),      // seq_lo
+        (uint8_t)((seq >> 8) & 0xFF), // seq_hi
+        holder_mac[0], holder_mac[1], holder_mac[2],
+        holder_mac[3], holder_mac[4], holder_mac[5]
+    };
+    
+    return esp_now_send(holder_mac, payload, sizeof(payload));
+}
+
+static esp_err_t espnow_send_pass_grant(const uint8_t* winner_mac, uint16_t seq) {
+    if (!g_espnow_ready) return ESP_ERR_INVALID_STATE;
+    
+    esp_err_t err = ensure_peer(winner_mac);
+    if (err != ESP_OK) return err;
+    
+    uint8_t payload[10] = {
+        MSG_PASS_GRANT,
+        (uint8_t)(seq & 0xFF),      // seq_lo
+        (uint8_t)((seq >> 8) & 0xFF), // seq_hi
+        winner_mac[0], winner_mac[1], winner_mac[2],
+        winner_mac[3], winner_mac[4], winner_mac[5]
+    };
+    
+    return esp_now_send(winner_mac, payload, sizeof(payload));
+}
+
+static esp_err_t espnow_send_state_sync(uint16_t seq, const uint8_t* new_holder_mac) {
+    if (!g_espnow_ready) return ESP_ERR_INVALID_STATE;
+    
+    uint8_t payload[12] = {
+        MSG_STATE_SYNC,
+        (uint8_t)(seq & 0xFF),      // seq_lo
+        (uint8_t)((seq >> 8) & 0xFF), // seq_hi
+        new_holder_mac[0], new_holder_mac[1], new_holder_mac[2],
+        new_holder_mac[3], new_holder_mac[4], new_holder_mac[5],
+        (uint8_t)(PASS_COOLDOWN_MS & 0xFF),      // cooldown_lo
+        (uint8_t)((PASS_COOLDOWN_MS >> 8) & 0xFF) // cooldown_hi
+    };
+    
+    // Broadcast to all peers
+    uint8_t broadcast_addr[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+    return esp_now_send(broadcast_addr, payload, sizeof(payload));
 }
 
 // CRC-8 Dallas/Maxim (poly 0x31), init 0x00, table-less
@@ -281,12 +650,6 @@ static void ir_send_ZT_oneshot(void) {
     ESP_ERROR_CHECK(rmt_transmit(rmt_tx_chan, tx_copy_encoder, syms, n * sizeof(syms[0]), &cfg));
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(rmt_tx_chan, pdMS_TO_TICKS(1000)));
 
-    // Update "LAST SENT" line with "5A 54"
-    last_sent_byte = 0x54; // keep old field for compatibility
-    g_tx_hex[0] = 0; 
-    uint8_t zt[2] = {0x5A, 0x54}; 
-    hex_append(g_tx_hex, sizeof(g_tx_hex), zt, 2);
-    display_needs_update = true;
     IR_LOGI(TAG, "Sent ZT preamble: 0x5A 0x54");
 }
 
@@ -311,37 +674,52 @@ static void ir_send_ZT_MAC_oneshot(void) {
     ESP_ERROR_CHECK(rmt_transmit(rmt_tx_chan, tx_copy_encoder, syms, n * sizeof(syms[0]), &cfg));
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(rmt_tx_chan, pdMS_TO_TICKS(1000)));
 
-    // Update "LAST SENT" line: "5A 54 xx xx xx xx xx xx"
-    g_tx_hex[0] = 0;
-    uint8_t head[2] = { IR_PREAMBLE0, IR_PREAMBLE1 };
-    hex_append(g_tx_hex, sizeof(g_tx_hex), head, 2);
-    hex_append(g_tx_hex, sizeof(g_tx_hex), mac, IR_MAC_LEN);
-    display_needs_update = true;
     IR_LOGI(TAG, "Sent ZT+MAC (%u symbols)", (unsigned)n);
 }
 
 static void ir_send_ZT_LEN_MAC_CRC_oneshot(void) {
-    // Build the payload: LEN + MAC
+    // Build the payload: LEN + [SEQ] + MAC
     uint8_t mac[IR_MAC_LEN];
     esp_read_mac(mac, ESP_MAC_WIFI_STA);
-    const uint8_t len = IR_MAC_LEN;
+    uint8_t len = IR_MAC_LEN;
 
-    // Compute CRC over [LEN || MAC]
+#if IR_ENABLE_SEQ_FUTURE
+    // Include 16-bit sequence number
+    len = IR_MAC_LEN + 2;  // SEQ_LO + SEQ_HI + MAC
+    uint16_t seq = g_ir_seq;
+    g_last_beacon_seq_tx = seq;
+    uint8_t seq_lo = (uint8_t)(seq & 0xFF);
+    uint8_t seq_hi = (uint8_t)(seq >> 8);
+#endif
+
+    // Compute CRC over [LEN || [SEQ_LO|SEQ_HI] || MAC]
     uint8_t crc = 0;
     {
+#if IR_ENABLE_SEQ_FUTURE
+        uint8_t tmp[1 + IR_MAC_LEN + 2];  // LEN + SEQ_LO + SEQ_HI + MAC
+        tmp[0] = len;
+        tmp[1] = seq_lo;
+        tmp[2] = seq_hi;
+        memcpy(tmp + 3, mac, IR_MAC_LEN);
+        crc = crc8_maxim(tmp, sizeof(tmp));
+#else
         uint8_t tmp[1 + IR_MAC_LEN];
         tmp[0] = len;
         memcpy(tmp + 1, mac, IR_MAC_LEN);
         crc = crc8_maxim(tmp, sizeof(tmp));
+#endif
     }
 
     // Build contiguous UART symbols for all bytes
-    // Total bytes: 2 (ZT) + 1 (LEN) + 6 (MAC) + 1 (CRC) = 10 -> 100 symbols
     rmt_symbol_word_t syms[160];
     size_t n = 0;
     ir_append_byte_syms(IR_PREAMBLE0, syms, &n);
     ir_append_byte_syms(IR_PREAMBLE1, syms, &n);
     ir_append_byte_syms(len,          syms, &n);
+#if IR_ENABLE_SEQ_FUTURE
+    ir_append_byte_syms(seq_lo,       syms, &n);
+    ir_append_byte_syms(seq_hi,       syms, &n);
+#endif
     for (int i = 0; i < IR_MAC_LEN; ++i) ir_append_byte_syms(mac[i], syms, &n);
     ir_append_byte_syms(crc,          syms, &n);
 
@@ -350,14 +728,15 @@ static void ir_send_ZT_LEN_MAC_CRC_oneshot(void) {
     ESP_ERROR_CHECK(rmt_transmit(rmt_tx_chan, tx_copy_encoder, syms, n * sizeof(syms[0]), &cfg));
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(rmt_tx_chan, pdMS_TO_TICKS(1000)));
 
-    // Update LAST SENT: "5A 54 06 <MAC...> <CRC>"
-    g_tx_hex[0] = 0;
-    uint8_t head[3] = { IR_PREAMBLE0, IR_PREAMBLE1, len };
-    hex_append(g_tx_hex, sizeof(g_tx_hex), head, 3);
-    hex_append(g_tx_hex, sizeof(g_tx_hex), mac, IR_MAC_LEN);
-    hex_append(g_tx_hex, sizeof(g_tx_hex), &crc, 1);
-    display_needs_update = true;
+#if IR_ENABLE_SEQ_FUTURE
+    // Reset grant guard before incrementing sequence
+    g_granted_seq_valid = false;
+    // Increment sequence number after successful transmit
+    g_ir_seq++;
+    IR_LOGI(TAG, "Sent ZT+LEN+SEQ+MAC+CRC (len=%u, seq=%u)", (unsigned)len, (unsigned)g_ir_seq-1);
+#else
     IR_LOGI(TAG, "Sent ZT+LEN+MAC+CRC (len=%u)", (unsigned)len);
+#endif
 }
 
 // Build a UART byte (start 0, 8 data LSB, stop 1) into symbols
@@ -378,15 +757,7 @@ static void tx_prebuild_byte(uint8_t b) {
     IR_LOGI(TAG, "TX prebuilt 0x%02X into %u symbols", b, (unsigned)tx_uart_len);
 }
 
-// ----------------------
-// Button interrupt handler (ISR)
-// ----------------------
-static void IRAM_ATTR button_isr(void* arg) {
-    if (tx_task_handle == NULL) return;  // guard against early IRQ before task exists
-    BaseType_t hp = pdFALSE;
-    xTaskNotifyFromISR(tx_task_handle, 1, eSetBits, &hp);
-    if (hp) portYIELD_FROM_ISR();
-}
+// Button interrupt handler removed - using automatic beacon instead
 
 // ----------------------
 // Setup RMT TX
@@ -455,6 +826,12 @@ static void uart_rx_task(void *pv) {
     size_t  pi  = 0;
 
     while (true) {
+        // If RX is disabled (e.g., we're HOLDER in beacon mode), don't arm UART
+        if (!g_rx_enabled) {
+            vTaskDelay(pdMS_TO_TICKS(20));  // light sleep; no busy wait
+            continue;
+        }
+        
         int n = uart_read_bytes(IR_UART_PORT, buf, sizeof(buf), pdMS_TO_TICKS(20));
         if (n <= 0) continue;
 
@@ -468,20 +845,17 @@ static void uart_rx_task(void *pv) {
                     if (b == IR_PREAMBLE0) {
                         g_rx_work_hex[0] = 0;
                         hex_append(g_rx_work_hex, sizeof(g_rx_work_hex), &b, 1);
-                        display_needs_update = true;
                         st = WAIT_T;
                     }
                     break;
 
                 case WAIT_T:
                     hex_append(g_rx_work_hex, sizeof(g_rx_work_hex), &b, 1);
-                    display_needs_update = true;
                     if (b == IR_PREAMBLE1) {
                         st = READ_LEN;
                     } else {
                         ESP_LOGW("RX", "Unexpected second byte after Z: 0x%02X", b);
                         g_rx_work_hex[0] = 0; // Clear the in-progress line
-                        display_needs_update = true;
                         st = WAIT_Z;
                     }
                     break;
@@ -489,11 +863,9 @@ static void uart_rx_task(void *pv) {
                 case READ_LEN:
                     len = b;
                     hex_append(g_rx_work_hex, sizeof(g_rx_work_hex), &b, 1);
-                    display_needs_update = true;
                     if (len == 0 || len > IR_MAX_PAYLOAD) {
                         ESP_LOGW("RX", "LEN invalid: %u", (unsigned)len);
                         g_rx_work_hex[0] = 0; // Clear the in-progress line
-                        display_needs_update = true;
                         st = WAIT_Z;
                         break;
                     }
@@ -504,7 +876,6 @@ static void uart_rx_task(void *pv) {
                 case READ_PAYLOAD:
                     payload[pi++] = b;
                     hex_append(g_rx_work_hex, sizeof(g_rx_work_hex), &b, 1);
-                    display_needs_update = true;
                     if (pi >= len) {
                         st = READ_CRC;
                     }
@@ -524,9 +895,9 @@ static void uart_rx_task(void *pv) {
 
                     if (ok) {
                         // Interpret payload form
-                        bool has_seq = (IR_ENABLE_SEQ_FUTURE && len == (IR_MAC_LEN + 1));
-                        uint8_t seq = has_seq ? payload[0] : 0;
-                        const uint8_t *mac_ptr = has_seq ? (payload + 1) : payload; // sender MAC
+                        bool has_seq = (IR_ENABLE_SEQ_FUTURE && len == (IR_MAC_LEN + 2));
+                        uint16_t seq = has_seq ? ((uint16_t)payload[0] | ((uint16_t)payload[1] << 8)) : 0;
+                        const uint8_t *mac_ptr = has_seq ? (payload + 2) : payload; // sender MAC
 #if IR_SELF_FILTER
                         bool is_self = (memcmp(mac_ptr, g_self_mac, IR_MAC_LEN) == 0);
                         if (is_self) {
@@ -534,7 +905,6 @@ static void uart_rx_task(void *pv) {
                             ESP_LOGI("RX", "CRC OK but ignored self frame (our MAC)");
                             // Clear the in-progress line so the UI doesn't show stale bytes
                             g_rx_work_hex[0] = 0;
-                            display_needs_update = true;
                             st = WAIT_Z;
                             break;
                         }
@@ -544,19 +914,105 @@ static void uart_rx_task(void *pv) {
                             ESP_LOGI("RX", "Duplicate frame suppressed (MAC%s, %s)",
                                      "", has_seq ? "SEQ" : "time-window");
                             g_rx_work_hex[0] = 0;
-                            display_needs_update = true;
                             st = WAIT_Z;
                             break;
                         }
 
                         // Not self and not duplicate — send ESP-NOW ACK back to sender MAC
 #if IR_USE_ESPNOW_ACK
-                        (void)espnow_send_ack_to(mac_ptr, seq);
+                        // Optional safety: cancel PENDING if a different holder's IR is seen
+                        if (g_role == ROLE_PENDING && has_seq && memcmp(mac_ptr, g_pending_pass_req.holder_mac, 6) != 0) {
+                            esp_timer_stop(g_pass_req_timer);
+                            esp_timer_stop(g_retry_timer);
+                            g_role = ROLE_RUNNER;
+                            ir_rx_set_enabled(true);
+                            ESP_LOGI("CORE","cancel PENDING: new holder IR seen %02X:%02X", mac_ptr[0], mac_ptr[1]);
+                        }
+                        
+                        // Re-slot PENDING if same holder emits newer sequence
+                        if (g_role == ROLE_PENDING && has_seq && memcmp(mac_ptr, g_pending_pass_req.holder_mac, 6) == 0 && seq != g_pending_seq) {
+                            esp_timer_stop(g_pass_req_timer);
+                            esp_timer_stop(g_retry_timer);
+                            g_pending_seq = seq;
+                            // recompute slot and start once
+                            slot_pick_t sp = pick_slot(seq, mac_ptr, g_self_mac);
+                            uint32_t delay_us = (uint32_t)sp.slot * SLOT_US + sp.jitter_us;
+                            // (re)arm the pass-req timer to send for this seq
+                            esp_timer_stop(g_pass_req_timer);
+                            esp_timer_start_once(g_pass_req_timer, delay_us);
+                            ESP_LOGI("CLAIM","re-slot same-holder newer seq=%u (slot=%u,jit=%u)", seq, sp.slot, sp.jitter_us);
+                            // keep ROLE_PENDING; return (don't schedule another immediate path)
+                            goto done_crc_ok;
+                        }
+                        
+                        // Role transition: RUNNER → HOLDER on valid IR
+                        if (g_role == ROLE_RUNNER) {
+                            int64_t now = esp_timer_get_time();
+                            if (now >= g_no_tagback_until_us) {
+                                // Check if we have sequence numbers (new protocol)
+                                if (has_seq) {
+                                    // Per-holder dedupe check
+                                    if (dedupe_seen_and_update(mac_ptr, seq)) { 
+                                        ESP_LOGD("IR","dup (h=%02X:%02X seq=%u)",mac_ptr[0],mac_ptr[1],(unsigned)seq); 
+                                        break; 
+                                    }
+                                    
+                                    // New protocol: use slotting
+                                    slot_pick_t sp = pick_slot(seq, mac_ptr, g_self_mac);
+                                    uint32_t delay_us = sp.slot * SLOT_US + sp.jitter_us;
+                                    
+                                    // Store PASS_REQ data
+                                    g_pending_pass_req.seq = seq;
+                                    memcpy(g_pending_pass_req.holder_mac, mac_ptr, 6);
+                                    
+                                    // Schedule PASS_REQ (defensive timer stop)
+                                    esp_timer_stop(g_pass_req_timer);
+                                    esp_timer_start_once(g_pass_req_timer, delay_us);
+                                    
+                                    ESP_LOGI("CLAIM", "slot=%u jitter=%u send_in=%lu seq=%u", 
+                                             sp.slot, sp.jitter_us, (unsigned long)delay_us, (unsigned)seq);
+                                    
+                                    if (PASS_COMMIT_MODE == PASS_COMMIT_ON_GRANT) {
+                                        g_role = ROLE_PENDING;
+                                        g_pending_seq = seq;
+                                        update_led_state();
+                                        // Schedule retry timer (60ms) - defensive stop
+                                        esp_timer_stop(g_retry_timer);
+                                        esp_timer_start_once(g_retry_timer, 60000);
+                                    }
+                                } else {
+                                    // Legacy protocol: use IR backoff if enabled
+#if ENABLE_IR_BACKOFF
+                                    // Deterministic slot + micro-jitter to avoid collisions
+                                    slot_pick_t sp = pick_slot((uint16_t)seq, mac_ptr, g_self_mac);
+                                    uint32_t delay_us = (uint32_t)sp.slot * (uint32_t)SLOT_US + (uint32_t)sp.jitter_us;
+                                    memcpy(g_ack_slot_dst, mac_ptr, 6);
+                                    g_ack_slot_seq = seq;
+                                    esp_timer_stop(g_ack_slot_timer);           // hygiene: stop if armed
+                                    ESP_ERROR_CHECK_WITHOUT_ABORT(esp_timer_start_once(g_ack_slot_timer, delay_us));
+                                    ESP_LOGD("CLAIM","slot=%u jitter=%u send_in=%lu us", sp.slot, sp.jitter_us, (unsigned long)delay_us);
+#else
+                                    (void)espnow_send_ack_to(mac_ptr, seq);     // legacy immediate
 #endif
+                                    memcpy(g_last_peer_mac, mac_ptr, 6);
+                                    g_no_tagback_until_us = now + (int64_t)PASS_COOLDOWN_MS * 1000;
+                                    ESP_LOGI("CORE", "cooldown with %02X:%02X:%02X:%02X:%02X:%02X for %d ms",
+                                             mac_ptr[0], mac_ptr[1], mac_ptr[2], mac_ptr[3], mac_ptr[4], mac_ptr[5], PASS_COOLDOWN_MS);
+                                    g_holder_startup_until_us = now + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+                                    g_role = ROLE_HOLDER;
+                                    ir_rx_set_enabled(false);
+                                    update_led_state();
+                                    display_needs_update = true;
+                                    ESP_LOGI("CORE", "ROLE -> HOLDER (legacy, from %02X:%02X:%02X:%02X:%02X:%02X) - startup delay %dms",
+                                             mac_ptr[0],mac_ptr[1],mac_ptr[2],mac_ptr[3],mac_ptr[4],mac_ptr[5], HOLDER_STARTUP_DELAY_MS);
+                                }
+                            }
+                        }
+#endif
+done_crc_ok:
                         // Promote to LAST RECEIVED
                         strlcpy(g_rx_last_hex, g_rx_work_hex, sizeof(g_rx_last_hex));
                         g_rx_work_hex[0] = 0;
-                        display_needs_update = true;
                         ESP_LOGI("RX", "CRC OK (len=%u)", (unsigned)len);
                         if (len == IR_MAC_LEN) {
                             ESP_LOGI("RX", "MAC = %02X:%02X:%02X:%02X:%02X:%02X",
@@ -568,10 +1024,9 @@ static void uart_rx_task(void *pv) {
                                      mac_ptr[3], mac_ptr[4], mac_ptr[5]);
                         }
                     } else {
-                        // CRC fail — show what we saw but call it out in logs
+                        // CRC fail — log it but don't update display
                         strlcpy(g_rx_last_hex, g_rx_work_hex, sizeof(g_rx_last_hex));
                         g_rx_work_hex[0] = 0;
-                        display_needs_update = true;
                         ESP_LOGW("RX", "CRC FAIL: calc=0x%02X recv=0x%02X", calc, b);
                     }
                     st = WAIT_Z;
@@ -747,11 +1202,10 @@ void process_capture(const rmt_symbol_word_t *buf, size_t count) {
         IR_LOGI(TAG, "ZT preamble seen: 0x%02X 0x%02X", rx_bytes[0], rx_bytes[1]);
     }
 
-    // Promote RECEIVING -> LAST RECEIVED here (single redraw)
+    // Promote RECEIVING -> LAST RECEIVED here (no display update needed)
     if (rx_count > 0) {
         strlcpy(g_rx_last_hex, g_rx_work_hex, sizeof(g_rx_last_hex));
         g_rx_work_hex[0] = 0; // clear working buffer
-        display_needs_update = true;
         
         // Queue the first byte for compatibility
         if (xQueueSend(rx_byte_queue, &rx_bytes[0], 0) == pdTRUE) {
@@ -886,6 +1340,24 @@ extern "C" uint8_t decode_symbols_to_byte(const void* symbols, size_t count) {
     return 0; // caller must check validity to avoid "all zeros" UI
 }
 
+// ---- Beacon task for HOLDER role ----
+static void role_beacon_task(void *arg) {
+    // Wakeups are driven by esp_timer → vTaskNotifyGive()
+    for (;;) {
+        // Block until the next beacon tick
+        ulTaskNotifyTake(pdTRUE /*clear on exit*/, portMAX_DELAY);
+        
+        // Only the holder transmits, and only after startup guard
+        if (g_role != ROLE_HOLDER) continue;
+        
+        int64_t now = esp_timer_get_time();
+        if (now < g_holder_startup_until_us) continue;
+        
+        // One-shot send of the beacon frame (ZT | holderMAC | seq)
+        ir_send_ZT_LEN_MAC_CRC_oneshot();
+    }
+}
+
 // ----------------------
 // Print binary representation
 // ----------------------
@@ -913,134 +1385,27 @@ static void print_binary(uint8_t val, const char *label, int x, int y) {
 // ----------------------
 static void update_display() {
     display.fillScreen(TFT_BLACK);
-    display.setTextSize(1);
+    display.setTextSize(2);
     display.setTextColor(TFT_WHITE, TFT_BLACK);
     
-    display.setCursor(0, 0);
-    display.println("IR Simple Test (Stage-2a)");
-    
-    // Show MAC address
-    display.setCursor(0, 16);
-    display.setTextColor(TFT_CYAN, TFT_BLACK);
-    display.println(g_mac_line);
-    display.setTextColor(TFT_WHITE, TFT_BLACK);
-    
-    // Show LAST SENT
-    display.setCursor(0, 32);
-    display.setTextColor(TFT_GREEN, TFT_BLACK);
-    display.print("LAST SENT: ");
-    display.setTextColor(TFT_WHITE, TFT_BLACK);
-    display.println(g_tx_hex[0] ? g_tx_hex : "-");
-    
-    // Show RECEIVING (if any)
-    if (g_rx_work_hex[0]) {
-        display.setCursor(0, 48);
-        display.setTextColor(TFT_YELLOW, TFT_BLACK);
-        display.print("RECEIVING: ");
-        display.setTextColor(TFT_WHITE, TFT_BLACK);
-        display.println(g_rx_work_hex);
-    }
-    
-    // Show LAST RECEIVED
-    display.setCursor(0, 64);
-    display.setTextColor(TFT_MAGENTA, TFT_BLACK);
-    display.print("LAST RECEIVED: ");
-    display.setTextColor(TFT_WHITE, TFT_BLACK);
-    display.println(g_rx_last_hex[0] ? g_rx_last_hex : "-");
-    
-#if IR_USE_ESPNOW_ACK
-    display.setCursor(0, 80);
+    // Show current role prominently
+    display.setCursor(0, 60);
     display.setTextColor(TFT_YELLOW, TFT_BLACK);
-    display.print("LAST ACK FROM: ");
+    const char* role_str = (g_role == ROLE_HOLDER) ? "HOLDER" : 
+                          (g_role == ROLE_RUNNER) ? "RUNNER" : "PENDING";
+    display.printf("ROLE: %s", role_str);
+    
+    display.setTextSize(1);
+    display.setCursor(0, 120);
     display.setTextColor(TFT_WHITE, TFT_BLACK);
-    display.println(g_ack_hex[0] ? g_ack_hex : "-");
-#endif
-    
-    display.setCursor(0, 100);
-    display.println("Press Button A to send ZT+LEN+MAC+CRC");
+    display.println("Hot Potato Demo");
 }
 
-// ----------------------
-// TX Task (for interrupt-driven button)
-// ----------------------
-static void tx_task(void *pvParameters) {
-    IR_LOGI(TAG, "TX task started");
-    
-    while (1) {
-        // Wait for button interrupt notification
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        
-        // Send ZT + LEN + MAC + CRC in one shot
-        ir_send_ZT_LEN_MAC_CRC_oneshot();
-        
-        // Small delay to prevent rapid-fire
-        vTaskDelay(pdMS_TO_TICKS(50));
-    }
-}
+// TX Task removed - using automatic beacon instead
 
-// ----------------------
-// Button task (polling fallback)
-// ----------------------
-static void button_task(void *pvParameters) {
-    bool last_button_state = true;
-    
-    while (1) {
-        bool current_button_state = (gpio_get_level(BUTTON_A_GPIO) == 0);
-        
-        if (current_button_state && !last_button_state) {
-            // Button pressed - send ZT+LEN+MAC+CRC in one shot
-            ir_send_ZT_LEN_MAC_CRC_oneshot();
-            
-            // Debounce
-            vTaskDelay(pdMS_TO_TICKS(50));
-        }
-        
-        last_button_state = current_button_state;
-        vTaskDelay(pdMS_TO_TICKS(10));
-    }
-}
+// Button task removed - using automatic beacon instead
 
-// ----------------------
-// Setup button (try interrupt, fallback to polling)
-// ----------------------
-static void setup_button() {
-    // Try to setup button interrupt first
-    gpio_config_t io = {
-        .pin_bit_mask = (1ULL << BUTTON_A_GPIO),
-        .mode = GPIO_MODE_INPUT,
-        .pull_up_en = GPIO_PULLUP_DISABLE, // GPIO34-39 have no internal pull-ups
-        .pull_down_en = GPIO_PULLDOWN_DISABLE,
-        .intr_type = GPIO_INTR_NEGEDGE,    // press -> falling edge (if externally pulled up)
-    };
-    
-    esp_err_t ret = gpio_config(&io);
-    if (ret == ESP_OK) {
-        ret = gpio_install_isr_service(0);
-        if (ret == ESP_OK) {
-            ret = gpio_isr_handler_add(BUTTON_A_GPIO, button_isr, NULL);
-            if (ret == ESP_OK) {
-                use_button_interrupt = true;
-                IR_LOGI(TAG, "Button interrupt setup successful");
-            } else {
-                IR_LOGI(TAG, "Button interrupt handler add failed, using polling");
-            }
-        } else {
-            IR_LOGI(TAG, "Button interrupt service install failed, using polling");
-        }
-    } else {
-        IR_LOGI(TAG, "Button interrupt config failed, using polling");
-    }
-    
-    // Fallback to polling if interrupt setup failed
-    if (!use_button_interrupt) {
-        gpio_config_t btn_cfg = {};
-        btn_cfg.pin_bit_mask = 1ULL << BUTTON_A_GPIO;
-        btn_cfg.mode = GPIO_MODE_INPUT;
-        btn_cfg.pull_up_en = GPIO_PULLUP_ENABLE;
-        gpio_config(&btn_cfg);
-        IR_LOGI(TAG, "Button polling mode enabled");
-    }
-}
+// Button setup function removed - using automatic beacon instead
 
 // ----------------------
 // Main test function
@@ -1079,8 +1444,7 @@ extern "C" void ir_simple_test_main(void) {
     display.setCursor(0, 0);
     display.println("Initializing...");
     
-    // Setup button (interrupt or polling)
-    setup_button();
+    // Button setup removed - using automatic beacon instead
     
     // Setup TX and selected RX backend
     setup_rmt_tx();
@@ -1092,6 +1456,34 @@ extern "C" void ir_simple_test_main(void) {
 #endif
 #if IR_USE_ESPNOW_ACK
     if (!g_ack_queue) g_ack_queue = xQueueCreate(4, 6); // 4 MACs
+    if (!g_pass_req_queue) g_pass_req_queue = xQueueCreate(2, sizeof(uint8_t)); // PASS_REQ events
+    
+    // Create timers for PASS_REQ slotting
+    esp_timer_create_args_t pass_req_timer_args = {
+        .callback = pass_req_timer_callback,
+        .arg = nullptr,
+        .name = "pass_req_timer"
+    };
+    ESP_ERROR_CHECK(esp_timer_create(&pass_req_timer_args, &g_pass_req_timer));
+    
+    esp_timer_create_args_t retry_timer_args = {
+        .callback = retry_timer_callback,
+        .arg = nullptr,
+        .name = "retry_timer"
+    };
+    ESP_ERROR_CHECK(esp_timer_create(&retry_timer_args, &g_retry_timer));
+    
+    // Create ACK slot timer for IR backoff
+    if (g_ack_slot_timer == NULL) {
+        const esp_timer_create_args_t a = {
+            .callback = &ack_slot_timer_cb,
+            .arg = NULL,
+            .dispatch_method = ESP_TIMER_TASK,
+            .name = "ack_slot"
+        };
+        ESP_ERROR_CHECK(esp_timer_create(&a, &g_ack_slot_timer));
+    }
+    
     espnow_init_once();
 #endif
 #if IR_RX_BACKEND_UART
@@ -1112,36 +1504,76 @@ extern "C" void ir_simple_test_main(void) {
     // Start RX task
     xTaskCreate(rx_task, "rx_task", 8192, NULL, 5, NULL);
 #endif
+
+    // Start with RX enabled only if we're not the holder
+    ir_rx_set_enabled(START_AS_HOLDER ? false : true);
     
-    // Start appropriate button task
-    if (use_button_interrupt) {
-        xTaskCreate(tx_task, "tx_task", 8192, NULL, 4, &tx_task_handle);
+    // M5Stack FIRE side LEDs reset (WS2812/SK6812 style on GPIO 15)
+    static led_strip_handle_t s_reset_strip = NULL;
+    led_strip_config_t strip_cfg = {
+        .strip_gpio_num = HP_LED_GPIO,
+        .max_leds       = HP_LED_COUNT,
+    };
+    led_strip_rmt_config_t rmt_cfg = {
+        .clk_src           = RMT_CLK_SRC_DEFAULT,
+        .resolution_hz     = 10 * 1000 * 1000,  // 10 MHz
+        .mem_block_symbols = 64,
+    };
+    if (led_strip_new_rmt_device(&strip_cfg, &rmt_cfg, &s_reset_strip) == ESP_OK) {
+        // Send all zeros a couple of times just to be sure
+        led_strip_clear(s_reset_strip);
+        led_strip_refresh(s_reset_strip);
+        vTaskDelay(pdMS_TO_TICKS(10));
+        led_strip_clear(s_reset_strip);
+        led_strip_refresh(s_reset_strip);
+        ESP_LOGI(TAG, "M5Stack FIRE side LEDs reset - should be OFF now");
+        
+        // Keep the handle for potential future use
+        led_strip = s_reset_strip;
     } else {
-        xTaskCreate(button_task, "button_task", 8192, NULL, 4, NULL);
+        ESP_LOGW(TAG, "led_strip init failed; cannot clear LEDs");
+        led_strip = NULL;
     }
     
-    IR_LOGI(TAG, "IR Simple Test (Stage-2a) ready - press Button A to send ZT");
+
+    
+    // Set initial startup delay for HOLDER role
+    if (g_role == ROLE_HOLDER) {
+        g_holder_startup_until_us = esp_timer_get_time() + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+        ESP_LOGI(TAG, "Initial HOLDER - startup delay %dms", HOLDER_STARTUP_DELAY_MS);
+    }
+    
+    // Start beacon task for role-based potato passing
+    xTaskCreate(role_beacon_task, "role_beacon", 4096, NULL, 4, &g_beacon_task);
+    
+    // Create & start periodic esp_timer for beacon cadence
+    if (g_beacon_timer == NULL) {
+        const esp_timer_create_args_t beacon_args = {
+            .callback = &beacon_timer_cb,
+            .arg = NULL,
+            .dispatch_method = ESP_TIMER_TASK,
+            .name = "beacon_tick"
+        };
+        ESP_ERROR_CHECK(esp_timer_create(&beacon_args, &g_beacon_timer));
+    }
+    // Always run the periodic tick; the task will gate on role/startup
+    ESP_ERROR_CHECK(esp_timer_start_periodic(g_beacon_timer, (uint64_t)BEACON_PERIOD_MS * 1000ULL));
+    
+    IR_LOGI(TAG, "IR Simple Test (Stage-2a) ready - potato passing demo");
     
     // Initial display update
     update_display();
     
-    // Main display loop
+    // Initial LED state update
+    update_led_state();
+    
+    // Main loop - only update display when role changes
     while (1) {
         if (display_needs_update) {
             update_display();
             display_needs_update = false;
         }
         
-#if !IR_RX_BACKEND_UART
-        // Check for received bytes (for compatibility)
-        uint8_t received_byte;
-        if (xQueueReceive(rx_byte_queue, &received_byte, 0) == pdTRUE) {
-            last_received_byte = received_byte;
-            has_received = true;
-            // Note: display update is handled by process_capture now
-        }
-#endif
-
 #if IR_USE_ESPNOW_ACK
         uint8_t ack_mac[6];
         if (g_ack_queue && xQueueReceive(g_ack_queue, ack_mac, 0) == pdTRUE) {
@@ -1150,13 +1582,97 @@ extern "C" void ir_simple_test_main(void) {
                      "%02X %02X %02X %02X %02X %02X",
                      ack_mac[0], ack_mac[1], ack_mac[2],
                      ack_mac[3], ack_mac[4], ack_mac[5]);
-            display_needs_update = true;
             ESP_LOGI("ESPNOW", "ACK received from %s", g_ack_hex);
+        }
+        
+        // Process PASS_REQ timer events
+        uint8_t dummy;
+        if (g_pass_req_queue && xQueueReceive(g_pass_req_queue, &dummy, 0) == pdTRUE) {
+            if (g_role == ROLE_RUNNER || g_role == ROLE_PENDING) {
+                // Send PASS_REQ
+                esp_err_t err = espnow_send_pass_req(g_pending_pass_req.holder_mac, g_pending_pass_req.seq);
+                if (err == ESP_OK) {
+                    ESP_LOGI("PASS_REQ", "Sent seq=%u to %02X:%02X:%02X:%02X:%02X:%02X",
+                             g_pending_pass_req.seq,
+                             g_pending_pass_req.holder_mac[0], g_pending_pass_req.holder_mac[1],
+                             g_pending_pass_req.holder_mac[2], g_pending_pass_req.holder_mac[3],
+                             g_pending_pass_req.holder_mac[4], g_pending_pass_req.holder_mac[5]);
+                    
+                    if (PASS_COMMIT_MODE == PASS_COMMIT_IMMEDIATE) {
+                        // Legacy mode: flip immediately
+                        int64_t now = esp_timer_get_time();
+                        memcpy(g_last_peer_mac, g_pending_pass_req.holder_mac, 6);
+                        g_no_tagback_until_us = now + (int64_t)PASS_COOLDOWN_MS * 1000;
+                        g_holder_startup_until_us = now + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+                        g_role = ROLE_HOLDER;
+                        ir_rx_set_enabled(false);
+                        update_led_state();
+                        display_needs_update = true;
+                        ESP_LOGI("CORE", "ROLE -> HOLDER (immediate commit seq=%u)", g_pending_pass_req.seq);
+                    }
+                } else {
+                    ESP_LOGW("PASS_REQ", "Send failed: %s", esp_err_to_name(err));
+                }
+            }
         }
 #endif
         
         // Feed watchdog
         esp_task_wdt_reset();
         vTaskDelay(pdMS_TO_TICKS(100));
+    }
+}
+
+// LED control function - light up red when HOLDER, off otherwise
+static void update_led_state(void) {
+    if (!led_strip) {
+        ESP_LOGW(TAG, "LED strip not initialized!");
+        return;
+    }
+    
+    ESP_LOGI(TAG, "update_led_state: role=%d", g_role);
+    
+    if (g_role == ROLE_HOLDER) {
+        // Aggressive reset sequence to ensure clean state before turning on
+        ESP_LOGI(TAG, "Resetting LEDs before turning on for HOLDER role");
+        
+        // Multiple clear attempts to ensure clean state
+        for (int i = 0; i < 3; i++) {
+            led_strip_clear(led_strip);
+            led_strip_refresh(led_strip);
+            vTaskDelay(pdMS_TO_TICKS(5));
+        }
+        
+        // Then turn on red LEDs for all side LEDs
+        for (int i = 0; i < HP_LED_COUNT; i++) {
+            led_strip_set_pixel(led_strip, i, 255, 0, 0);  // Red for all side LEDs
+        }
+        led_strip_refresh(led_strip);
+        ESP_LOGI(TAG, "LED: ON (HOLDER) - all %d side LEDs red", HP_LED_COUNT);
+    } else {
+        // For RUNNER and PENDING roles, turn off LED with multiple attempts
+        ESP_LOGI(TAG, "Turning off LED for role %d", g_role);
+        
+        // Very aggressive LED off sequence
+        for (int i = 0; i < 5; i++) {
+            led_strip_clear(led_strip);
+            led_strip_refresh(led_strip);
+            vTaskDelay(pdMS_TO_TICKS(10));
+            
+            // Also explicitly set pixel to black
+            led_strip_set_pixel(led_strip, 0, 0, 0, 0);  // Black/off
+            led_strip_refresh(led_strip);
+            vTaskDelay(pdMS_TO_TICKS(10));
+        }
+        
+        // Final clear and refresh
+        led_strip_clear(led_strip);
+        led_strip_refresh(led_strip);
+        
+        if (g_role == ROLE_RUNNER) {
+            ESP_LOGI(TAG, "LED: OFF (RUNNER - disabled) - aggressive clear completed");
+        } else {
+            ESP_LOGI(TAG, "LED: OFF (PENDING) - aggressive clear completed");
+        }
     }
 }

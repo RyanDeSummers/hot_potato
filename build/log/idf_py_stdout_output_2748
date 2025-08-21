@@ -1,0 +1,164 @@
+[1/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/esp-idf-v5.3.3/projects/hot_potato/build/bootloader/bootloader.bin"
+Bootloader binary size 0x68d0 bytes. 0x730 bytes (6%) free.
+[3/11] No install step for 'bootloader'
+[4/11] Completed 'bootloader'
+[5/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/ir_simple_test.cpp.obj
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:185:47: warning: missing initializer for member 'pass_req_data_t::holder_mac' [-Wmissing-field-initializers]
+  185 | static pass_req_data_t g_pending_pass_req = {0};
+      |                                               ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:506:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  506 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_MAC_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:530:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  530 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_send_ZT_LEN_MAC_CRC_oneshot()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:580:65: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+  580 |     rmt_transmit_config_t cfg = { .loop_count = 0, .flags = {0} };
+      |                                                                 ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:547:13: warning: unused variable 'seq_hi' [-Wunused-variable]
+  547 |     uint8_t seq_hi = (uint8_t)((g_ir_seq >> 8) & 0xFF);
+      |             ^~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_tx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:625:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+  625 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:625:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:625:5: warning: missing initializer for member 'rmt_tx_channel_config_t::<unnamed struct>::io_od_mode' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:633:5: warning: missing initializer for member 'rmt_carrier_config_t::<unnamed struct>::always_on' [-Wmissing-field-initializers]
+  633 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_uart_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:659:5: warning: missing initializer for member 'uart_config_t::rx_flow_ctrl_thresh' [-Wmissing-field-initializers]
+  659 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:659:5: warning: missing initializer for member 'uart_config_t::flags' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void setup_rmt_rx()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:848:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::with_dma' [-Wmissing-field-initializers]
+  848 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:848:5: warning: missing initializer for member 'rmt_rx_channel_config_t::<unnamed struct>::io_loop_back' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void send_byte(uint8_t)':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1099:9: warning: missing initializer for member 'rmt_transmit_config_t::<unnamed struct>::queue_nonblocking' [-Wmissing-field-initializers]
+ 1099 |         };
+      |         ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: In function 'void ir_simple_test_main()':
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1306:5: warning: missing initializer for member 'esp_timer_create_args_t::dispatch_method' [-Wmissing-field-initializers]
+ 1306 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1306:5: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1313:5: warning: missing initializer for member 'esp_timer_create_args_t::dispatch_method' [-Wmissing-field-initializers]
+ 1313 |     };
+      |     ^
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1313:5: warning: missing initializer for member 'esp_timer_create_args_t::skip_unhandled_events' [-Wmissing-field-initializers]
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp: At global scope:
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1172:13: warning: 'void print_binary(uint8_t, const char*, int, int)' defined but not used [-Wunused-function]
+ 1172 | static void print_binary(uint8_t val, const char *label, int x, int y) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1049:13: warning: 'void rx_task(void*)' defined but not used [-Wunused-function]
+ 1049 | static void rx_task(void *pvParameters) {
+      |             ^~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:1038:16: warning: 'uint8_t decode_symbols_to_byte(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+ 1038 | static uint8_t decode_symbols_to_byte(const rmt_symbol_word_t *syms, size_t cnt) {
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:874:13: warning: 'void dump_symbols(const rmt_symbol_word_t*, size_t)' defined but not used [-Wunused-function]
+  874 | static void dump_symbols(const rmt_symbol_word_t *buf, size_t n) {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:864:23: warning: 'bool rmt_rx_done_callback(rmt_channel_handle_t, const rmt_rx_done_event_data_t*, void*)' defined but not used [-Wunused-function]
+  864 | static bool IRAM_ATTR rmt_rx_done_callback(rmt_channel_handle_t channel, const rmt_rx_done_event_data_t *edata, void *user_data) {
+      |                       ^~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:839:13: warning: 'void setup_rmt_rx()' defined but not used [-Wunused-function]
+  839 | static void setup_rmt_rx() {
+      |             ^~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:513:13: warning: 'void ir_send_ZT_MAC_oneshot()' defined but not used [-Wunused-function]
+  513 | static void ir_send_ZT_MAC_oneshot(void) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:500:13: warning: 'void ir_send_ZT_oneshot()' defined but not used [-Wunused-function]
+  500 | static void ir_send_ZT_oneshot(void) {
+      |             ^~~~~~~~~~~~~~~~~~
+C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp:72:13: warning: 'g_tx_hex' defined but not used [-Wunused-variable]
+   72 | static char g_tx_hex[128];      // e.g., "5A 54"
+      |             ^~~~~~~~
+[6/11] Linking C static library esp-idf\main\libmain.a
+[7/11] Generating ld/sections.ld
+[8/11] Linking CXX executable hot_potato.elf
+[9/11] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin
+[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\projects\hot_potato\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.exe C:/esp-idf-v5.3.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/esp-idf-v5.3.3/projects/hot_potato/build/partition_table/partition-table.bin C:/esp-idf-v5.3.3/projects/hot_potato/build/hot_potato.bin"
+hot_potato.bin binary size 0xdb560 bytes. Smallest app partition is 0x100000 bytes. 0x24aa0 bytes (14%) free.
+[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp-idf-v5.3.3\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/esp-idf-v5.3.3 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.3_py3.10_env/Scripts/python.exe;;C:/esp-idf-v5.3.3/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/esp-idf-v5.3.3/projects/hot_potato/build -P C:/esp-idf-v5.3.3/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hot_potato.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.0
+Serial port COM3
+Connecting....
+Chip is ESP32-D0WDQ6-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 34:98:7a:b5:97:74
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000ebfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26832 bytes to 16436...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007882... (100 %)
+Wrote 26832 bytes (16436 compressed) at 0x00001000 in 0.8 seconds (effective 272.0 kbit/s)...
+Hash of data verified.
+Compressed 898400 bytes to 554751...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001dd02... (5 %)
+Writing at 0x00027b7b... (8 %)
+Writing at 0x00032e89... (11 %)
+Writing at 0x000398b1... (14 %)
+Writing at 0x0003f264... (17 %)
+Writing at 0x00044af1... (20 %)
+Writing at 0x0004a9d8... (23 %)
+Writing at 0x000515b1... (26 %)
+Writing at 0x0005796f... (29 %)
+Writing at 0x0005d6e4... (32 %)
+Writing at 0x000633ce... (35 %)
+Writing at 0x000694ba... (38 %)
+Writing at 0x0006ee92... (41 %)
+Writing at 0x00075425... (44 %)
+Writing at 0x0007a58e... (47 %)
+Writing at 0x0007fac2... (50 %)
+Writing at 0x00084f34... (52 %)
+Writing at 0x0008a30a... (55 %)
+Writing at 0x0008f9b6... (58 %)
+Writing at 0x000951bb... (61 %)
+Writing at 0x0009b085... (64 %)
+Writing at 0x000a097c... (67 %)
+Writing at 0x000a64b0... (70 %)
+Writing at 0x000ac267... (73 %)
+Writing at 0x000b1a7b... (76 %)
+Writing at 0x000b7721... (79 %)
+Writing at 0x000bd188... (82 %)
+Writing at 0x000c2cc8... (85 %)
+Writing at 0x000ccb80... (88 %)
+Writing at 0x000d518d... (91 %)
+Writing at 0x000dacd3... (94 %)
+Writing at 0x000e0f47... (97 %)
+Writing at 0x000e68bd... (100 %)
+Wrote 898400 bytes (554751 compressed) at 0x00010000 in 12.9 seconds (effective 557.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 441.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

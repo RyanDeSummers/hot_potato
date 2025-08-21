@@ -1,5 +1,55 @@
 #pragma once
 
+// ---- Role configuration ----
+#ifndef START_AS_HOLDER
+#define START_AS_HOLDER 1   // build: -DSTART_AS_HOLDER=0 for RUNNER
+#endif
+#ifndef PASS_COOLDOWN_MS
+#define PASS_COOLDOWN_MS 1000
+#endif
+#ifndef HOLDER_STARTUP_DELAY_MS
+#define HOLDER_STARTUP_DELAY_MS 1
+#endif
+
+// ---- LED configuration ----
+#ifndef HP_LED_GPIO
+#define HP_LED_GPIO 15      // M5Stack FIRE side LEDs
+#endif
+#ifndef HP_LED_COUNT
+#define HP_LED_COUNT 10     // FIRE has 10 LEDs
+#endif
+
+// ---- Commit policy ----
+#define PASS_COMMIT_IMMEDIATE 0
+#define PASS_COMMIT_ON_GRANT  1
+#ifndef PASS_COMMIT_MODE
+#define PASS_COMMIT_MODE PASS_COMMIT_ON_GRANT
+#endif
+
+// Enable/disable IR receive path depending on role
+void ir_rx_set_enabled(bool en);
+
+// ---- Beacon timing ----
+#ifndef BEACON_PERIOD_MS
+#define BEACON_PERIOD_MS 300   // on-air ~33ms + idle gap; tweak for experiments
+#endif
+
+// ---- Slotting (collision handling) ----
+#ifndef SLOTS
+#define SLOTS 12
+#endif
+#ifndef SLOT_US
+#define SLOT_US 1500    // 1.5 ms per slot
+#endif
+#ifndef SLOT_JITTER_MAX_US
+#define SLOT_JITTER_MAX_US 400
+#endif
+
+// ---- IR backoff (slotted) ----
+#ifndef ENABLE_IR_BACKOFF
+#define ENABLE_IR_BACKOFF 1   // set 0 to disable (old behavior)
+#endif
+
 // ---- IR config ----
 #define IR_BAUD         2400
 #define IR_BIT_US       (1000000 / IR_BAUD)   // 416 at 2400 bps

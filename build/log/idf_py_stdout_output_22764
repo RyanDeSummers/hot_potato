@@ -1,0 +1,2594 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fe70h (130672) map[0m
+[0;32mI (150) esp_image: segment 1: paddr=0002fe98 vaddr=3ffb0000 size=00180h (   384) load[0m
+[0;32mI (150) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9ad68h (634216) map[0m
+[0;32mI (373) esp_image: segment 3: paddr=000cad90 vaddr=3ffb0180 size=041f8h ( 16888) load[0m
+[0;32mI (379) esp_image: segment 4: paddr=000cef90 vaddr=40080000 size=1a5fch (108028) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (447) cpu_start: Multicore app[0m
+[0;32mI (456) cpu_start: Pro cpu start user code[0m
+[0;32mI (456) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (456) app_init: Application information:[0m
+[0;32mI (459) app_init: Project name:     hot_potato[0m
+[0;32mI (464) app_init: App version:      6f5b998-dirty[0m
+[0;32mI (469) app_init: Compile time:     Aug 18 2025 14:23:14[0m
+[0;32mI (475) app_init: ELF file SHA256:  cd39dbd72...[0m
+[0;32mI (480) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (486) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (491) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (495) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (501) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (508) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (514) heap_init: At 3FFB8E40 len 000271C0 (156 KiB): DRAM[0m
+[0;32mI (520) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (526) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (533) heap_init: At 4009A5FC len 00005A04 (22 KiB): IRAM[0m
+[0;32mI (540) spi_flash: detected chip: generic[0m
+[0;32mI (543) spi_flash: flash io: dio[0m
+[0;33mW (547) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (562) main_task: Started on CPU0[0m
+[0;32mI (572) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (572) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;31mE (572) task_wdt: esp_task_wdt_init(515): TWDT already initialized[0m
+[0;32mI (582) IR_SIMPLE_TEST_OPT: MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (612) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (782) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (782) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (782) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (792) CFG: Self MAC = 34:98:7A:B5:97:74[0m
+[0;32mI (822) wifi:wifi driver task: 3ffc1718, prio:23, stack:6656, core=0[0m
+[0;32mI (822) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (822) wifi:wifi certification version: v7.0[0m
+[0;32mI (822) wifi:config NVS flash: enabled[0m
+[0;32mI (822) wifi:config nano formating: disabled[0m
+[0;32mI (832) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (832) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (842) wifi:Init management short buffer num: 32[0m
+[0;32mI (842) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (842) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (852) wifi:Init static rx buffer num: 10[0m
+[0;32mI (852) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (862) wifi_init: rx ba win: 6[0m
+[0;32mI (862) wifi_init: accept mbox: 6[0m
+[0;32mI (862) wifi_init: tcpip mbox: 32[0m
+[0;32mI (872) wifi_init: udp mbox: 6[0m
+[0;32mI (872) wifi_init: tcp mbox: 6[0m
+[0;32mI (872) wifi_init: tcp tx win: 5760[0m
+[0;32mI (882) wifi_init: tcp rx win: 5760[0m
+[0;32mI (882) wifi_init: tcp mss: 1440[0m
+[0;32mI (892) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (892) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (902) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (992) wifi:mode : sta (34:98:7a:b5:97:74)[0m
+[0;32mI (992) wifi:enable tsf[0m
+[0;32mI (992) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (992) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (992) ESPNOW: init OK, channel=1[0m
+[0;32mI (1002) IR-UART: UART RX initialized on GPIO36 at 2400-8N1[0m
+[0;32mI (1002) IR-UART: UART RX task started[0m
+[0;32mI (1012) IR_SIMPLE_TEST_OPT: Initial HOLDER - startup delay 3000ms[0m
+[0;32mI (1012) IR_SIMPLE_TEST_OPT: IR Simple Test (Stage-2a) ready - potato passing demo[0m
+[0;32mI (4152) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (4212) IR-UART: 0x5A[0m
+[0;32mI (4212) IR-UART: 0x54[0m
+[0;32mI (4212) IR-UART: 0x06[0m
+[0;32mI (4212) IR-UART: 0x34[0m
+[0;32mI (4212) IR-UART: 0x98[0m
+[0;32mI (4212) IR-UART: 0x7A[0m
+[0;32mI (4212) IR-UART: 0xB5[0m
+[0;32mI (4222) IR-UART: 0x97[0m
+[0;32mI (4222) IR-UART: 0x74[0m
+[0;32mI (4222) IR-UART: 0x3D[0m
+[0;32mI (4222) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (4492) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (4552) IR-UART: 0x5A[0m
+[0;32mI (4552) IR-UART: 0x54[0m
+[0;32mI (4552) IR-UART: 0x06[0m
+[0;32mI (4552) IR-UART: 0x34[0m
+[0;32mI (4552) IR-UART: 0x98[0m
+[0;32mI (4552) IR-UART: 0x7A[0m
+[0;32mI (4552) IR-UART: 0xB5[0m
+[0;32mI (4562) IR-UART: 0x97[0m
+[0;32mI (4562) IR-UART: 0x74[0m
+[0;32mI (4562) IR-UART: 0x3D[0m
+[0;32mI (4562) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (4832) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (4892) IR-UART: 0x5A[0m
+[0;32mI (4892) IR-UART: 0x54[0m
+[0;32mI (4892) IR-UART: 0x06[0m
+[0;32mI (4892) IR-UART: 0x34[0m
+[0;32mI (4892) IR-UART: 0x98[0m
+[0;32mI (4892) IR-UART: 0x7A[0m
+[0;32mI (4892) IR-UART: 0xB5[0m
+[0;32mI (4902) IR-UART: 0x97[0m
+[0;32mI (4902) IR-UART: 0x74[0m
+[0;32mI (4902) IR-UART: 0x3D[0m
+[0;32mI (4902) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5172) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (5232) IR-UART: 0x5A[0m
+[0;32mI (5232) IR-UART: 0x54[0m
+[0;32mI (5232) IR-UART: 0x06[0m
+[0;32mI (5232) IR-UART: 0x34[0m
+[0;32mI (5232) IR-UART: 0x98[0m
+[0;32mI (5232) IR-UART: 0x7A[0m
+[0;32mI (5232) IR-UART: 0xB5[0m
+[0;32mI (5242) IR-UART: 0x97[0m
+[0;32mI (5242) IR-UART: 0x74[0m
+[0;32mI (5242) IR-UART: 0x3D[0m
+[0;32mI (5242) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5512) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (5572) IR-UART: 0x5A[0m
+[0;32mI (5572) IR-UART: 0x54[0m
+[0;32mI (5572) IR-UART: 0x06[0m
+[0;32mI (5572) IR-UART: 0x34[0m
+[0;32mI (5572) IR-UART: 0x98[0m
+[0;32mI (5572) IR-UART: 0x7A[0m
+[0;32mI (5572) IR-UART: 0xB5[0m
+[0;32mI (5582) IR-UART: 0x97[0m
+[0;32mI (5582) IR-UART: 0x74[0m
+[0;32mI (5582) IR-UART: 0x3D[0m
+[0;32mI (5582) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5852) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (5912) IR-UART: 0x5A[0m
+[0;32mI (5912) IR-UART: 0x54[0m
+[0;32mI (5912) IR-UART: 0x06[0m
+[0;32mI (5912) IR-UART: 0x34[0m
+[0;32mI (5912) IR-UART: 0x98[0m
+[0;32mI (5912) IR-UART: 0x7A[0m
+[0;32mI (5912) IR-UART: 0xB5[0m
+[0;32mI (5922) IR-UART: 0x97[0m
+[0;32mI (5922) IR-UART: 0x74[0m
+[0;32mI (5922) IR-UART: 0x3D[0m
+[0;32mI (5922) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (6192) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (6252) IR-UART: 0x5A[0m
+[0;32mI (6252) IR-UART: 0x54[0m
+[0;32mI (6252) IR-UART: 0x06[0m
+[0;32mI (6252) IR-UART: 0x34[0m
+[0;32mI (6252) IR-UART: 0x98[0m
+[0;32mI (6252) IR-UART: 0x7A[0m
+[0;32mI (6252) IR-UART: 0xB5[0m
+[0;32mI (6262) IR-UART: 0x97[0m
+[0;32mI (6262) IR-UART: 0x74[0m
+[0;32mI (6262) IR-UART: 0x3D[0m
+[0;32mI (6262) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (6532) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (6592) IR-UART: 0x5A[0m
+[0;32mI (6592) IR-UART: 0x54[0m
+[0;32mI (6592) IR-UART: 0x06[0m
+[0;32mI (6592) IR-UART: 0x34[0m
+[0;32mI (6592) IR-UART: 0x98[0m
+[0;32mI (6592) IR-UART: 0x7A[0m
+[0;32mI (6592) IR-UART: 0xB5[0m
+[0;32mI (6602) IR-UART: 0x97[0m
+[0;32mI (6602) IR-UART: 0x74[0m
+[0;32mI (6602) IR-UART: 0x3D[0m
+[0;32mI (6602) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (6872) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (6932) IR-UART: 0x5A[0m
+[0;32mI (6932) IR-UART: 0x54[0m
+[0;32mI (6932) IR-UART: 0x06[0m
+[0;32mI (6932) IR-UART: 0x34[0m
+[0;32mI (6932) IR-UART: 0x98[0m
+[0;32mI (6932) IR-UART: 0x7A[0m
+[0;32mI (6932) IR-UART: 0xB5[0m
+[0;32mI (6942) IR-UART: 0x97[0m
+[0;32mI (6942) IR-UART: 0x74[0m
+[0;32mI (6942) IR-UART: 0x3D[0m
+[0;32mI (6942) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (7212) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (7272) IR-UART: 0x5A[0m
+[0;32mI (7272) IR-UART: 0x54[0m
+[0;32mI (7272) IR-UART: 0x06[0m
+[0;32mI (7272) IR-UART: 0x34[0m
+[0;32mI (7272) IR-UART: 0x98[0m
+[0;32mI (7272) IR-UART: 0x7A[0m
+[0;32mI (7272) IR-UART: 0xB5[0m
+[0;32mI (7282) IR-UART: 0x97[0m
+[0;32mI (7282) IR-UART: 0x74[0m
+[0;32mI (7282) IR-UART: 0x3D[0m
+[0;32mI (7282) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (7552) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (7612) IR-UART: 0x5A[0m
+[0;32mI (7612) IR-UART: 0x54[0m
+[0;32mI (7612) IR-UART: 0x06[0m
+[0;32mI (7612) IR-UART: 0x34[0m
+[0;32mI (7612) IR-UART: 0x98[0m
+[0;32mI (7612) IR-UART: 0x7A[0m
+[0;32mI (7612) IR-UART: 0xB5[0m
+[0;32mI (7622) IR-UART: 0x97[0m
+[0;32mI (7622) IR-UART: 0x74[0m
+[0;32mI (7622) IR-UART: 0x3D[0m
+[0;32mI (7622) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (7892) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (7952) IR-UART: 0x5A[0m
+[0;32mI (7952) IR-UART: 0x54[0m
+[0;32mI (7952) IR-UART: 0x06[0m
+[0;32mI (7952) IR-UART: 0x34[0m
+[0;32mI (7952) IR-UART: 0x98[0m
+[0;32mI (7952) IR-UART: 0x7A[0m
+[0;32mI (7952) IR-UART: 0xB5[0m
+[0;32mI (7962) IR-UART: 0x97[0m
+[0;32mI (7962) IR-UART: 0x74[0m
+[0;32mI (7962) IR-UART: 0x3D[0m
+[0;32mI (7962) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (8232) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (8292) IR-UART: 0x5A[0m
+[0;32mI (8292) IR-UART: 0x54[0m
+[0;32mI (8292) IR-UART: 0x06[0m
+[0;32mI (8292) IR-UART: 0x34[0m
+[0;32mI (8292) IR-UART: 0x98[0m
+[0;32mI (8292) IR-UART: 0x7A[0m
+[0;32mI (8292) IR-UART: 0xB5[0m
+[0;32mI (8302) IR-UART: 0x97[0m
+[0;32mI (8302) IR-UART: 0x74[0m
+[0;32mI (8302) IR-UART: 0x3D[0m
+[0;32mI (8302) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (8572) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (8632) IR-UART: 0x5A[0m
+[0;32mI (8632) IR-UART: 0x54[0m
+[0;32mI (8632) IR-UART: 0x06[0m
+[0;32mI (8632) IR-UART: 0x34[0m
+[0;32mI (8632) IR-UART: 0x98[0m
+[0;32mI (8632) IR-UART: 0x7A[0m
+[0;32mI (8632) IR-UART: 0xB5[0m
+[0;32mI (8642) IR-UART: 0x97[0m
+[0;32mI (8642) IR-UART: 0x74[0m
+[0;32mI (8642) IR-UART: 0x3D[0m
+[0;32mI (8642) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (8912) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (8972) IR-UART: 0x5A[0m
+[0;32mI (8972) IR-UART: 0x54[0m
+[0;32mI (8972) IR-UART: 0x06[0m
+[0;32mI (8972) IR-UART: 0x34[0m
+[0;32mI (8972) IR-UART: 0x98[0m
+[0;32mI (8972) IR-UART: 0x7A[0m
+[0;32mI (8972) IR-UART: 0xB5[0m
+[0;32mI (8982) IR-UART: 0x97[0m
+[0;32mI (8982) IR-UART: 0x74[0m
+[0;32mI (8982) IR-UART: 0x3D[0m
+[0;32mI (8982) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (9252) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (9312) IR-UART: 0x5A[0m
+[0;32mI (9312) IR-UART: 0x54[0m
+[0;32mI (9312) IR-UART: 0x06[0m
+[0;32mI (9312) IR-UART: 0x34[0m
+[0;32mI (9312) IR-UART: 0x98[0m
+[0;32mI (9312) IR-UART: 0x7A[0m
+[0;32mI (9312) IR-UART: 0xB5[0m
+[0;32mI (9322) IR-UART: 0x97[0m
+[0;32mI (9322) IR-UART: 0x74[0m
+[0;32mI (9322) IR-UART: 0x3D[0m
+[0;32mI (9322) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (9592) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (9652) IR-UART: 0x5A[0m
+[0;32mI (9652) IR-UART: 0x54[0m
+[0;32mI (9652) IR-UART: 0x06[0m
+[0;32mI (9652) IR-UART: 0x34[0m
+[0;32mI (9652) IR-UART: 0x98[0m
+[0;32mI (9652) IR-UART: 0x7A[0m
+[0;32mI (9652) IR-UART: 0xB5[0m
+[0;32mI (9662) IR-UART: 0x97[0m
+[0;32mI (9662) IR-UART: 0x74[0m
+[0;32mI (9662) IR-UART: 0x3D[0m
+[0;32mI (9662) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (9932) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (9992) IR-UART: 0x5A[0m
+[0;32mI (9992) IR-UART: 0x54[0m
+[0;32mI (9992) IR-UART: 0x06[0m
+[0;32mI (9992) IR-UART: 0x34[0m
+[0;32mI (9992) IR-UART: 0x98[0m
+[0;32mI (9992) IR-UART: 0x7A[0m
+[0;32mI (9992) IR-UART: 0xB5[0m
+[0;32mI (10002) IR-UART: 0x97[0m
+[0;32mI (10002) IR-UART: 0x74[0m
+[0;32mI (10002) IR-UART: 0x3D[0m
+[0;32mI (10002) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (10272) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (10332) IR-UART: 0x5A[0m
+[0;32mI (10332) IR-UART: 0x54[0m
+[0;32mI (10332) IR-UART: 0x06[0m
+[0;32mI (10332) IR-UART: 0x34[0m
+[0;32mI (10332) IR-UART: 0x98[0m
+[0;32mI (10332) IR-UART: 0x7A[0m
+[0;32mI (10332) IR-UART: 0xB5[0m
+[0;32mI (10342) IR-UART: 0x97[0m
+[0;32mI (10342) IR-UART: 0x74[0m
+[0;32mI (10342) IR-UART: 0x3D[0m
+[0;32mI (10352) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (10612) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (10672) IR-UART: 0x5A[0m
+[0;32mI (10672) IR-UART: 0x54[0m
+[0;32mI (10672) IR-UART: 0x06[0m
+[0;32mI (10672) IR-UART: 0x34[0m
+[0;32mI (10672) IR-UART: 0x98[0m
+[0;32mI (10672) IR-UART: 0x7A[0m
+[0;32mI (10672) IR-UART: 0xB5[0m
+[0;32mI (10682) IR-UART: 0x97[0m
+[0;32mI (10682) IR-UART: 0x74[0m
+[0;32mI (10682) IR-UART: 0x3D[0m
+[0;32mI (10692) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (10952) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (11012) IR-UART: 0x5A[0m
+[0;32mI (11012) IR-UART: 0x54[0m
+[0;32mI (11012) IR-UART: 0x06[0m
+[0;32mI (11012) IR-UART: 0x34[0m
+[0;32mI (11012) IR-UART: 0x98[0m
+[0;32mI (11012) IR-UART: 0x7A[0m
+[0;32mI (11012) IR-UART: 0xB5[0m
+[0;32mI (11022) IR-UART: 0x97[0m
+[0;32mI (11022) IR-UART: 0x74[0m
+[0;32mI (11022) IR-UART: 0x3D[0m
+[0;32mI (11032) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (11292) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (11352) IR-UART: 0x5A[0m
+[0;32mI (11352) IR-UART: 0x54[0m
+[0;32mI (11352) IR-UART: 0x06[0m
+[0;32mI (11352) IR-UART: 0x34[0m
+[0;32mI (11352) IR-UART: 0x98[0m
+[0;32mI (11352) IR-UART: 0x7A[0m
+[0;32mI (11352) IR-UART: 0xB5[0m
+[0;32mI (11362) IR-UART: 0x97[0m
+[0;32mI (11362) IR-UART: 0x74[0m
+[0;32mI (11362) IR-UART: 0x3D[0m
+[0;32mI (11372) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (11632) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (11692) IR-UART: 0x5A[0m
+[0;32mI (11692) IR-UART: 0x54[0m
+[0;32mI (11692) IR-UART: 0x06[0m
+[0;32mI (11692) IR-UART: 0x34[0m
+[0;32mI (11692) IR-UART: 0x98[0m
+[0;32mI (11692) IR-UART: 0x7A[0m
+[0;32mI (11692) IR-UART: 0xB5[0m
+[0;32mI (11702) IR-UART: 0x97[0m
+[0;32mI (11702) IR-UART: 0x74[0m
+[0;32mI (11702) IR-UART: 0x3D[0m
+[0;32mI (11712) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (11972) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (12032) IR-UART: 0x5A[0m
+[0;32mI (12032) IR-UART: 0x54[0m
+[0;32mI (12032) IR-UART: 0x06[0m
+[0;32mI (12032) IR-UART: 0x34[0m
+[0;32mI (12032) IR-UART: 0x98[0m
+[0;32mI (12032) IR-UART: 0x7A[0m
+[0;32mI (12032) IR-UART: 0xB5[0m
+[0;32mI (12042) IR-UART: 0x97[0m
+[0;32mI (12042) IR-UART: 0x74[0m
+[0;32mI (12042) IR-UART: 0x3D[0m
+[0;32mI (12052) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (12312) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (12372) IR-UART: 0x5A[0m
+[0;32mI (12372) IR-UART: 0x54[0m
+[0;32mI (12372) IR-UART: 0x06[0m
+[0;32mI (12372) IR-UART: 0x34[0m
+[0;32mI (12372) IR-UART: 0x98[0m
+[0;32mI (12372) IR-UART: 0x7A[0m
+[0;32mI (12372) IR-UART: 0xB5[0m
+[0;32mI (12382) IR-UART: 0x97[0m
+[0;32mI (12382) IR-UART: 0x74[0m
+[0;32mI (12382) IR-UART: 0x3D[0m
+[0;32mI (12392) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (12652) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (12712) IR-UART: 0x5A[0m
+[0;32mI (12712) IR-UART: 0x54[0m
+[0;32mI (12712) IR-UART: 0x06[0m
+[0;32mI (12712) IR-UART: 0x34[0m
+[0;32mI (12712) IR-UART: 0x98[0m
+[0;32mI (12712) IR-UART: 0x7A[0m
+[0;32mI (12712) IR-UART: 0xB5[0m
+[0;32mI (12722) IR-UART: 0x97[0m
+[0;32mI (12722) IR-UART: 0x74[0m
+[0;32mI (12722) IR-UART: 0x3D[0m
+[0;32mI (12732) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (12992) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (13052) IR-UART: 0x5A[0m
+[0;32mI (13052) IR-UART: 0x54[0m
+[0;32mI (13052) IR-UART: 0x06[0m
+[0;32mI (13052) IR-UART: 0x34[0m
+[0;32mI (13052) IR-UART: 0x98[0m
+[0;32mI (13052) IR-UART: 0x7A[0m
+[0;32mI (13052) IR-UART: 0xB5[0m
+[0;32mI (13062) IR-UART: 0x97[0m
+[0;32mI (13062) IR-UART: 0x74[0m
+[0;32mI (13062) IR-UART: 0x3D[0m
+[0;32mI (13072) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (13332) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (13392) IR-UART: 0x5A[0m
+[0;32mI (13392) IR-UART: 0x54[0m
+[0;32mI (13392) IR-UART: 0x06[0m
+[0;32mI (13392) IR-UART: 0x34[0m
+[0;32mI (13392) IR-UART: 0x98[0m
+[0;32mI (13392) IR-UART: 0x7A[0m
+[0;32mI (13392) IR-UART: 0xB5[0m
+[0;32mI (13402) IR-UART: 0x97[0m
+[0;32mI (13402) IR-UART: 0x74[0m
+[0;32mI (13402) IR-UART: 0x3D[0m
+[0;32mI (13412) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (13672) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (13732) IR-UART: 0x5A[0m
+[0;32mI (13732) IR-UART: 0x54[0m
+[0;32mI (13732) IR-UART: 0x06[0m
+[0;32mI (13732) IR-UART: 0x34[0m
+[0;32mI (13732) IR-UART: 0x98[0m
+[0;32mI (13732) IR-UART: 0x7A[0m
+[0;32mI (13732) IR-UART: 0xB5[0m
+[0;32mI (13742) IR-UART: 0x97[0m
+[0;32mI (13742) IR-UART: 0x74[0m
+[0;32mI (13742) IR-UART: 0x3D[0m
+[0;32mI (13752) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14012) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (14072) IR-UART: 0x5A[0m
+[0;32mI (14072) IR-UART: 0x54[0m
+[0;32mI (14072) IR-UART: 0x06[0m
+[0;32mI (14072) IR-UART: 0x34[0m
+[0;32mI (14072) IR-UART: 0x98[0m
+[0;32mI (14072) IR-UART: 0x7A[0m
+[0;32mI (14072) IR-UART: 0xB5[0m
+[0;32mI (14082) IR-UART: 0x97[0m
+[0;32mI (14082) IR-UART: 0x74[0m
+[0;32mI (14082) IR-UART: 0x3D[0m
+[0;32mI (14092) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14352) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (14412) IR-UART: 0x5A[0m
+[0;32mI (14412) IR-UART: 0x54[0m
+[0;32mI (14412) IR-UART: 0x06[0m
+[0;32mI (14412) IR-UART: 0x34[0m
+[0;32mI (14412) IR-UART: 0x98[0m
+[0;32mI (14412) IR-UART: 0x7A[0m
+[0;32mI (14412) IR-UART: 0xB5[0m
+[0;32mI (14422) IR-UART: 0x97[0m
+[0;32mI (14422) IR-UART: 0x74[0m
+[0;32mI (14422) IR-UART: 0x3D[0m
+[0;32mI (14432) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (14692) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (14752) IR-UART: 0x5A[0m
+[0;32mI (14752) IR-UART: 0x54[0m
+[0;32mI (14752) IR-UART: 0x06[0m
+[0;32mI (14752) IR-UART: 0x34[0m
+[0;32mI (14752) IR-UART: 0x98[0m
+[0;32mI (14752) IR-UART: 0x7A[0m
+[0;32mI (14752) IR-UART: 0xB5[0m
+[0;32mI (14762) IR-UART: 0x97[0m
+[0;32mI (14762) IR-UART: 0x74[0m
+[0;32mI (14762) IR-UART: 0x3D[0m
+[0;32mI (14772) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (15032) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (15092) IR-UART: 0x5A[0m
+[0;32mI (15092) IR-UART: 0x54[0m
+[0;32mI (15092) IR-UART: 0x06[0m
+[0;32mI (15092) IR-UART: 0x34[0m
+[0;32mI (15092) IR-UART: 0x98[0m
+[0;32mI (15092) IR-UART: 0x7A[0m
+[0;32mI (15092) IR-UART: 0xB5[0m
+[0;32mI (15102) IR-UART: 0x97[0m
+[0;32mI (15102) IR-UART: 0x74[0m
+[0;32mI (15102) IR-UART: 0x3D[0m
+[0;32mI (15112) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (15372) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (15432) IR-UART: 0x5A[0m
+[0;32mI (15432) IR-UART: 0x54[0m
+[0;32mI (15432) IR-UART: 0x06[0m
+[0;32mI (15432) IR-UART: 0x34[0m
+[0;32mI (15432) IR-UART: 0x98[0m
+[0;32mI (15432) IR-UART: 0x7A[0m
+[0;32mI (15432) IR-UART: 0xB5[0m
+[0;32mI (15442) IR-UART: 0x97[0m
+[0;32mI (15442) IR-UART: 0x74[0m
+[0;32mI (15442) IR-UART: 0x3D[0m
+[0;32mI (15452) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (15712) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (15772) IR-UART: 0x5A[0m
+[0;32mI (15772) IR-UART: 0x54[0m
+[0;32mI (15772) IR-UART: 0x06[0m
+[0;32mI (15772) IR-UART: 0x34[0m
+[0;32mI (15772) IR-UART: 0x98[0m
+[0;32mI (15772) IR-UART: 0x7A[0m
+[0;32mI (15772) IR-UART: 0xB5[0m
+[0;32mI (15782) IR-UART: 0x97[0m
+[0;32mI (15782) IR-UART: 0x74[0m
+[0;32mI (15782) IR-UART: 0x3D[0m
+[0;32mI (15792) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (16052) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (16112) IR-UART: 0x5A[0m
+[0;32mI (16112) IR-UART: 0x54[0m
+[0;32mI (16112) IR-UART: 0x06[0m
+[0;32mI (16112) IR-UART: 0x34[0m
+[0;32mI (16112) IR-UART: 0x98[0m
+[0;32mI (16112) IR-UART: 0x7A[0m
+[0;32mI (16112) IR-UART: 0xB5[0m
+[0;32mI (16122) IR-UART: 0x97[0m
+[0;32mI (16122) IR-UART: 0x74[0m
+[0;32mI (16122) IR-UART: 0x3D[0m
+[0;32mI (16132) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (16392) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (16452) IR-UART: 0x5A[0m
+[0;32mI (16452) IR-UART: 0x54[0m
+[0;32mI (16452) IR-UART: 0x06[0m
+[0;32mI (16452) IR-UART: 0x34[0m
+[0;32mI (16452) IR-UART: 0x98[0m
+[0;32mI (16452) IR-UART: 0x7A[0m
+[0;32mI (16452) IR-UART: 0xB5[0m
+[0;32mI (16462) IR-UART: 0x97[0m
+[0;32mI (16462) IR-UART: 0x74[0m
+[0;32mI (16462) IR-UART: 0x3D[0m
+[0;32mI (16472) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (16732) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (16792) IR-UART: 0x5A[0m
+[0;32mI (16792) IR-UART: 0x54[0m
+[0;32mI (16792) IR-UART: 0x06[0m
+[0;32mI (16792) IR-UART: 0x34[0m
+[0;32mI (16792) IR-UART: 0x98[0m
+[0;32mI (16792) IR-UART: 0x7A[0m
+[0;32mI (16792) IR-UART: 0xB5[0m
+[0;32mI (16802) IR-UART: 0x97[0m
+[0;32mI (16802) IR-UART: 0x74[0m
+[0;32mI (16802) IR-UART: 0x3D[0m
+[0;32mI (16812) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (17072) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (17132) IR-UART: 0x5A[0m
+[0;32mI (17132) IR-UART: 0x54[0m
+[0;32mI (17132) IR-UART: 0x06[0m
+[0;32mI (17132) IR-UART: 0x34[0m
+[0;32mI (17132) IR-UART: 0x98[0m
+[0;32mI (17132) IR-UART: 0x7A[0m
+[0;32mI (17132) IR-UART: 0xB5[0m
+[0;32mI (17142) IR-UART: 0x97[0m
+[0;32mI (17142) IR-UART: 0x74[0m
+[0;32mI (17142) IR-UART: 0x3D[0m
+[0;32mI (17152) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (17412) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (17472) IR-UART: 0x5A[0m
+[0;32mI (17472) IR-UART: 0x54[0m
+[0;32mI (17472) IR-UART: 0x06[0m
+[0;32mI (17472) IR-UART: 0x34[0m
+[0;32mI (17472) IR-UART: 0x98[0m
+[0;32mI (17472) IR-UART: 0x7A[0m
+[0;32mI (17472) IR-UART: 0xB5[0m
+[0;32mI (17482) IR-UART: 0x97[0m
+[0;32mI (17482) IR-UART: 0x74[0m
+[0;32mI (17482) IR-UART: 0x3D[0m
+[0;32mI (17492) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (17752) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (17812) IR-UART: 0x5A[0m
+[0;32mI (17812) IR-UART: 0x54[0m
+[0;32mI (17812) IR-UART: 0x06[0m
+[0;32mI (17812) IR-UART: 0x34[0m
+[0;32mI (17812) IR-UART: 0x98[0m
+[0;32mI (17812) IR-UART: 0x7A[0m
+[0;32mI (17812) IR-UART: 0xB5[0m
+[0;32mI (17822) IR-UART: 0x97[0m
+[0;32mI (17822) IR-UART: 0x74[0m
+[0;32mI (17822) IR-UART: 0x3D[0m
+[0;32mI (17832) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (18092) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (18152) IR-UART: 0x5A[0m
+[0;32mI (18152) IR-UART: 0x54[0m
+[0;32mI (18152) IR-UART: 0x06[0m
+[0;32mI (18152) IR-UART: 0x34[0m
+[0;32mI (18152) IR-UART: 0x98[0m
+[0;32mI (18152) IR-UART: 0x7A[0m
+[0;32mI (18152) IR-UART: 0xB5[0m
+[0;32mI (18162) IR-UART: 0x97[0m
+[0;32mI (18162) IR-UART: 0x74[0m
+[0;32mI (18162) IR-UART: 0x3D[0m
+[0;32mI (18172) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (18432) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (18492) IR-UART: 0x5A[0m
+[0;32mI (18492) IR-UART: 0x54[0m
+[0;32mI (18492) IR-UART: 0x06[0m
+[0;32mI (18492) IR-UART: 0x34[0m
+[0;32mI (18492) IR-UART: 0x98[0m
+[0;32mI (18492) IR-UART: 0x7A[0m
+[0;32mI (18492) IR-UART: 0xB5[0m
+[0;32mI (18502) IR-UART: 0x97[0m
+[0;32mI (18502) IR-UART: 0x74[0m
+[0;32mI (18502) IR-UART: 0x3D[0m
+[0;32mI (18512) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (18772) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (18832) IR-UART: 0x5A[0m
+[0;32mI (18832) IR-UART: 0x54[0m
+[0;32mI (18832) IR-UART: 0x06[0m
+[0;32mI (18832) IR-UART: 0x34[0m
+[0;32mI (18832) IR-UART: 0x98[0m
+[0;32mI (18832) IR-UART: 0x7A[0m
+[0;32mI (18832) IR-UART: 0xB5[0m
+[0;32mI (18842) IR-UART: 0x97[0m
+[0;32mI (18842) IR-UART: 0x74[0m
+[0;32mI (18842) IR-UART: 0x3D[0m
+[0;32mI (18852) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (19112) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (19172) IR-UART: 0x5A[0m
+[0;32mI (19172) IR-UART: 0x54[0m
+[0;32mI (19172) IR-UART: 0x06[0m
+[0;32mI (19172) IR-UART: 0x34[0m
+[0;32mI (19172) IR-UART: 0x98[0m
+[0;32mI (19172) IR-UART: 0x7A[0m
+[0;32mI (19172) IR-UART: 0xB5[0m
+[0;32mI (19182) IR-UART: 0x97[0m
+[0;32mI (19182) IR-UART: 0x74[0m
+[0;32mI (19182) IR-UART: 0x3D[0m
+[0;32mI (19192) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (19452) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (19512) IR-UART: 0x5A[0m
+[0;32mI (19512) IR-UART: 0x54[0m
+[0;32mI (19512) IR-UART: 0x06[0m
+[0;32mI (19512) IR-UART: 0x34[0m
+[0;32mI (19512) IR-UART: 0x98[0m
+[0;32mI (19512) IR-UART: 0x7A[0m
+[0;32mI (19512) IR-UART: 0xB5[0m
+[0;32mI (19522) IR-UART: 0x97[0m
+[0;32mI (19522) IR-UART: 0x74[0m
+[0;32mI (19522) IR-UART: 0x3D[0m
+[0;32mI (19532) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (19792) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (19852) IR-UART: 0x5A[0m
+[0;32mI (19852) IR-UART: 0x54[0m
+[0;32mI (19852) IR-UART: 0x06[0m
+[0;32mI (19852) IR-UART: 0x34[0m
+[0;32mI (19852) IR-UART: 0x98[0m
+[0;32mI (19852) IR-UART: 0x7A[0m
+[0;32mI (19852) IR-UART: 0xB5[0m
+[0;32mI (19862) IR-UART: 0x97[0m
+[0;32mI (19862) IR-UART: 0x74[0m
+[0;32mI (19862) IR-UART: 0x3D[0m
+[0;32mI (19872) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (20132) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (20192) IR-UART: 0x5A[0m
+[0;32mI (20192) IR-UART: 0x54[0m
+[0;32mI (20192) IR-UART: 0x06[0m
+[0;32mI (20192) IR-UART: 0x34[0m
+[0;32mI (20192) IR-UART: 0x98[0m
+[0;32mI (20192) IR-UART: 0x7A[0m
+[0;32mI (20192) IR-UART: 0xB5[0m
+[0;32mI (20202) IR-UART: 0x97[0m
+[0;32mI (20202) IR-UART: 0x74[0m
+[0;32mI (20202) IR-UART: 0x3D[0m
+[0;32mI (20212) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (20472) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (20532) IR-UART: 0x5A[0m
+[0;32mI (20532) IR-UART: 0x54[0m
+[0;32mI (20532) IR-UART: 0x06[0m
+[0;32mI (20532) IR-UART: 0x34[0m
+[0;32mI (20532) IR-UART: 0x98[0m
+[0;32mI (20532) IR-UART: 0x7A[0m
+[0;32mI (20532) IR-UART: 0xB5[0m
+[0;32mI (20542) IR-UART: 0x97[0m
+[0;32mI (20542) IR-UART: 0x74[0m
+[0;32mI (20542) IR-UART: 0x3D[0m
+[0;32mI (20552) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (20812) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (20872) IR-UART: 0x5A[0m
+[0;32mI (20872) IR-UART: 0x54[0m
+[0;32mI (20872) IR-UART: 0x06[0m
+[0;32mI (20872) IR-UART: 0x34[0m
+[0;32mI (20872) IR-UART: 0x98[0m
+[0;32mI (20872) IR-UART: 0x7A[0m
+[0;32mI (20872) IR-UART: 0xB5[0m
+[0;32mI (20882) IR-UART: 0x97[0m
+[0;32mI (20882) IR-UART: 0x74[0m
+[0;32mI (20882) IR-UART: 0x3D[0m
+[0;32mI (20892) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (21152) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (21212) IR-UART: 0x5A[0m
+[0;32mI (21212) IR-UART: 0x54[0m
+[0;32mI (21212) IR-UART: 0x06[0m
+[0;32mI (21212) IR-UART: 0x34[0m
+[0;32mI (21212) IR-UART: 0x98[0m
+[0;32mI (21212) IR-UART: 0x7A[0m
+[0;32mI (21212) IR-UART: 0xB5[0m
+[0;32mI (21222) IR-UART: 0x97[0m
+[0;32mI (21222) IR-UART: 0x74[0m
+[0;32mI (21222) IR-UART: 0x3D[0m
+[0;32mI (21232) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (21492) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (21552) IR-UART: 0x5A[0m
+[0;32mI (21552) IR-UART: 0x54[0m
+[0;32mI (21552) IR-UART: 0x06[0m
+[0;32mI (21552) IR-UART: 0x34[0m
+[0;32mI (21552) IR-UART: 0x98[0m
+[0;32mI (21552) IR-UART: 0x7A[0m
+[0;32mI (21552) IR-UART: 0xB5[0m
+[0;32mI (21562) IR-UART: 0x97[0m
+[0;32mI (21562) IR-UART: 0x74[0m
+[0;32mI (21562) IR-UART: 0x3D[0m
+[0;32mI (21572) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (21832) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (21892) IR-UART: 0x5A[0m
+[0;32mI (21892) IR-UART: 0x54[0m
+[0;32mI (21892) IR-UART: 0x06[0m
+[0;32mI (21892) IR-UART: 0x34[0m
+[0;32mI (21892) IR-UART: 0x98[0m
+[0;32mI (21892) IR-UART: 0x7A[0m
+[0;32mI (21892) IR-UART: 0xB5[0m
+[0;32mI (21902) IR-UART: 0x97[0m
+[0;32mI (21902) IR-UART: 0x74[0m
+[0;32mI (21902) IR-UART: 0x3D[0m
+[0;32mI (21912) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (22172) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (22232) IR-UART: 0x5A[0m
+[0;32mI (22232) IR-UART: 0x54[0m
+[0;32mI (22232) IR-UART: 0x06[0m
+[0;32mI (22232) IR-UART: 0x34[0m
+[0;32mI (22232) IR-UART: 0x98[0m
+[0;32mI (22232) IR-UART: 0x7A[0m
+[0;32mI (22232) IR-UART: 0xB5[0m
+[0;32mI (22242) IR-UART: 0x97[0m
+[0;32mI (22242) IR-UART: 0x74[0m
+[0;32mI (22242) IR-UART: 0x3D[0m
+[0;32mI (22252) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (22512) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (22572) IR-UART: 0x5A[0m
+[0;32mI (22572) IR-UART: 0x54[0m
+[0;32mI (22572) IR-UART: 0x06[0m
+[0;32mI (22572) IR-UART: 0x34[0m
+[0;32mI (22572) IR-UART: 0x98[0m
+[0;32mI (22572) IR-UART: 0x7A[0m
+[0;32mI (22572) IR-UART: 0xB5[0m
+[0;32mI (22582) IR-UART: 0x97[0m
+[0;32mI (22582) IR-UART: 0x74[0m
+[0;32mI (22582) IR-UART: 0x3D[0m
+[0;32mI (22592) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (22852) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (22912) IR-UART: 0x5A[0m
+[0;32mI (22912) IR-UART: 0x54[0m
+[0;32mI (22912) IR-UART: 0x06[0m
+[0;32mI (22912) IR-UART: 0x34[0m
+[0;32mI (22912) IR-UART: 0x98[0m
+[0;32mI (22912) IR-UART: 0x7A[0m
+[0;32mI (22912) IR-UART: 0xB5[0m
+[0;32mI (22922) IR-UART: 0x97[0m
+[0;32mI (22922) IR-UART: 0x74[0m
+[0;32mI (22922) IR-UART: 0x3D[0m
+[0;32mI (22932) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (23192) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (23252) IR-UART: 0x5A[0m
+[0;32mI (23252) IR-UART: 0x54[0m
+[0;32mI (23252) IR-UART: 0x06[0m
+[0;32mI (23252) IR-UART: 0x34[0m
+[0;32mI (23252) IR-UART: 0x98[0m
+[0;32mI (23252) IR-UART: 0x7A[0m
+[0;32mI (23252) IR-UART: 0xB5[0m
+[0;32mI (23262) IR-UART: 0x97[0m
+[0;32mI (23262) IR-UART: 0x74[0m
+[0;32mI (23262) IR-UART: 0x3D[0m
+[0;32mI (23272) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (23532) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (23592) IR-UART: 0x5A[0m
+[0;32mI (23592) IR-UART: 0x54[0m
+[0;32mI (23592) IR-UART: 0x06[0m
+[0;32mI (23592) IR-UART: 0x34[0m
+[0;32mI (23592) IR-UART: 0x98[0m
+[0;32mI (23592) IR-UART: 0x7A[0m
+[0;32mI (23592) IR-UART: 0xB5[0m
+[0;32mI (23602) IR-UART: 0x97[0m
+[0;32mI (23602) IR-UART: 0x74[0m
+[0;32mI (23602) IR-UART: 0x3D[0m
+[0;32mI (23612) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (23872) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (23932) IR-UART: 0x5A[0m
+[0;32mI (23932) IR-UART: 0x54[0m
+[0;32mI (23932) IR-UART: 0x06[0m
+[0;32mI (23932) IR-UART: 0x34[0m
+[0;32mI (23932) IR-UART: 0x98[0m
+[0;32mI (23932) IR-UART: 0x7A[0m
+[0;32mI (23932) IR-UART: 0xB5[0m
+[0;32mI (23942) IR-UART: 0x97[0m
+[0;32mI (23942) IR-UART: 0x74[0m
+[0;32mI (23942) IR-UART: 0x3D[0m
+[0;32mI (23952) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24212) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (24272) IR-UART: 0x5A[0m
+[0;32mI (24272) IR-UART: 0x54[0m
+[0;32mI (24272) IR-UART: 0x06[0m
+[0;32mI (24272) IR-UART: 0x34[0m
+[0;32mI (24272) IR-UART: 0x98[0m
+[0;32mI (24272) IR-UART: 0x7A[0m
+[0;32mI (24272) IR-UART: 0xB5[0m
+[0;32mI (24282) IR-UART: 0x97[0m
+[0;32mI (24282) IR-UART: 0x74[0m
+[0;32mI (24282) IR-UART: 0x3D[0m
+[0;32mI (24292) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24552) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (24612) IR-UART: 0x5A[0m
+[0;32mI (24612) IR-UART: 0x54[0m
+[0;32mI (24612) IR-UART: 0x06[0m
+[0;32mI (24612) IR-UART: 0x34[0m
+[0;32mI (24612) IR-UART: 0x98[0m
+[0;32mI (24612) IR-UART: 0x7A[0m
+[0;32mI (24612) IR-UART: 0xB5[0m
+[0;32mI (24622) IR-UART: 0x97[0m
+[0;32mI (24622) IR-UART: 0x74[0m
+[0;32mI (24622) IR-UART: 0x3D[0m
+[0;32mI (24632) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (24892) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (24952) IR-UART: 0x5A[0m
+[0;32mI (24952) IR-UART: 0x54[0m
+[0;32mI (24952) IR-UART: 0x06[0m
+[0;32mI (24952) IR-UART: 0x34[0m
+[0;32mI (24952) IR-UART: 0x98[0m
+[0;32mI (24952) IR-UART: 0x7A[0m
+[0;32mI (24952) IR-UART: 0xB5[0m
+[0;32mI (24962) IR-UART: 0x97[0m
+[0;32mI (24962) IR-UART: 0x74[0m
+[0;32mI (24962) IR-UART: 0x3D[0m
+[0;32mI (24972) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25232) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (25292) IR-UART: 0x5A[0m
+[0;32mI (25292) IR-UART: 0x54[0m
+[0;32mI (25292) IR-UART: 0x06[0m
+[0;32mI (25292) IR-UART: 0x34[0m
+[0;32mI (25292) IR-UART: 0x98[0m
+[0;32mI (25292) IR-UART: 0x7A[0m
+[0;32mI (25292) IR-UART: 0xB5[0m
+[0;32mI (25302) IR-UART: 0x97[0m
+[0;32mI (25302) IR-UART: 0x74[0m
+[0;32mI (25302) IR-UART: 0x3D[0m
+[0;32mI (25312) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25572) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (25632) IR-UART: 0x5A[0m
+[0;32mI (25632) IR-UART: 0x54[0m
+[0;32mI (25632) IR-UART: 0x06[0m
+[0;32mI (25632) IR-UART: 0x34[0m
+[0;32mI (25632) IR-UART: 0x98[0m
+[0;32mI (25632) IR-UART: 0x7A[0m
+[0;32mI (25632) IR-UART: 0xB5[0m
+[0;32mI (25642) IR-UART: 0x97[0m
+[0;32mI (25642) IR-UART: 0x74[0m
+[0;32mI (25642) IR-UART: 0x3D[0m
+[0;32mI (25652) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (25912) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (25972) IR-UART: 0x5A[0m
+[0;32mI (25972) IR-UART: 0x54[0m
+[0;32mI (25972) IR-UART: 0x06[0m
+[0;32mI (25972) IR-UART: 0x34[0m
+[0;32mI (25972) IR-UART: 0x98[0m
+[0;32mI (25972) IR-UART: 0x7A[0m
+[0;32mI (25972) IR-UART: 0xB5[0m
+[0;32mI (25982) IR-UART: 0x97[0m
+[0;32mI (25982) IR-UART: 0x74[0m
+[0;32mI (25982) IR-UART: 0x3D[0m
+[0;32mI (25992) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (26252) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (26312) IR-UART: 0x5A[0m
+[0;32mI (26312) IR-UART: 0x54[0m
+[0;32mI (26312) IR-UART: 0x06[0m
+[0;32mI (26312) IR-UART: 0x34[0m
+[0;32mI (26312) IR-UART: 0x98[0m
+[0;32mI (26312) IR-UART: 0x7A[0m
+[0;32mI (26312) IR-UART: 0xB5[0m
+[0;32mI (26322) IR-UART: 0x97[0m
+[0;32mI (26322) IR-UART: 0x74[0m
+[0;32mI (26322) IR-UART: 0x3D[0m
+[0;32mI (26332) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (26592) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (26652) IR-UART: 0x5A[0m
+[0;32mI (26652) IR-UART: 0x54[0m
+[0;32mI (26652) IR-UART: 0x06[0m
+[0;32mI (26652) IR-UART: 0x34[0m
+[0;32mI (26652) IR-UART: 0x98[0m
+[0;32mI (26652) IR-UART: 0x7A[0m
+[0;32mI (26652) IR-UART: 0xB5[0m
+[0;32mI (26662) IR-UART: 0x97[0m
+[0;32mI (26662) IR-UART: 0x74[0m
+[0;32mI (26662) IR-UART: 0x3D[0m
+[0;32mI (26672) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (26932) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (26992) IR-UART: 0x5A[0m
+[0;32mI (26992) IR-UART: 0x54[0m
+[0;32mI (26992) IR-UART: 0x06[0m
+[0;32mI (26992) IR-UART: 0x34[0m
+[0;32mI (26992) IR-UART: 0x98[0m
+[0;32mI (26992) IR-UART: 0x7A[0m
+[0;32mI (26992) IR-UART: 0xB5[0m
+[0;32mI (27002) IR-UART: 0x97[0m
+[0;32mI (27002) IR-UART: 0x74[0m
+[0;32mI (27002) IR-UART: 0x3D[0m
+[0;32mI (27012) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (27272) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (27332) IR-UART: 0x5A[0m
+[0;32mI (27332) IR-UART: 0x54[0m
+[0;32mI (27332) IR-UART: 0x06[0m
+[0;32mI (27332) IR-UART: 0x34[0m
+[0;32mI (27332) IR-UART: 0x98[0m
+[0;32mI (27332) IR-UART: 0x7A[0m
+[0;32mI (27332) IR-UART: 0xB5[0m
+[0;32mI (27342) IR-UART: 0x97[0m
+[0;32mI (27342) IR-UART: 0x74[0m
+[0;32mI (27342) IR-UART: 0x3D[0m
+[0;32mI (27352) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (27612) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (27672) IR-UART: 0x5A[0m
+[0;32mI (27672) IR-UART: 0x54[0m
+[0;32mI (27672) IR-UART: 0x06[0m
+[0;32mI (27672) IR-UART: 0x34[0m
+[0;32mI (27672) IR-UART: 0x98[0m
+[0;32mI (27672) IR-UART: 0x7A[0m
+[0;32mI (27672) IR-UART: 0xB5[0m
+[0;32mI (27682) IR-UART: 0x97[0m
+[0;32mI (27682) IR-UART: 0x74[0m
+[0;32mI (27682) IR-UART: 0x3D[0m
+[0;32mI (27692) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (27952) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (28012) IR-UART: 0x5A[0m
+[0;32mI (28012) IR-UART: 0x54[0m
+[0;32mI (28012) IR-UART: 0x06[0m
+[0;32mI (28012) IR-UART: 0x34[0m
+[0;32mI (28012) IR-UART: 0x98[0m
+[0;32mI (28012) IR-UART: 0x7A[0m
+[0;32mI (28012) IR-UART: 0xB5[0m
+[0;32mI (28022) IR-UART: 0x97[0m
+[0;32mI (28022) IR-UART: 0x74[0m
+[0;32mI (28022) IR-UART: 0x3D[0m
+[0;32mI (28032) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (28292) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (28352) IR-UART: 0x5A[0m
+[0;32mI (28352) IR-UART: 0x54[0m
+[0;32mI (28352) IR-UART: 0x06[0m
+[0;32mI (28352) IR-UART: 0x34[0m
+[0;32mI (28352) IR-UART: 0x98[0m
+[0;32mI (28352) IR-UART: 0x7A[0m
+[0;32mI (28352) IR-UART: 0xB5[0m
+[0;32mI (28362) IR-UART: 0x97[0m
+[0;32mI (28362) IR-UART: 0x74[0m
+[0;32mI (28362) IR-UART: 0x3D[0m
+[0;32mI (28372) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (28632) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (28692) IR-UART: 0x5A[0m
+[0;32mI (28692) IR-UART: 0x54[0m
+[0;32mI (28692) IR-UART: 0x06[0m
+[0;32mI (28692) IR-UART: 0x34[0m
+[0;32mI (28692) IR-UART: 0x98[0m
+[0;32mI (28692) IR-UART: 0x7A[0m
+[0;32mI (28692) IR-UART: 0xB5[0m
+[0;32mI (28702) IR-UART: 0x97[0m
+[0;32mI (28702) IR-UART: 0x74[0m
+[0;32mI (28702) IR-UART: 0x3D[0m
+[0;32mI (28712) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (28972) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (29032) IR-UART: 0x5A[0m
+[0;32mI (29032) IR-UART: 0x54[0m
+[0;32mI (29032) IR-UART: 0x06[0m
+[0;32mI (29032) IR-UART: 0x34[0m
+[0;32mI (29032) IR-UART: 0x98[0m
+[0;32mI (29032) IR-UART: 0x7A[0m
+[0;32mI (29032) IR-UART: 0xB5[0m
+[0;32mI (29042) IR-UART: 0x97[0m
+[0;32mI (29042) IR-UART: 0x74[0m
+[0;32mI (29042) IR-UART: 0x3D[0m
+[0;32mI (29052) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (29312) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (29372) IR-UART: 0x5A[0m
+[0;32mI (29372) IR-UART: 0x54[0m
+[0;32mI (29372) IR-UART: 0x06[0m
+[0;32mI (29372) IR-UART: 0x34[0m
+[0;32mI (29372) IR-UART: 0x98[0m
+[0;32mI (29372) IR-UART: 0x7A[0m
+[0;32mI (29372) IR-UART: 0xB5[0m
+[0;32mI (29382) IR-UART: 0x97[0m
+[0;32mI (29382) IR-UART: 0x74[0m
+[0;32mI (29382) IR-UART: 0x3D[0m
+[0;32mI (29392) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (29652) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (29712) IR-UART: 0x5A[0m
+[0;32mI (29712) IR-UART: 0x54[0m
+[0;32mI (29712) IR-UART: 0x06[0m
+[0;32mI (29712) IR-UART: 0x34[0m
+[0;32mI (29712) IR-UART: 0x98[0m
+[0;32mI (29712) IR-UART: 0x7A[0m
+[0;32mI (29712) IR-UART: 0xB5[0m
+[0;32mI (29722) IR-UART: 0x97[0m
+[0;32mI (29722) IR-UART: 0x74[0m
+[0;32mI (29722) IR-UART: 0x3D[0m
+[0;32mI (29732) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (29992) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (30052) IR-UART: 0x5A[0m
+[0;32mI (30052) IR-UART: 0x54[0m
+[0;32mI (30052) IR-UART: 0x06[0m
+[0;32mI (30052) IR-UART: 0x34[0m
+[0;32mI (30052) IR-UART: 0x98[0m
+[0;32mI (30052) IR-UART: 0x7A[0m
+[0;32mI (30052) IR-UART: 0xB5[0m
+[0;32mI (30062) IR-UART: 0x97[0m
+[0;32mI (30062) IR-UART: 0x74[0m
+[0;32mI (30062) IR-UART: 0x3D[0m
+[0;32mI (30072) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (30332) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (30392) IR-UART: 0x5A[0m
+[0;32mI (30392) IR-UART: 0x54[0m
+[0;32mI (30392) IR-UART: 0x06[0m
+[0;32mI (30392) IR-UART: 0x34[0m
+[0;32mI (30392) IR-UART: 0x98[0m
+[0;32mI (30392) IR-UART: 0x7A[0m
+[0;32mI (30392) IR-UART: 0xB5[0m
+[0;32mI (30402) IR-UART: 0x97[0m
+[0;32mI (30402) IR-UART: 0x74[0m
+[0;32mI (30402) IR-UART: 0x3D[0m
+[0;32mI (30412) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (30672) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (30732) IR-UART: 0x5A[0m
+[0;32mI (30732) IR-UART: 0x54[0m
+[0;32mI (30732) IR-UART: 0x06[0m
+[0;32mI (30732) IR-UART: 0x34[0m
+[0;32mI (30732) IR-UART: 0x98[0m
+[0;32mI (30732) IR-UART: 0x7A[0m
+[0;32mI (30732) IR-UART: 0xB5[0m
+[0;32mI (30742) IR-UART: 0x97[0m
+[0;32mI (30742) IR-UART: 0x74[0m
+[0;32mI (30742) IR-UART: 0x3D[0m
+[0;32mI (30752) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (31012) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (31072) IR-UART: 0x5A[0m
+[0;32mI (31072) IR-UART: 0x54[0m
+[0;32mI (31072) IR-UART: 0x06[0m
+[0;32mI (31072) IR-UART: 0x34[0m
+[0;32mI (31072) IR-UART: 0x98[0m
+[0;32mI (31072) IR-UART: 0x7A[0m
+[0;32mI (31072) IR-UART: 0xB5[0m
+[0;32mI (31082) IR-UART: 0x97[0m
+[0;32mI (31082) IR-UART: 0x74[0m
+[0;32mI (31082) IR-UART: 0x3D[0m
+[0;32mI (31092) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (31352) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (31412) IR-UART: 0x5A[0m
+[0;32mI (31412) IR-UART: 0x54[0m
+[0;32mI (31412) IR-UART: 0x06[0m
+[0;32mI (31412) IR-UART: 0x34[0m
+[0;32mI (31412) IR-UART: 0x98[0m
+[0;32mI (31412) IR-UART: 0x7A[0m
+[0;32mI (31412) IR-UART: 0xB5[0m
+[0;32mI (31422) IR-UART: 0x97[0m
+[0;32mI (31422) IR-UART: 0x74[0m
+[0;32mI (31422) IR-UART: 0x3D[0m
+[0;32mI (31432) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (31692) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (31752) IR-UART: 0x5A[0m
+[0;32mI (31752) IR-UART: 0x54[0m
+[0;32mI (31752) IR-UART: 0x06[0m
+[0;32mI (31752) IR-UART: 0x34[0m
+[0;32mI (31752) IR-UART: 0x98[0m
+[0;32mI (31752) IR-UART: 0x7A[0m
+[0;32mI (31752) IR-UART: 0xB5[0m
+[0;32mI (31762) IR-UART: 0x97[0m
+[0;32mI (31762) IR-UART: 0x74[0m
+[0;32mI (31762) IR-UART: 0x3D[0m
+[0;32mI (31772) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (32032) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (32092) IR-UART: 0x5A[0m
+[0;32mI (32092) IR-UART: 0x54[0m
+[0;32mI (32092) IR-UART: 0x06[0m
+[0;32mI (32092) IR-UART: 0x34[0m
+[0;32mI (32092) IR-UART: 0x98[0m
+[0;32mI (32092) IR-UART: 0x7A[0m
+[0;32mI (32092) IR-UART: 0xB5[0m
+[0;32mI (32102) IR-UART: 0x97[0m
+[0;32mI (32102) IR-UART: 0x74[0m
+[0;32mI (32102) IR-UART: 0x3D[0m
+[0;32mI (32112) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (32372) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (32432) IR-UART: 0x5A[0m
+[0;32mI (32432) IR-UART: 0x54[0m
+[0;32mI (32432) IR-UART: 0x06[0m
+[0;32mI (32432) IR-UART: 0x34[0m
+[0;32mI (32432) IR-UART: 0x98[0m
+[0;32mI (32432) IR-UART: 0x7A[0m
+[0;32mI (32432) IR-UART: 0xB5[0m
+[0;32mI (32442) IR-UART: 0x97[0m
+[0;32mI (32442) IR-UART: 0x74[0m
+[0;32mI (32442) IR-UART: 0x3D[0m
+[0;32mI (32452) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (32712) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (32772) IR-UART: 0x5A[0m
+[0;32mI (32772) IR-UART: 0x54[0m
+[0;32mI (32772) IR-UART: 0x06[0m
+[0;32mI (32772) IR-UART: 0x34[0m
+[0;32mI (32772) IR-UART: 0x98[0m
+[0;32mI (32772) IR-UART: 0x7A[0m
+[0;32mI (32772) IR-UART: 0xB5[0m
+[0;32mI (32782) IR-UART: 0x97[0m
+[0;32mI (32782) IR-UART: 0x74[0m
+[0;32mI (32782) IR-UART: 0x3D[0m
+[0;32mI (32792) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (33052) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (33112) IR-UART: 0x5A[0m
+[0;32mI (33112) IR-UART: 0x54[0m
+[0;32mI (33112) IR-UART: 0x06[0m
+[0;32mI (33112) IR-UART: 0x34[0m
+[0;32mI (33112) IR-UART: 0x98[0m
+[0;32mI (33112) IR-UART: 0x7A[0m
+[0;32mI (33112) IR-UART: 0xB5[0m
+[0;32mI (33122) IR-UART: 0x97[0m
+[0;32mI (33122) IR-UART: 0x74[0m
+[0;32mI (33122) IR-UART: 0x3D[0m
+[0;32mI (33132) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (33392) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (33452) IR-UART: 0x5A[0m
+[0;32mI (33452) IR-UART: 0x54[0m
+[0;32mI (33452) IR-UART: 0x06[0m
+[0;32mI (33452) IR-UART: 0x34[0m
+[0;32mI (33452) IR-UART: 0x98[0m
+[0;32mI (33452) IR-UART: 0x7A[0m
+[0;32mI (33452) IR-UART: 0xB5[0m
+[0;32mI (33462) IR-UART: 0x97[0m
+[0;32mI (33462) IR-UART: 0x74[0m
+[0;32mI (33462) IR-UART: 0x3D[0m
+[0;32mI (33472) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (33732) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (33792) IR-UART: 0x5A[0m
+[0;32mI (33792) IR-UART: 0x54[0m
+[0;32mI (33792) IR-UART: 0x06[0m
+[0;32mI (33792) IR-UART: 0x34[0m
+[0;32mI (33792) IR-UART: 0x98[0m
+[0;32mI (33792) IR-UART: 0x7A[0m
+[0;32mI (33792) IR-UART: 0xB5[0m
+[0;32mI (33802) IR-UART: 0x97[0m
+[0;32mI (33802) IR-UART: 0x74[0m
+[0;32mI (33802) IR-UART: 0x3D[0m
+[0;32mI (33812) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (34072) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (34132) IR-UART: 0x5A[0m
+[0;32mI (34132) IR-UART: 0x54[0m
+[0;32mI (34132) IR-UART: 0x06[0m
+[0;32mI (34132) IR-UART: 0x34[0m
+[0;32mI (34132) IR-UART: 0x98[0m
+[0;32mI (34132) IR-UART: 0x7A[0m
+[0;32mI (34132) IR-UART: 0xB5[0m
+[0;32mI (34142) IR-UART: 0x97[0m
+[0;32mI (34142) IR-UART: 0x74[0m
+[0;32mI (34142) IR-UART: 0x3D[0m
+[0;32mI (34152) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (34412) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (34472) IR-UART: 0x5A[0m
+[0;32mI (34472) IR-UART: 0x54[0m
+[0;32mI (34472) IR-UART: 0x06[0m
+[0;32mI (34472) IR-UART: 0x34[0m
+[0;32mI (34472) IR-UART: 0x98[0m
+[0;32mI (34472) IR-UART: 0x7A[0m
+[0;32mI (34472) IR-UART: 0xB5[0m
+[0;32mI (34482) IR-UART: 0x97[0m
+[0;32mI (34482) IR-UART: 0x74[0m
+[0;32mI (34482) IR-UART: 0x3D[0m
+[0;32mI (34492) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (34752) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (34812) IR-UART: 0x5A[0m
+[0;32mI (34812) IR-UART: 0x54[0m
+[0;32mI (34812) IR-UART: 0x06[0m
+[0;32mI (34812) IR-UART: 0x34[0m
+[0;32mI (34812) IR-UART: 0x98[0m
+[0;32mI (34812) IR-UART: 0x7A[0m
+[0;32mI (34812) IR-UART: 0xB5[0m
+[0;32mI (34822) IR-UART: 0x97[0m
+[0;32mI (34822) IR-UART: 0x74[0m
+[0;32mI (34822) IR-UART: 0x3D[0m
+[0;32mI (34832) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35092) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (35152) IR-UART: 0x5A[0m
+[0;32mI (35152) IR-UART: 0x54[0m
+[0;32mI (35152) IR-UART: 0x06[0m
+[0;32mI (35152) IR-UART: 0x34[0m
+[0;32mI (35152) IR-UART: 0x98[0m
+[0;32mI (35152) IR-UART: 0x7A[0m
+[0;32mI (35152) IR-UART: 0xB5[0m
+[0;32mI (35162) IR-UART: 0x97[0m
+[0;32mI (35162) IR-UART: 0x74[0m
+[0;32mI (35162) IR-UART: 0x3D[0m
+[0;32mI (35172) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35432) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (35492) IR-UART: 0x5A[0m
+[0;32mI (35492) IR-UART: 0x54[0m
+[0;32mI (35492) IR-UART: 0x06[0m
+[0;32mI (35492) IR-UART: 0x34[0m
+[0;32mI (35492) IR-UART: 0x98[0m
+[0;32mI (35492) IR-UART: 0x7A[0m
+[0;32mI (35492) IR-UART: 0xB5[0m
+[0;32mI (35502) IR-UART: 0x97[0m
+[0;32mI (35502) IR-UART: 0x74[0m
+[0;32mI (35502) IR-UART: 0x3D[0m
+[0;32mI (35512) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (35772) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (35832) IR-UART: 0x5A[0m
+[0;32mI (35832) IR-UART: 0x54[0m
+[0;32mI (35832) IR-UART: 0x06[0m
+[0;32mI (35832) IR-UART: 0x34[0m
+[0;32mI (35832) IR-UART: 0x98[0m
+[0;32mI (35832) IR-UART: 0x7A[0m
+[0;32mI (35832) IR-UART: 0xB5[0m
+[0;32mI (35842) IR-UART: 0x97[0m
+[0;32mI (35842) IR-UART: 0x74[0m
+[0;32mI (35842) IR-UART: 0x3D[0m
+[0;32mI (35852) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (36112) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (36172) IR-UART: 0x5A[0m
+[0;32mI (36172) IR-UART: 0x54[0m
+[0;32mI (36172) IR-UART: 0x06[0m
+[0;32mI (36172) IR-UART: 0x34[0m
+[0;32mI (36172) IR-UART: 0x98[0m
+[0;32mI (36172) IR-UART: 0x7A[0m
+[0;32mI (36172) IR-UART: 0xB5[0m
+[0;32mI (36182) IR-UART: 0x97[0m
+[0;32mI (36182) IR-UART: 0x74[0m
+[0;32mI (36182) IR-UART: 0x3D[0m
+[0;32mI (36192) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (36452) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (36512) IR-UART: 0x5A[0m
+[0;32mI (36512) IR-UART: 0x54[0m
+[0;32mI (36512) IR-UART: 0x06[0m
+[0;32mI (36512) IR-UART: 0x34[0m
+[0;32mI (36512) IR-UART: 0x98[0m
+[0;32mI (36512) IR-UART: 0x7A[0m
+[0;32mI (36512) IR-UART: 0xB5[0m
+[0;32mI (36522) IR-UART: 0x97[0m
+[0;32mI (36522) IR-UART: 0x74[0m
+[0;32mI (36522) IR-UART: 0x3D[0m
+[0;32mI (36532) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (36792) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (36852) IR-UART: 0x5A[0m
+[0;32mI (36852) IR-UART: 0x54[0m
+[0;32mI (36852) IR-UART: 0x06[0m
+[0;32mI (36852) IR-UART: 0x34[0m
+[0;32mI (36852) IR-UART: 0x98[0m
+[0;32mI (36852) IR-UART: 0x7A[0m
+[0;32mI (36852) IR-UART: 0xB5[0m
+[0;32mI (36862) IR-UART: 0x97[0m
+[0;32mI (36862) IR-UART: 0x74[0m
+[0;32mI (36862) IR-UART: 0x3D[0m
+[0;32mI (36872) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (37132) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (37192) IR-UART: 0x5A[0m
+[0;32mI (37192) IR-UART: 0x54[0m
+[0;32mI (37192) IR-UART: 0x06[0m
+[0;32mI (37192) IR-UART: 0x34[0m
+[0;32mI (37192) IR-UART: 0x98[0m
+[0;32mI (37192) IR-UART: 0x7A[0m
+[0;32mI (37192) IR-UART: 0xB5[0m
+[0;32mI (37202) IR-UART: 0x97[0m
+[0;32mI (37202) IR-UART: 0x74[0m
+[0;32mI (37202) IR-UART: 0x3D[0m
+[0;32mI (37212) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (37472) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (37532) IR-UART: 0x5A[0m
+[0;32mI (37532) IR-UART: 0x54[0m
+[0;32mI (37532) IR-UART: 0x06[0m
+[0;32mI (37532) IR-UART: 0x34[0m
+[0;32mI (37532) IR-UART: 0x98[0m
+[0;32mI (37532) IR-UART: 0x7A[0m
+[0;32mI (37532) IR-UART: 0xB5[0m
+[0;32mI (37542) IR-UART: 0x97[0m
+[0;32mI (37542) IR-UART: 0x74[0m
+[0;32mI (37542) IR-UART: 0x3D[0m
+[0;32mI (37552) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (37812) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (37872) IR-UART: 0x5A[0m
+[0;32mI (37872) IR-UART: 0x54[0m
+[0;32mI (37872) IR-UART: 0x06[0m
+[0;32mI (37872) IR-UART: 0x34[0m
+[0;32mI (37872) IR-UART: 0x98[0m
+[0;32mI (37872) IR-UART: 0x7A[0m
+[0;32mI (37872) IR-UART: 0xB5[0m
+[0;32mI (37882) IR-UART: 0x97[0m
+[0;32mI (37882) IR-UART: 0x74[0m
+[0;32mI (37882) IR-UART: 0x3D[0m
+[0;32mI (37892) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (38152) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (38212) IR-UART: 0x5A[0m
+[0;32mI (38212) IR-UART: 0x54[0m
+[0;32mI (38212) IR-UART: 0x06[0m
+[0;32mI (38212) IR-UART: 0x34[0m
+[0;32mI (38212) IR-UART: 0x98[0m
+[0;32mI (38212) IR-UART: 0x7A[0m
+[0;32mI (38212) IR-UART: 0xB5[0m
+[0;32mI (38222) IR-UART: 0x97[0m
+[0;32mI (38222) IR-UART: 0x74[0m
+[0;32mI (38222) IR-UART: 0x3D[0m
+[0;32mI (38232) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (38492) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (38552) IR-UART: 0x5A[0m
+[0;32mI (38552) IR-UART: 0x54[0m
+[0;32mI (38552) IR-UART: 0x06[0m
+[0;32mI (38552) IR-UART: 0x34[0m
+[0;32mI (38552) IR-UART: 0x98[0m
+[0;32mI (38552) IR-UART: 0x7A[0m
+[0;32mI (38552) IR-UART: 0xB5[0m
+[0;32mI (38562) IR-UART: 0x97[0m
+[0;32mI (38562) IR-UART: 0x74[0m
+[0;32mI (38562) IR-UART: 0x3D[0m
+[0;32mI (38572) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (38832) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (38892) IR-UART: 0x5A[0m
+[0;32mI (38892) IR-UART: 0x54[0m
+[0;32mI (38892) IR-UART: 0x06[0m
+[0;32mI (38892) IR-UART: 0x34[0m
+[0;32mI (38892) IR-UART: 0x98[0m
+[0;32mI (38892) IR-UART: 0x7A[0m
+[0;32mI (38892) IR-UART: 0xB5[0m
+[0;32mI (38902) IR-UART: 0x97[0m
+[0;32mI (38902) IR-UART: 0x74[0m
+[0;32mI (38902) IR-UART: 0x3D[0m
+[0;32mI (38912) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (39172) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (39232) IR-UART: 0x5A[0m
+[0;32mI (39232) IR-UART: 0x54[0m
+[0;32mI (39232) IR-UART: 0x06[0m
+[0;32mI (39232) IR-UART: 0x34[0m
+[0;32mI (39232) IR-UART: 0x98[0m
+[0;32mI (39232) IR-UART: 0x7A[0m
+[0;32mI (39232) IR-UART: 0xB5[0m
+[0;32mI (39242) IR-UART: 0x97[0m
+[0;32mI (39242) IR-UART: 0x74[0m
+[0;32mI (39242) IR-UART: 0x3D[0m
+[0;32mI (39252) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (39512) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (39572) IR-UART: 0x5A[0m
+[0;32mI (39572) IR-UART: 0x54[0m
+[0;32mI (39572) IR-UART: 0x06[0m
+[0;32mI (39572) IR-UART: 0x34[0m
+[0;32mI (39572) IR-UART: 0x98[0m
+[0;32mI (39572) IR-UART: 0x7A[0m
+[0;32mI (39572) IR-UART: 0xB5[0m
+[0;32mI (39582) IR-UART: 0x97[0m
+[0;32mI (39582) IR-UART: 0x74[0m
+[0;32mI (39582) IR-UART: 0x3D[0m
+[0;32mI (39592) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (39852) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (39912) IR-UART: 0x5A[0m
+[0;32mI (39912) IR-UART: 0x54[0m
+[0;32mI (39912) IR-UART: 0x06[0m
+[0;32mI (39912) IR-UART: 0x34[0m
+[0;32mI (39912) IR-UART: 0x98[0m
+[0;32mI (39912) IR-UART: 0x7A[0m
+[0;32mI (39912) IR-UART: 0xB5[0m
+[0;32mI (39922) IR-UART: 0x97[0m
+[0;32mI (39922) IR-UART: 0x74[0m
+[0;32mI (39922) IR-UART: 0x3D[0m
+[0;32mI (39932) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (40192) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (40252) IR-UART: 0x5A[0m
+[0;32mI (40252) IR-UART: 0x54[0m
+[0;32mI (40252) IR-UART: 0x06[0m
+[0;32mI (40252) IR-UART: 0x34[0m
+[0;32mI (40252) IR-UART: 0x98[0m
+[0;32mI (40252) IR-UART: 0x7A[0m
+[0;32mI (40252) IR-UART: 0xB5[0m
+[0;32mI (40262) IR-UART: 0x97[0m
+[0;32mI (40262) IR-UART: 0x74[0m
+[0;32mI (40262) IR-UART: 0x3D[0m
+[0;32mI (40272) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (40532) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (40592) IR-UART: 0x5A[0m
+[0;32mI (40592) IR-UART: 0x54[0m
+[0;32mI (40592) IR-UART: 0x06[0m
+[0;32mI (40592) IR-UART: 0x34[0m
+[0;32mI (40592) IR-UART: 0x98[0m
+[0;32mI (40592) IR-UART: 0x7A[0m
+[0;32mI (40592) IR-UART: 0xB5[0m
+[0;32mI (40602) IR-UART: 0x97[0m
+[0;32mI (40602) IR-UART: 0x74[0m
+[0;32mI (40602) IR-UART: 0x3D[0m
+[0;32mI (40612) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (40872) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (40932) IR-UART: 0x5A[0m
+[0;32mI (40932) IR-UART: 0x54[0m
+[0;32mI (40932) IR-UART: 0x06[0m
+[0;32mI (40932) IR-UART: 0x34[0m
+[0;32mI (40932) IR-UART: 0x98[0m
+[0;32mI (40932) IR-UART: 0x7A[0m
+[0;32mI (40932) IR-UART: 0xB5[0m
+[0;32mI (40942) IR-UART: 0x97[0m
+[0;32mI (40942) IR-UART: 0x74[0m
+[0;32mI (40942) IR-UART: 0x3D[0m
+[0;32mI (40952) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (41212) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (41272) IR-UART: 0x5A[0m
+[0;32mI (41272) IR-UART: 0x54[0m
+[0;32mI (41272) IR-UART: 0x06[0m
+[0;32mI (41272) IR-UART: 0x34[0m
+[0;32mI (41272) IR-UART: 0x98[0m
+[0;32mI (41272) IR-UART: 0x7A[0m
+[0;32mI (41272) IR-UART: 0xB5[0m
+[0;32mI (41282) IR-UART: 0x97[0m
+[0;32mI (41282) IR-UART: 0x74[0m
+[0;32mI (41282) IR-UART: 0x3D[0m
+[0;32mI (41292) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (41552) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (41612) IR-UART: 0x5A[0m
+[0;32mI (41612) IR-UART: 0x54[0m
+[0;32mI (41612) IR-UART: 0x06[0m
+[0;32mI (41612) IR-UART: 0x34[0m
+[0;32mI (41612) IR-UART: 0x98[0m
+[0;32mI (41612) IR-UART: 0x7A[0m
+[0;32mI (41612) IR-UART: 0xB5[0m
+[0;32mI (41622) IR-UART: 0x97[0m
+[0;32mI (41622) IR-UART: 0x74[0m
+[0;32mI (41622) IR-UART: 0x3D[0m
+[0;32mI (41632) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (41892) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (41952) IR-UART: 0x5A[0m
+[0;32mI (41952) IR-UART: 0x54[0m
+[0;32mI (41952) IR-UART: 0x06[0m
+[0;32mI (41952) IR-UART: 0x34[0m
+[0;32mI (41952) IR-UART: 0x98[0m
+[0;32mI (41952) IR-UART: 0x7A[0m
+[0;32mI (41952) IR-UART: 0xB5[0m
+[0;32mI (41962) IR-UART: 0x97[0m
+[0;32mI (41962) IR-UART: 0x74[0m
+[0;32mI (41962) IR-UART: 0x3D[0m
+[0;32mI (41972) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (42232) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (42292) IR-UART: 0x5A[0m
+[0;32mI (42292) IR-UART: 0x54[0m
+[0;32mI (42292) IR-UART: 0x06[0m
+[0;32mI (42292) IR-UART: 0x34[0m
+[0;32mI (42292) IR-UART: 0x98[0m
+[0;32mI (42292) IR-UART: 0x7A[0m
+[0;32mI (42292) IR-UART: 0xB5[0m
+[0;32mI (42302) IR-UART: 0x97[0m
+[0;32mI (42302) IR-UART: 0x74[0m
+[0;32mI (42302) IR-UART: 0x3D[0m
+[0;32mI (42312) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (42572) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (42632) IR-UART: 0x5A[0m
+[0;32mI (42632) IR-UART: 0x54[0m
+[0;32mI (42632) IR-UART: 0x06[0m
+[0;32mI (42632) IR-UART: 0x34[0m
+[0;32mI (42632) IR-UART: 0x98[0m
+[0;32mI (42632) IR-UART: 0x7A[0m
+[0;32mI (42632) IR-UART: 0xB5[0m
+[0;32mI (42642) IR-UART: 0x97[0m
+[0;32mI (42642) IR-UART: 0x74[0m
+[0;32mI (42642) IR-UART: 0x3D[0m
+[0;32mI (42652) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (42912) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (42972) IR-UART: 0x5A[0m
+[0;32mI (42972) IR-UART: 0x54[0m
+[0;32mI (42972) IR-UART: 0x06[0m
+[0;32mI (42972) IR-UART: 0x34[0m
+[0;32mI (42972) IR-UART: 0x98[0m
+[0;32mI (42972) IR-UART: 0x7A[0m
+[0;32mI (42972) IR-UART: 0xB5[0m
+[0;32mI (42982) IR-UART: 0x97[0m
+[0;32mI (42982) IR-UART: 0x74[0m
+[0;32mI (42982) IR-UART: 0x3D[0m
+[0;32mI (42992) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (43252) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (43312) IR-UART: 0x5A[0m
+[0;32mI (43312) IR-UART: 0x54[0m
+[0;32mI (43312) IR-UART: 0x06[0m
+[0;32mI (43312) IR-UART: 0x34[0m
+[0;32mI (43312) IR-UART: 0x98[0m
+[0;32mI (43312) IR-UART: 0x7A[0m
+[0;32mI (43312) IR-UART: 0xB5[0m
+[0;32mI (43322) IR-UART: 0x97[0m
+[0;32mI (43322) IR-UART: 0x74[0m
+[0;32mI (43322) IR-UART: 0x3D[0m
+[0;32mI (43332) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (43592) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (43652) IR-UART: 0x5A[0m
+[0;32mI (43652) IR-UART: 0x54[0m
+[0;32mI (43652) IR-UART: 0x06[0m
+[0;32mI (43652) IR-UART: 0x34[0m
+[0;32mI (43652) IR-UART: 0x98[0m
+[0;32mI (43652) IR-UART: 0x7A[0m
+[0;32mI (43652) IR-UART: 0xB5[0m
+[0;32mI (43662) IR-UART: 0x97[0m
+[0;32mI (43662) IR-UART: 0x74[0m
+[0;32mI (43662) IR-UART: 0x3D[0m
+[0;32mI (43672) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (43932) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (43992) IR-UART: 0x5A[0m
+[0;32mI (43992) IR-UART: 0x54[0m
+[0;32mI (43992) IR-UART: 0x06[0m
+[0;32mI (43992) IR-UART: 0x34[0m
+[0;32mI (43992) IR-UART: 0x98[0m
+[0;32mI (43992) IR-UART: 0x7A[0m
+[0;32mI (43992) IR-UART: 0xB5[0m
+[0;32mI (44002) IR-UART: 0x97[0m
+[0;32mI (44002) IR-UART: 0x74[0m
+[0;32mI (44002) IR-UART: 0x3D[0m
+[0;32mI (44012) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (44272) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (44332) IR-UART: 0x5A[0m
+[0;32mI (44332) IR-UART: 0x54[0m
+[0;32mI (44332) IR-UART: 0x06[0m
+[0;32mI (44332) IR-UART: 0x34[0m
+[0;32mI (44332) IR-UART: 0x98[0m
+[0;32mI (44332) IR-UART: 0x7A[0m
+[0;32mI (44332) IR-UART: 0xB5[0m
+[0;32mI (44342) IR-UART: 0x97[0m
+[0;32mI (44342) IR-UART: 0x74[0m
+[0;32mI (44342) IR-UART: 0x3D[0m
+[0;32mI (44352) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (44612) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (44672) IR-UART: 0x5A[0m
+[0;32mI (44672) IR-UART: 0x54[0m
+[0;32mI (44672) IR-UART: 0x06[0m
+[0;32mI (44672) IR-UART: 0x34[0m
+[0;32mI (44672) IR-UART: 0x98[0m
+[0;32mI (44672) IR-UART: 0x7A[0m
+[0;32mI (44672) IR-UART: 0xB5[0m
+[0;32mI (44682) IR-UART: 0x97[0m
+[0;32mI (44682) IR-UART: 0x74[0m
+[0;32mI (44682) IR-UART: 0x3D[0m
+[0;32mI (44692) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (44952) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (45012) IR-UART: 0x5A[0m
+[0;32mI (45012) IR-UART: 0x54[0m
+[0;32mI (45012) IR-UART: 0x06[0m
+[0;32mI (45012) IR-UART: 0x34[0m
+[0;32mI (45012) IR-UART: 0x98[0m
+[0;32mI (45012) IR-UART: 0x7A[0m
+[0;32mI (45012) IR-UART: 0xB5[0m
+[0;32mI (45022) IR-UART: 0x97[0m
+[0;32mI (45022) IR-UART: 0x74[0m
+[0;32mI (45022) IR-UART: 0x3D[0m
+[0;32mI (45032) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45292) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (45352) IR-UART: 0x5A[0m
+[0;32mI (45352) IR-UART: 0x54[0m
+[0;32mI (45352) IR-UART: 0x06[0m
+[0;32mI (45352) IR-UART: 0x34[0m
+[0;32mI (45352) IR-UART: 0x98[0m
+[0;32mI (45352) IR-UART: 0x7A[0m
+[0;32mI (45352) IR-UART: 0xB5[0m
+[0;32mI (45362) IR-UART: 0x97[0m
+[0;32mI (45362) IR-UART: 0x74[0m
+[0;32mI (45362) IR-UART: 0x3D[0m
+[0;32mI (45372) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45632) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (45692) IR-UART: 0x5A[0m
+[0;32mI (45692) IR-UART: 0x54[0m
+[0;32mI (45692) IR-UART: 0x06[0m
+[0;32mI (45692) IR-UART: 0x34[0m
+[0;32mI (45692) IR-UART: 0x98[0m
+[0;32mI (45692) IR-UART: 0x7A[0m
+[0;32mI (45692) IR-UART: 0xB5[0m
+[0;32mI (45702) IR-UART: 0x97[0m
+[0;32mI (45702) IR-UART: 0x74[0m
+[0;32mI (45702) IR-UART: 0x3D[0m
+[0;32mI (45712) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (45972) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (46032) IR-UART: 0x5A[0m
+[0;32mI (46032) IR-UART: 0x54[0m
+[0;32mI (46032) IR-UART: 0x06[0m
+[0;32mI (46032) IR-UART: 0x34[0m
+[0;32mI (46032) IR-UART: 0x98[0m
+[0;32mI (46032) IR-UART: 0x7A[0m
+[0;32mI (46032) IR-UART: 0xB5[0m
+[0;32mI (46042) IR-UART: 0x97[0m
+[0;32mI (46042) IR-UART: 0x74[0m
+[0;32mI (46042) IR-UART: 0x3D[0m
+[0;32mI (46052) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46312) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (46372) IR-UART: 0x5A[0m
+[0;32mI (46372) IR-UART: 0x54[0m
+[0;32mI (46372) IR-UART: 0x06[0m
+[0;32mI (46372) IR-UART: 0x34[0m
+[0;32mI (46372) IR-UART: 0x98[0m
+[0;32mI (46372) IR-UART: 0x7A[0m
+[0;32mI (46372) IR-UART: 0xB5[0m
+[0;32mI (46382) IR-UART: 0x97[0m
+[0;32mI (46382) IR-UART: 0x74[0m
+[0;32mI (46382) IR-UART: 0x3D[0m
+[0;32mI (46392) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46652) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (46712) IR-UART: 0x5A[0m
+[0;32mI (46712) IR-UART: 0x54[0m
+[0;32mI (46712) IR-UART: 0x06[0m
+[0;32mI (46712) IR-UART: 0x34[0m
+[0;32mI (46712) IR-UART: 0x98[0m
+[0;32mI (46712) IR-UART: 0x7A[0m
+[0;32mI (46712) IR-UART: 0xB5[0m
+[0;32mI (46722) IR-UART: 0x97[0m
+[0;32mI (46722) IR-UART: 0x74[0m
+[0;32mI (46722) IR-UART: 0x3D[0m
+[0;32mI (46732) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (46992) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (47052) IR-UART: 0x5A[0m
+[0;32mI (47052) IR-UART: 0x54[0m
+[0;32mI (47052) IR-UART: 0x06[0m
+[0;32mI (47052) IR-UART: 0x34[0m
+[0;32mI (47052) IR-UART: 0x98[0m
+[0;32mI (47052) IR-UART: 0x7A[0m
+[0;32mI (47052) IR-UART: 0xB5[0m
+[0;32mI (47062) IR-UART: 0x97[0m
+[0;32mI (47062) IR-UART: 0x74[0m
+[0;32mI (47062) IR-UART: 0x3D[0m
+[0;32mI (47072) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (47332) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (47392) IR-UART: 0x5A[0m
+[0;32mI (47392) IR-UART: 0x54[0m
+[0;32mI (47392) IR-UART: 0x06[0m
+[0;32mI (47392) IR-UART: 0x34[0m
+[0;32mI (47392) IR-UART: 0x98[0m
+[0;32mI (47392) IR-UART: 0x7A[0m
+[0;32mI (47392) IR-UART: 0xB5[0m
+[0;32mI (47402) IR-UART: 0x97[0m
+[0;32mI (47402) IR-UART: 0x74[0m
+[0;32mI (47402) IR-UART: 0x3D[0m
+[0;32mI (47412) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (47672) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (47732) IR-UART: 0x5A[0m
+[0;32mI (47732) IR-UART: 0x54[0m
+[0;32mI (47732) IR-UART: 0x06[0m
+[0;32mI (47732) IR-UART: 0x34[0m
+[0;32mI (47732) IR-UART: 0x98[0m
+[0;32mI (47732) IR-UART: 0x7A[0m
+[0;32mI (47732) IR-UART: 0xB5[0m
+[0;32mI (47742) IR-UART: 0x97[0m
+[0;32mI (47742) IR-UART: 0x74[0m
+[0;32mI (47742) IR-UART: 0x3D[0m
+[0;32mI (47752) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (48012) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (48072) IR-UART: 0x5A[0m
+[0;32mI (48072) IR-UART: 0x54[0m
+[0;32mI (48072) IR-UART: 0x06[0m
+[0;32mI (48072) IR-UART: 0x34[0m
+[0;32mI (48072) IR-UART: 0x98[0m
+[0;32mI (48072) IR-UART: 0x7A[0m
+[0;32mI (48072) IR-UART: 0xB5[0m
+[0;32mI (48082) IR-UART: 0x97[0m
+[0;32mI (48082) IR-UART: 0x74[0m
+[0;32mI (48082) IR-UART: 0x3D[0m
+[0;32mI (48092) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (48352) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (48412) IR-UART: 0x5A[0m
+[0;32mI (48412) IR-UART: 0x54[0m
+[0;32mI (48412) IR-UART: 0x06[0m
+[0;32mI (48412) IR-UART: 0x34[0m
+[0;32mI (48412) IR-UART: 0x98[0m
+[0;32mI (48412) IR-UART: 0x7A[0m
+[0;32mI (48412) IR-UART: 0xB5[0m
+[0;32mI (48422) IR-UART: 0x97[0m
+[0;32mI (48422) IR-UART: 0x74[0m
+[0;32mI (48422) IR-UART: 0x3D[0m
+[0;32mI (48432) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (48692) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (48752) IR-UART: 0x5A[0m
+[0;32mI (48752) IR-UART: 0x54[0m
+[0;32mI (48752) IR-UART: 0x06[0m
+[0;32mI (48752) IR-UART: 0x34[0m
+[0;32mI (48752) IR-UART: 0x98[0m
+[0;32mI (48752) IR-UART: 0x7A[0m
+[0;32mI (48752) IR-UART: 0xB5[0m
+[0;32mI (48762) IR-UART: 0x97[0m
+[0;32mI (48762) IR-UART: 0x74[0m
+[0;32mI (48762) IR-UART: 0x3D[0m
+[0;32mI (48772) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (49032) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (49092) IR-UART: 0x5A[0m
+[0;32mI (49092) IR-UART: 0x54[0m
+[0;32mI (49092) IR-UART: 0x06[0m
+[0;32mI (49092) IR-UART: 0x34[0m
+[0;32mI (49092) IR-UART: 0x98[0m
+[0;32mI (49092) IR-UART: 0x7A[0m
+[0;32mI (49092) IR-UART: 0xB5[0m
+[0;32mI (49102) IR-UART: 0x97[0m
+[0;32mI (49102) IR-UART: 0x74[0m
+[0;32mI (49102) IR-UART: 0x3D[0m
+[0;32mI (49112) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (49372) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (49432) IR-UART: 0x5A[0m
+[0;32mI (49432) IR-UART: 0x54[0m
+[0;32mI (49432) IR-UART: 0x06[0m
+[0;32mI (49432) IR-UART: 0x34[0m
+[0;32mI (49432) IR-UART: 0x98[0m
+[0;32mI (49432) IR-UART: 0x7A[0m
+[0;32mI (49432) IR-UART: 0xB5[0m
+[0;32mI (49442) IR-UART: 0x97[0m
+[0;32mI (49442) IR-UART: 0x74[0m
+[0;32mI (49442) IR-UART: 0x3D[0m
+[0;32mI (49452) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (49712) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (49772) IR-UART: 0x5A[0m
+[0;32mI (49772) IR-UART: 0x54[0m
+[0;32mI (49772) IR-UART: 0x06[0m
+[0;32mI (49772) IR-UART: 0x34[0m
+[0;32mI (49772) IR-UART: 0x98[0m
+[0;32mI (49772) IR-UART: 0x7A[0m
+[0;32mI (49772) IR-UART: 0xB5[0m
+[0;32mI (49782) IR-UART: 0x97[0m
+[0;32mI (49782) IR-UART: 0x74[0m
+[0;32mI (49782) IR-UART: 0x3D[0m
+[0;32mI (49792) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (50052) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (50112) IR-UART: 0x5A[0m
+[0;32mI (50112) IR-UART: 0x54[0m
+[0;32mI (50112) IR-UART: 0x06[0m
+[0;32mI (50112) IR-UART: 0x34[0m
+[0;32mI (50112) IR-UART: 0x98[0m
+[0;32mI (50112) IR-UART: 0x7A[0m
+[0;32mI (50112) IR-UART: 0xB5[0m
+[0;32mI (50122) IR-UART: 0x97[0m
+[0;32mI (50122) IR-UART: 0x74[0m
+[0;32mI (50122) IR-UART: 0x3D[0m
+[0;32mI (50132) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (50392) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (50452) IR-UART: 0x5A[0m
+[0;32mI (50452) IR-UART: 0x54[0m
+[0;32mI (50452) IR-UART: 0x06[0m
+[0;32mI (50452) IR-UART: 0x34[0m
+[0;32mI (50452) IR-UART: 0x98[0m
+[0;32mI (50452) IR-UART: 0x7A[0m
+[0;32mI (50452) IR-UART: 0xB5[0m
+[0;32mI (50462) IR-UART: 0x97[0m
+[0;32mI (50462) IR-UART: 0x74[0m
+[0;32mI (50462) IR-UART: 0x3D[0m
+[0;32mI (50472) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (50732) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (50792) IR-UART: 0x5A[0m
+[0;32mI (50792) IR-UART: 0x54[0m
+[0;32mI (50792) IR-UART: 0x06[0m
+[0;32mI (50792) IR-UART: 0x34[0m
+[0;32mI (50792) IR-UART: 0x98[0m
+[0;32mI (50792) IR-UART: 0x7A[0m
+[0;32mI (50792) IR-UART: 0xB5[0m
+[0;32mI (50802) IR-UART: 0x97[0m
+[0;32mI (50802) IR-UART: 0x74[0m
+[0;32mI (50802) IR-UART: 0x3D[0m
+[0;32mI (50812) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (51072) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (51132) IR-UART: 0x5A[0m
+[0;32mI (51132) IR-UART: 0x54[0m
+[0;32mI (51132) IR-UART: 0x06[0m
+[0;32mI (51132) IR-UART: 0x34[0m
+[0;32mI (51132) IR-UART: 0x98[0m
+[0;32mI (51132) IR-UART: 0x7A[0m
+[0;32mI (51132) IR-UART: 0xB5[0m
+[0;32mI (51142) IR-UART: 0x97[0m
+[0;32mI (51142) IR-UART: 0x74[0m
+[0;32mI (51142) IR-UART: 0x3D[0m
+[0;32mI (51152) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (51412) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (51472) IR-UART: 0x5A[0m
+[0;32mI (51472) IR-UART: 0x54[0m
+[0;32mI (51472) IR-UART: 0x06[0m
+[0;32mI (51472) IR-UART: 0x34[0m
+[0;32mI (51472) IR-UART: 0x98[0m
+[0;32mI (51472) IR-UART: 0x7A[0m
+[0;32mI (51472) IR-UART: 0xB5[0m
+[0;32mI (51482) IR-UART: 0x97[0m
+[0;32mI (51482) IR-UART: 0x74[0m
+[0;32mI (51482) IR-UART: 0x3D[0m
+[0;32mI (51492) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (51752) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (51812) IR-UART: 0x5A[0m
+[0;32mI (51812) IR-UART: 0x54[0m
+[0;32mI (51812) IR-UART: 0x06[0m
+[0;32mI (51812) IR-UART: 0x34[0m
+[0;32mI (51812) IR-UART: 0x98[0m
+[0;32mI (51812) IR-UART: 0x7A[0m
+[0;32mI (51812) IR-UART: 0xB5[0m
+[0;32mI (51822) IR-UART: 0x97[0m
+[0;32mI (51822) IR-UART: 0x74[0m
+[0;32mI (51822) IR-UART: 0x3D[0m
+[0;32mI (51832) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (52092) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (52152) IR-UART: 0x5A[0m
+[0;32mI (52152) IR-UART: 0x54[0m
+[0;32mI (52152) IR-UART: 0x06[0m
+[0;32mI (52152) IR-UART: 0x34[0m
+[0;32mI (52152) IR-UART: 0x98[0m
+[0;32mI (52152) IR-UART: 0x7A[0m
+[0;32mI (52152) IR-UART: 0xB5[0m
+[0;32mI (52162) IR-UART: 0x97[0m
+[0;32mI (52162) IR-UART: 0x74[0m
+[0;32mI (52162) IR-UART: 0x3D[0m
+[0;32mI (52172) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (52432) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (52492) IR-UART: 0x5A[0m
+[0;32mI (52492) IR-UART: 0x54[0m
+[0;32mI (52492) IR-UART: 0x06[0m
+[0;32mI (52492) IR-UART: 0x34[0m
+[0;32mI (52492) IR-UART: 0x98[0m
+[0;32mI (52492) IR-UART: 0x7A[0m
+[0;32mI (52492) IR-UART: 0xB5[0m
+[0;32mI (52502) IR-UART: 0x97[0m
+[0;32mI (52502) IR-UART: 0x74[0m
+[0;32mI (52502) IR-UART: 0x3D[0m
+[0;32mI (52512) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (52772) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (52832) IR-UART: 0x5A[0m
+[0;32mI (52832) IR-UART: 0x54[0m
+[0;32mI (52832) IR-UART: 0x06[0m
+[0;32mI (52832) IR-UART: 0x34[0m
+[0;32mI (52832) IR-UART: 0x98[0m
+[0;32mI (52832) IR-UART: 0x7A[0m
+[0;32mI (52832) IR-UART: 0xB5[0m
+[0;32mI (52842) IR-UART: 0x97[0m
+[0;32mI (52842) IR-UART: 0x74[0m
+[0;32mI (52842) IR-UART: 0x3D[0m
+[0;32mI (52852) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (53112) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (53172) IR-UART: 0x5A[0m
+[0;32mI (53172) IR-UART: 0x54[0m
+[0;32mI (53172) IR-UART: 0x06[0m
+[0;32mI (53172) IR-UART: 0x34[0m
+[0;32mI (53172) IR-UART: 0x98[0m
+[0;32mI (53172) IR-UART: 0x7A[0m
+[0;32mI (53172) IR-UART: 0xB5[0m
+[0;32mI (53182) IR-UART: 0x97[0m
+[0;32mI (53182) IR-UART: 0x74[0m
+[0;32mI (53182) IR-UART: 0x3D[0m
+[0;32mI (53192) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (53452) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (53512) IR-UART: 0x5A[0m
+[0;32mI (53512) IR-UART: 0x54[0m
+[0;32mI (53512) IR-UART: 0x06[0m
+[0;32mI (53512) IR-UART: 0x34[0m
+[0;32mI (53512) IR-UART: 0x98[0m
+[0;32mI (53512) IR-UART: 0x7A[0m
+[0;32mI (53512) IR-UART: 0xB5[0m
+[0;32mI (53522) IR-UART: 0x97[0m
+[0;32mI (53522) IR-UART: 0x74[0m
+[0;32mI (53522) IR-UART: 0x3D[0m
+[0;32mI (53532) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (53792) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (53852) IR-UART: 0x5A[0m
+[0;32mI (53852) IR-UART: 0x54[0m
+[0;32mI (53852) IR-UART: 0x06[0m
+[0;32mI (53852) IR-UART: 0x34[0m
+[0;32mI (53852) IR-UART: 0x98[0m
+[0;32mI (53852) IR-UART: 0x7A[0m
+[0;32mI (53852) IR-UART: 0xB5[0m
+[0;32mI (53862) IR-UART: 0x97[0m
+[0;32mI (53862) IR-UART: 0x74[0m
+[0;32mI (53862) IR-UART: 0x3D[0m
+[0;32mI (53872) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (54132) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (54192) IR-UART: 0x5A[0m
+[0;32mI (54192) IR-UART: 0x54[0m
+[0;32mI (54192) IR-UART: 0x06[0m
+[0;32mI (54192) IR-UART: 0x34[0m
+[0;32mI (54192) IR-UART: 0x98[0m
+[0;32mI (54192) IR-UART: 0x7A[0m
+[0;32mI (54192) IR-UART: 0xB5[0m
+[0;32mI (54202) IR-UART: 0x97[0m
+[0;32mI (54202) IR-UART: 0x74[0m
+[0;32mI (54202) IR-UART: 0x3D[0m
+[0;32mI (54212) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (54472) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (54532) IR-UART: 0x5A[0m
+[0;32mI (54532) IR-UART: 0x54[0m
+[0;32mI (54532) IR-UART: 0x06[0m
+[0;32mI (54532) IR-UART: 0x34[0m
+[0;32mI (54532) IR-UART: 0x98[0m
+[0;32mI (54532) IR-UART: 0x7A[0m
+[0;32mI (54532) IR-UART: 0xB5[0m
+[0;32mI (54542) IR-UART: 0x97[0m
+[0;32mI (54542) IR-UART: 0x74[0m
+[0;32mI (54542) IR-UART: 0x3D[0m
+[0;32mI (54552) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (54812) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (54872) IR-UART: 0x5A[0m
+[0;32mI (54872) IR-UART: 0x54[0m
+[0;32mI (54872) IR-UART: 0x06[0m
+[0;32mI (54872) IR-UART: 0x34[0m
+[0;32mI (54872) IR-UART: 0x98[0m
+[0;32mI (54872) IR-UART: 0x7A[0m
+[0;32mI (54872) IR-UART: 0xB5[0m
+[0;32mI (54882) IR-UART: 0x97[0m
+[0;32mI (54882) IR-UART: 0x74[0m
+[0;32mI (54882) IR-UART: 0x3D[0m
+[0;32mI (54892) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (55152) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (55212) IR-UART: 0x5A[0m
+[0;32mI (55212) IR-UART: 0x54[0m
+[0;32mI (55212) IR-UART: 0x06[0m
+[0;32mI (55212) IR-UART: 0x34[0m
+[0;32mI (55212) IR-UART: 0x98[0m
+[0;32mI (55212) IR-UART: 0x7A[0m
+[0;32mI (55212) IR-UART: 0xB5[0m
+[0;32mI (55222) IR-UART: 0x97[0m
+[0;32mI (55222) IR-UART: 0x74[0m
+[0;32mI (55222) IR-UART: 0x3D[0m
+[0;32mI (55232) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (55492) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (55552) IR-UART: 0x5A[0m
+[0;32mI (55552) IR-UART: 0x54[0m
+[0;32mI (55552) IR-UART: 0x06[0m
+[0;32mI (55552) IR-UART: 0x34[0m
+[0;32mI (55552) IR-UART: 0x98[0m
+[0;32mI (55552) IR-UART: 0x7A[0m
+[0;32mI (55552) IR-UART: 0xB5[0m
+[0;32mI (55562) IR-UART: 0x97[0m
+[0;32mI (55562) IR-UART: 0x74[0m
+[0;32mI (55562) IR-UART: 0x3D[0m
+[0;32mI (55572) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (55832) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (55892) IR-UART: 0x5A[0m
+[0;32mI (55892) IR-UART: 0x54[0m
+[0;32mI (55892) IR-UART: 0x06[0m
+[0;32mI (55892) IR-UART: 0x34[0m
+[0;32mI (55892) IR-UART: 0x98[0m
+[0;32mI (55892) IR-UART: 0x7A[0m
+[0;32mI (55892) IR-UART: 0xB5[0m
+[0;32mI (55902) IR-UART: 0x97[0m
+[0;32mI (55902) IR-UART: 0x74[0m
+[0;32mI (55902) IR-UART: 0x3D[0m
+[0;32mI (55912) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56172) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (56232) IR-UART: 0x5A[0m
+[0;32mI (56232) IR-UART: 0x54[0m
+[0;32mI (56232) IR-UART: 0x06[0m
+[0;32mI (56232) IR-UART: 0x34[0m
+[0;32mI (56232) IR-UART: 0x98[0m
+[0;32mI (56232) IR-UART: 0x7A[0m
+[0;32mI (56232) IR-UART: 0xB5[0m
+[0;32mI (56242) IR-UART: 0x97[0m
+[0;32mI (56242) IR-UART: 0x74[0m
+[0;32mI (56242) IR-UART: 0x3D[0m
+[0;32mI (56252) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56512) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (56572) IR-UART: 0x5A[0m
+[0;32mI (56572) IR-UART: 0x54[0m
+[0;32mI (56572) IR-UART: 0x06[0m
+[0;32mI (56572) IR-UART: 0x34[0m
+[0;32mI (56572) IR-UART: 0x98[0m
+[0;32mI (56572) IR-UART: 0x7A[0m
+[0;32mI (56572) IR-UART: 0xB5[0m
+[0;32mI (56582) IR-UART: 0x97[0m
+[0;32mI (56582) IR-UART: 0x74[0m
+[0;32mI (56582) IR-UART: 0x3D[0m
+[0;32mI (56592) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (56852) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (56912) IR-UART: 0x5A[0m
+[0;32mI (56912) IR-UART: 0x54[0m
+[0;32mI (56912) IR-UART: 0x06[0m
+[0;32mI (56912) IR-UART: 0x34[0m
+[0;32mI (56912) IR-UART: 0x98[0m
+[0;32mI (56912) IR-UART: 0x7A[0m
+[0;32mI (56912) IR-UART: 0xB5[0m
+[0;32mI (56922) IR-UART: 0x97[0m
+[0;32mI (56922) IR-UART: 0x74[0m
+[0;32mI (56922) IR-UART: 0x3D[0m
+[0;32mI (56932) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57192) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (57252) IR-UART: 0x5A[0m
+[0;32mI (57252) IR-UART: 0x54[0m
+[0;32mI (57252) IR-UART: 0x06[0m
+[0;32mI (57252) IR-UART: 0x34[0m
+[0;32mI (57252) IR-UART: 0x98[0m
+[0;32mI (57252) IR-UART: 0x7A[0m
+[0;32mI (57252) IR-UART: 0xB5[0m
+[0;32mI (57262) IR-UART: 0x97[0m
+[0;32mI (57262) IR-UART: 0x74[0m
+[0;32mI (57262) IR-UART: 0x3D[0m
+[0;32mI (57272) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57532) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (57592) IR-UART: 0x5A[0m
+[0;32mI (57592) IR-UART: 0x54[0m
+[0;32mI (57592) IR-UART: 0x06[0m
+[0;32mI (57592) IR-UART: 0x34[0m
+[0;32mI (57592) IR-UART: 0x98[0m
+[0;32mI (57592) IR-UART: 0x7A[0m
+[0;32mI (57592) IR-UART: 0xB5[0m
+[0;32mI (57602) IR-UART: 0x97[0m
+[0;32mI (57602) IR-UART: 0x74[0m
+[0;32mI (57602) IR-UART: 0x3D[0m
+[0;32mI (57612) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (57872) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (57932) IR-UART: 0x5A[0m
+[0;32mI (57932) IR-UART: 0x54[0m
+[0;32mI (57932) IR-UART: 0x06[0m
+[0;32mI (57932) IR-UART: 0x34[0m
+[0;32mI (57932) IR-UART: 0x98[0m
+[0;32mI (57932) IR-UART: 0x7A[0m
+[0;32mI (57932) IR-UART: 0xB5[0m
+[0;32mI (57942) IR-UART: 0x97[0m
+[0;32mI (57942) IR-UART: 0x74[0m
+[0;32mI (57942) IR-UART: 0x3D[0m
+[0;32mI (57952) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (58212) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (58272) IR-UART: 0x5A[0m
+[0;32mI (58272) IR-UART: 0x54[0m
+[0;32mI (58272) IR-UART: 0x06[0m
+[0;32mI (58272) IR-UART: 0x34[0m
+[0;32mI (58272) IR-UART: 0x98[0m
+[0;32mI (58272) IR-UART: 0x7A[0m
+[0;32mI (58272) IR-UART: 0xB5[0m
+[0;32mI (58282) IR-UART: 0x97[0m
+[0;32mI (58282) IR-UART: 0x74[0m
+[0;32mI (58282) IR-UART: 0x3D[0m
+[0;32mI (58292) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (58552) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (58612) IR-UART: 0x5A[0m
+[0;32mI (58612) IR-UART: 0x54[0m
+[0;32mI (58612) IR-UART: 0x06[0m
+[0;32mI (58612) IR-UART: 0x34[0m
+[0;32mI (58612) IR-UART: 0x98[0m
+[0;32mI (58612) IR-UART: 0x7A[0m
+[0;32mI (58612) IR-UART: 0xB5[0m
+[0;32mI (58622) IR-UART: 0x97[0m
+[0;32mI (58622) IR-UART: 0x74[0m
+[0;32mI (58622) IR-UART: 0x3D[0m
+[0;32mI (58632) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (58892) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (58952) IR-UART: 0x5A[0m
+[0;32mI (58952) IR-UART: 0x54[0m
+[0;32mI (58952) IR-UART: 0x06[0m
+[0;32mI (58952) IR-UART: 0x34[0m
+[0;32mI (58952) IR-UART: 0x98[0m
+[0;32mI (58952) IR-UART: 0x7A[0m
+[0;32mI (58952) IR-UART: 0xB5[0m
+[0;32mI (58962) IR-UART: 0x97[0m
+[0;32mI (58962) IR-UART: 0x74[0m
+[0;32mI (58962) IR-UART: 0x3D[0m
+[0;32mI (58972) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (59232) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (59292) IR-UART: 0x5A[0m
+[0;32mI (59292) IR-UART: 0x54[0m
+[0;32mI (59292) IR-UART: 0x06[0m
+[0;32mI (59292) IR-UART: 0x34[0m
+[0;32mI (59292) IR-UART: 0x98[0m
+[0;32mI (59292) IR-UART: 0x7A[0m
+[0;32mI (59292) IR-UART: 0xB5[0m
+[0;32mI (59302) IR-UART: 0x97[0m
+[0;32mI (59302) IR-UART: 0x74[0m
+[0;32mI (59302) IR-UART: 0x3D[0m
+[0;32mI (59312) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (59572) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (59632) IR-UART: 0x5A[0m
+[0;32mI (59632) IR-UART: 0x54[0m
+[0;32mI (59632) IR-UART: 0x06[0m
+[0;32mI (59632) IR-UART: 0x34[0m
+[0;32mI (59632) IR-UART: 0x98[0m
+[0;32mI (59632) IR-UART: 0x7A[0m
+[0;32mI (59632) IR-UART: 0xB5[0m
+[0;32mI (59642) IR-UART: 0x97[0m
+[0;32mI (59642) IR-UART: 0x74[0m
+[0;32mI (59642) IR-UART: 0x3D[0m
+[0;32mI (59652) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (59912) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (59972) IR-UART: 0x5A[0m
+[0;32mI (59972) IR-UART: 0x54[0m
+[0;32mI (59972) IR-UART: 0x06[0m
+[0;32mI (59972) IR-UART: 0x34[0m
+[0;32mI (59972) IR-UART: 0x98[0m
+[0;32mI (59972) IR-UART: 0x7A[0m
+[0;32mI (59972) IR-UART: 0xB5[0m
+[0;32mI (59982) IR-UART: 0x97[0m
+[0;32mI (59982) IR-UART: 0x74[0m
+[0;32mI (59982) IR-UART: 0x3D[0m
+[0;32mI (59992) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (60252) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (60312) IR-UART: 0x5A[0m
+[0;32mI (60312) IR-UART: 0x54[0m
+[0;32mI (60312) IR-UART: 0x06[0m
+[0;32mI (60312) IR-UART: 0x34[0m
+[0;32mI (60312) IR-UART: 0x98[0m
+[0;32mI (60312) IR-UART: 0x7A[0m
+[0;32mI (60312) IR-UART: 0xB5[0m
+[0;32mI (60322) IR-UART: 0x97[0m
+[0;32mI (60322) IR-UART: 0x74[0m
+[0;32mI (60322) IR-UART: 0x3D[0m
+[0;32mI (60332) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (60592) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (60652) IR-UART: 0x5A[0m
+[0;32mI (60652) IR-UART: 0x54[0m
+[0;32mI (60652) IR-UART: 0x06[0m
+[0;32mI (60652) IR-UART: 0x34[0m
+[0;32mI (60652) IR-UART: 0x98[0m
+[0;32mI (60652) IR-UART: 0x7A[0m
+[0;32mI (60652) IR-UART: 0xB5[0m
+[0;32mI (60662) IR-UART: 0x97[0m
+[0;32mI (60662) IR-UART: 0x74[0m
+[0;32mI (60662) IR-UART: 0x3D[0m
+[0;32mI (60672) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (60932) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (60992) IR-UART: 0x5A[0m
+[0;32mI (60992) IR-UART: 0x54[0m
+[0;32mI (60992) IR-UART: 0x06[0m
+[0;32mI (60992) IR-UART: 0x34[0m
+[0;32mI (60992) IR-UART: 0x98[0m
+[0;32mI (60992) IR-UART: 0x7A[0m
+[0;32mI (60992) IR-UART: 0xB5[0m
+[0;32mI (61002) IR-UART: 0x97[0m
+[0;32mI (61002) IR-UART: 0x74[0m
+[0;32mI (61002) IR-UART: 0x3D[0m
+[0;32mI (61012) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (61272) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (61332) IR-UART: 0x5A[0m
+[0;32mI (61332) IR-UART: 0x54[0m
+[0;32mI (61332) IR-UART: 0x06[0m
+[0;32mI (61332) IR-UART: 0x34[0m
+[0;32mI (61332) IR-UART: 0x98[0m
+[0;32mI (61332) IR-UART: 0x7A[0m
+[0;32mI (61332) IR-UART: 0xB5[0m
+[0;32mI (61342) IR-UART: 0x97[0m
+[0;32mI (61342) IR-UART: 0x74[0m
+[0;32mI (61342) IR-UART: 0x3D[0m
+[0;32mI (61352) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (61612) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (61672) IR-UART: 0x5A[0m
+[0;32mI (61672) IR-UART: 0x54[0m
+[0;32mI (61672) IR-UART: 0x06[0m
+[0;32mI (61672) IR-UART: 0x34[0m
+[0;32mI (61672) IR-UART: 0x98[0m
+[0;32mI (61672) IR-UART: 0x7A[0m
+[0;32mI (61672) IR-UART: 0xB5[0m
+[0;32mI (61682) IR-UART: 0x97[0m
+[0;32mI (61682) IR-UART: 0x74[0m
+[0;32mI (61682) IR-UART: 0x3D[0m
+[0;32mI (61692) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (61952) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (62012) IR-UART: 0x5A[0m
+[0;32mI (62012) IR-UART: 0x54[0m
+[0;32mI (62012) IR-UART: 0x06[0m
+[0;32mI (62012) IR-UART: 0x34[0m
+[0;32mI (62012) IR-UART: 0x98[0m
+[0;32mI (62012) IR-UART: 0x7A[0m
+[0;32mI (62012) IR-UART: 0xB5[0m
+[0;32mI (62022) IR-UART: 0x97[0m
+[0;32mI (62022) IR-UART: 0x74[0m
+[0;32mI (62022) IR-UART: 0x3D[0m
+[0;32mI (62032) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (62292) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (62352) IR-UART: 0x5A[0m
+[0;32mI (62352) IR-UART: 0x54[0m
+[0;32mI (62352) IR-UART: 0x06[0m
+[0;32mI (62352) IR-UART: 0x34[0m
+[0;32mI (62352) IR-UART: 0x98[0m
+[0;32mI (62352) IR-UART: 0x7A[0m
+[0;32mI (62352) IR-UART: 0xB5[0m
+[0;32mI (62362) IR-UART: 0x97[0m
+[0;32mI (62362) IR-UART: 0x74[0m
+[0;32mI (62362) IR-UART: 0x3D[0m
+[0;32mI (62372) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (62632) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (62692) IR-UART: 0x5A[0m
+[0;32mI (62692) IR-UART: 0x54[0m
+[0;32mI (62692) IR-UART: 0x06[0m
+[0;32mI (62692) IR-UART: 0x34[0m
+[0;32mI (62692) IR-UART: 0x98[0m
+[0;32mI (62692) IR-UART: 0x7A[0m
+[0;32mI (62692) IR-UART: 0xB5[0m
+[0;32mI (62702) IR-UART: 0x97[0m
+[0;32mI (62702) IR-UART: 0x74[0m
+[0;32mI (62702) IR-UART: 0x3D[0m
+[0;32mI (62712) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (62972) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (63032) IR-UART: 0x5A[0m
+[0;32mI (63032) IR-UART: 0x54[0m
+[0;32mI (63032) IR-UART: 0x06[0m
+[0;32mI (63032) IR-UART: 0x34[0m
+[0;32mI (63032) IR-UART: 0x98[0m
+[0;32mI (63032) IR-UART: 0x7A[0m
+[0;32mI (63032) IR-UART: 0xB5[0m
+[0;32mI (63042) IR-UART: 0x97[0m
+[0;32mI (63042) IR-UART: 0x74[0m
+[0;32mI (63042) IR-UART: 0x3D[0m
+[0;32mI (63052) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (63312) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (63372) IR-UART: 0x5A[0m
+[0;32mI (63372) IR-UART: 0x54[0m
+[0;32mI (63372) IR-UART: 0x06[0m
+[0;32mI (63372) IR-UART: 0x34[0m
+[0;32mI (63372) IR-UART: 0x98[0m
+[0;32mI (63372) IR-UART: 0x7A[0m
+[0;32mI (63372) IR-UART: 0xB5[0m
+[0;32mI (63382) IR-UART: 0x97[0m
+[0;32mI (63382) IR-UART: 0x74[0m
+[0;32mI (63382) IR-UART: 0x3D[0m
+[0;32mI (63392) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (63652) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (63712) IR-UART: 0x5A[0m
+[0;32mI (63712) IR-UART: 0x54[0m
+[0;32mI (63712) IR-UART: 0x06[0m
+[0;32mI (63712) IR-UART: 0x34[0m
+[0;32mI (63712) IR-UART: 0x98[0m
+[0;32mI (63712) IR-UART: 0x7A[0m
+[0;32mI (63712) IR-UART: 0xB5[0m
+[0;32mI (63722) IR-UART: 0x97[0m
+[0;32mI (63722) IR-UART: 0x74[0m
+[0;32mI (63722) IR-UART: 0x3D[0m
+[0;32mI (63732) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (63992) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (64052) IR-UART: 0x5A[0m
+[0;32mI (64052) IR-UART: 0x54[0m
+[0;32mI (64052) IR-UART: 0x06[0m
+[0;32mI (64052) IR-UART: 0x34[0m
+[0;32mI (64052) IR-UART: 0x98[0m
+[0;32mI (64052) IR-UART: 0x7A[0m
+[0;32mI (64052) IR-UART: 0xB5[0m
+[0;32mI (64062) IR-UART: 0x97[0m
+[0;32mI (64062) IR-UART: 0x74[0m
+[0;32mI (64062) IR-UART: 0x3D[0m
+[0;32mI (64072) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (64332) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (64392) IR-UART: 0x5A[0m
+[0;32mI (64392) IR-UART: 0x54[0m
+[0;32mI (64392) IR-UART: 0x06[0m
+[0;32mI (64392) IR-UART: 0x34[0m
+[0;32mI (64392) IR-UART: 0x98[0m
+[0;32mI (64392) IR-UART: 0x7A[0m
+[0;32mI (64392) IR-UART: 0xB5[0m
+[0;32mI (64402) IR-UART: 0x97[0m
+[0;32mI (64402) IR-UART: 0x74[0m
+[0;32mI (64402) IR-UART: 0x3D[0m
+[0;32mI (64412) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (64672) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (64732) IR-UART: 0x5A[0m
+[0;32mI (64732) IR-UART: 0x54[0m
+[0;32mI (64732) IR-UART: 0x06[0m
+[0;32mI (64732) IR-UART: 0x34[0m
+[0;32mI (64732) IR-UART: 0x98[0m
+[0;32mI (64732) IR-UART: 0x7A[0m
+[0;32mI (64732) IR-UART: 0xB5[0m
+[0;32mI (64742) IR-UART: 0x97[0m
+[0;32mI (64742) IR-UART: 0x74[0m
+[0;32mI (64742) IR-UART: 0x3D[0m
+[0;32mI (64752) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (65012) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (65072) IR-UART: 0x5A[0m
+[0;32mI (65072) IR-UART: 0x54[0m
+[0;32mI (65072) IR-UART: 0x06[0m
+[0;32mI (65072) IR-UART: 0x34[0m
+[0;32mI (65072) IR-UART: 0x98[0m
+[0;32mI (65072) IR-UART: 0x7A[0m
+[0;32mI (65072) IR-UART: 0xB5[0m
+[0;32mI (65082) IR-UART: 0x97[0m
+[0;32mI (65082) IR-UART: 0x74[0m
+[0;32mI (65082) IR-UART: 0x3D[0m
+[0;32mI (65092) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (65352) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (65412) IR-UART: 0x5A[0m
+[0;32mI (65412) IR-UART: 0x54[0m
+[0;32mI (65412) IR-UART: 0x06[0m
+[0;32mI (65412) IR-UART: 0x34[0m
+[0;32mI (65412) IR-UART: 0x98[0m
+[0;32mI (65412) IR-UART: 0x7A[0m
+[0;32mI (65412) IR-UART: 0xB5[0m
+[0;32mI (65422) IR-UART: 0x97[0m
+[0;32mI (65422) IR-UART: 0x74[0m
+[0;32mI (65422) IR-UART: 0x3D[0m
+[0;32mI (65432) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (65692) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (65752) IR-UART: 0x5A[0m
+[0;32mI (65752) IR-UART: 0x54[0m
+[0;32mI (65752) IR-UART: 0x06[0m
+[0;32mI (65752) IR-UART: 0x34[0m
+[0;32mI (65752) IR-UART: 0x98[0m
+[0;32mI (65752) IR-UART: 0x7A[0m
+[0;32mI (65752) IR-UART: 0xB5[0m
+[0;32mI (65762) IR-UART: 0x97[0m
+[0;32mI (65762) IR-UART: 0x74[0m
+[0;32mI (65762) IR-UART: 0x3D[0m
+[0;32mI (65772) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (66032) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (66092) IR-UART: 0x5A[0m
+[0;32mI (66092) IR-UART: 0x54[0m
+[0;32mI (66092) IR-UART: 0x06[0m
+[0;32mI (66092) IR-UART: 0x34[0m
+[0;32mI (66092) IR-UART: 0x98[0m
+[0;32mI (66092) IR-UART: 0x7A[0m
+[0;32mI (66092) IR-UART: 0xB5[0m
+[0;32mI (66102) IR-UART: 0x97[0m
+[0;32mI (66102) IR-UART: 0x74[0m
+[0;32mI (66102) IR-UART: 0x3D[0m
+[0;32mI (66112) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (66372) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (66432) IR-UART: 0x5A[0m
+[0;32mI (66432) IR-UART: 0x54[0m
+[0;32mI (66432) IR-UART: 0x06[0m
+[0;32mI (66432) IR-UART: 0x34[0m
+[0;32mI (66432) IR-UART: 0x98[0m
+[0;32mI (66432) IR-UART: 0x7A[0m
+[0;32mI (66432) IR-UART: 0xB5[0m
+[0;32mI (66442) IR-UART: 0x97[0m
+[0;32mI (66442) IR-UART: 0x74[0m
+[0;32mI (66442) IR-UART: 0x3D[0m
+[0;32mI (66452) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (66712) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (66772) IR-UART: 0x5A[0m
+[0;32mI (66772) IR-UART: 0x54[0m
+[0;32mI (66772) IR-UART: 0x06[0m
+[0;32mI (66772) IR-UART: 0x34[0m
+[0;32mI (66772) IR-UART: 0x98[0m
+[0;32mI (66772) IR-UART: 0x7A[0m
+[0;32mI (66772) IR-UART: 0xB5[0m
+[0;32mI (66782) IR-UART: 0x97[0m
+[0;32mI (66782) IR-UART: 0x74[0m
+[0;32mI (66782) IR-UART: 0x3D[0m
+[0;32mI (66792) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (67052) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (67112) IR-UART: 0x5A[0m
+[0;32mI (67112) IR-UART: 0x54[0m
+[0;32mI (67112) IR-UART: 0x06[0m
+[0;32mI (67112) IR-UART: 0x34[0m
+[0;32mI (67112) IR-UART: 0x98[0m
+[0;32mI (67112) IR-UART: 0x7A[0m
+[0;32mI (67112) IR-UART: 0xB5[0m
+[0;32mI (67122) IR-UART: 0x97[0m
+[0;32mI (67122) IR-UART: 0x74[0m
+[0;32mI (67122) IR-UART: 0x3D[0m
+[0;32mI (67132) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (67392) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (67452) IR-UART: 0x5A[0m
+[0;32mI (67452) IR-UART: 0x54[0m
+[0;32mI (67452) IR-UART: 0x06[0m
+[0;32mI (67452) IR-UART: 0x34[0m
+[0;32mI (67452) IR-UART: 0x98[0m
+[0;32mI (67452) IR-UART: 0x7A[0m
+[0;32mI (67452) IR-UART: 0xB5[0m
+[0;32mI (67462) IR-UART: 0x97[0m
+[0;32mI (67462) IR-UART: 0x74[0m
+[0;32mI (67462) IR-UART: 0x3D[0m
+[0;32mI (67472) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (67732) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (67792) IR-UART: 0x5A[0m
+[0;32mI (67792) IR-UART: 0x54[0m
+[0;32mI (67792) IR-UART: 0x06[0m
+[0;32mI (67792) IR-UART: 0x34[0m
+[0;32mI (67792) IR-UART: 0x98[0m
+[0;32mI (67792) IR-UART: 0x7A[0m
+[0;32mI (67792) IR-UART: 0xB5[0m
+[0;32mI (67802) IR-UART: 0x97[0m
+[0;32mI (67802) IR-UART: 0x74[0m
+[0;32mI (67802) IR-UART: 0x3D[0m
+[0;32mI (67812) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68072) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (68132) IR-UART: 0x5A[0m
+[0;32mI (68132) IR-UART: 0x54[0m
+[0;32mI (68132) IR-UART: 0x06[0m
+[0;32mI (68132) IR-UART: 0x34[0m
+[0;32mI (68132) IR-UART: 0x98[0m
+[0;32mI (68132) IR-UART: 0x7A[0m
+[0;32mI (68132) IR-UART: 0xB5[0m
+[0;32mI (68142) IR-UART: 0x97[0m
+[0;32mI (68142) IR-UART: 0x74[0m
+[0;32mI (68142) IR-UART: 0x3D[0m
+[0;32mI (68152) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68412) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (68472) IR-UART: 0x5A[0m
+[0;32mI (68472) IR-UART: 0x54[0m
+[0;32mI (68472) IR-UART: 0x06[0m
+[0;32mI (68472) IR-UART: 0x34[0m
+[0;32mI (68472) IR-UART: 0x98[0m
+[0;32mI (68472) IR-UART: 0x7A[0m
+[0;32mI (68472) IR-UART: 0xB5[0m
+[0;32mI (68482) IR-UART: 0x97[0m
+[0;32mI (68482) IR-UART: 0x74[0m
+[0;32mI (68482) IR-UART: 0x3D[0m
+[0;32mI (68492) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (68752) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (68812) IR-UART: 0x5A[0m
+[0;32mI (68812) IR-UART: 0x54[0m
+[0;32mI (68812) IR-UART: 0x06[0m
+[0;32mI (68812) IR-UART: 0x34[0m
+[0;32mI (68812) IR-UART: 0x98[0m
+[0;32mI (68812) IR-UART: 0x7A[0m
+[0;32mI (68812) IR-UART: 0xB5[0m
+[0;32mI (68822) IR-UART: 0x97[0m
+[0;32mI (68822) IR-UART: 0x74[0m
+[0;32mI (68822) IR-UART: 0x3D[0m
+[0;32mI (68832) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (69092) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (69152) IR-UART: 0x5A[0m
+[0;32mI (69152) IR-UART: 0x54[0m
+[0;32mI (69152) IR-UART: 0x06[0m
+[0;32mI (69152) IR-UART: 0x34[0m
+[0;32mI (69152) IR-UART: 0x98[0m
+[0;32mI (69152) IR-UART: 0x7A[0m
+[0;32mI (69152) IR-UART: 0xB5[0m
+[0;32mI (69162) IR-UART: 0x97[0m
+[0;32mI (69162) IR-UART: 0x74[0m
+[0;32mI (69162) IR-UART: 0x3D[0m
+[0;32mI (69172) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (69432) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (69492) IR-UART: 0x5A[0m
+[0;32mI (69492) IR-UART: 0x54[0m
+[0;32mI (69492) IR-UART: 0x06[0m
+[0;32mI (69492) IR-UART: 0x34[0m
+[0;32mI (69492) IR-UART: 0x98[0m
+[0;32mI (69492) IR-UART: 0x7A[0m
+[0;32mI (69492) IR-UART: 0xB5[0m
+[0;32mI (69502) IR-UART: 0x97[0m
+[0;32mI (69502) IR-UART: 0x74[0m
+[0;32mI (69502) IR-UART: 0x3D[0m
+[0;32mI (69512) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (69772) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (69832) IR-UART: 0x5A[0m
+[0;32mI (69832) IR-UART: 0x54[0m
+[0;32mI (69832) IR-UART: 0x06[0m
+[0;32mI (69832) IR-UART: 0x34[0m
+[0;32mI (69832) IR-UART: 0x98[0m
+[0;32mI (69832) IR-UART: 0x7A[0m
+[0;32mI (69832) IR-UART: 0xB5[0m
+[0;32mI (69842) IR-UART: 0x97[0m
+[0;32mI (69842) IR-UART: 0x74[0m
+[0;32mI (69842) IR-UART: 0x3D[0m
+[0;32mI (69852) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (70112) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (70172) IR-UART: 0x5A[0m
+[0;32mI (70172) IR-UART: 0x54[0m
+[0;32mI (70172) IR-UART: 0x06[0m
+[0;32mI (70172) IR-UART: 0x34[0m
+[0;32mI (70172) IR-UART: 0x98[0m
+[0;32mI (70172) IR-UART: 0x7A[0m
+[0;32mI (70172) IR-UART: 0xB5[0m
+[0;32mI (70182) IR-UART: 0x97[0m
+[0;32mI (70182) IR-UART: 0x74[0m
+[0;32mI (70182) IR-UART: 0x3D[0m
+[0;32mI (70192) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (70452) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (70512) IR-UART: 0x5A[0m
+[0;32mI (70512) IR-UART: 0x54[0m
+[0;32mI (70512) IR-UART: 0x06[0m
+[0;32mI (70512) IR-UART: 0x34[0m
+[0;32mI (70512) IR-UART: 0x98[0m
+[0;32mI (70512) IR-UART: 0x7A[0m
+[0;32mI (70512) IR-UART: 0xB5[0m
+[0;32mI (70522) IR-UART: 0x97[0m
+[0;32mI (70522) IR-UART: 0x74[0m
+[0;32mI (70522) IR-UART: 0x3D[0m
+[0;32mI (70532) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (70792) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (70852) IR-UART: 0x5A[0m
+[0;32mI (70852) IR-UART: 0x54[0m
+[0;32mI (70852) IR-UART: 0x06[0m
+[0;32mI (70852) IR-UART: 0x34[0m
+[0;32mI (70852) IR-UART: 0x98[0m
+[0;32mI (70852) IR-UART: 0x7A[0m
+[0;32mI (70852) IR-UART: 0xB5[0m
+[0;32mI (70862) IR-UART: 0x97[0m
+[0;32mI (70862) IR-UART: 0x74[0m
+[0;32mI (70862) IR-UART: 0x3D[0m
+[0;32mI (70872) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (71132) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (71192) IR-UART: 0x5A[0m
+[0;32mI (71192) IR-UART: 0x54[0m
+[0;32mI (71192) IR-UART: 0x06[0m
+[0;32mI (71192) IR-UART: 0x34[0m
+[0;32mI (71192) IR-UART: 0x98[0m
+[0;32mI (71192) IR-UART: 0x7A[0m
+[0;32mI (71192) IR-UART: 0xB5[0m
+[0;32mI (71202) IR-UART: 0x97[0m
+[0;32mI (71202) IR-UART: 0x74[0m
+[0;32mI (71202) IR-UART: 0x3D[0m
+[0;32mI (71212) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (71472) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (71532) IR-UART: 0x5A[0m
+[0;32mI (71532) IR-UART: 0x54[0m
+[0;32mI (71532) IR-UART: 0x06[0m
+[0;32mI (71532) IR-UART: 0x34[0m
+[0;32mI (71532) IR-UART: 0x98[0m
+[0;32mI (71532) IR-UART: 0x7A[0m
+[0;32mI (71532) IR-UART: 0xB5[0m
+[0;32mI (71542) IR-UART: 0x97[0m
+[0;32mI (71542) IR-UART: 0x74[0m
+[0;32mI (71542) IR-UART: 0x3D[0m
+[0;32mI (71552) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (71812) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (71872) IR-UART: 0x5A[0m
+[0;32mI (71872) IR-UART: 0x54[0m
+[0;32mI (71872) IR-UART: 0x06[0m
+[0;32mI (71872) IR-UART: 0x34[0m
+[0;32mI (71872) IR-UART: 0x98[0m
+[0;32mI (71872) IR-UART: 0x7A[0m
+[0;32mI (71872) IR-UART: 0xB5[0m
+[0;32mI (71882) IR-UART: 0x97[0m
+[0;32mI (71882) IR-UART: 0x74[0m
+[0;32mI (71882) IR-UART: 0x3D[0m
+[0;32mI (71892) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (72152) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (72212) IR-UART: 0x5A[0m
+[0;32mI (72212) IR-UART: 0x54[0m
+[0;32mI (72212) IR-UART: 0x06[0m
+[0;32mI (72212) IR-UART: 0x34[0m
+[0;32mI (72212) IR-UART: 0x98[0m
+[0;32mI (72212) IR-UART: 0x7A[0m
+[0;32mI (72212) IR-UART: 0xB5[0m
+[0;32mI (72222) IR-UART: 0x97[0m
+[0;32mI (72222) IR-UART: 0x74[0m
+[0;32mI (72222) IR-UART: 0x3D[0m
+[0;32mI (72232) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (72492) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (72552) IR-UART: 0x5A[0m
+[0;32mI (72552) IR-UART: 0x54[0m
+[0;32mI (72552) IR-UART: 0x06[0m
+[0;32mI (72552) IR-UART: 0x34[0m
+[0;32mI (72552) IR-UART: 0x98[0m
+[0;32mI (72552) IR-UART: 0x7A[0m
+[0;32mI (72552) IR-UART: 0xB5[0m
+[0;32mI (72562) IR-UART: 0x97[0m
+[0;32mI (72562) IR-UART: 0x74[0m
+[0;32mI (72562) IR-UART: 0x3D[0m
+[0;32mI (72572) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (72832) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (72892) IR-UART: 0x5A[0m
+[0;32mI (72892) IR-UART: 0x54[0m
+[0;32mI (72892) IR-UART: 0x06[0m
+[0;32mI (72892) IR-UART: 0x34[0m
+[0;32mI (72892) IR-UART: 0x98[0m
+[0;32mI (72892) IR-UART: 0x7A[0m
+[0;32mI (72892) IR-UART: 0xB5[0m
+[0;32mI (72902) IR-UART: 0x97[0m
+[0;32mI (72902) IR-UART: 0x74[0m
+[0;32mI (72902) IR-UART: 0x3D[0m
+[0;32mI (72912) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (73172) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (73232) IR-UART: 0x5A[0m
+[0;32mI (73232) IR-UART: 0x54[0m
+[0;32mI (73232) IR-UART: 0x06[0m
+[0;32mI (73232) IR-UART: 0x34[0m
+[0;32mI (73232) IR-UART: 0x98[0m
+[0;32mI (73232) IR-UART: 0x7A[0m
+[0;32mI (73232) IR-UART: 0xB5[0m
+[0;32mI (73242) IR-UART: 0x97[0m
+[0;32mI (73242) IR-UART: 0x74[0m
+[0;32mI (73242) IR-UART: 0x3D[0m
+[0;32mI (73252) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (73512) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (73572) IR-UART: 0x5A[0m
+[0;32mI (73572) IR-UART: 0x54[0m
+[0;32mI (73572) IR-UART: 0x06[0m
+[0;32mI (73572) IR-UART: 0x34[0m
+[0;32mI (73572) IR-UART: 0x98[0m
+[0;32mI (73572) IR-UART: 0x7A[0m
+[0;32mI (73572) IR-UART: 0xB5[0m
+[0;32mI (73582) IR-UART: 0x97[0m
+[0;32mI (73582) IR-UART: 0x74[0m
+[0;32mI (73582) IR-UART: 0x3D[0m
+[0;32mI (73592) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (73852) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (73912) IR-UART: 0x5A[0m
+[0;32mI (73912) IR-UART: 0x54[0m
+[0;32mI (73912) IR-UART: 0x06[0m
+[0;32mI (73912) IR-UART: 0x34[0m
+[0;32mI (73912) IR-UART: 0x98[0m
+[0;32mI (73912) IR-UART: 0x7A[0m
+[0;32mI (73912) IR-UART: 0xB5[0m
+[0;32mI (73922) IR-UART: 0x97[0m
+[0;32mI (73922) IR-UART: 0x74[0m
+[0;32mI (73922) IR-UART: 0x3D[0m
+[0;32mI (73932) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (74192) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (74252) IR-UART: 0x5A[0m
+[0;32mI (74252) IR-UART: 0x54[0m
+[0;32mI (74252) IR-UART: 0x06[0m
+[0;32mI (74252) IR-UART: 0x34[0m
+[0;32mI (74252) IR-UART: 0x98[0m
+[0;32mI (74252) IR-UART: 0x7A[0m
+[0;32mI (74252) IR-UART: 0xB5[0m
+[0;32mI (74262) IR-UART: 0x97[0m
+[0;32mI (74262) IR-UART: 0x74[0m
+[0;32mI (74262) IR-UART: 0x3D[0m
+[0;32mI (74272) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (74532) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+MAC+CRC (len=6)[0m
+[0;32mI (74592) IR-UART: 0x5A[0m
+[0;32mI (74592) IR-UART: 0x54[0m
+[0;32mI (74592) IR-UART: 0x06[0m
+[0;32mI (74592) IR-UART: 0x34[0m
+[0;32mI (74592) IR-UART: 0x98[0m
+[0;32mI (74592) IR-UART: 0x7A[0m
+[0;32mI (74592) IR-UART: 0xB5[0m
+[0;32mI (74602) IR-UART: 0x97[0m
+[0;32mI (74602) IR-UART: 0x74[0m
+[0;32mI (74602) IR-UART: 0x3D[0m
+[0;32mI (74612) RX: CRC OK but ignored self frame (our MAC)[0m

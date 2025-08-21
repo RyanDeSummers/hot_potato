@@ -1,0 +1,880 @@
+����m[�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10720h ( 67360) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=00020748 vaddr=3ffb0000 size=028d0h ( 10448) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=00023020 vaddr=40080000 size=0cff8h ( 53240) load[0m
+[0;32mI (155) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2fe1ch (196124) map[0m
+[0;32mI (222) esp_image: segment 4: paddr=0005fe44 vaddr=4008cff8 size=02758h ( 10072) load[0m
+[0;32mI (234) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (234) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (255) app_init: Application information:[0m
+[0;32mI (258) app_init: Project name:     hot_potato[0m
+[0;32mI (263) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (268) app_init: Compile time:     Aug 12 2025 21:50:08[0m
+[0;32mI (274) app_init: ELF file SHA256:  4737b6673...[0m
+[0;32mI (280) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (285) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (290) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (295) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFB37D0 len 0002C830 (178 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (325) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 4008F750 len 000108B0 (66 KiB): IRAM[0m
+[0;32mI (339) spi_flash: detected chip: generic[0m
+[0;32mI (342) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (361) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (371) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;32mI (401) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (571) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:2 [0m
+[0;32mI (571) IR_SIMPLE_TEST_OPT: Button interrupt setup successful[0m
+[0;32mI (571) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (581) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (591) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (601) gpio: GPIO[36]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (601) IR_SIMPLE_TEST_OPT: RMT RX initialized[0m
+[0;32mI (611) IR_SIMPLE_TEST_OPT: RX task started[0m
+[0;32mI (611) IR_SIMPLE_TEST_OPT: TX task started[0m
+[0;32mI (621) IR_SIMPLE_TEST_OPT: IR Simple Test ready - press Button A to send[0m
+[0;32mI (7171) RX: Dump 8 symbols:[0m
+[0;32mI (7171) RX: [00] l0=0 d0=859 | l1=1 d1=378[0m
+[0;32mI (7171) RX: [01] l0=0 d0=442 | l1=1 d1=821[0m
+[0;32mI (7171) RX: [02] l0=0 d0=436 | l1=1 d1=380[0m
+[0;32mI (7181) RX: [03] l0=0 d0=440 | l1=1 d1=29529[0m
+[0;32mI (7181) RX: [04] l0=0 d0=1255 | l1=1 d1=404[0m
+[0;32mI (7191) RX: [05] l0=0 d0=437 | l1=1 d1=405[0m
+[0;32mI (7191) RX: [06] l0=0 d0=489 | l1=1 d1=325[0m
+[0;32mI (7201) RX: [07] l0=0 d0=464 | l1=1 d1=0[0m
+[0;32mI (7201) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (7211) IR_SIMPLE_TEST_OPT: RX parser: state=0, byte=0x5A[0m
+[0;32mI (7211) IR_SIMPLE_TEST_OPT: RX parser: found 'Z', moving to S_SYNC_T[0m
+[0;32mI (7271) RX: Dump 1 symbols:[0m
+[0;32mI (7271) RX: [00] l0=0 d0=459 | l1=1 d1=0[0m
+[0;32mI (7271) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7321) RX: Dump 1 symbols:[0m
+[0;32mI (7321) RX: [00] l0=0 d0=434 | l1=1 d1=0[0m
+[0;32mI (7321) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7361) RX: Dump 1 symbols:[0m
+[0;32mI (7361) RX: [00] l0=0 d0=439 | l1=1 d1=0[0m
+[0;32mI (7361) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7431) RX: Dump 1 symbols:[0m
+[0;32mI (7431) RX: [00] l0=0 d0=439 | l1=1 d1=0[0m
+[0;32mI (7431) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7481) RX: Dump 1 symbols:[0m
+[0;32mI (7481) RX: [00] l0=0 d0=440 | l1=1 d1=0[0m
+[0;32mI (7481) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7521) RX: Dump 2 symbols:[0m
+[0;32mI (7521) RX: [00] l0=0 d0=1697 | l1=1 d1=409[0m
+[0;32mI (7521) RX: [01] l0=0 d0=1669 | l1=1 d1=0[0m
+[0;32mI (7521) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7581) RX: Dump 3 symbols:[0m
+[0;32mI (7581) RX: [00] l0=0 d0=434 | l1=1 d1=381[0m
+[0;32mI (7591) RX: [01] l0=0 d0=1281 | l1=1 d1=404[0m
+[0;32mI (7591) RX: [02] l0=0 d0=437 | l1=1 d1=0[0m
+[0;32mI (7591) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7671) RX: Dump 4 symbols:[0m
+[0;32mI (7671) RX: [00] l0=0 d0=860 | l1=1 d1=403[0m
+[0;32mI (7671) RX: [01] l0=0 d0=439 | l1=1 d1=376[0m
+[0;32mI (7671) RX: [02] l0=0 d0=434 | l1=1 d1=830[0m
+[0;32mI (7681) RX: [03] l0=0 d0=437 | l1=1 d1=0[0m
+[0;32mI (7681) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7741) RX: Dump 3 symbols:[0m
+[0;32mI (7741) RX: [00] l0=0 d0=443 | l1=1 d1=400[0m
+[0;32mI (7741) RX: [01] l0=0 d0=856 | l1=1 d1=801[0m
+[0;32mI (7741) RX: [02] l0=0 d0=435 | l1=1 d1=0[0m
+[0;32mI (7741) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7821) RX: Dump 2 symbols:[0m
+[0;32mI (7821) RX: [00] l0=0 d0=440 | l1=1 d1=375[0m
+[0;32mI (7821) RX: [01] l0=0 d0=2959 | l1=1 d1=0[0m
+[0;32mI (7821) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7891) RX: Dump 2 symbols:[0m
+[0;32mI (7891) RX: [00] l0=0 d0=435 | l1=1 d1=408[0m
+[0;32mI (7891) RX: [01] l0=0 d0=2936 | l1=1 d1=0[0m
+[0;32mI (7891) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7931) RX: Dump 2 symbols:[0m
+[0;32mI (7931) RX: [00] l0=0 d0=1281 | l1=1 d1=404[0m
+[0;32mI (7931) RX: [01] l0=0 d0=2099 | l1=1 d1=0[0m
+[0;32mI (7931) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (7971) RX: Dump 1 symbols:[0m
+[0;32mI (7971) RX: [00] l0=0 d0=438 | l1=1 d1=0[0m
+[0;32mI (7971) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (8041) RX: Dump 4 symbols:[0m
+[0;32mI (8041) RX: [00] l0=0 d0=442 | l1=1 d1=401[0m
+[0;32mI (8041) RX: [01] l0=0 d0=440 | l1=1 d1=796[0m
+[0;32mI (8051) RX: [02] l0=0 d0=440 | l1=1 d1=402[0m
+[0;32mI (8051) RX: [03] l0=0 d0=439 | l1=1 d1=0[0m
+[0;32mI (8061) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (8121) RX: Dump 2 symbols:[0m
+[0;32mI (8121) RX: [00] l0=0 d0=433 | l1=1 d1=1645[0m
+[0;32mI (8121) RX: [01] l0=0 d0=464 | l1=1 d1=0[0m
+[0;32mI (8121) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (8181) RX: Dump 3 symbols:[0m
+[0;32mI (8181) RX: [00] l0=0 d0=434 | l1=1 d1=409[0m
+[0;32mI (8181) RX: [01] l0=0 d0=433 | l1=1 d1=830[0m
+[0;32mI (8181) RX: [02] l0=0 d0=437 | l1=1 d1=0[0m
+[0;32mI (8191) IR_SIMPLE_TEST_OPT: RX: discard (no valid start/stop)[0m
+[0;32mI (14531) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (14531) IR_SIMPLE_TEST_OPT: Sent byte: 0x5A[0m
+[0;32mI (14531) IR_SIMPLE_TEST_OPT: TX prebuilt 0x54 into 10 symbols[0m
+[0;32mI (14541) IR_SIMPLE_TEST_OPT: Sent byte: 0x54[0m
+[0;32mI (14541) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14551) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14551) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14561) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14571) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14581) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14581) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14591) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14591) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14601) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14601) IR_SIMPLE_TEST_OPT: TX prebuilt 0xFF into 10 symbols[0m
+[0;32mI (14611) IR_SIMPLE_TEST_OPT: Sent byte: 0xFF[0m
+[0;32mI (14611) IR_SIMPLE_TEST_OPT: TX prebuilt 0x34 into 10 symbols[0m
+[0;32mI (14621) IR_SIMPLE_TEST_OPT: Sent byte: 0x34[0m
+[0;32mI (14621) IR_SIMPLE_TEST_OPT: TX prebuilt 0x98 into 10 symbols[0m
+[0;32mI (14631) IR_SIMPLE_TEST_OPT: Sent byte: 0x98[0m
+[0;32mI (14631) IR_SIMPLE_TEST_OPT: TX prebuilt 0x7A into 10 symbols[0m
+[0;32mI (14651) IR_SIMPLE_TEST_OPT: Sent byte: 0x7A[0m
+[0;32mI (14651) IR_SIMPLE_TEST_OPT: TX prebuilt 0xB5 into 10 symbols[0m
+[0;32mI (14661) IR_SIMPLE_TEST_OPT: Sent byte: 0xB5[0m
+[0;32mI (14661) IR_SIMPLE_TEST_OPT: TX prebuilt 0x97 into 10 symbols[0m
+[0;32mI (14671) IR_SIMPLE_TEST_OPT: Sent byte: 0x97[0m
+[0;32mI (14671) IR_SIMPLE_TEST_OPT: TX prebuilt 0x74 into 10 symbols[0m
+[0;32mI (14681) IR_SIMPLE_TEST_OPT: Sent byte: 0x74[0m
+[0;32mI (14681) IR_SIMPLE_TEST_OPT: TX prebuilt 0x01 into 10 symbols[0m
+[0;32mI (14691) IR_SIMPLE_TEST_OPT: Sent byte: 0x01[0m
+[0;32mI (14691) IR_SIMPLE_TEST_OPT: TX prebuilt 0x00 into 10 symbols[0m
+[0;32mI (14701) IR_SIMPLE_TEST_OPT: Sent byte: 0x00[0m
+[0;32mI (14701) IR_SIMPLE_TEST_OPT: TX prebuilt 0x04 into 10 symbols[0m
+[0;32mI (14711) IR_SIMPLE_TEST_OPT: Sent byte: 0x04[0m
+[0;32mI (14721) IR_SIMPLE_TEST_OPT: TX prebuilt 0xDE into 10 symbols[0m
+[0;32mI (14731) IR_SIMPLE_TEST_OPT: Sent byte: 0xDE[0m
+[0;32mI (14731) IR_SIMPLE_TEST_OPT: TX prebuilt 0xAD into 10 symbols[0m
+[0;32mI (14741) IR_SIMPLE_TEST_OPT: Sent byte: 0xAD[0m
+[0;32mI (14741) IR_SIMPLE_TEST_OPT: TX prebuilt 0xBE into 10 symbols[0m
+[0;32mI (14751) IR_SIMPLE_TEST_OPT: Sent byte: 0xBE[0m
+[0;32mI (14751) IR_SIMPLE_TEST_OPT: TX prebuilt 0xEF into 10 symbols[0m
+[0;32mI (14761) IR_SIMPLE_TEST_OPT: Sent byte: 0xEF[0m
+[0;32mI (14761) IR_SIMPLE_TEST_OPT: TX prebuilt 0x8A into 10 symbols[0m
+[0;32mI (14771) IR_SIMPLE_TEST_OPT: Sent byte: 0x8A[0m
+[0;32mI (14801) RX: Dump 20 symbols:[0m
+[0;32mI (14801) RX: [00] l0=0 d0=859 | l1=1 d1=378[0m
+[0;32mI (14801) RX: [01] l0=0 d0=442 | l1=1 d1=821[0m
+[0;32mI (14801) RX: [02] l0=0 d0=436 | l1=1 d1=432[0m
+[0;32mI (14811) RX: [03] l0=0 d0=409 | l1=1 d1=3012[0m
+[0;32mI (14811) RX: [04] l0=0 d0=1257 | l1=1 d1=400[0m
+[0;32mI (14821) RX: [05] l0=0 d0=441 | l1=1 d1=428[0m
+[0;32mI (14821) RX: [06] l0=0 d0=413 | l1=1 d1=402[0m
+[0;32mI (14831) RX: [07] l0=0 d0=440 | l1=1 d1=7742[0m
+[0;32mI (14831) RX: [08] l0=0 d0=462 | l1=1 d1=11091[0m
+[0;32mI (14841) RX: [09] l0=0 d0=437 | l1=1 d1=11114[0m
+[0;32mI (14841) RX: [10] l0=0 d0=435 | l1=1 d1=11116[0m
+[0;32mI (14851) RX: [11] l0=0 d0=433 | l1=1 d1=11118[0m
+[0;32mI (14851) RX: [12] l0=0 d0=441 | l1=1 d1=11084[0m
+[0;32mI (14861) RX: [13] l0=0 d0=434 | l1=1 d1=11117[0m
+[0;32mI (14861) RX: [14] l0=0 d0=1283 | l1=1 d1=402[0m
+[0;32mI (14871) RX: [15] l0=0 d0=409 | l1=1 d1=828[0m
+[0;32mI (14871) RX: [16] l0=0 d0=854 | l1=1 d1=7776[0m
+[0;32mI (14881) RX: [17] l0=0 d0=1675 | l1=1 d1=825[0m
+[0;32mI (14881) RX: [18] l0=0 d0=858 | l1=1 d1=8193[0m
+[0;32mI (14891) RX: [19] l0=0 d0=832 | l1=1 d1=404[0m
+[0;32mI (14891) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (14901) IR_SIMPLE_TEST_OPT: RX parser: state=1, byte=0x5A[0m
+[0;32mI (14911) IR_SIMPLE_TEST_OPT: RX parser: expected 'T' (0x54), got 0x5A, resetting[0m
+[0;32mI (14911) RX: Dump 20 symbols:[0m
+[0;32mI (14921) RX: [00] l0=0 d0=859 | l1=1 d1=378[0m
+[0;32mI (14921) RX: [01] l0=0 d0=442 | l1=1 d1=821[0m
+[0;32mI (14931) RX: [02] l0=0 d0=436 | l1=1 d1=432[0m
+[0;32mI (14931) RX: [03] l0=0 d0=409 | l1=1 d1=3012[0m
+[0;32mI (14941) RX: [04] l0=0 d0=1257 | l1=1 d1=400[0m
+[0;32mI (14941) RX: [05] l0=0 d0=441 | l1=1 d1=428[0m
+[0;32mI (14951) RX: [06] l0=0 d0=413 | l1=1 d1=402[0m
+[0;32mI (14951) RX: [07] l0=0 d0=440 | l1=1 d1=7742[0m
+[0;32mI (14961) RX: [08] l0=0 d0=462 | l1=1 d1=11091[0m
+[0;32mI (14961) RX: [09] l0=0 d0=437 | l1=1 d1=11114[0m
+[0;32mI (14971) RX: [10] l0=0 d0=435 | l1=1 d1=11116[0m
+[0;32mI (14971) RX: [11] l0=0 d0=433 | l1=1 d1=11118[0m
+[0;32mI (14981) RX: [12] l0=0 d0=441 | l1=1 d1=11084[0m
+[0;32mI (14981) RX: [13] l0=0 d0=434 | l1=1 d1=11117[0m
+[0;32mI (14991) RX: [14] l0=0 d0=1283 | l1=1 d1=402[0m
+[0;32mI (14991) RX: [15] l0=0 d0=409 | l1=1 d1=828[0m
+[0;32mI (15001) RX: [16] l0=0 d0=854 | l1=1 d1=7776[0m
+[0;32mI (15001) RX: [17] l0=0 d0=1675 | l1=1 d1=825[0m
+[0;32mI (15011) RX: [18] l0=0 d0=858 | l1=1 d1=8193[0m
+[0;32mI (15011) RX: [19] l0=0 d0=832 | l1=1 d1=404[0m
+[0;32mI (15021) IR_SIMPLE_TEST_OPT: Received byte: 0x5A[0m
+[0;32mI (15021) IR_SIMPLE_TEST_OPT: RX parser: state=0, byte=0x5A[0m
+[0;32mI (15031) IR_SIMPLE_TEST_OPT: RX parser: found 'Z', moving to S_SYNC_T[0m
+[0;31mE (15041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15111) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15111) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15211) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15301) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15301) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15471) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15661) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15751) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15751) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15941) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15941) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (15991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16111) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16211) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16301) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16471) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16661) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16751) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16941) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (16991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17111) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17211) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17301) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17471) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17661) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17751) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17941) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (17991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18101) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18111) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18121) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18131) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18141) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18151) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18161) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18171) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18181) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18191) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18201) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18211) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18211) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18221) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18231) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18241) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18251) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18261) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18271) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18281) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18291) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18301) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18311) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18321) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18331) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18341) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18351) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18361) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18371) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18381) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18391) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18401) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18411) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18421) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18431) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18441) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18451) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18461) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18471) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18471) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18481) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18491) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18501) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18511) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18521) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18531) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18541) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18551) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18561) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18571) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18581) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18591) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18601) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18611) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18621) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18631) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18641) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18651) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18661) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18661) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18671) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18681) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18691) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18701) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18711) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18721) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18731) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18741) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18751) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18761) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18771) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18781) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18791) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18801) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18811) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18821) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18831) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18841) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18851) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18861) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18871) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18881) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18891) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18901) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18911) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18921) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18931) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18941) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18951) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18961) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18971) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18981) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (18991) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19001) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19011) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19021) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19031) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19041) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19051) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19061) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19071) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19081) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19091) rmt: rmt_receive(392): channel not in enable state[0m
+[0;31mE (19101) rmt: rmt_receive(392): channel not in enable state[0m

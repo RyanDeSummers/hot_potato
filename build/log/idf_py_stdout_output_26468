@@ -1,0 +1,181 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20220h (131616) map[0m
+[0;32mI (150) esp_image: segment 1: paddr=00030248 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=000345c8 vaddr=40080000 size=0ba50h ( 47696) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9b5e8h (636392) map[0m
+[0;32mI (394) esp_image: segment 4: paddr=000db610 vaddr=4008ba50 size=0ebach ( 60332) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (452) cpu_start: Pro cpu start user code[0m
+[0;32mI (452) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (455) app_init: Project name:     hot_potato[0m
+[0;32mI (460) app_init: App version:      6f5b998-dirty[0m
+[0;32mI (465) app_init: Compile time:     Aug 18 2025 14:23:14[0m
+[0;32mI (471) app_init: ELF file SHA256:  5567b851a...[0m
+[0;32mI (476) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (482) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (487) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (491) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (497) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (504) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (510) heap_init: At 3FFB8E68 len 00027198 (156 KiB): DRAM[0m
+[0;32mI (516) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (522) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (529) heap_init: At 4009A5FC len 00005A04 (22 KiB): IRAM[0m
+[0;32mI (536) spi_flash: detected chip: generic[0m
+[0;32mI (539) spi_flash: flash io: dio[0m
+[0;33mW (543) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (558) main_task: Started on CPU0[0m
+[0;32mI (568) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (568) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;31mE (568) task_wdt: esp_task_wdt_init(515): TWDT already initialized[0m
+[0;32mI (578) IR_SIMPLE_TEST_OPT: MAC: 34:98:7A:B5:97:74[0m
+[0;32mI (608) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (778) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (778) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (778) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (788) CFG: Self MAC = 34:98:7A:B5:97:74[0m
+[0;32mI (818) wifi:wifi driver task: 3ffc17e4, prio:23, stack:6656, core=0[0m
+[0;32mI (818) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (818) wifi:wifi certification version: v7.0[0m
+[0;32mI (818) wifi:config NVS flash: enabled[0m
+[0;32mI (818) wifi:config nano formating: disabled[0m
+[0;32mI (828) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (828) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (838) wifi:Init management short buffer num: 32[0m
+[0;32mI (838) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (848) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (848) wifi:Init static rx buffer num: 10[0m
+[0;32mI (848) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (858) wifi_init: rx ba win: 6[0m
+[0;32mI (858) wifi_init: accept mbox: 6[0m
+[0;32mI (868) wifi_init: tcpip mbox: 32[0m
+[0;32mI (868) wifi_init: udp mbox: 6[0m
+[0;32mI (868) wifi_init: tcp mbox: 6[0m
+[0;32mI (878) wifi_init: tcp tx win: 5760[0m
+[0;32mI (878) wifi_init: tcp rx win: 5760[0m
+[0;32mI (888) wifi_init: tcp mss: 1440[0m
+[0;32mI (888) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (888) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (898) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (988) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1108) wifi:mode : sta (34:98:7a:b5:97:74)[0m
+[0;32mI (1118) wifi:enable tsf[0m
+[0;32mI (1118) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1118) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (1118) ESPNOW: init OK, channel=1[0m
+[0;32mI (1118) IR-UART: UART RX initialized on GPIO36 at 2400-8N1[0m
+[0;32mI (1128) IR-UART: UART RX task started[0m
+[0;32mI (1128) IR_SIMPLE_TEST_OPT: Initial HOLDER - startup delay 3000ms[0m
+[0;32mI (1138) IR_SIMPLE_TEST_OPT: IR Simple Test (Stage-2a) ready - potato passing demo[0m
+[0;32mI (1978) IR-UART: 0xFF[0m
+[0;32mI (4178) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=0)[0m
+[0;32mI (4238) IR-UART: 0x5A[0m
+[0;32mI (4238) IR-UART: 0x54[0m
+[0;32mI (4238) IR-UART: 0x07[0m
+[0;32mI (4238) IR-UART: 0x00[0m
+[0;32mI (4238) IR-UART: 0x34[0m
+[0;32mI (4238) IR-UART: 0x98[0m
+[0;32mI (4238) IR-UART: 0x7A[0m
+[0;32mI (4248) IR-UART: 0xB5[0m
+[0;32mI (4248) IR-UART: 0x97[0m
+[0;32mI (4248) IR-UART: 0x74[0m
+[0;32mI (4248) IR-UART: 0xE7[0m
+[0;32mI (4258) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (4358) IR-UART: 0xFF[0m
+[0;32mI (4358) IR-UART: 0xFF[0m
+[0;32mI (4518) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=1)[0m
+[0;32mI (4578) IR-UART: 0x5A[0m
+[0;32mI (4578) IR-UART: 0x54[0m
+[0;32mI (4578) IR-UART: 0x07[0m
+[0;32mI (4578) IR-UART: 0x01[0m
+[0;32mI (4578) IR-UART: 0x34[0m
+[0;32mI (4578) IR-UART: 0x98[0m
+[0;32mI (4578) IR-UART: 0x7A[0m
+[0;32mI (4588) IR-UART: 0xB5[0m
+[0;32mI (4588) IR-UART: 0x97[0m
+[0;32mI (4588) IR-UART: 0x74[0m
+[0;32mI (4588) IR-UART: 0x0E[0m
+[0;32mI (4598) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (4858) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=2)[0m
+[0;32mI (4918) IR-UART: 0x5A[0m
+[0;32mI (4918) IR-UART: 0x54[0m
+[0;32mI (4918) IR-UART: 0x07[0m
+[0;32mI (4918) IR-UART: 0x02[0m
+[0;32mI (4918) IR-UART: 0x34[0m
+[0;32mI (4918) IR-UART: 0x98[0m
+[0;32mI (4918) IR-UART: 0x7A[0m
+[0;32mI (4928) IR-UART: 0xB5[0m
+[0;32mI (4928) IR-UART: 0x97[0m
+[0;32mI (4928) IR-UART: 0x74[0m
+[0;32mI (4928) IR-UART: 0x04[0m
+[0;32mI (4938) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5198) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=3)[0m
+[0;32mI (5258) IR-UART: 0x5A[0m
+[0;32mI (5258) IR-UART: 0x54[0m
+[0;32mI (5258) IR-UART: 0x07[0m
+[0;32mI (5258) IR-UART: 0x03[0m
+[0;32mI (5258) IR-UART: 0x34[0m
+[0;32mI (5258) IR-UART: 0x98[0m
+[0;32mI (5258) IR-UART: 0x7A[0m
+[0;32mI (5268) IR-UART: 0xB5[0m
+[0;32mI (5268) IR-UART: 0x97[0m
+[0;32mI (5268) IR-UART: 0x74[0m
+[0;32mI (5268) IR-UART: 0xED[0m
+[0;32mI (5278) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5538) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=4)[0m
+[0;32mI (5598) IR-UART: 0x5A[0m
+[0;32mI (5598) IR-UART: 0x54[0m
+[0;32mI (5598) IR-UART: 0x07[0m
+[0;32mI (5598) IR-UART: 0x04[0m
+[0;32mI (5598) IR-UART: 0x34[0m
+[0;32mI (5598) IR-UART: 0x98[0m
+[0;32mI (5598) IR-UART: 0x7A[0m
+[0;32mI (5608) IR-UART: 0xB5[0m
+[0;32mI (5608) IR-UART: 0x97[0m
+[0;32mI (5608) IR-UART: 0x74[0m
+[0;32mI (5608) IR-UART: 0x10[0m
+[0;32mI (5618) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (5878) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=5)[0m
+[0;32mI (5938) IR-UART: 0x5A[0m
+[0;32mI (5938) IR-UART: 0x54[0m
+[0;32mI (5938) IR-UART: 0x07[0m
+[0;32mI (5938) IR-UART: 0x05[0m
+[0;32mI (5938) IR-UART: 0x34[0m
+[0;32mI (5938) IR-UART: 0x98[0m
+[0;32mI (5938) IR-UART: 0x7A[0m
+[0;32mI (5948) IR-UART: 0xB5[0m
+[0;32mI (5948) IR-UART: 0x97[0m
+[0;32mI (5948) IR-UART: 0x74[0m
+[0;32mI (5948) IR-UART: 0xF9[0m
+[0;32mI (5958) RX: CRC OK but ignored self frame (our MAC)[0m
+[0;32mI (6218) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=7, seq=6)[0m

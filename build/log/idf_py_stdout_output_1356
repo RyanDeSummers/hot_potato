@@ -1,0 +1,473 @@
+.3.3-dirt�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0fe80h ( 65152) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=0001fea8 vaddr=3ffb0000 size=00170h (   368) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00020020 vaddr=400d0020 size=2eed4h (192212) map[0m
+[0;32mI (199) esp_image: segment 3: paddr=0004eefc vaddr=3ffb0170 size=026f0h (  9968) load[0m
+[0;32mI (203) esp_image: segment 4: paddr=000515f4 vaddr=40080000 size=0f344h ( 62276) load[0m
+[0;32mI (237) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (237) boot: Disabling RNG early entropy source...[0m
+[0;32mI (249) cpu_start: Multicore app[0m
+[0;32mI (257) cpu_start: Pro cpu start user code[0m
+[0;32mI (257) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (258) app_init: Application information:[0m
+[0;32mI (260) app_init: Project name:     hot_potato[0m
+[0;32mI (266) app_init: App version:      v5.3.3-dirty[0m
+[0;32mI (271) app_init: Compile time:     Aug 12 2025 21:50:08[0m
+[0;32mI (277) app_init: ELF file SHA256:  4fc309298...[0m
+[0;32mI (282) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (287) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (292) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (297) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (302) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (309) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (315) heap_init: At 3FFB3718 len 0002C8E8 (178 KiB): DRAM[0m
+[0;32mI (321) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (328) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (334) heap_init: At 4008F344 len 00010CBC (67 KiB): IRAM[0m
+[0;32mI (342) spi_flash: detected chip: generic[0m
+[0;32mI (345) spi_flash: flash io: dio[0m
+[0;33mW (349) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (364) main_task: Started on CPU0[0m
+[0;32mI (374) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (374) IR_SIMPLE_TEST: Starting IR Simple Test[0m
+[0;32mI (404) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (574) gpio: GPIO[39]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (584) IR_SIMPLE_TEST: RMT TX initialized[0m
+[0;32mI (584) gpio: GPIO[36]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (594) IR_SIMPLE_TEST: RMT RX initialized[0m
+[0;32mI (604) IR_SIMPLE_TEST: RX task started[0m
+[0;32mI (604) IR_SIMPLE_TEST: IR Simple Test ready - press Button A to send[0m
+[0;32mI (1374) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (1374) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (1374) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (1384) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (1394) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (1394) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (1404) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (1414) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (1414) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (1424) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (1424) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (2654) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (2654) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (2654) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (2664) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (2674) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (2674) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (2684) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (2694) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (2694) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (2704) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (2704) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (3364) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (3364) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (3364) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (3374) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (3384) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3384) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3394) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3404) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3404) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3414) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (3414) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (3894) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (3894) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (3894) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (3904) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (3914) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3914) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3924) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3934) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3934) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (3944) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (3944) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (4394) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (4394) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (4394) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (4404) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (4414) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (4414) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (4424) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (4434) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (4434) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (4444) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (4444) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (5034) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (5034) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (5034) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (5044) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (5054) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5054) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5064) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5074) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5074) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5084) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (5084) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (5584) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (5584) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (5584) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (5594) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (5604) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5604) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5614) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5624) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5624) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (5634) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (5634) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (6094) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (6094) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (6094) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (6104) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (6114) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6114) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6124) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6134) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6134) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6144) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (6144) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (6614) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (6614) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (6614) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (6624) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (6634) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6634) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6644) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6654) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6654) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (6664) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (6664) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (7434) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (7434) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (7434) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (7444) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (7454) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (7454) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (7464) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (7474) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (7474) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (7484) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (7484) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (11654) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (11654) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (11654) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (11664) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (11674) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (11674) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (11684) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (11694) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (11694) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (11704) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (11714) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (12034) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (12034) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (12034) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (12044) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (12054) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12054) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12064) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12074) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12074) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12084) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (12094) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (12304) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (12304) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (12304) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (12314) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (12324) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12324) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12334) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12344) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12344) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12354) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (12364) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (12524) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (12524) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (12524) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (12534) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (12544) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12544) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12554) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12564) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12564) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12574) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (12584) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (12744) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (12744) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (12744) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (12754) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (12764) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12764) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12774) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12784) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12784) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12794) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (12804) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (12954) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (12954) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (12954) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (12964) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (12974) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12974) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12984) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12994) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (12994) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13004) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (13014) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (13164) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (13164) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (13164) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (13174) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (13184) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13184) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13194) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13204) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13204) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13214) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (13224) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (13394) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (13394) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (13394) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (13404) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (13414) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13414) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13424) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13434) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13434) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13444) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (13454) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (13614) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (13614) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (13614) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (13624) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (13634) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13634) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13644) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13654) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13654) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (13664) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (13674) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (13984) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (13984) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (13984) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (13994) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (14004) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14004) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14014) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14024) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14024) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14034) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (14044) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (14314) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (14314) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (14314) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (14324) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (14334) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14334) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14344) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14354) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14354) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14364) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (14374) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (14574) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (14574) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (14574) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (14584) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (14594) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14594) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14604) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14614) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14614) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14624) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (14634) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (14784) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (14784) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (14784) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (14794) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (14804) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14804) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14814) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14824) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14824) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (14834) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (14844) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (15004) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (15004) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (15004) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (15014) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (15024) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15024) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15034) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15044) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15044) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15054) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (15064) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (15224) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (15224) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (15224) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (15234) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (15244) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15244) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15254) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15264) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15264) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15274) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (15284) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (15434) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (15434) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (15434) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (15444) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (15454) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15454) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15464) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15474) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15474) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15484) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (15494) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (15644) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (15644) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (15644) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (15654) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (15664) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15664) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15674) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15684) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15684) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15694) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (15704) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (15874) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (15874) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (15874) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (15884) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (15894) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15894) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15904) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15914) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15914) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (15924) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (15934) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (16104) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (16104) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (16104) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (16114) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (16124) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16124) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16134) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16144) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16144) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16154) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (16164) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (16324) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (16324) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (16324) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (16334) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (16344) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16344) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16354) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16364) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16364) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16374) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (16384) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (16534) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (16534) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (16534) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (16544) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (16554) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16554) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16564) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16574) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16574) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16584) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (16594) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (16744) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (16744) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (16744) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (16754) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (16764) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16764) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16774) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16784) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16784) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16794) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (16804) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (16954) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (16954) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (16954) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (16964) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (16974) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16974) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16984) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16994) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (16994) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17004) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (17014) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (17164) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (17164) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (17164) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (17174) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (17184) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17184) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17194) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17204) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17204) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17214) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (17224) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (17374) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (17374) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (17374) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (17384) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (17394) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17394) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17404) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17414) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17414) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17424) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (17434) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (17574) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (17574) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (17574) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (17584) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (17594) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17594) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17604) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17614) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17614) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17624) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (17634) IR_SIMPLE_TEST: Received byte: 0x07[0m
+[0;32mI (17764) IR_SIMPLE_TEST: Decoding 64 symbols[0m
+[0;32mI (17764) IR_SIMPLE_TEST: Bit 0: level0=0, is_mark=0, result=0x01[0m
+[0;32mI (17764) IR_SIMPLE_TEST: Bit 1: level0=0, is_mark=0, result=0x03[0m
+[0;32mI (17774) IR_SIMPLE_TEST: Bit 2: level0=0, is_mark=0, result=0x07[0m
+[0;32mI (17784) IR_SIMPLE_TEST: Bit 3: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17784) IR_SIMPLE_TEST: Bit 4: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17794) IR_SIMPLE_TEST: Bit 5: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17804) IR_SIMPLE_TEST: Bit 6: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17804) IR_SIMPLE_TEST: Bit 7: level0=1, is_mark=1, result=0x07[0m
+[0;32mI (17814) IR_SIMPLE_TEST: Final decoded byte: 0x07[0m
+[0;32mI (17824) IR_SIMPLE_TEST: Received byte: 0x07[0m
