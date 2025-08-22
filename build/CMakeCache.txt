@@ -358,9 +358,6 @@ PYTHON:UNINITIALIZED=C:\Espressif\python_env\idf5.3_py3.10_env\Scripts\python.ex
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
-//No help, variable specified on the command line.
-START_AS_HOLDER:UNINITIALIZED=1
-
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
 

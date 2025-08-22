@@ -1,0 +1,205 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20c60h (134240) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=00030c88 vaddr=3ffb0000 size=04398h ( 17304) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=00035028 vaddr=40080000 size=0aff0h ( 45040) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9c978h (641400) map[0m
+[0;32mI (395) esp_image: segment 4: paddr=000dc9a0 vaddr=4008aff0 size=0f7b8h ( 63416) load[0m
+[0;32mI (434) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (434) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (455) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (455) app_init: Application information:[0m
+[0;32mI (457) app_init: Project name:     hot_potato[0m
+[0;32mI (463) app_init: App version:      5f7bc89-dirty[0m
+[0;32mI (468) app_init: Compile time:     Aug 21 2025 13:41:37[0m
+[0;32mI (474) app_init: ELF file SHA256:  140af4048...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (489) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (494) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (499) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (506) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB8F28 len 000270D8 (156 KiB): DRAM[0m
+[0;32mI (519) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (525) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 4009A7A8 len 00005858 (22 KiB): IRAM[0m
+[0;32mI (539) spi_flash: detected chip: generic[0m
+[0;32mI (542) spi_flash: flash io: dio[0m
+[0;33mW (546) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (561) main_task: Started on CPU0[0m
+[0;32mI (571) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+[0;32mI (571) IR_SIMPLE_TEST_OPT: Starting IR Simple Test[0m
+[0;31mE (571) task_wdt: esp_task_wdt_init(515): TWDT already initialized[0m
+[0;32mI (581) IR_SIMPLE_TEST_OPT: MAC: 08:D1:F9:6A:D9:BC[0m
+[0;32mI (611) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (781) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (781) IR_SIMPLE_TEST_OPT: RMT TX initialized[0m
+[0;32mI (781) IR_SIMPLE_TEST_OPT: TX prebuilt 0x5A into 10 symbols[0m
+[0;32mI (791) CFG: Self MAC = 08:D1:F9:6A:D9:BC[0m
+[0;32mI (821) wifi:wifi driver task: 3ffc18c8, prio:23, stack:6656, core=0[0m
+[0;32mI (821) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (821) wifi:wifi certification version: v7.0[0m
+[0;32mI (821) wifi:config NVS flash: enabled[0m
+[0;32mI (821) wifi:config nano formating: disabled[0m
+[0;32mI (831) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (831) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (841) wifi:Init management short buffer num: 32[0m
+[0;32mI (841) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (841) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (851) wifi:Init static rx buffer num: 10[0m
+[0;32mI (851) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (861) wifi_init: rx ba win: 6[0m
+[0;32mI (861) wifi_init: accept mbox: 6[0m
+[0;32mI (861) wifi_init: tcpip mbox: 32[0m
+[0;32mI (871) wifi_init: udp mbox: 6[0m
+[0;32mI (871) wifi_init: tcp mbox: 6[0m
+[0;32mI (871) wifi_init: tcp tx win: 5760[0m
+[0;32mI (881) wifi_init: tcp rx win: 5760[0m
+[0;32mI (881) wifi_init: tcp mss: 1440[0m
+[0;32mI (891) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (891) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (901) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (991) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1071) wifi:mode : sta (08:d1:f9:6a:d9:bc)[0m
+[0;32mI (1071) wifi:enable tsf[0m
+[0;32mI (1081) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1081) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (1081) ESPNOW: init OK, channel=1[0m
+[0;32mI (1081) IR-UART: UART RX initialized on GPIO36 at 2400-8N1[0m
+[0;32mI (1091) IR-UART: UART RX task started[0m
+[0;32mI (1091) IR_RX: DISABLED (holder; not listening)[0m
+[0;32mI (1101) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1121) IR_SIMPLE_TEST_OPT: M5Stack FIRE side LEDs reset - should be OFF now[0m
+[0;32mI (1121) IR_SIMPLE_TEST_OPT: Initial HOLDER - startup delay 1ms[0m
+[0;32mI (1121) IR_SIMPLE_TEST_OPT: IR Simple Test (Stage-2a) ready - potato passing demo[0m
+[0;32mI (1161) IR_SIMPLE_TEST_OPT: update_led_state: role=0[0m
+[0;32mI (1161) IR_SIMPLE_TEST_OPT: Resetting LEDs before turning on for HOLDER role[0m
+[0;32mI (1171) IR_SIMPLE_TEST_OPT: LED: ON (HOLDER) - all 10 side LEDs red[0m
+[0;32mI (1471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=0)[0m
+[0;32mI (1771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=1)[0m
+[0;32mI (2071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=2)[0m
+[0;32mI (2371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=3)[0m
+[0;32mI (2671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=4)[0m
+[0;32mI (2971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=5)[0m
+[0;32mI (3271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=6)[0m
+[0;32mI (3571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=7)[0m
+[0;32mI (3871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=8)[0m
+[0;32mI (4171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=9)[0m
+[0;32mI (4471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=10)[0m
+[0;32mI (4771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=11)[0m
+[0;32mI (5071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=12)[0m
+[0;32mI (5371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=13)[0m
+[0;32mI (5671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=14)[0m
+[0;32mI (5971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=15)[0m
+[0;32mI (6271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=16)[0m
+[0;32mI (6571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=17)[0m
+[0;32mI (6871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=18)[0m
+[0;32mI (7171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=19)[0m
+[0;32mI (7471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=20)[0m
+[0;32mI (7771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=21)[0m
+[0;32mI (8071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=22)[0m
+[0;32mI (8371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=23)[0m
+[0;32mI (8671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=24)[0m
+[0;32mI (8971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=25)[0m
+[0;32mI (9271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=26)[0m
+[0;32mI (9571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=27)[0m
+[0;32mI (9871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=28)[0m
+[0;32mI (10171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=29)[0m
+[0;32mI (10471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=30)[0m
+[0;32mI (10771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=31)[0m
+[0;32mI (11071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=32)[0m
+[0;32mI (11371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=33)[0m
+[0;32mI (11671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=34)[0m
+[0;32mI (11971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=35)[0m
+[0;32mI (12271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=36)[0m
+[0;32mI (12571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=37)[0m
+[0;32mI (12871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=38)[0m
+[0;32mI (13171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=39)[0m
+[0;32mI (13471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=40)[0m
+[0;32mI (13771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=41)[0m
+[0;32mI (14071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=42)[0m
+[0;32mI (14371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=43)[0m
+[0;32mI (14671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=44)[0m
+[0;32mI (14971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=45)[0m
+[0;32mI (15271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=46)[0m
+[0;32mI (15571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=47)[0m
+[0;32mI (15871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=48)[0m
+[0;32mI (16171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=49)[0m
+[0;32mI (16471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=50)[0m
+[0;32mI (16771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=51)[0m
+[0;32mI (17071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=52)[0m
+[0;32mI (17371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=53)[0m
+[0;32mI (17671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=54)[0m
+[0;32mI (17971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=55)[0m
+[0;32mI (18271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=56)[0m
+[0;32mI (18571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=57)[0m
+[0;32mI (18871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=58)[0m
+[0;32mI (19171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=59)[0m
+[0;32mI (19471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=60)[0m
+[0;32mI (19771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=61)[0m
+[0;32mI (20071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=62)[0m
+[0;32mI (20371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=63)[0m
+[0;32mI (20671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=64)[0m
+[0;32mI (20971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=65)[0m
+[0;32mI (21271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=66)[0m
+[0;32mI (21571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=67)[0m
+[0;32mI (21871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=68)[0m
+[0;32mI (22171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=69)[0m
+[0;32mI (22471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=70)[0m
+[0;32mI (22771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=71)[0m
+[0;32mI (23071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=72)[0m
+[0;32mI (23371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=73)[0m
+[0;32mI (23671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=74)[0m
+[0;32mI (23971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=75)[0m
+[0;32mI (24271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=76)[0m
+[0;32mI (24571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=77)[0m
+[0;32mI (24871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=78)[0m
+[0;32mI (25171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=79)[0m
+[0;32mI (25471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=80)[0m
+[0;32mI (25771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=81)[0m
+[0;32mI (26071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=82)[0m
+[0;32mI (26371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=83)[0m
+[0;32mI (26671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=84)[0m
+[0;32mI (26971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=85)[0m
+[0;32mI (27271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=86)[0m
+[0;32mI (27571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=87)[0m
+[0;32mI (27871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=88)[0m
+[0;32mI (28171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=89)[0m
+[0;32mI (28471) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=90)[0m
+[0;32mI (28771) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=91)[0m
+[0;32mI (29071) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=92)[0m
+[0;32mI (29371) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=93)[0m
+[0;32mI (29671) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=94)[0m
+[0;32mI (29971) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=95)[0m
+[0;32mI (30271) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=96)[0m
+[0;32mI (30571) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=97)[0m
+[0;32mI (30871) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=98)[0m
+[0;32mI (31171) IR_SIMPLE_TEST_OPT: Sent ZT+LEN+SEQ+MAC+CRC (len=8, seq=99)[0m

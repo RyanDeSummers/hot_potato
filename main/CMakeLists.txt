@@ -4,6 +4,7 @@ idf_component_register(
         "SoundManager.cpp"
         "game_logic.cpp"        # <-- use .cpp here
         "ir_simple_test.cpp"
+        "ir_uplink_test.cpp"
 
     INCLUDE_DIRS
         "."

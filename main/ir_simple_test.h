@@ -50,6 +50,11 @@ void ir_rx_set_enabled(bool en);
 #define ENABLE_IR_BACKOFF 1   // set 0 to disable (old behavior)
 #endif
 
+// ---- Mode B handshake options ----
+#ifndef MODE_B_USE_ACK2
+#define MODE_B_USE_ACK2 1     // set 0 for immediate grant (faster but less robust)
+#endif
+
 // ---- IR config ----
 #define IR_BAUD         2400
 #define IR_BIT_US       (1000000 / IR_BAUD)   // 416 at 2400 bps

@@ -1,0 +1,96 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15644
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.3-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Aug  7 2025 21:47:29[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20b90h (134032) map[0m
+[0;32mI (151) esp_image: segment 1: paddr=00030bb8 vaddr=3ffb0000 size=04388h ( 17288) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=00034f48 vaddr=40080000 size=0b0d0h ( 45264) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9b70ch (636684) map[0m
+[0;32mI (394) esp_image: segment 4: paddr=000db734 vaddr=4008b0d0 size=0f6a4h ( 63140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (453) cpu_start: Pro cpu start user code[0m
+[0;32mI (453) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (453) app_init: Application information:[0m
+[0;32mI (456) app_init: Project name:     hot_potato[0m
+[0;32mI (461) app_init: App version:      5f7bc89-dirty[0m
+[0;32mI (466) app_init: Compile time:     Aug 21 2025 13:41:37[0m
+[0;32mI (472) app_init: ELF file SHA256:  ee084d6a6...[0m
+[0;32mI (478) app_init: ESP-IDF:          v5.3.3-dirty[0m
+[0;32mI (483) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (488) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (493) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (498) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (505) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFB8AF8 len 00027508 (157 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (523) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (530) heap_init: At 4009A774 len 0000588C (22 KiB): IRAM[0m
+[0;32mI (538) spi_flash: detected chip: generic[0m
+[0;32mI (541) spi_flash: flash io: dio[0m
+[0;33mW (544) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (559) main_task: Started on CPU0[0m
+[0;32mI (569) main_task: Calling app_main()[0m
+Starting Hot Potato Game
+Running Mode B: IR Uplink Test (holder RX / runners IR TX)
+[0;32mI (569) IR_UPLINK_TEST: === MODE B: IR UPLINK TEST (holder RX / runners IR TX) ===[0m
+[0;32mI (579) IR_UPLINK_TEST: Starting IR Uplink Test (Mode B)[0m
+[0;32mI (619) M5GFX: [Autodetect] M5Stack[0m
+[0;32mI (789) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (789) IR_UPLINK_TEST: UART RX ready on GPIO36 @ 2400-8N1[0m
+[0;32mI (819) wifi:wifi driver task: 3ffc1aa4, prio:23, stack:6656, core=0[0m
+[0;32mI (819) wifi:wifi firmware version: b0b320f[0m
+[0;32mI (819) wifi:wifi certification version: v7.0[0m
+[0;32mI (819) wifi:config NVS flash: enabled[0m
+[0;32mI (819) wifi:config nano formating: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (829) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (839) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (849) wifi:Init static rx buffer num: 10[0m
+[0;32mI (849) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (859) wifi_init: accept mbox: 6[0m
+[0;32mI (859) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (869) wifi_init: tcp mbox: 6[0m
+[0;32mI (869) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (989) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1059) wifi:mode : sta (08:d1:f9:6a:d9:bc)[0m
+[0;32mI (1059) wifi:enable tsf[0m
+[0;32mI (1059) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1069) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (1069) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1069) IR_UPLINK_TEST: M5Stack FIRE side LEDs reset - should be OFF now[0m
+[0;32mI (1079) IR_UPLINK_TEST: LED: OFF (RUNNER)[0m
+[0;32mI (1079) main_task: Returned from app_main()[0m

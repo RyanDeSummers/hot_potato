@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hot_potato",
-    "project_version":    "6f5b998-dirty",
+    "project_version":    "5f7bc89-dirty",
     "project_path":       "C:/esp-idf-v5.3.3/projects/hot_potato",
     "idf_path":           "C:/esp-idf-v5.3.3",
     "build_dir":          "C:/esp-idf-v5.3.3/projects/hot_potato/build",
@@ -1210,7 +1210,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "C:/esp-idf-v5.3.3/projects/hot_potato/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/esp-idf-v5.3.3/projects/hot_potato/main/main.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/SoundManager.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/game_logic.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp" ],
+            "sources": [ "C:/esp-idf-v5.3.3/projects/hot_potato/main/main.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/SoundManager.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/game_logic.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_simple_test.cpp", "C:/esp-idf-v5.3.3/projects/hot_potato/main/ir_uplink_test.cpp" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

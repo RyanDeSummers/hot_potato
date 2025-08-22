@@ -1,0 +1,8 @@
+CMake Error at C:/esp-idf-v5.3.3/tools/cmake/third_party/GetGitRevisionDescription.cmake:78 (configure_file):
+  Invalid argument
+Call Stack (most recent call first):
+  C:/esp-idf-v5.3.3/tools/cmake/third_party/GetGitRevisionDescription.cmake:93 (get_git_head_revision)
+  C:/esp-idf-v5.3.3/tools/cmake/project.cmake:700 (git_describe)
+  CMakeLists.txt:3 (project)
+
+
