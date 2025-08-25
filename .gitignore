@@ -1,0 +1,21 @@
+# ESP-IDF / CMake
+build/
+sdkconfig.old
+sdkconfig.ci
+*.bin
+*.elf
+*.map
+*.log
+project_description.json
+
+# Python caches
+**/__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# PlatformIO (if any)
+.pio/

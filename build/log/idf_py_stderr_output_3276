@@ -1,6 +1,0 @@
-CMake Warning:
-  Manually-specified variables were not used by the project:
-
-    HP_TEST_UPLINK
-
-
