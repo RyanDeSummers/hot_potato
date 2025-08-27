@@ -36,6 +36,15 @@ void give_potato(PlayerState* state, uint8_t sender_mac[6]) {
     printf("Potato received!\n");
 }
 
+void pass_potato(PlayerState* state, uint8_t target_mac[6]) {
+    if (!state->alive) return;
+    if (!state->has_potato) return;
+    if (can_pass_to(state, target_mac)) {
+        state->has_potato = false;
+        state->health = 11;
+    }
+}
+
 bool can_pass_to(PlayerState* state, uint8_t target_mac[6]) {
     // No tagbacks: can't pass to last sender
     return memcmp(state->last_sender_mac, target_mac, 6) != 0;
