@@ -5,6 +5,8 @@ idf_component_register(
         "game_logic.cpp"        # <-- use .cpp here
         "ir_simple_test.cpp"
         "ir_uplink_test.cpp"
+        "ir_downlink_test.cpp"
+        "zt_test_mode.cpp"
 
     INCLUDE_DIRS
         "."

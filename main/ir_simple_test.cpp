@@ -28,7 +28,7 @@
 #include "ir_simple_test.h"
 
 #define IR_TX_GPIO GPIO_NUM_26
-#define IR_RX_GPIO GPIO_NUM_36
+#define IR_RX_GPIO GPIO_NUM_36  // Reverted back - GPIO36 is fine for IR RX
 
 #define CARRIER_FREQ 38000 // 38 kHz
 
@@ -1485,6 +1485,17 @@ extern "C" void ir_simple_test_main(void) {
     }
     
     espnow_init_once();
+    
+    // 1) Join + countdown → get initial role & roster
+    zt_role_t init_role; zt_roster_t roster;
+    zt_join_and_countdown(&init_role, &roster, START_AS_HOLDER == 1); // HOST if START_AS_HOLDER=1
+
+    // 2) Apply role to Mode A (beacon mode): holder TX, runners RX
+    g_role = (init_role == ZT_ROLE_HOLDER) ? ROLE_HOLDER : ROLE_RUNNER;
+    ir_rx_set_enabled(g_role == ROLE_RUNNER);
+    
+    ESP_LOGI(TAG, "Test harness: initial role = %s", (init_role == ZT_ROLE_HOLDER) ? "HOLDER" : "RUNNER");
+    ESP_LOGI(TAG, "Test harness: roster count = %d", roster.count);
 #endif
 #if IR_RX_BACKEND_UART
     setup_uart_rx();

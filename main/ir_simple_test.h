@@ -1,5 +1,7 @@
 #pragma once
 
+#include "zt_test_mode.h"
+
 // ---- Role configuration ----
 #ifndef START_AS_HOLDER
 #define START_AS_HOLDER 1   // build: -DSTART_AS_HOLDER=0 for RUNNER

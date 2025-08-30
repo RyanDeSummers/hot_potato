@@ -20,6 +20,14 @@
 #include "driver/uart.h"
 #include "driver/rmt_tx.h"
 #include "ir_simple_test.h"  // reuse IR constants/macros (SLOTS, SLOT_US, etc.)
+#include "zt_test_mode.h"    // for g_T0_us
+
+#ifndef MODE_B_USE_ACK2
+#define MODE_B_USE_ACK2 1
+#endif
+
+static void zt_render_countdown(int secs, const uint8_t initial_holder[6], const zt_roster_t* roster);
+static void ir_uplink_recv_cb(const esp_now_recv_info* info, const uint8_t* data, int len);
 
 extern "C" {
   #include "led_strip.h"
@@ -32,7 +40,7 @@ extern led_strip_handle_t led_strip;
 
 // ---- GPIOs (match your existing wiring) ----
 #define IR_TX_GPIO   GPIO_NUM_26
-#define IR_RX_GPIO   GPIO_NUM_36
+#define IR_RX_GPIO   GPIO_NUM_36  // Reverted back - GPIO36 is fine for IR RX
 #define IR_UART_PORT UART_NUM_2
 
 static const char* TAG = "IR_UPLINK_TEST";
@@ -42,8 +50,9 @@ typedef enum { ROLE_HOLDER, ROLE_RUNNER } role_t;
 static volatile role_t g_role = START_AS_HOLDER ? ROLE_HOLDER : ROLE_RUNNER;
 static uint8_t  g_self_mac[6] = {0};
 static uint8_t  g_last_peer_mac[6] = {0};
-static int64_t  g_no_tagback_until_us = 1000;
-static int64_t  g_holder_startup_until_us = 1;
+static int64_t  g_no_tagback_until_us = 0;
+static int64_t  g_holder_startup_until_us = 0;
+static bool     g_game_started = false;  // Track when countdown is complete
 
 // ---- RMT TX (IR) ----
 static rmt_channel_handle_t rmt_tx_chan = nullptr;
@@ -70,6 +79,7 @@ static bool g_espnow_ready = false;
 static uint16_t g_window_seq = 0;
 static bool     g_granted_seq_valid = false;
 static uint16_t g_granted_seq = 0;
+static uint32_t g_empty_windows = 0;  // Count consecutive windows with no IR
 
 // Handshake state (holder waits for ACK2 from this runner/seq)
 static bool     g_wait_ack2 = false;
@@ -241,92 +251,14 @@ static esp_err_t espnow_init_once(void) {
     ESP_LOGD("ESPNOW","tx %02X:%02X:%02X:%02X:%02X:%02X -> %s",
       mac[0],mac[1],mac[2],mac[3],mac[4],mac[5], st==ESP_NOW_SEND_SUCCESS?"OK":"FAIL");
   }));
-  ESP_ERROR_CHECK(esp_now_register_recv_cb([](const esp_now_recv_info* info, const uint8_t* data, int len){
-    if (len<=0 || !data) return;
-    switch (data[0]) {
-      case MSG_IR_WINDOW: {
-        if (g_role != ROLE_RUNNER) break;
-        if (len < 14) break;
-        uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
-        uint8_t holder[6]; memcpy(holder, &data[3], 6);
-        uint8_t K = data[9];
-        uint32_t delta_us = (uint32_t)data[10] | ((uint32_t)data[11]<<8) | ((uint32_t)data[12]<<16) | ((uint32_t)data[13]<<24);
-
-        // no-tagback check
-        int64_t now = esp_timer_get_time();
-        if (now < g_no_tagback_until_us) { ESP_LOGI(TAG,"cooldown; skip window"); break; }
-
-        // Pick slot deterministically and schedule IR uplink
-        slot_pick_t sp = pick_slot(seq, holder, g_self_mac, K ? K : UPLINK_K);
-        uint64_t delay = (uint64_t)delta_us + (uint64_t)sp.slot * UPLINK_SLOT_US + sp.jitter_us;
-        esp_timer_handle_t t = nullptr;
-        const esp_timer_create_args_t a = { .callback = [](void* p){
-            uint16_t s = (uint16_t)(uintptr_t)p;
-            runner_send_ir_uplink(s);
-          }, .arg = (void*)(uintptr_t)seq, .name="ir_uplink_tx" };
-        ESP_ERROR_CHECK(esp_timer_create(&a, &t));
-        ESP_ERROR_CHECK(esp_timer_start_once(t, delay));
-        ESP_LOGI("IRBK","seq=%u slot=%u/%u jit=%uus send_in=%lluus", (unsigned)seq, sp.slot, K?K:UPLINK_K, sp.jitter_us, (unsigned long long)delay);
-        break;
-      }
-      case MSG_PASS_GRANT: {
-        if (g_role != ROLE_RUNNER) break;
-        if (len < 10) break;
-        uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
-        uint8_t new_holder[6]; memcpy(new_holder, &data[3], 6);
-        if (memcmp(new_holder, g_self_mac, 6) == 0) {
-                     // we won → become HOLDER
-           g_role = ROLE_HOLDER;
-           ir_rx_set_enabled(true);                   // holder listens in Mode B
-           g_holder_startup_until_us = esp_timer_get_time() + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
-           g_granted_seq_valid = false;
-           
-           // Update LEDs for HOLDER
-           if (led_strip) {
-             ESP_ERROR_CHECK(led_strip_clear(led_strip));
-             ESP_ERROR_CHECK(led_strip_refresh(led_strip));
-             for (int i = 0; i < HP_LED_COUNT; i++) {
-               ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 255, 0, 0)); // Red
-             }
-             ESP_ERROR_CHECK(led_strip_refresh(led_strip));
-           }
-           
-           // Update display
-           display.fillScreen(TFT_BLACK);
-           display.setCursor(0, 60);
-           display.printf("ROLE: HOLDER");
-           
-           ESP_LOGI("CORE","ROLE -> HOLDER (GRANT seq=%u)", (unsigned)seq);
-        }
-        break;
-      }
-      case MSG_ACK1_H2R: {
-        // Runner got ACK1 → send ACK2 back to holder
-        if (g_role != ROLE_RUNNER) break;
-        if (len < 3) break;
-        uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
-        if (!g_wait_ack1 || g_wait_ack1_seq != seq) break; // not ours
-        espnow_send_ack2_r2h(info->src_addr, seq);
-        g_wait_ack1 = false;
-        ESP_LOGI(TAG,"ACK1 rx → ACK2 tx (seq=%u)", (unsigned)seq);
-        break;
-      }
-      case MSG_ACK2_R2H: {
-        // Holder got ACK2 → commit pass
-        if (g_role != ROLE_HOLDER) break;
-        if (len < 3) break;
-        uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
-        if (!g_wait_ack2 || seq != g_wait_ack2_seq) break;
-        if (memcmp(info->src_addr, g_wait_ack2_mac, 6) != 0) break;
-        if (g_ack2_timer) esp_timer_stop(g_ack2_timer);
-        holder_commit_after_ack2(g_wait_ack2_mac, seq);
-        break;
-      }
-      default: break;
-    }
-  }));
+  ESP_ERROR_CHECK(esp_now_register_recv_cb(ir_uplink_recv_cb));
   g_espnow_ready = true;
   return ESP_OK;
+}
+
+// Reinstall Mode-B ESPNOW recv callback after test harness
+extern "C" void ir_uplink_install_recv_cb(void) {
+  ESP_ERROR_CHECK(esp_now_register_recv_cb(ir_uplink_recv_cb));
 }
 
 static esp_err_t ensure_peer(const uint8_t* mac) {
@@ -384,6 +316,9 @@ static esp_err_t espnow_send_ack2_r2h(const uint8_t* holder_mac, uint16_t seq) {
 }
 
 static void holder_commit_after_ack2(const uint8_t* winner_mac, uint16_t seq) {
+  // Update distinct-before-repeat round state
+  zt_record_grant(winner_mac);
+  
   // Commit: GRANT + STATE_SYNC, cooldown, flip role
   ESP_ERROR_CHECK(espnow_send_pass_grant(winner_mac, seq));
   ESP_ERROR_CHECK(espnow_send_state_sync(seq, winner_mac));
@@ -429,11 +364,13 @@ static void holder_window_task(void*){
   for (;;) {
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
     if (g_role != ROLE_HOLDER) continue;
+    if (!g_game_started) continue;  // Wait for countdown to complete
     int64_t now = esp_timer_get_time();
     if (now < g_holder_startup_until_us) continue;
 
     g_window_seq++;
     g_granted_seq_valid = false;
+    g_empty_windows++;  // Increment empty window counter
     
     // Dynamic K calculation to fit slots within period
     const uint32_t period_us = (uint32_t)BEACON_PERIOD_MS * 1000u;
@@ -444,7 +381,12 @@ static void holder_window_task(void*){
     
     const uint32_t delta_us = 7000; // window T0 = now + 7ms (reduced from 10ms)
     ESP_ERROR_CHECK(espnow_broadcast_ir_window(g_window_seq, K, delta_us));
-    ESP_LOGI(TAG, "IR_WINDOW seq=%u K=%u/%u T0=now+%u us", (unsigned)g_window_seq, (unsigned)K, (unsigned)UPLINK_K, (unsigned)delta_us);
+    ESP_LOGI(TAG, "IR_WINDOW seq=%u K=%u/%u T0=now+%u us window_len=%u us empty_count=%u", 
+             (unsigned)g_window_seq, (unsigned)K, (unsigned)UPLINK_K, (unsigned)delta_us, (unsigned)(K * UPLINK_SLOT_US), (unsigned)g_empty_windows);
+    zt_round_maybe_relax(g_empty_windows, g_self_mac);
+    if (g_empty_windows >= 10) {
+      ESP_LOGW(TAG, "WARNING: No IR received in %u consecutive windows - possible starvation", (unsigned)g_empty_windows);
+    }
   }
 }
 
@@ -477,11 +419,29 @@ static void uart_rx_task(void*){
             const uint8_t* src = has_seq ? (payload+2) : payload;
             if (g_role == ROLE_HOLDER && has_seq) {
               // accept only once per seq
-              if (g_granted_seq_valid && g_granted_seq == seq) { st=WAIT_Z; break; }
+              if (g_granted_seq_valid && g_granted_seq == seq) { 
+                ESP_LOGD(TAG, "IR drop: dup_seq=%u", (unsigned)seq);
+                st=WAIT_Z; break; 
+              }
               // no-tagback and seq gating
               int64_t now = esp_timer_get_time();
-              if (now < g_no_tagback_until_us){ st=WAIT_Z; break; }
-              if (seq != g_window_seq){ st=WAIT_Z; break; }  // must match current window
+              if (now < g_no_tagback_until_us){ 
+                ESP_LOGD(TAG, "IR drop: cooldown remaining=%lld us", (long long)(g_no_tagback_until_us - now));
+                st=WAIT_Z; break; 
+              }
+              if (seq != g_window_seq){ 
+                ESP_LOGD(TAG, "IR drop: seq_mismatch got=%u want=%u", (unsigned)seq, (unsigned)g_window_seq);
+                st=WAIT_Z; break; 
+              }  // must match current window
+              
+              // Distinct-before-repeat: only accept not-yet-seen candidates in this round
+              if (!zt_is_candidate_allowed(src)) { 
+                ESP_LOGD(TAG, "IR drop: not_distinct %02X:%02X:%02X", src[3], src[4], src[5]);
+                st=WAIT_Z; break; 
+              }
+              
+              // IR received successfully - reset empty counter
+              g_empty_windows = 0;
 #if MODE_B_USE_ACK2
               // Begin handshake: ACK1 → wait for ACK2 → then commit
               memcpy(g_wait_ack2_mac, src, 6);
@@ -505,6 +465,9 @@ static void uart_rx_task(void*){
               g_no_tagback_until_us = esp_timer_get_time() + (int64_t)PASS_COOLDOWN_MS*1000;
               g_role = ROLE_RUNNER;
               ir_rx_set_enabled(false);
+              
+              // Update distinct-before-repeat round state
+              zt_record_grant(src);
               
               // Update LEDs for RUNNER (off)
               if (led_strip) {
@@ -534,20 +497,7 @@ extern "C" void ir_uplink_test_main(void) {
   ESP_LOGI(TAG, "Starting IR Uplink Test (Mode B)");
   esp_read_mac(g_self_mac, ESP_MAC_WIFI_STA);
 
-  // Display (minimal)
-  display.begin();
-  display.setTextSize(2);
-  display.setTextColor(TFT_WHITE, TFT_BLACK);
-  display.fillScreen(TFT_BLACK);
-  display.setCursor(0, 60);
-  display.printf("ROLE: %s", START_AS_HOLDER ? "HOLDER" : "RUNNER");
-
-  // HW init
-  setup_rmt_tx();
-  setup_uart_rx();
-  ESP_ERROR_CHECK(espnow_init_once());
-
-  // LED init (same as Mode A)
+  // Immediate LED clear on startup (before anything else)
   if (led_strip == nullptr) {
     led_strip_config_t strip_config = {
       .strip_gpio_num = HP_LED_GPIO,
@@ -559,12 +509,64 @@ extern "C" void ir_uplink_test_main(void) {
       .mem_block_symbols = 64,
     };
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
-    
-    // Aggressive clear for WS2812 reset
+  }
+  
+  // Aggressive clear for WS2812 reset (multiple times to ensure they're off)
+  if (led_strip) {
+    ESP_ERROR_CHECK(led_strip_clear(led_strip));
+    ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+    vTaskDelay(pdMS_TO_TICKS(10)); // Small delay for WS2812 to process
     ESP_ERROR_CHECK(led_strip_clear(led_strip));
     ESP_ERROR_CHECK(led_strip_refresh(led_strip));
     ESP_LOGI(TAG, "M5Stack FIRE side LEDs reset - should be OFF now");
   }
+
+  // Display (minimal) - will be updated after role assignment
+  display.begin();
+  display.setTextSize(2);
+  display.setTextColor(TFT_WHITE, TFT_BLACK);
+  display.fillScreen(TFT_BLACK);
+  display.setCursor(0, 20);
+  display.printf("MODE B");
+  display.setCursor(0, 60);
+  display.printf("ROLE: %s", START_AS_HOLDER ? "HOST" : "PEER");
+
+  // HW init
+  setup_rmt_tx();
+  setup_uart_rx();
+  ESP_ERROR_CHECK(espnow_init_once());
+  
+  // 1) Join + countdown → get initial role & roster
+  zt_role_t init_role; zt_roster_t roster;
+  
+  // LCD countdown hook so all devices show the same timer
+  zt_set_countdown_cb(zt_render_countdown);
+  
+  zt_join_and_countdown(&init_role, &roster, START_AS_HOLDER == 1); // HOST if START_AS_HOLDER=1
+
+  // 2) Apply role to Mode B (uplink mode): holder RX, runners TX
+  g_role = (init_role == ZT_ROLE_HOLDER) ? ROLE_HOLDER : ROLE_RUNNER;
+  ir_rx_set_enabled(g_role == ROLE_HOLDER);
+  
+  ESP_LOGI(TAG, "Test harness: initial role = %s", (init_role == ZT_ROLE_HOLDER) ? "HOLDER" : "RUNNER");
+  ESP_LOGI(TAG, "Test harness: roster count = %d", roster.count);
+
+  // Harness installed its own recv cb. Restore Mode-B's handler for gameplay:
+  ir_uplink_install_recv_cb();
+
+  // Distinct-before-repeat: initialize round with the initial holder
+  uint8_t init_holder[6]; zt_get_initial_holder(init_holder);
+  zt_distinct_init(&roster, init_holder);
+
+  // Update display with actual role
+  display.fillScreen(TFT_BLACK);
+  display.setCursor(0, 20);
+  display.printf("MODE B");
+  display.setCursor(0, 60);
+  display.printf("ROLE: %s", (g_role == ROLE_HOLDER) ? "HOLDER" : "RUNNER");
+  ESP_LOGI(TAG, "Display updated: ROLE = %s", (g_role == ROLE_HOLDER) ? "HOLDER" : "RUNNER");
+
+  // LED already initialized at startup
 
   // Role-driven RX gating (Mode B: holder listens)
   ir_rx_set_enabled(g_role == ROLE_HOLDER);
@@ -594,8 +596,129 @@ extern "C" void ir_uplink_test_main(void) {
     xTaskCreate(holder_window_task, "holder_window_task", 4096, nullptr, 5, &g_window_task);
     const esp_timer_create_args_t a = { .callback = &window_tick_cb, .arg=nullptr, .name="window_tick" };
     ESP_ERROR_CHECK(esp_timer_create(&a, &g_window_tick));
+    // Start the timer but the task will wait for countdown
     ESP_ERROR_CHECK(esp_timer_start_periodic(g_window_tick, (uint64_t)BEACON_PERIOD_MS * 1000ULL));
   }
   // UART RX task (decodes runner IR when we are holder)
   xTaskCreate(uart_rx_task, "uart_rx_task", 4096, nullptr, 6, nullptr);
+  
+  // Wait for countdown to complete before starting game
+  ESP_LOGI(TAG, "Waiting for countdown to complete...");
+  // The countdown is already handled by the test harness, so we just need to wait a bit
+  vTaskDelay(pdMS_TO_TICKS(100));
+  ESP_LOGI(TAG, "Countdown complete! Game starting...");
+  g_game_started = true;  // Enable game logic
+}
+
+static void zt_render_countdown(int secs, const uint8_t initial_holder[6], const zt_roster_t* roster) {
+  // Minimalist centered banner
+  display.fillScreen(TFT_BLACK);
+  display.setTextDatum(textdatum_t::middle_center);
+  display.setTextColor(TFT_WHITE, TFT_BLACK);
+  display.setTextSize(3);
+  display.drawString("SYNC START", display.width()/2, display.height()/2 - 28);
+  display.setTextSize(5);
+  char buf[16]; snprintf(buf, sizeof(buf), "%d", secs);
+  display.drawString(buf, display.width()/2, display.height()/2 + 8);
+  // Small footer: initial holder hint
+  display.setTextSize(2);
+  char macs[32];
+  snprintf(macs, sizeof(macs), "%02X:%02X:%02X", initial_holder[3], initial_holder[4], initial_holder[5]);
+  display.drawString(macs, display.width()/2, display.height()/2 + 48);
+}
+
+// ESPNOW receive callback for Mode B
+static void ir_uplink_recv_cb(const esp_now_recv_info* info, const uint8_t* data, int len){
+  if (len<=0 || !data) return;
+  switch (data[0]) {
+    case MSG_IR_WINDOW: {
+      if (g_role != ROLE_RUNNER) break;
+      if (!g_game_started) break;  // Wait for countdown to complete
+      if (len < 14) break;
+      uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+      uint8_t holder[6]; memcpy(holder, &data[3], 6);
+      uint8_t K = data[9];
+      uint32_t delta_us = (uint32_t)data[10] | ((uint32_t)data[11]<<8) | ((uint32_t)data[12]<<16) | ((uint32_t)data[13]<<24);
+
+      // no-tagback check
+      int64_t now = esp_timer_get_time();
+      if (now < g_no_tagback_until_us) { ESP_LOGI(TAG,"cooldown; skip window"); break; }
+
+      // Skip if we've already held this round (distinct-before-repeat, local view)
+      if (!zt_is_candidate_allowed(g_self_mac)) { ESP_LOGI(TAG,"ineligible this round; skip window"); break; }
+
+      // Pick slot deterministically and schedule IR uplink
+      slot_pick_t sp = pick_slot(seq, holder, g_self_mac, K ? K : UPLINK_K);
+      uint64_t delay = (uint64_t)delta_us + (uint64_t)sp.slot * UPLINK_SLOT_US + sp.jitter_us;
+      esp_timer_handle_t t = nullptr;
+      const esp_timer_create_args_t a = { .callback = [](void* p){
+          uint16_t s = (uint16_t)(uintptr_t)p;
+          runner_send_ir_uplink(s);
+        }, .arg = (void*)(uintptr_t)seq, .name="ir_uplink_tx" };
+      ESP_ERROR_CHECK(esp_timer_create(&a, &t));
+      ESP_ERROR_CHECK(esp_timer_start_once(t, delay));
+      ESP_LOGI("IRBK","seq=%u slot=%u/%u jit=%uus send_in=%lluus", (unsigned)seq, sp.slot, K?K:UPLINK_K, sp.jitter_us, (unsigned long long)delay);
+      break;
+    }
+    case MSG_PASS_GRANT: {
+      if (g_role != ROLE_RUNNER) break;
+      if (len < 10) break;
+      uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+      uint8_t new_holder[6]; memcpy(new_holder, &data[3], 6);
+      if (memcmp(new_holder, g_self_mac, 6) == 0) {
+                   // we won → become HOLDER
+         g_role = ROLE_HOLDER;
+         ir_rx_set_enabled(true);                   // holder listens in Mode B
+         g_holder_startup_until_us = esp_timer_get_time() + (int64_t)HOLDER_STARTUP_DELAY_MS * 1000;
+         g_granted_seq_valid = false;
+         
+         // Update LEDs for HOLDER
+         if (led_strip) {
+           ESP_ERROR_CHECK(led_strip_clear(led_strip));
+           ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+           for (int i = 0; i < HP_LED_COUNT; i++) {
+             ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 255, 0, 0)); // Red
+           }
+           ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+         }
+         
+         // Update display
+         display.fillScreen(TFT_BLACK);
+         display.setCursor(0, 60);
+         display.printf("ROLE: HOLDER");
+         
+         ESP_LOGI("CORE","ROLE -> HOLDER (GRANT seq=%u)", (unsigned)seq);
+      }
+      break;
+    }
+    case MSG_ACK1_H2R: {
+      // Runner got ACK1 → send ACK2 back to holder
+      if (g_role != ROLE_RUNNER) break;
+      if (len < 3) break;
+      uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+      if (!g_wait_ack1 || g_wait_ack1_seq != seq) break; // not ours
+      espnow_send_ack2_r2h(info->src_addr, seq);
+      g_wait_ack1 = false;
+      ESP_LOGI(TAG,"ACK1 rx → ACK2 tx (seq=%u)", (unsigned)seq);
+      break;
+    }
+    case MSG_ACK2_R2H: {
+      // Holder got ACK2 → commit pass
+      if (g_role != ROLE_HOLDER) break;
+      if (len < 3) break;
+      uint16_t seq = (uint16_t)data[1] | ((uint16_t)data[2] << 8);
+      if (!g_wait_ack2 || seq != g_wait_ack2_seq) break;
+      if (memcmp(info->src_addr, g_wait_ack2_mac, 6) != 0) break;
+      if (g_ack2_timer) esp_timer_stop(g_ack2_timer);
+      holder_commit_after_ack2(g_wait_ack2_mac, seq);
+      break;
+    }
+    case MSG_STATE_SYNC: {
+      if (len < 12) break;
+      uint8_t new_holder[6]; memcpy(new_holder, &data[3], 6);
+      zt_record_grant(new_holder);  // keep local round state in sync
+      break;
+    }
+    default: break;
+  }
 }
