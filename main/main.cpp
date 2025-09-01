@@ -4,8 +4,8 @@ extern "C" {
     #include <stdio.h>
     #include "freertos/FreeRTOS.h"
     #include "ir_simple_test.h"     // Mode A: holder sends IR beacons
-#include "ir_uplink_test.h"     // Mode B: holder receives IR uplinks (new)
-#include "ir_downlink_test.h"   // Mode A condensed: holder TX / runners RX
+    #include "ir_uplink_test.h"     // Mode B: holder receives IR uplinks (new)
+    #include "ir_downlink_test.h"   // Mode A condensed: holder TX / runners RX
     #include "freertos/task.h"
     #include "game_logic.h"
     #include "M5GFX.h"

@@ -1,0 +1,391 @@
+extern "C" {
+    #include "led_strip.h"
+    }
+    #include <stdio.h>
+    #include "freertos/FreeRTOS.h"
+    #include "ir_simple_test.h"     // Mode A: holder sends IR beacons
+#include "ir_uplink_test.h"     // Mode B: holder receives IR uplinks (new)
+#include "ir_downlink_test.h"   // Mode A condensed: holder TX / runners RX
+    #include "freertos/task.h"
+    #include "game_logic.h"
+    #include "M5GFX.h"
+    #include "SoundManager.hpp"
+    
+    PlayerState myState;
+    M5GFX display;
+    led_strip_handle_t led_strip = NULL;
+    SoundManager speaker;
+    
+    // LED animation task variables
+    static TaskHandle_t led_task_handle = NULL;
+    static volatile int* shared_health_ptr = NULL;  // Pointer to shared health variable
+    static volatile bool losing_animation = false;  // Flag for losing animation
+    static volatile bool game_over = false;  // Flag to stop normal animation when game ends
+    
+    // LED animation task - runs continuously in parallel with main loop
+    static void led_animation_task(void* parameter)
+    {
+        while (1) {
+            if (!led_strip || !shared_health_ptr) {
+                vTaskDelay(pdMS_TO_TICKS(100));
+                continue;
+            }
+            
+            // Check if losing animation is requested
+            if (losing_animation) {
+                // Losing animation: all LEDs light up red then fade away
+                printf("Starting losing LED animation\n");
+                
+                // Light up all LEDs bright red
+                for (int pos = 0; pos < 8; pos++) {
+                    led_strip_set_pixel(led_strip, pos, 255, 0, 0);
+                }
+                led_strip_refresh(led_strip);
+                vTaskDelay(pdMS_TO_TICKS(500));  // Hold bright red for 500ms
+                
+                // Fade away gradually
+                for (int brightness = 255; brightness >= 0; brightness -= 5) {
+                    for (int pos = 0; pos < 8; pos++) {
+                        led_strip_set_pixel(led_strip, pos, brightness, 0, 0);
+                    }
+                    led_strip_refresh(led_strip);
+                    vTaskDelay(pdMS_TO_TICKS(20));  // Smooth fade
+                }
+                
+                // Clear all LEDs
+                led_strip_clear(led_strip);
+                led_strip_refresh(led_strip);
+                
+                // Set game over flag and stop normal animation
+                game_over = true;
+                losing_animation = false;
+                printf("Losing LED animation completed, game over\n");
+                continue;
+            }
+            
+            // Don't run normal animation if game is over
+            if (game_over) {
+                vTaskDelay(pdMS_TO_TICKS(100));
+                continue;
+            }
+            
+            // Get current health value and calculate delay
+            int current_health = *shared_health_ptr;
+            uint8_t delay_ms = current_health * 15;
+            delay_ms = delay_ms < 25 ? 25 : delay_ms;
+            
+            // Clear all LEDs first
+            led_strip_clear(led_strip);
+            led_strip_refresh(led_strip);
+            
+            // TWO opposite spinning lights effect - continuous smooth rotation
+            for (int pos = 0; pos < 8; pos++) {
+                // Clear all LEDs for clean frame
+                led_strip_clear(led_strip);
+                
+                // Set current positions - lights on opposite sides of the strip
+                led_strip_set_pixel(led_strip, pos, 255, 0, 0);  // First light
+                led_strip_set_pixel(led_strip, (pos + 4) % 8, 255, 0, 0);  // Second light (opposite side)
+                
+                // Refresh and wait for smooth transition
+                led_strip_refresh(led_strip);
+                vTaskDelay(pdMS_TO_TICKS(delay_ms));
+            }
+            
+            // No extra delay - continuous smooth rotation
+        }
+    }
+    
+    extern "C" void app_main(void)
+    {
+            printf("Starting Hot Potato Game\n");
+
+    // TEMP: choose test variant
+#if defined(HP_TEST_UPLINK) && (HP_TEST_UPLINK==1)
+    printf("Running Mode B: IR Uplink Test (holder RX / runners IR TX)\n");
+<<<<<<< HEAD
+    //ir_uplink_test_main();
+=======
+    ir_uplink_test_main();
+#else
+    printf("Running Mode A: IR Downlink Test (holder TX / runners IR RX)\n");
+    ir_downlink_test_main();
+#endif
+>>>>>>> f815aba (feat(ir): add downlink + test harness; update uplink/simple tests and main; remove .gitignore.txt)
+    
+    // Original switch (currently disabled):
+    // #if defined(HP_TEST_UPLINK) && (HP_TEST_UPLINK==1)
+    //     printf("Running Mode B: IR Uplink Test (holder RX / runners IR TX)\n");
+    //     ir_uplink_test_main();
+    // #else
+    //     printf("Running Mode A: IR Simple Test (holder TX / runners RX)\n");
+    //     ir_simple_test_main();
+    // #endif
+        //return;
+    
+        game_init(&myState);
+    
+        printf("Initializing display...\n");
+
+        // Try to detect the board type
+        auto board = display.getBoard();
+        printf("Detected board type: %d\n", (int)board);
+        
+        if (!display.begin()) {
+            printf("ERROR: Display initialization failed!\n");
+            // Continue without display
+        } else {
+            printf("Display begin completed\n");
+            display.setRotation(1);
+            display.setTextSize(2);
+            display.setTextColor(TFT_WHITE, TFT_BLACK);
+            printf("Display setup completed\n");
+            
+            // Test display with a simple message
+            display.clear();
+            display.setCursor(10, 10);
+            display.println("Hot Potato Starting...");
+            printf("Initial display test completed\n");
+        }
+    
+                    // LED init (GPIO15, 8 LEDs for traveling effect)
+        led_strip_config_t strip_config = {}; strip_config.strip_gpio_num = 15; strip_config.max_leds = 8;
+        led_strip_rmt_config_t rmt_config = {}; rmt_config.resolution_hz = 10 * 1000 * 1000;
+        if (led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip) != ESP_OK) { printf("LED strip init failed\n"); led_strip = NULL; }
+        
+        // Set up shared health pointer for LED task
+        shared_health_ptr = &myState.health;
+        
+        // Create LED animation task - runs continuously, speed based on health
+        if (xTaskCreate(led_animation_task, "led_anim", 2048, NULL, 5, &led_task_handle) != pdPASS) {
+            printf("Failed to create LED animation task\n");
+        }
+    
+            // Sound init (GPIO25 DAC)
+    if (!speaker.init(25)) { printf("Sound init failed\n"); }
+    
+    // Button init for testing
+    gpio_config_t button_config = {};
+    button_config.intr_type = GPIO_INTR_DISABLE;
+    button_config.mode = GPIO_MODE_INPUT;
+    button_config.pin_bit_mask = (1ULL << 39) | (1ULL << 37);  // GPIO 39 (Button A) and GPIO 37 (Button C)
+    button_config.pull_down_en = GPIO_PULLDOWN_DISABLE;
+    button_config.pull_up_en = GPIO_PULLUP_ENABLE;
+    gpio_config(&button_config);
+    
+    printf("Buttons initialized: GPIO 39 (Button A) for pass, GPIO 37 (Button C) for give\n");
+    
+    // Start with a potato
+    uint8_t fake_sender_mac[6] = {1,2,3,4,5,6};
+    
+    while (1) {
+            int prev_health = myState.health;
+            
+            // Button handling for testing
+            static bool button_a_pressed = false;
+            static bool button_c_pressed = false;
+            
+            // Read button states
+            bool button_a_current = !gpio_get_level((gpio_num_t)39);  // Inverted because of pull-up
+            bool button_c_current = !gpio_get_level((gpio_num_t)37);  // Inverted because of pull-up
+            
+            // Button A (GPIO 39) - Pass potato
+            if (button_a_current && !button_a_pressed && myState.has_potato && myState.alive) {
+                printf("Button A pressed - Passing potato to fake MAC\n");
+                uint8_t fake_target_mac[6] = {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF};
+                if (can_pass_to(&myState, fake_target_mac)) {
+                    pass_potato(&myState, fake_target_mac);
+                    vTaskSuspend(led_task_handle);
+                    for (int i = 0; i < 8; i++) {
+                        led_strip_set_pixel(led_strip, i, 0, 255, 0);
+                    }
+                    led_strip_refresh(led_strip);
+                    speaker.beep(800, 100);  // Success beep
+                } else {
+                    printf("Cannot pass to this target (tagback rule)\n");
+                    speaker.beep(400, 100);  // Error beep
+                }
+            }
+            button_a_pressed = button_a_current;
+            
+            // Button C (GPIO 37) - Give potato
+            if (button_c_current && !button_c_pressed && !myState.has_potato && myState.alive) {
+                printf("Button C pressed - Giving potato from fake MAC\n");
+                uint8_t fake_giver_mac[6] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66};
+                give_potato(&myState, fake_giver_mac);
+                vTaskResume(led_task_handle);
+                speaker.beep(600, 100);  // Potato received beep
+            }
+            button_c_pressed = button_c_current;
+        
+            game_tick(&myState);
+            // On health tick: pulse LED and beep
+            if (myState.health < prev_health && myState.health > 0) {
+                
+                speaker.beep(600, 40);
+            }
+        
+            // On elimination: trigger losing LED animation + jingle
+            if (is_eliminated(&myState)) {
+                losing_animation = true;  // Trigger losing animation
+                speaker.death_jingle();
+            }
+    
+            // LCD
+            printf("Updating display...\n");
+            if (display.getPanel()) {  // Check if display is initialized
+                // Check if player is eliminated first
+                if (!myState.alive) {
+                    // ELIMINATION SCREEN - Full red fade effect
+                    display.clear();
+                    
+                    // Get display dimensions for centering
+                    int16_t display_width = display.width();
+                    int16_t display_height = display.height();
+                    
+                    // Fill entire screen with bright red
+                    display.fillScreen(TFT_RED);
+                    
+                    // Show "ELIMINATED" text in white on red background
+                    display.setTextSize(4);  // Large text
+                    display.setTextColor(TFT_WHITE, TFT_RED);
+                    
+                    const char* elim_msg = "ELIMINATED";
+                    int16_t elim_width = display.textWidth(elim_msg);
+                    int16_t elim_x = (display_width - elim_width) / 2;
+                    int16_t elim_y = (display_height / 2) - 20;  // Center vertically
+                    
+                    display.setCursor(elim_x, elim_y);
+                    display.println(elim_msg);
+                    
+                    // Add "GAME OVER" subtitle
+                    display.setTextSize(2);
+                    const char* game_over_msg = "GAME OVER";
+                    int16_t go_width = display.textWidth(game_over_msg);
+                    int16_t go_x = (display_width - go_width) / 2;
+                    int16_t go_y = elim_y + 60;
+                    
+                    display.setCursor(go_x, go_y);
+                    display.println(game_over_msg);
+                    
+                } else {
+                    // NORMAL GAME SCREEN
+                    display.clear();
+                    
+                    // Get display dimensions for centering
+                    int16_t display_width = display.width();
+                    int16_t display_height = display.height();
+                    
+
+                    
+                    // Reset text size and color for other elements
+                    display.setTextSize(2);
+                    display.setTextColor(TFT_WHITE, TFT_BLACK);
+                    
+                    // Potato status at bottom center
+                    if (myState.has_potato) {
+                        display.setTextColor(TFT_RED, TFT_BLACK);
+                        const char* potato_msg = "You have the potato!";
+                        const char* tag_msg = "Tag someone, quick!";
+                        
+                        // Center the first line
+                        int16_t msg1_width = display.textWidth(potato_msg);
+                        int16_t msg1_x = (display_width - msg1_width) / 2;
+                        display.setCursor(msg1_x, display_height - 60);
+                        display.println(potato_msg);
+                        
+                        // Center the second line
+                        int16_t msg2_width = display.textWidth(tag_msg);
+                        int16_t msg2_x = (display_width - msg2_width) / 2;
+                        display.setCursor(msg2_x, display_height - 40);
+                        display.println(tag_msg);
+                        
+                        // HUGE centered health countdown
+                        display.setTextSize(8);  // Much bigger text
+                        display.setTextColor(TFT_RED, TFT_BLACK);
+                        
+                        // Center the health number
+                        char health_str[8];
+                        snprintf(health_str, sizeof(health_str), "%d", myState.health);
+                        int16_t health_width = display.textWidth(health_str);
+                        int16_t health_x = (display_width - health_width) / 2;
+                        int16_t health_y = (display_height / 2) - 40;  // Center vertically with slight offset
+                        
+                        display.setCursor(health_x, health_y);
+                        display.println(health_str);
+
+                        display.setTextColor(TFT_WHITE, TFT_BLACK);
+                    } else {
+                        const char* no_potato_msg = "You don't have the potato!";
+                        const char* run_msg = "RUN!";
+                        int16_t msg_width = display.textWidth(no_potato_msg);
+                        int16_t msg_x = (display_width - msg_width) / 2;
+                        display.setCursor(msg_x, display_height - 80);
+                        display.println(no_potato_msg);
+
+                        msg_width = display.textWidth(run_msg);
+                        msg_x = (display_width - msg_width) / 2;
+                        display.setCursor(msg_x, display_height - 40);
+                        display.println(run_msg);
+                    }
+                }
+            }
+    
+                    if (is_eliminated(&myState)) {
+                        printf("Game Over - Player Eliminated\n");
+                        vTaskDelay(pdMS_TO_TICKS(2000));
+                        break; 
+                    }
+        
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+    
+    // Cleanup LED task
+    if (led_task_handle) {
+        // Signal LED task to stop
+        game_over = true;
+        vTaskDelay(pdMS_TO_TICKS(100));  // Give LED task time to see the flag
+        
+        vTaskDelete(led_task_handle);
+        led_task_handle = NULL;
+    }
+    
+<<<<<<< HEAD
+    speaker.shutdown();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+        speaker.shutdown();
+    }
+>>>>>>> f815aba (feat(ir): add downlink + test harness; update uplink/simple tests and main; remove .gitignore.txt)

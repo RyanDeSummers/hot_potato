@@ -1,21 +1,23 @@
-# ESP-IDF / CMake
+# Build artifacts
 build/
-sdkconfig.old
-sdkconfig.ci
 *.bin
 *.elf
 *.map
+
+# SDK configs
+sdkconfig.old
+sdkconfig.defaults
+
+# Logs and temp files
 *.log
-project_description.json
-
-# Python caches
-**/__pycache__/
 *.pyc
-*.pyo
+*.swp
+*.swo
 
-# IDE
+# VSCode and IDE stuff
 .vscode/
 .idea/
 
-# PlatformIO (if any)
-.pio/
+# OS junk
+.DS_Store
+Thumbs.db
