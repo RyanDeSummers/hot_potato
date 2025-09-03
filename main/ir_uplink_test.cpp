@@ -4,6 +4,10 @@
 //
 // ESP-IDF 5.3.3-only APIs, no deprecated functions.
 
+// Build configuration: ZT_IS_HOST determines host vs peer behavior
+// Must be defined via build flag: -DCMAKE_CXX_FLAGS="-DZT_IS_HOST=1" for HOST
+// or -DCMAKE_CXX_FLAGS="-DZT_IS_HOST=0" for PEER
+
 #include <string.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
@@ -47,7 +51,7 @@ static const char* TAG = "IR_UPLINK_TEST";
 
 // ---- Role state ----
 typedef enum { ROLE_HOLDER, ROLE_RUNNER } role_t;
-static volatile role_t g_role = START_AS_HOLDER ? ROLE_HOLDER : ROLE_RUNNER;
+static volatile role_t g_role = ZT_IS_HOST ? ROLE_HOLDER : ROLE_RUNNER;
 static uint8_t  g_self_mac[6] = {0};
 static uint8_t  g_last_peer_mac[6] = {0};
 static int64_t  g_no_tagback_until_us = 0;
@@ -317,6 +321,8 @@ static esp_err_t espnow_send_ack2_r2h(const uint8_t* holder_mac, uint16_t seq) {
 
 static void holder_commit_after_ack2(const uint8_t* winner_mac, uint16_t seq) {
   // Update distinct-before-repeat round state
+  ESP_LOGI(TAG, "Recording grant for %02X:%02X:%02X:%02X:%02X:%02X in distinct-before-repeat", 
+           winner_mac[0], winner_mac[1], winner_mac[2], winner_mac[3], winner_mac[4], winner_mac[5]);
   zt_record_grant(winner_mac);
   
   // Commit: GRANT + STATE_SYNC, cooldown, flip role
@@ -436,7 +442,7 @@ static void uart_rx_task(void*){
               
               // Distinct-before-repeat: only accept not-yet-seen candidates in this round
               if (!zt_is_candidate_allowed(src)) { 
-                ESP_LOGD(TAG, "IR drop: not_distinct %02X:%02X:%02X", src[3], src[4], src[5]);
+                ESP_LOGI(TAG, "IR drop: not_distinct %02X:%02X:%02X - distinct-before-repeat active", src[3], src[4], src[5]);
                 st=WAIT_Z; break; 
               }
               
@@ -466,8 +472,10 @@ static void uart_rx_task(void*){
               g_role = ROLE_RUNNER;
               ir_rx_set_enabled(false);
               
-              // Update distinct-before-repeat round state
-              zt_record_grant(src);
+                             // Update distinct-before-repeat round state
+               ESP_LOGI(TAG, "Recording grant for %02X:%02X:%02X:%02X:%02X:%02X in distinct-before-repeat (immediate)", 
+                        src[0], src[1], src[2], src[3], src[4], src[5]);
+               zt_record_grant(src);
               
               // Update LEDs for RUNNER (off)
               if (led_strip) {
@@ -529,7 +537,7 @@ extern "C" void ir_uplink_test_main(void) {
   display.setCursor(0, 20);
   display.printf("MODE B");
   display.setCursor(0, 60);
-  display.printf("ROLE: %s", START_AS_HOLDER ? "HOST" : "PEER");
+  display.printf("ROLE: %s", ZT_IS_HOST ? "HOST" : "PEER");
 
   // HW init
   setup_rmt_tx();
@@ -542,12 +550,13 @@ extern "C" void ir_uplink_test_main(void) {
   // LCD countdown hook so all devices show the same timer
   zt_set_countdown_cb(zt_render_countdown);
   
-  zt_join_and_countdown(&init_role, &roster, START_AS_HOLDER == 1); // HOST if START_AS_HOLDER=1
+  zt_join_and_countdown(&init_role, &roster, ZT_IS_HOST == 1); // HOST if ZT_IS_HOST=1
 
   // 2) Apply role to Mode B (uplink mode): holder RX, runners TX
   g_role = (init_role == ZT_ROLE_HOLDER) ? ROLE_HOLDER : ROLE_RUNNER;
   ir_rx_set_enabled(g_role == ROLE_HOLDER);
   
+  ESP_LOGI(TAG, "Build config: ZT_IS_HOST=%d", ZT_IS_HOST);
   ESP_LOGI(TAG, "Test harness: initial role = %s", (init_role == ZT_ROLE_HOLDER) ? "HOLDER" : "RUNNER");
   ESP_LOGI(TAG, "Test harness: roster count = %d", roster.count);
 
@@ -556,7 +565,10 @@ extern "C" void ir_uplink_test_main(void) {
 
   // Distinct-before-repeat: initialize round with the initial holder
   uint8_t init_holder[6]; zt_get_initial_holder(init_holder);
-  zt_distinct_init(&roster, init_holder);
+  ESP_LOGI(TAG, "Distinct-before-repeat: initializing with holder %02X:%02X:%02X:%02X:%02X:%02X", 
+           init_holder[0], init_holder[1], init_holder[2], init_holder[3], init_holder[4], init_holder[5]);
+  zt_distinct_init(nullptr, init_holder);  // Use global roster from test harness
+  ESP_LOGI(TAG, "Distinct-before-repeat: initialization complete");
 
   // Update display with actual role
   display.fillScreen(TFT_BLACK);
@@ -564,7 +576,9 @@ extern "C" void ir_uplink_test_main(void) {
   display.printf("MODE B");
   display.setCursor(0, 60);
   display.printf("ROLE: %s", (g_role == ROLE_HOLDER) ? "HOLDER" : "RUNNER");
-  ESP_LOGI(TAG, "Display updated: ROLE = %s", (g_role == ROLE_HOLDER) ? "HOLDER" : "RUNNER");
+  display.setCursor(0, 100);
+  display.printf("BUILD: %s", ZT_IS_HOST ? "HOST" : "PEER");
+  ESP_LOGI(TAG, "Display updated: ROLE = %s, BUILD = %s", (g_role == ROLE_HOLDER) ? "HOLDER" : "RUNNER", ZT_IS_HOST ? "HOST" : "PEER");
 
   // LED already initialized at startup
 
@@ -645,7 +659,10 @@ static void ir_uplink_recv_cb(const esp_now_recv_info* info, const uint8_t* data
       if (now < g_no_tagback_until_us) { ESP_LOGI(TAG,"cooldown; skip window"); break; }
 
       // Skip if we've already held this round (distinct-before-repeat, local view)
-      if (!zt_is_candidate_allowed(g_self_mac)) { ESP_LOGI(TAG,"ineligible this round; skip window"); break; }
+      if (!zt_is_candidate_allowed(g_self_mac)) { 
+        ESP_LOGI(TAG,"ineligible this round; skip window - distinct-before-repeat active"); 
+        break; 
+      }
 
       // Pick slot deterministically and schedule IR uplink
       slot_pick_t sp = pick_slot(seq, holder, g_self_mac, K ? K : UPLINK_K);
@@ -713,12 +730,14 @@ static void ir_uplink_recv_cb(const esp_now_recv_info* info, const uint8_t* data
       holder_commit_after_ack2(g_wait_ack2_mac, seq);
       break;
     }
-    case MSG_STATE_SYNC: {
-      if (len < 12) break;
-      uint8_t new_holder[6]; memcpy(new_holder, &data[3], 6);
-      zt_record_grant(new_holder);  // keep local round state in sync
-      break;
-    }
+         case MSG_STATE_SYNC: {
+       if (len < 12) break;
+       uint8_t new_holder[6]; memcpy(new_holder, &data[3], 6);
+       ESP_LOGI(TAG, "STATE_SYNC: recording grant for %02X:%02X:%02X:%02X:%02X:%02X in distinct-before-repeat", 
+                new_holder[0], new_holder[1], new_holder[2], new_holder[3], new_holder[4], new_holder[5]);
+       zt_record_grant(new_holder);  // keep local round state in sync
+       break;
+     }
     default: break;
   }
 }

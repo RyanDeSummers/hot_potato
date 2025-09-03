@@ -30,14 +30,9 @@ extern "C" {
     {
             printf("Starting Hot Potato Game\n");
 
-    // TEMP: choose test variant
-#if defined(HP_TEST_UPLINK) && (HP_TEST_UPLINK==1)
+    // Running Mode B: IR Uplink Test (holder RX / runners IR TX)
     printf("Running Mode B: IR Uplink Test (holder RX / runners IR TX)\n");
     ir_uplink_test_main();
-#else
-    printf("Running Mode A: IR Downlink Test (holder TX / runners IR RX)\n");
-    ir_downlink_test_main();
-#endif
     
     // Original switch (currently disabled):
     // #if defined(HP_TEST_UPLINK) && (HP_TEST_UPLINK==1)
